@@ -1,17 +1,17 @@
 {% assign metatitle = site.title %}
 
 {% if title %}
-    {% assign metatitle = metatitle | prepend: " • " | prepend: title %}
+  {% assign metatitle = metatitle | prepend: ' • ' | prepend: title %}
 {% endif %}
 
 {% assign metadesc = site.desc %}
 {% if desc %}
-    {% assign metadesc = desc %}
+  {% assign metadesc = desc %}
 {% endif %}
 
-{% assign metatype = "website" %}
-{% if type == "note" %}
-    {% assign metatype = "article" %}
+{% assign metatype = 'website' %}
+{% if type == 'note' %}
+  {% assign metatype = 'article' %}
 {% endif %}
 
 <meta charset="UTF-8">
@@ -36,6 +36,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
 
 <link rel="preconnect" href="https://cdnjs.cloudflare.com/" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
 <link rel="stylesheet" href="/assets/style.css">

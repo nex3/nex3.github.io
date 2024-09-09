@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "serve": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "fix": "prettier -w ."
   },
   "keywords": [],
   "author": "",
@@ -11,9 +12,11 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0-beta.1",
+    "@shopify/prettier-plugin-liquid": "^1.5.0",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.2.0",
     "markdown-it-footnote": "^4.0.0",
+    "prettier": "^3.3.3",
     "title-case": "^3.0.3"
   }
 }

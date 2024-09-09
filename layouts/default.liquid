@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include 'head.liquid' %}
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="/" class="page-header__logo" title="Go home">
+        <img src="/assets/avatar.png" alt="" width="48">
+      </a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+      </nav>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+
+    <footer class="page-footer">
+      <small>Copyright {{ site.author }}</small>
+    </footer>
+  </body>
+</html>
