@@ -2,13 +2,18 @@
   "name": "nex3.github.io",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "eleventy --serve",
+    "build": "eleventy"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0-beta.1"
+    "@11ty/eleventy": "^3.0.0-beta.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-attrs": "^4.2.0",
+    "markdown-it-footnote": "^4.0.0",
+    "title-case": "^3.0.3"
   }
 }
