@@ -28,11 +28,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setLibrary('md', md);
 
-  eleventyConfig.addCollection("notes", function (collection) {
-    return collection.getFilteredByGlob(["notes/**/*.md", "index.md"]);
-  });
-
-  eleventyConfig.addPassthroughCopy('assets');
+  eleventyConfig.addPassthroughCopy({'assets': 'assets', 'static': ''});
   eleventyConfig.setUseGitIgnore(false);
 
   return {
