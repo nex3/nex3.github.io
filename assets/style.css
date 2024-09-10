@@ -1,6 +1,6 @@
 :root {
   --accent: #2d9cdb;
-  --grey: #444;
+  --grey: #555;
 }
 
 html {
@@ -45,7 +45,7 @@ nav a {
 
 main {
   flex-grow: 1;
-  max-width: 60ch;
+  max-width: 90ch;
   width: 100%;
   margin: 0 auto;
 }
@@ -70,6 +70,29 @@ a[href]:focus {
 
 .footnotes {
   font-size: 0.8em;
+}
+
+a.attribution {
+  font-size: 0.8em;
+  color: var(--grey);
+  text-decoration-color: var(--grey);
+}
+
+h1 a[href] {
+  color: black;
+  text-decoration: none;
+}
+
+.blog-posts {
+  padding: 0;
+}
+
+.blog-posts li {
+  list-style: none
+}
+
+.blog-posts li + li {
+  border-top: 0.1px solid var(--grey);
 }
 
 /* Typography */

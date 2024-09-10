@@ -12,11 +12,15 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0-beta.1",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@shopify/prettier-plugin-liquid": "^1.5.0",
+    "date-fns": "^3.6.0",
+    "js-yaml": "^4.1.0",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.2.0",
     "markdown-it-footnote": "^4.0.0",
     "prettier": "^3.3.3",
-    "title-case": "^3.0.3"
+    "title-case": "^3.0.3",
+    "truncate-html": "^1.1.2"
   }
 }

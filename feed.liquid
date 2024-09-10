@@ -1,0 +1,26 @@
+---
+permalink: '/feed.xml'
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Natalie's Blog</title>
+  <id>{{ site.url | addPathPrefixToFullUrl }}</id>
+  <link href="{{ permalink | htmlBaseUrl: site.url }}" rel="self"/>
+  <link href="{{ site.url | addPathPrefixToFullUrl }}" />
+  <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  {%- assign posts = collections.blog | reverse -%}
+  {%- for post in posts limit:15 -%}
+  {%- assign absolutePostUrl = post.url | htmlBaseUrl: site.url %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" rel="alternate"/>
+    <id>{{ absolutePostUrl }}</id>
+    <published>{{ post.date | dateToRfc3339 }}</published>
+    <updated>{{ post.data.updated | default: post.date | dateToRfc3339 }}</updated>
+    <author>
+      <name>{{ post.data.author }}</name>
+    </author>
+    <content type="html">{{ post.templateContent | renderTransforms: post.data.page, site.url | escape }}</content>
+  </entry>{% endfor %}
+</feed>

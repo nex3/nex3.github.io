@@ -23,7 +23,7 @@ With this site, I'm trying to accomplish three broad goals:
 
 2. **Provide a (curated) feed for posts I like.** Something I think no social
    media has gotten right since Google Reader is the ability to curate posts,
-   art, and other media *from across the web* with high-quality attribution and
+   art, and other media _from across the web_ with high-quality attribution and
    additional commentary. I want that here.
 
 3. **Provide a forum for conversation sparked by posts.** This is the toughest
