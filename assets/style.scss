@@ -1,6 +1,12 @@
 $accent: #2d9cdb;
 $grey: #555;
 
+@mixin phone {
+  @media only screen and (max-width: 468px) {
+    @content
+  }
+}
+
 html {
   font-size: 100%;
   scroll-behavior: smooth;
@@ -18,25 +24,52 @@ body {
 }
 
 .page-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   margin-top: 8px;
 
-  @media only screen and (max-width: 468px) {
+  @include phone {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: column;
   }
 
-  nav a:not(:hover):not(:focus) {
-    color: currentColor;
-    text-decoration: none;
+  &__logo {
+    grid-row: span 2;
+  }
+
+  nav {
+    grid-column: 3;
+    &.icons {
+      grid-row: 2;
+      a {
+        margin: 0 8px;
+      }
+    }
+  
+    a {
+      margin: 0 12px;
+      font-size: 1.25em;
+      &:not(:hover):not(:focus) {
+        color: currentColor;
+        text-decoration: none;
+      }
+    }
+    img {
+      width: 1.1em;
+      vertical-align: middle;
+    }
   }
 }
 
-nav a {
-  margin: 0 12px;
-  font-size: 1.25em;
+nav {
+  display: flex;
+  justify-content: flex-end;
+  @include phone {
+    justify-content: space-evenly;
+  }
 }
 
 main {
