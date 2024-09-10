@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Natalie's Blog</title>
+  <id>https://nex-3.com/</id>
+  <link href="https://nex-3.com/feed.xml" rel="self"/>
+  <link href="https://nex-3.com/" />
+  <updated>2024-09-09T21:00:00Z</updated>
+  <entry>
+    <title>Apologia for RSS</title>
+    <link href="https://nex-3.com/blog/apologia-for-rss/" rel="alternate"/>
+    <id>https://nex-3.com/blog/apologia-for-rss/</id>
+    <published>2024-09-09T21:00:00Z</published>
+    <updated>2024-09-09T21:00:00Z</updated>
+    <author>
+      <name>Natalie</name>
+    </author>
+    <content type="html">&lt;p&gt;RSS&lt;sup class=&#34;footnote-ref&#34;&gt;&lt;a href=&#34;https://nex-3.com/blog/apologia-for-rss/#fn1&#34; id=&#34;fnref1&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt; was the original federated social media. RSS invented the &amp;quot;share&amp;quot; verb.
+RSS is easy, simple, and sustainable. RSS never died.&lt;/p&gt;
+&lt;p&gt;I&#39;m sure a chunk of you already know what RSS is. Probably some don&#39;t. RSS is a
+protocol (really just a text format) for listing the posts on a website in a
+machine-readable way. Readers of your website post its RSS feed URL into their
+feed reader software, this reader periodically checks it for new posts, and it
+presents all the posts in a single unified list with useful features like
+&amp;quot;marking stuff as read&amp;quot;. (Postcasts still&lt;sup class=&#34;footnote-ref&#34;&gt;&lt;a href=&#34;https://nex-3.com/blog/apologia-for-rss/#fn2&#34; id=&#34;fnref2&#34;&gt;[2]&lt;/a&gt;&lt;/sup&gt; use the same technology.)&lt;/p&gt;
+&lt;p&gt;Back in the day, everything had RSS. Any site that had anything that mapped kind
+of onto &amp;quot;posts&amp;quot;, from blogs to webcomics to the nascent social media sites,
+would expose an RSS feed as well because not to do so was to cut themselves off
+from what was at the time a massive audience. Even Twitter had RSS for a long
+time. This was great as a user, because you could easily read stuff from all
+across the web in a single place. It was great as an author, because your
+self-hosted blog wasn&#39;t intrinsically harder for people to read than anything
+else anywhere on the internet. It was a kind of federation, but one that didn&#39;t
+require each node to rack up server costs and DevOps time. If you could host a
+simple XML file that only updated when you made a post, that&#39;s all you needed.&lt;/p&gt;
+&lt;p&gt;If you&#39;re reading this, even if you used RSS a bit in its heyday, you may think
+&amp;quot;oh I can see why that would be useful&amp;quot; but you don&#39;t yet understand. All of
+this is just preamble. What &lt;em&gt;really&lt;/em&gt; makes RSS spectacular is the ability to
+share&lt;sup class=&#34;footnote-ref&#34;&gt;&lt;a href=&#34;https://nex-3.com/blog/apologia-for-rss/#fn3&#34; id=&#34;fnref3&#34;&gt;[3]&lt;/a&gt;&lt;/sup&gt; posts across feeds. Each post comes with a unique identifier as well
+as authorship information, which means my feed can just &lt;em&gt;contain&lt;/em&gt; a post from my
+friend that I think my readers would be interested in. It can contain any post
+from anywhere on the internet! Before Twitter had &amp;quot;retweets&amp;quot; and every website
+had a &amp;quot;share on social media&amp;quot; button on every page, RSS had post embedding.&lt;/p&gt;
+&lt;p&gt;Not that most feed readers really took advantage of that, because there wasn&#39;t a
+particularly tight feedback loop between &lt;em&gt;reading&lt;/em&gt; and &lt;em&gt;authoring&lt;/em&gt; an RSS feed.
+The one major exception was the late lamented Google Reader, the first
+high-profile victim of Google&#39;s now-infamous penchant for devouring its
+children. Google Reader provided its own feed for each user, and for a moment
+there was a vibrant culture&lt;sup class=&#34;footnote-ref&#34;&gt;&lt;a href=&#34;https://nex-3.com/blog/apologia-for-rss/#fn4&#34; id=&#34;fnref4&#34;&gt;[4]&lt;/a&gt;&lt;/sup&gt; of sharing blog posts with friends and
+commenting and discussing. I want this back. I want to be able to share
+&lt;em&gt;anything&lt;/em&gt; from &lt;em&gt;anywhere&lt;/em&gt;, I want to see the fruits of my friends&#39; excellent
+taste, and I want to be able to have a conversation about it.&lt;/p&gt;
+&lt;p&gt;I may not be able to do that yet (although I &lt;em&gt;am&lt;/em&gt; hoping to set up a new blog
+with some amount of post embedding ability built into it). But I can and do use
+RSS, as I have continuously since the mid-2000s. You can too! These days I&#39;m
+using &lt;a href=&#34;https://newsblur.com&#34;&gt;NewsBlur&lt;/a&gt;, but I&#39;ve also heard good things about
+&lt;a href=&#34;https://feedbin.com/&#34;&gt;Feedbin&lt;/a&gt; as well if you want something a little simpler.
+(I used to use Feedly, but it went all-in on LLM shit so I can&#39;t endorse it.)
+RSS may not quite be Cohost, but it&#39;s a way to interact with the web that&#39;s not
+just sustainable, but whose very existence makes it easier to make a web that
+isn&#39;t at the mercy of corporate cartels.&lt;/p&gt;
+&lt;hr class=&#34;footnotes-sep&#34;&gt;
+&lt;section class=&#34;footnotes&#34;&gt;
+&lt;ol class=&#34;footnotes-list&#34;&gt;
+&lt;li id=&#34;fn1&#34; class=&#34;footnote-item&#34;&gt;&lt;p&gt;Throughout this post I&#39;m going to use &amp;quot;RSS&amp;quot; to refer to the concept of
+semi-static machine readable news feeds in general. Atom is definitely the
+better actual format, but RSS is the more recognizable term. &lt;a href=&#34;https://nex-3.com/blog/apologia-for-rss/#fnref1&#34; class=&#34;footnote-backref&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn2&#34; class=&#34;footnote-item&#34;&gt;&lt;p&gt;Unless you get them through something like Spotify, in which case they
+aren&#39;t really &amp;quot;podcasts&amp;quot;, just sparkling audio shows. &lt;a href=&#34;https://nex-3.com/blog/apologia-for-rss/#fnref2&#34; class=&#34;footnote-backref&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn3&#34; class=&#34;footnote-item&#34;&gt;&lt;p&gt;I believe this was originally added with the intent that there would be
+dedicated &amp;quot;feed aggregators&amp;quot;, some of which did actually exist. I never
+found this particularly useful, but I absolutely valued having people I
+knew personally curate posts that I would later see. &lt;a href=&#34;https://nex-3.com/blog/apologia-for-rss/#fnref3&#34; class=&#34;footnote-backref&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn4&#34; class=&#34;footnote-item&#34;&gt;&lt;p&gt;I maintain to this day that if Google had expanded this existing small but
+well-loved proto-social-media product, adding the ability to include
+locations (via Maps) and videos (via YouTube) and websites (via Search) and
+expanding the authoring tools for plain posts, it would have been &lt;em&gt;wildly&lt;/em&gt;
+more successful than burning it to the ground and trying to create Google+
+from whole cloth. Then again, it&#39;s probably for the best that they didn&#39;t. &lt;a href=&#34;https://nex-3.com/blog/apologia-for-rss/#fnref4&#34; class=&#34;footnote-backref&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content>
+  </entry>
+</feed>
