@@ -38,6 +38,11 @@ body {
 
   &__logo {
     grid-row: span 2;
+    display: flex;
+    img {
+      aspect-ratio: 1/1;
+      object-fit: contain;
+    }
   }
 
   nav {
