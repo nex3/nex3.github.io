@@ -1,5 +1,5 @@
 ---
-title: Cohost in memoriam: 80 Days in 80 Days
+title: "Cohost in memoriam: 80 Days in 80 Days"
 author: Natalie
 date: 2024-09-10 11:11:00 -8
 ---
