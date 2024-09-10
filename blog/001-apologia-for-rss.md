@@ -13,7 +13,7 @@ protocol (really just a text format) for listing the posts on a website in a
 machine-readable way. Readers of your website post its RSS feed URL into their
 feed reader software, this reader periodically checks it for new posts, and it
 presents all the posts in a single unified list with useful features like
-"marking stuff as read". (Postcasts still[^2] use the same technology.)
+"marking stuff as read". (Podcasts still[^2] use the same technology.)
 
 Back in the day, everything had RSS. Any site that had anything that mapped kind
 of onto "posts", from blogs to webcomics to the nascent social media sites,
