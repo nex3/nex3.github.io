@@ -1,0 +1,28 @@
+{%- if description -%}
+  <figure
+    class="image"
+    {%- if style -%}
+      style="{{style | escape}}"
+    {%- endif -%}
+  >
+{%- endif -%}
+
+<img
+  src="{{url}}"
+  {%- unless description -%}
+    {%- if style %}style="{{style | escape}}"{% endif -%}
+  {%- endunless -%}
+  {%- if alt -%}
+    alt="{{alt | escape}}"
+  {%- endif -%}
+>
+
+{%- if description -%}
+  <figcaption>
+    <details>
+      <summary>detailed image description</summary>
+      {{- description | markdown -}}
+    </details>
+  </figcaption>
+  </figure>
+{%- endif -%}

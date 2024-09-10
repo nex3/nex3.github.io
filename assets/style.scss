@@ -1,4 +1,5 @@
 $accent: #2d9cdb;
+$highlight: #bdecff;
 $grey: #555;
 
 @mixin phone {
@@ -82,6 +83,11 @@ main {
   max-width: 90ch;
   width: 100%;
   margin: 0 auto;
+
+  > img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .page-footer {
@@ -105,8 +111,7 @@ a[href] {
 }
 
 .attribution {
-  font-size: 0.8em;
-  color: $grey;
+  @extend %sidenote;
   a[href] {
     color: $grey;
     text-decoration-color: $grey;
@@ -124,6 +129,51 @@ a[href] {
     + li {
       border-top: 0.1px solid $grey;
     }
+  }
+}
+
+.friend-links {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  column-gap: 10px;
+
+  li {
+    font-weight: bold;
+    list-style: none;
+  }
+}
+
+figure {
+  details {
+    summary {
+      @extend %sidenote;
+      text-align: center;
+    }
+  }
+}
+
+details {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  padding: 5px;
+  transition-property: background-color, border-color;
+  transition-duration: 300ms;
+
+  &[open] {
+    border-color: $grey;
+    background-color: $highlight;
+  }
+
+  summary {
+    + p {
+      margin-top: 5px;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -168,4 +218,9 @@ h5,
 
 small {
   font-size: 0.8em;
+}
+
+%sidenote {
+  font-size: 0.8em;
+  color: $grey;
 }

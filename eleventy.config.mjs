@@ -6,13 +6,17 @@ import rssPlugin from "@11ty/eleventy-plugin-rss";
 import * as sass from "sass";
 import yaml from "js-yaml";
 
+import componentsPlugin from "./helpers/components/index.js";
 import datesPlugin from "./helpers/dates.js";
 import pagesPlugin from "./helpers/pages.js";
+import typePlugin from "./helpers/type.js";
 
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(componentsPlugin);
   eleventyConfig.addPlugin(datesPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(pagesPlugin);
+  eleventyConfig.addPlugin(typePlugin);
 
   eleventyConfig.addLiquidFilter("absoluteUrl", rssPlugin.absoluteUrl);
   eleventyConfig.addLiquidFilter(

@@ -16,6 +16,7 @@
     "@shopify/prettier-plugin-liquid": "^1.5.0",
     "date-fns": "^3.6.0",
     "js-yaml": "^4.1.0",
+    "liquidjs": "^10.16.7",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.2.0",
     "markdown-it-footnote": "^4.0.0",
