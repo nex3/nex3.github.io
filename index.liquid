@@ -8,7 +8,6 @@ pagination:
   reverse: true
 permalink: '/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html'
 ---
-
 {% assign pageNumber = pagination.pageNumber | plus: 1 %}
 {% assign pages = pagination.pages.size %}
 

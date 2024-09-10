@@ -61,16 +61,16 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ assets: "assets", static: "" });
   eleventyConfig.setUseGitIgnore(false);
 
-	// TODO: use https://github.com/kentaroi/eleventy-sass once the
+  // TODO: use https://github.com/kentaroi/eleventy-sass once the
   // require-module issue is fixed.
-	eleventyConfig.addTemplateFormats("scss");
-	eleventyConfig.addExtension("scss", {
-		outputFileExtension: "css",
-		compile: async function (inputContent) {
-			const result = sass.compileString(inputContent);
-			return async () =>  result.css;
-		},
-	});
+  eleventyConfig.addTemplateFormats("scss");
+  eleventyConfig.addExtension("scss", {
+    outputFileExtension: "css",
+    compile: async function (inputContent) {
+      const result = sass.compileString(inputContent);
+      return async () => result.css;
+    },
+  });
 
   return {
     dir: {
