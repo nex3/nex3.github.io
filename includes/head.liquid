@@ -26,11 +26,11 @@
 
 <meta property="og:title" content="{{-metatitle-}}">
 <meta property="og:type" content="{{-metatype-}}">
-<meta property="og:url" content="{{ page.url | prepend: site.baseurl }}">
+<meta property="og:url" content="{{ page.url | htmlBaseUrl: site.url }}">
 <meta property="og:image" content="/assets/avatar.png">
 <meta property="og:description" content="{{- metadesc -}}">
 
-<link rel="canonical" href="{{ page.url | prepend: site.baseurl }}">
+<link rel="canonical" href="{{ page.url | htmlBaseUrl: site.url }}">
 <link rel="alternate" type="application/atom+xml" href="/feed.xml" />
 
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>

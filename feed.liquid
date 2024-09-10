@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Natalie's Blog</title>
+  <title>{{ site.title }}</title>
   <id>{{ site.url | addPathPrefixToFullUrl }}</id>
   <link href="{{ permalink | htmlBaseUrl: site.url }}" rel="self"/>
   <link href="{{ site.url | addPathPrefixToFullUrl }}" />
