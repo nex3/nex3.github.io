@@ -135,6 +135,9 @@ h5 {
 
 h1 {
   font-size: 3.052em;
+  @include phone {
+    font-size: 2.6em;
+  }
 }
 
 h2 {
