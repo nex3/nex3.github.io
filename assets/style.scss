@@ -93,14 +93,18 @@ a[href] {
     outline: 2px solid $accent;
     outline-offset: 4px;
   }
-  &.attribution {
-    font-size: 0.8em;
-    color: $grey;
-    text-decoration-color: $grey;
-  }
   h1 & {
     color: currentColor;
     text-decoration: none;
+  }
+}
+
+.attribution {
+  font-size: 0.8em;
+  color: $grey;
+  a[href] {
+    color: $grey;
+    text-decoration-color: $grey;
   }
 }
 

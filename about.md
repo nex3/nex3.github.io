@@ -5,6 +5,10 @@ title: About
 
 # About
 
+<p class="attribution">
+   Avatar by <a href="https://subspaceskater.com/">@subspaceskater</a>
+</p>
+
 I'm Natalie and this is my little slice of online, an attempt to carve out an
 alternative to social media that straddles the line between being being a blog
 and approximating the joy I once took in posting on the late lamented [Cohost].
