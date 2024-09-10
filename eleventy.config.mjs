@@ -3,6 +3,7 @@ import markdownIt from "markdown-it";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItAttrs from "markdown-it-attrs";
 import rssPlugin from "@11ty/eleventy-plugin-rss";
+import * as sass from "sass";
 import yaml from "js-yaml";
 
 import datesPlugin from "./helpers/dates.js";
@@ -59,6 +60,17 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ assets: "assets", static: "" });
   eleventyConfig.setUseGitIgnore(false);
+
+	// TODO: use https://github.com/kentaroi/eleventy-sass once the
+  // require-module issue is fixed.
+	eleventyConfig.addTemplateFormats("scss");
+	eleventyConfig.addExtension("scss", {
+		outputFileExtension: "css",
+		compile: async function (inputContent) {
+			const result = sass.compileString(inputContent);
+			return async () =>  result.css;
+		},
+	});
 
   return {
     dir: {

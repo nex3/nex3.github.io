@@ -1,7 +1,5 @@
-:root {
-  --accent: #2d9cdb;
-  --grey: #555;
-}
+$accent: #2d9cdb;
+$grey: #555;
 
 html {
   font-size: 100%;
@@ -19,23 +17,21 @@ body {
   margin: 0 24px;
 }
 
-@media only screen and (max-width: 468px) {
-  .page-header {
-    flex-direction: column;
-  }
-}
-
 .page-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 8px;
-}
 
-.page-header nav a:not(:hover):not(:focus) {
-  color: currentColor;
-  text-decoration: none;
+  @media only screen and (max-width: 468px) {
+    flex-direction: column;
+  }
+
+  nav a:not(:hover):not(:focus) {
+    color: currentColor;
+    text-decoration: none;
+  }
 }
 
 nav a {
@@ -56,43 +52,37 @@ main {
 }
 
 a[href] {
-  color: var(--accent);
-}
-
-a[href]:hover {
-  text-decoration: none;
-}
-
-a[href]:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
+  color: $accent;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 2px solid $accent;
+    outline-offset: 4px;
+  }
+  &.attribution {
+    font-size: 0.8em;
+    color: $grey;
+    text-decoration-color: $grey;
+  }
+  h1 & {
+    color: currentColor;
+    text-decoration: none;
+  }
 }
 
 .footnotes {
   font-size: 0.8em;
 }
 
-a.attribution {
-  font-size: 0.8em;
-  color: var(--grey);
-  text-decoration-color: var(--grey);
-}
-
-h1 a[href] {
-  color: black;
-  text-decoration: none;
-}
-
 .blog-posts {
   padding: 0;
-}
-
-.blog-posts li {
-  list-style: none
-}
-
-.blog-posts li + li {
-  border-top: 0.1px solid var(--grey);
+  li {
+    list-style: none;
+    + li {
+      border-top: 0.1px solid $grey;
+    }
+  }
 }
 
 /* Typography */
