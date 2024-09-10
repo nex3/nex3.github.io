@@ -2,6 +2,7 @@
 title: Apologia for RSS
 author: Natalie
 date: 2024-09-09 13:00:00 -8
+updated: 2024-09-09 20:05:00 -8
 ---
 
 RSS[^1] was the original federated social media. RSS invented the "share" verb.
@@ -44,10 +45,10 @@ commenting and discussing. I want this back. I want to be able to share
 _anything_ from _anywhere_, I want to see the fruits of my friends' excellent
 taste, and I want to be able to have a conversation about it.
 
-I may not be able to do that yet (although I _am_ hoping to set up a new blog
-with some amount of post embedding ability built into it). But I can and do use
-RSS, as I have continuously since the mid-2000s. You can too! These days I'm
-using [NewsBlur](https://newsblur.com), but I've also heard good things about
+I may not be able to do that yet (although I _am_ hoping this blog can be
+something like that eventually). But I can and do use RSS, as I have
+continuously since the mid-2000s. You can too! These days I'm using
+[NewsBlur](https://newsblur.com), but I've also heard good things about
 [Feedbin](https://feedbin.com/) as well if you want something a little simpler.
 (I used to use Feedly, but it went all-in on LLM shit so I can't endorse it.)
 RSS may not quite be Cohost, but it's a way to interact with the web that's not
