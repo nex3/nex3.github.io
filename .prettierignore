@@ -1,3 +1,4 @@
 /static
 /feed.liquid
 *.md
+*.html

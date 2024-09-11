@@ -3,13 +3,11 @@ const { stripIndent } = require("../type");
 
 module.exports = createPairedComponentPlugin(
   "image",
-  function (liquidEngine, description, url, alt, style) {
-    console.log(description);
-    return liquidEngine.renderFile("image", {
+  (liquidEngine, description, url, alt, style) =>
+    liquidEngine.renderFile("image", {
       description: stripIndent(description).trim(),
       url,
       alt,
       style,
-    });
-  },
+    }),
 );
