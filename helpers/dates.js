@@ -1,7 +1,7 @@
-const {
-  format: formatBase,
-  formatDistanceToNow: formatDistanceBase,
-} = require("date-fns");
+import {
+  format as formatBase,
+  formatDistanceToNow as formatDistanceBase,
+} from "date-fns";
 
 /**
  * Returns the formatted date string in the given format.
@@ -21,7 +21,7 @@ function formatDistanceToNow(date) {
   return formatDistanceBase(new Date(date));
 }
 
-module.exports = function datesPlugin(eleventyConfig) {
+export default function datesPlugin(eleventyConfig) {
   // filters...
   eleventyConfig.addLiquidFilter("format", format);
   eleventyConfig.addLiquidFilter("formatDistanceToNow", formatDistanceToNow);

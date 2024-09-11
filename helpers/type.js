@@ -1,5 +1,5 @@
-const truncate = require("truncate-html");
-const { markdownEngine } = require("./engines");
+import truncate from "truncate-html";
+import { markdownEngine } from "./engines.js";
 
 /**
  * Strips leading whitespace from each line of a string,
@@ -8,7 +8,7 @@ const { markdownEngine } = require("./engines");
  * @see https://github.com/sindresorhus/strip-indent
  * @see https://github.com/jamiebuilds/min-indent
  */
-function stripIndent(contents) {
+export function stripIndent(contents) {
   // Find leading whitespace of first line (ignoring initial newlines)
   const match = /^[\n\r]*([ \t]*)(?=\S)/.exec(contents);
   if (match?.[1]?.length) {
@@ -44,10 +44,8 @@ function markdownInline(content) {
   return markdownEngine.renderInline(content);
 }
 
-module.exports = function typePlugin(eleventyConfig) {
+export default function typePlugin(eleventyConfig) {
   eleventyConfig.addLiquidFilter("truncateHTML", truncateHTML);
   eleventyConfig.addLiquidFilter("markdown", markdown);
   eleventyConfig.addLiquidFilter("markdownInline", markdownInline);
 };
-
-module.exports.stripIndent = stripIndent;

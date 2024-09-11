@@ -1,4 +1,4 @@
-const { Tokenizer, evalToken } = require("liquidjs");
+import { Tokenizer, evalToken } from "liquidjs";
 
 // Much of this file is based on the implementation of `addPairedShortcode`,
 // licensed under the terms:
@@ -48,7 +48,7 @@ function parseArgumentsBuiltin(args) {
  * * The first argument to {@link shortcodeFn} is the liquid engine, which can
  *   be used to render the component's template.
  */
-module.exports.createPairedComponentPlugin = function (
+export function createPairedComponentPlugin (
   shortcodeName,
   shortcodeFn,
 ) {

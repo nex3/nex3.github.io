@@ -1,7 +1,7 @@
-const { createPairedComponentPlugin } = require("./base");
-const { stripIndent } = require("../type");
+import { createPairedComponentPlugin } from "./base.js";
+import { stripIndent } from "../type.js";
 
-module.exports = createPairedComponentPlugin(
+export default createPairedComponentPlugin(
   "image",
   (liquidEngine, description, url, alt, style) =>
     liquidEngine.renderFile("image", {

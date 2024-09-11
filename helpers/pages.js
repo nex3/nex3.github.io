@@ -12,7 +12,7 @@ function replaceInternalLinks(content, url) {
   return content.replace(/href="#/g, `href="${url}#`);
 }
 
-module.exports = function pagesPlugin(eleventyConfig) {
+export default function pagesPlugin(eleventyConfig) {
   // filters...
   eleventyConfig.addLiquidFilter("getBlogSlug", getBlogSlug);
   eleventyConfig.addLiquidFilter("replaceInternalLinks", replaceInternalLinks);

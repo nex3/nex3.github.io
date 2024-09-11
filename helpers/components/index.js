@@ -1,5 +1,5 @@
-const imagePlugin = require("./image");
+import imagePlugin from "./image.js";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   imagePlugin(eleventyConfig);
 };

@@ -1,7 +1,6 @@
-const markdown = require("markdown-it");
-const markdownItAttrs = require("markdown-it-attrs");
-const markdownItFootnote = require("markdown-it-footnote");
-const path = require("path");
+import markdown from "markdown-it";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownItFootnote from "markdown-it-footnote";
 
 /**
  * Returns Markdown engine with custom configuration and plugins.
@@ -9,7 +8,7 @@ const path = require("path");
  * @see https://github.com/markdown-it/markdown-it
  * @see https://github.com/arve0/markdown-it-attrs
  */
-module.exports.markdownEngine = markdown({
+export const markdownEngine = markdown({
   html: true,
   typographer: false,
 })

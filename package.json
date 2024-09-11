@@ -6,6 +6,7 @@
     "build": "eleventy",
     "fix": "prettier -w ."
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "MIT",
