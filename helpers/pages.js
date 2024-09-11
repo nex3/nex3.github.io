@@ -16,4 +16,4 @@ export default function pagesPlugin(eleventyConfig) {
   // filters...
   eleventyConfig.addLiquidFilter("getBlogSlug", getBlogSlug);
   eleventyConfig.addLiquidFilter("replaceInternalLinks", replaceInternalLinks);
-};
+}

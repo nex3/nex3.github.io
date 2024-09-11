@@ -48,10 +48,7 @@ function parseArgumentsBuiltin(args) {
  * * The first argument to {@link shortcodeFn} is the liquid engine, which can
  *   be used to render the component's template.
  */
-export function createPairedComponentPlugin (
-  shortcodeName,
-  shortcodeFn,
-) {
+export function createPairedComponentPlugin(shortcodeName, shortcodeFn) {
   return function (eleventyConfig) {
     eleventyConfig.addLiquidTag(shortcodeName, function (liquidEngine) {
       return {
@@ -97,4 +94,4 @@ export function createPairedComponentPlugin (
       };
     });
   };
-};
+}

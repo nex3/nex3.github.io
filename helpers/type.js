@@ -48,4 +48,4 @@ export default function typePlugin(eleventyConfig) {
   eleventyConfig.addLiquidFilter("truncateHTML", truncateHTML);
   eleventyConfig.addLiquidFilter("markdown", markdown);
   eleventyConfig.addLiquidFilter("markdownInline", markdownInline);
-};
+}

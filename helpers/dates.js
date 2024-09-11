@@ -25,4 +25,4 @@ export default function datesPlugin(eleventyConfig) {
   // filters...
   eleventyConfig.addLiquidFilter("format", format);
   eleventyConfig.addLiquidFilter("formatDistanceToNow", formatDistanceToNow);
-};
+}
