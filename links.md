@@ -55,6 +55,7 @@ looking for more of a taste of the old web, give them a click!
   <li><a href="https://gameboat.org/">Colin</a></li>
   <li><a href="https://eden.care/">Eden</a></li>
   <li><a href="https://sirboxalot.github.io/">Evan</a></li>
+  <li><a href="https://pastrystudent.wordpress.com/">Ket</a></li>
   <li><a href="https://emaytch.neocities.org/journal">Margot</a></li>
   <li><a href="https://valbaca.com">Val</a></li>
 </ul>
