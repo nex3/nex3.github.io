@@ -62,7 +62,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", md);
 
-  eleventyConfig.addPassthroughCopy({ assets: "assets", static: "" });
+  eleventyConfig.addPassthroughCopy({ "source/assets": "assets", static: "" });
   eleventyConfig.setUseGitIgnore(false);
 
   // TODO: use https://github.com/kentaroi/eleventy-sass once the
