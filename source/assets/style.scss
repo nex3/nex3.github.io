@@ -127,11 +127,19 @@ a[href] {
 
 .footnotes {
   font-size: 0.8em;
+
+  &-sep {
+    border-color: $grey;
+    border-top-width: 1px;
+    border-style: dashed;
+    border-bottom: none;
+    width: 90%;
+  }
 }
 
 .blog-posts {
   padding: 0;
-  li {
+  > li {
     list-style: none;
     + li {
       border-top: 0.1px solid $grey;
