@@ -314,6 +314,17 @@ small {
     display: block;
   }
 
+  :focus:not(:focus-visible) {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  :focus-visible {
+    outline-style: solid;
+    outline-width: 4px;
+    outline-color: rgb(131, 37, 79);
+  }
+
   > header {
     background-color: rgb(255 249 242);
     display: flex;
@@ -363,9 +374,15 @@ small {
         height: 100%;
       }
 
-      .co-mask-capsule {
-        -webkit-mask-image: url(/assets/cohost/mask-capsule.svg);
-        mask-image: url(/assets/cohost/mask-capsule.svg);
+      @each $shape in [capsule] {
+        .co-mask-#{$shape} {
+          -webkit-mask-image: url(/assets/cohost/mask-#{$shape}.svg);
+          mask-image: url(/assets/cohost/mask-#{$shape}.svg);
+        }
+      }
+
+      .co-mask-circle {
+        border-radius: 999999px;
       }
     }
 
