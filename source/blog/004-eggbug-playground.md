@@ -23,7 +23,7 @@ quickly outstrip me, but I'm very pleased to have opened the floodgates.
   <hr>
   <div class="co-prose-box">
     <div class="co-prose">
-      <div style="width: 90%; height: 400px; margin: 0px auto; border: 2px solid black; background-image: url(&quot;/assets/posts/004/playground.jpg&quot;); background-size: cover; cursor: url(&quot;/assets/posts/004/eggbug-cursor.svg&quot;), pointer; text-shadow: white -2px 0px, white 0px 2px, white 2px 0px, white 0px -2px;"><h3 style="font-family: cursive; text-align: center; margin-top: 5em;">eggbug playground</h3><p style="text-align: center;">move your cursor to let him play</p></div>
+      <div style="width: 90%; height: 300px; margin: 0px auto; border: 2px solid black; background-image: url(&quot;/assets/posts/004/playground.jpg&quot;); background-size: cover; cursor: url(&quot;/assets/posts/004/eggbug-cursor.svg&quot;), pointer; text-shadow: white -2px 0px, white 0px 2px, white 2px 0px, white 0px -2px;"><h3 style="font-family: cursive; text-align: center; margin-top: 5em;">eggbug playground</h3><p style="text-align: center;">move your cursor to let him play</p></div>
     </div>
   </div>
   <div class="co-tags-box">
