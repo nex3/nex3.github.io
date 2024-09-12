@@ -8,3 +8,9 @@ layout: default
 {% render 'attribution', date: date, author: author, link: page.url %}
 
 {{ content }}
+
+<div class="commentbox"></div>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+  commentBox('5765991539671040-proj', { sortOrder: 'oldest' });
+</script>
