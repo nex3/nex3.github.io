@@ -46,6 +46,13 @@ what this website is for.
 
 (Or like, on hiatus but perfectly usable.)
 
+* I've written a few tiny bits of fan fiction that I'm particularly fond of:
+
+  * [A Moment in the Sky](a-moment-in-the-sky), for _The Legend of Zelda: Tears
+    of the Kingdom_ (warning: major plot spoilers).
+
+  * [Eulogy for G5 Iguazu](eulogy-for-g5-iguazu), for _Armored Core VI_.
+
 * I made a [**Sekiro randomizer bingo card generator**](/bingo), which I claim
   is one of the more advanced randomizer bingo card generators in existence. I
   also created [a little library](https://github.com/nex3/bingo/) that can be

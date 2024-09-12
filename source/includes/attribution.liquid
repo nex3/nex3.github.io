@@ -1,3 +1,4 @@
 <p class="attribution">
-  <a href="{{ link }}">Posted {{ date | format }} by {{ author }}</a>
+  <a href="{{ link }}">Posted {% render 'date', date: date %}
+  {% if author %}by {{ author }}{% endif %}</a>
 </p>

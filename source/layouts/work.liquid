@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% if title %}
+  <h1>
+    <a href="{{ page.url }}">{{ title }}</a>
+  </h1>
+{% endif %}
+
+{% if date %}
+  <p class="attribution">{% render 'date', date: date, link: page.url %}</p>
+{% endif %}
+
+{{ content }}

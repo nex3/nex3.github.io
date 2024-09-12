@@ -6,9 +6,7 @@
       </div>
       <a rel="author" href="https://cohost.org/{{ author }}" title="{{ authorDisplayName }}">{{ authorDisplayName }}</a>
       <a href="https://cohost.org/{{ author }}" class="co-handle">@{{ author }}</a>
-      <time datetime="{{ time | dateToRfc3339 }}" title="{{ time | format: "iii, MMM d, y, ppp" }}">
-        <a href="{{ url }}">{{ time | format }}</a>
-      </time>
+      {% render 'date', date: time, link: url %}
     </div>
     <svg
       xmlns="http://www.w3.org/2000/svg"

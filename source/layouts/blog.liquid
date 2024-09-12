@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-<h1>
-  <a href="{{ page.url }}">{{ title }}</a>
-</h1>
+{% if title %}
+  <h1>
+    <a href="{{ page.url }}">{{ title }}</a>
+  </h1>
+{% endif %}
 
 {% render 'attribution', date: date, author: author, link: page.url %}
 
