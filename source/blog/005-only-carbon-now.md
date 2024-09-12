@@ -18,7 +18,7 @@ obituary for Ryan Reynolds:
   <header>
     <div>
       <div class="co-avatar">
-        <img src="https://staging.cohostcdn.org/avatar/34-c0caebe4-f555-4b08-8975-2cc2ad1d3900-profile.jpeg?dpr=2&amp;width=80&amp;height=80&amp;fit=cover&amp;auto=webp" class="co-mask-capsule" alt="Willow">
+        <img src="/assets/cohost/willow.jpg" class="co-mask-capsule" alt="Willow">
       </div>
       <a rel="author" href="https://cohost.org/Willow" title="willow">willow</a>
       <a href="https://cohost.org/Willow" class="co-handle">@Willow</a>
