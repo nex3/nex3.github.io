@@ -50,6 +50,10 @@ body {
 
   nav {
     grid-column: 3;
+    @include phone {
+      max-width: 80%;
+    }
+
     &.icons {
       grid-row: 2;
       a {
@@ -75,6 +79,7 @@ body {
 nav {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   @include phone {
     justify-content: space-evenly;
   }
