@@ -148,6 +148,21 @@ a[href] {
 }
 
 figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 1rem;
+
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    font-size: 0.8em;
+    @include phone {
+      font-size: 0.6em;
+    }
+  }
+
   details {
     summary {
       @extend %sidenote;
