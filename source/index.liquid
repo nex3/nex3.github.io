@@ -23,13 +23,16 @@ permalink: '/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | p
 <ul class="blog-posts">
   {% for post in posts %}
     <li>
-      {% if post.data.title %}
-        <h1>
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </h1>
-      {% endif %}
-      {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
-      {{ post.content | truncateHTML: 300 | replaceInternalLinks: post.url }}
+      {% unless forloop.first %}<hr>{% endunless %}
+      <article>
+        {% if post.data.title %}
+          <h1>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </h1>
+        {% endif %}
+        {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
+        {{ post.content | truncateHTML: 300 | replaceInternalLinks: post.url }}
+      </article>
     </li>
   {% endfor %}
 </ul>

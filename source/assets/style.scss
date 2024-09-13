@@ -1,8 +1,11 @@
+@use "sass:color";
+
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 $accent: #2d9cdb;
 $highlight: #bdecff;
 $grey: #555;
+$dim-grey: color.change(#555, $alpha: 0.6);
 
 $phone-break: 468px;
 @mixin phone {
@@ -130,7 +133,7 @@ a[href] {
   font-size: 0.8em;
 
   &-sep {
-    border-color: $grey;
+    border-color: $dim-grey;
     border-top-width: 1px;
     border-style: dashed;
     border-bottom: none;
@@ -142,8 +145,18 @@ a[href] {
   padding: 0;
   > li {
     list-style: none;
-    + li {
-      border-top: 0.1px solid $grey;
+
+    > hr {
+      width: calc(100% + 12ch);
+      max-width: 96vw;
+      margin-left: 50%;
+      transform: translateX(-50%);
+
+      height: 3px;
+      position: relative;
+      border: none;
+      border-top: 1px solid $dim-grey;
+      border-bottom: 1px solid $dim-grey;
     }
   }
 }
