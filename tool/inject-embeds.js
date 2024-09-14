@@ -84,7 +84,8 @@ for (const blog of await glob("source/blog/*.md")) {
       blog,
       fullText.substring(0, index + match.index + 2) +
         replacement +
-        fullText.substring(index + match.index + match[0].length) + "\n\n",
+        fullText.substring(index + match.index + match[0].length) +
+        "\n\n",
       "utf8",
     );
   }
