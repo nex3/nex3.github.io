@@ -12,6 +12,8 @@ layout: default
 
   {{ content }}
 
+  {% render 'tags', tags: tags %}
+
   <div class="commentbox"></div>
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>

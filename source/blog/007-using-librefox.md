@@ -2,6 +2,7 @@
 layout: blog
 author: Natalie
 date: 2024-09-12 20:13:00 -8
+tags: [firefox, librewolf]
 ---
 
 I've finally become sick enough of Firefox's horseshit that I've begun using

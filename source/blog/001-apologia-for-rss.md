@@ -3,6 +3,7 @@ title: Apologia for RSS
 author: Natalie
 date: 2024-09-09 13:00:00 -8
 updated: 2024-09-09 20:05:00 -8
+tags: [rss]
 ---
 
 RSS[^1] was the original federated social media. RSS invented the "share" verb.

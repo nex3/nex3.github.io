@@ -1,6 +1,9 @@
 ---
 author: Natalie
 date: 2024-09-10 21:30:00 -8
+tags:
+- cohost
+- cohost repost
 ---
 
 This is the first of probably a number of my posts that I'm directly porting

@@ -180,6 +180,31 @@ a[href] {
   }
 }
 
+h1.tag {
+  text-align: center;
+  color: $dim-grey;
+  font-size: 2em;
+}
+
+.tags {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.7rem;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: $dim-grey;
+
+    &::before {
+      content: "#";
+    }
+  }
+}
+
 figure {
   display: flex;
   flex-direction: column;

@@ -3,6 +3,9 @@ title: "Cohost in memoriam: only carbon now"
 author: Natalie
 date: 2024-09-11 18:49:00 -8
 updated: 2024-09-11 19:08:00 -8
+tags:
+- cohost
+- cohost in memoriam
 ---
 
 On a site that I've seen described as "a retirement home for the greatest

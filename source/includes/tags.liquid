@@ -1,0 +1,10 @@
+{%- assign tags = tags | slice: 1, 9999 -%}
+{% if tags %}
+  <ol class="tags">
+    {% for tag in tags %}
+      <li>
+        <a href="/tag/{{ tag | url_encode }}">{{ tag | escape }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+{% endif %}
