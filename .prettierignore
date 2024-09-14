@@ -1,7 +1,4 @@
 /static
-/source/feed.liquid
+feed.liquid
 *.md
 *.html
-
-# Prettier can't handle Node.js frontmatter
-/source/tag.liquid

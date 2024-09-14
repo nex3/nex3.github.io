@@ -1,0 +1,14 @@
+---
+eleventyExcludeFromCollections: true
+permalink: "/tag/{{ posts.tag | url_encode }}/{{ posts.slug }}/feed.xml"
+---
+{%- assign title = site.title | append: ": #" | append: posts.tag -%}
+
+{%- comment -%}For whatever reason, the permalink variable here doesn't have
+variables resolved.{%- endcomment -%}
+{%- assign tagslug = posts.tag | url_encode -%}
+{%- assign realPermalink = "/tag/" | append: tagslug | append: "/" -%}
+{%- assign feedPermalink = realPermalink | append: "feed.xml" -%}
+
+{% render 'feed', title: title, posts: posts.posts, permalink: feedPermalink,
+       pageUrl: realPermalink, site: site %}

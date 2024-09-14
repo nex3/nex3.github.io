@@ -184,6 +184,11 @@ h1.tag {
   text-align: center;
   color: $dim-grey;
   font-size: 2em;
+
+  img {
+    width: 1.5rem;
+    filter: grayscale(1);
+  }
 }
 
 .tags {

@@ -1,5 +1,4 @@
----js
-const pagination = {
+export const pagination = {
   data: "collections",
   alias: "posts",
   size: 1,
@@ -52,12 +51,3 @@ const pagination = {
     return results;
   },
 };
-
-const layout = "default.liquid";
-
-const permalink = "/tag/{{ posts.tag | url_encode }}/{{ posts.slug }}/";
----
-
-<h1 class="tag">#{{ posts.tag }}</h1>
-
-{% render 'blog-posts', posts: posts.posts, pagination: posts.pagination %}

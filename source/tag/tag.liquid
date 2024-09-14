@@ -1,0 +1,18 @@
+---
+layout: "default.liquid"
+permalink: "/tag/{{ posts.tag | url_encode }}/{{ posts.slug }}/"
+---
+
+{%- comment -%}
+  For whatever reason, the permalink variable here doesn't have
+  variables resolved.
+{%- endcomment -%}
+{%- assign tagslug = posts.tag | url_encode -%}
+{%- assign realPermalink = '/tag/' | append: tagslug | append: '/' -%}
+
+<h1 class="tag">
+  #{{ posts.tag }}
+  <a href="{{realPermalink}}feed.xml"><img src="/assets/rss.svg" alt="#{{ posts.tag }} Feed"></a>
+</h1>
+
+{% render 'blog-posts', posts: posts.posts, pagination: posts.pagination %}
