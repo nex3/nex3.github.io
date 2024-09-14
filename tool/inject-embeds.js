@@ -23,7 +23,7 @@ for (const blog of await glob("source/blog/*.md")) {
   const index = indexAfterFrontMatter(fullText);
   const text = fullText.substring(index);
 
-  const injectableLink = /\n\n(https?:\/\/[^\n]+)\n\n/g;
+  const injectableLink = /\n\n(https?:\/\/[^\n]+)(\n\n|\n?$)/g;
   while (true) {
     const match = injectableLink.exec(text);
     if (!match) break;
@@ -84,7 +84,7 @@ for (const blog of await glob("source/blog/*.md")) {
       blog,
       fullText.substring(0, index + match.index + 2) +
         replacement +
-        fullText.substring(index + match.index + match[0].length - 2),
+        fullText.substring(index + match.index + match[0].length) + "\n\n",
       "utf8",
     );
   }

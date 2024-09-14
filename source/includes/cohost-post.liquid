@@ -30,6 +30,7 @@
     <div class="co-prose-box">
       <div class="co-prose">{{ contents }}</div>
     </div>
+    {%- if tags.size > 0 -%}
     <div class="co-tags-box">
       <div class="co-tags">
         {%- for tag in tags -%}
@@ -37,6 +38,7 @@
         {%- endfor -%}
       </div>
     </div>
+    {%- endif -%}
     <hr>
     <footer>
       <div>

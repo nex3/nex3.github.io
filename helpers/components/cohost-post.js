@@ -15,7 +15,8 @@ export default createPairedComponentPlugin(
   ) => {
     const tags = tagString
       .split(",")
-      .map((tag) => tag.trim().replace(/^#/, ""));
+      .map(tag => tag.trim().replace(/^#/, ""))
+      .filter(tag => tag.length > 0);
     const author = url.match(/^https:\/\/cohost\.org\/([^\/]+)/)[1];
     const time = new Date(Date.parse(timeString));
 

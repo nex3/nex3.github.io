@@ -8,12 +8,32 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "v22"
       - run: npm ci
+
+      - run: node tool/inject-embeds.js
+      - name: Check if the repo is clean
+        id: check-clean
+        run: |
+          if [[ ! -z "$(git diff-index --name-only HEAD --)" ]]; then
+            echo "clean=false" >> $GITHUB_OUTPUT;
+          else
+            echo "clean=true" >> $GITHUB_OUTPUT;
+          fi
+
+      - uses: EndBug/add-and-commit@v9
+        if: ${{ ! steps.check-clean.clean }}
+        with:
+          author_name: Nattlebot Robobaum
+          author_email: nattlebot@nex-3.com
+          message: Inject embeds
+
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
