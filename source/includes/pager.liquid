@@ -1,0 +1,21 @@
+{% assign pageNumber = pagination.pageNumber | plus: 1 %}
+{% assign pages = pagination.pages.size %}
+
+{% if pages > 1 %}
+<nav class="pager">
+  {% if pagination.href.previous %}
+     <a href="{{ pagination.href.previous }}" rel="prev">
+       <img src="/assets/arrow.svg" alt="Previous Page">
+     </a>
+  {% endif %}
+
+  <span>{{ pageNumber }} / {{ pages }}</span>
+
+  {% if pagination.href.next %}
+     <a href="{{ pagination.href.next }}" rel="next">
+       <img src="/assets/arrow.svg" alt="Next Page">
+     </a>
+  {% endif %}
+</nav>
+{% endif %}
+

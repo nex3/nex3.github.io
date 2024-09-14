@@ -1,14 +1,6 @@
-{% assign pageNumber = pagination.pageNumber | plus: 1 %}
-{% assign pages = pagination.pages.size %}
-
-{% if pages > 1 %}
-  <p>Page {{ pageNumber }} of {{ pages }}</p>
-  {% if pagination.href.previous %}
-    <p>
-      <a href="{{ pagination.href.previous }}">Previous page</a>
-    </p>
-  {% endif %}
-{% endif %}
+{% unless pagination.pageNumber == 0 %}
+  {% render 'pager', pagination: pagination %}
+{% endunless %}
 
 <ul class="blog-posts">
   {% for post in posts %}
@@ -28,8 +20,4 @@
   {% endfor %}
 </ul>
 
-{% if pagination.href.next %}
-  <p>
-    <a href="{{ pagination.href.next }}">Next page</a>
-  </p>
-{% endif %}
+{% render 'pager', pagination: pagination %}

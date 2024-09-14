@@ -59,8 +59,13 @@ body {
   }
 
   nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
     grid-column: 3;
     @include phone {
+    justify-content: space-evenly;
       max-width: 80%;
     }
 
@@ -83,15 +88,6 @@ body {
       width: 1.1em;
       vertical-align: middle;
     }
-  }
-}
-
-nav {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  @include phone {
-    justify-content: space-evenly;
   }
 }
 
@@ -144,6 +140,22 @@ a[href] {
     border-style: dashed;
     border-bottom: none;
     width: 90%;
+  }
+}
+
+.pager {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  img {
+    width: 1rem;
+    position: relative;
+    top: 2px;
+  }
+
+  a[rel=next] {
+    transform: scale(-1, 1)
   }
 }
 
