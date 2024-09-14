@@ -805,6 +805,14 @@ small {
   }
 }
 
+.co-mention {
+  font-weight: 700;
+  text-decoration-line: none;
+  :hover {
+    text-decoration-line: underline;
+  }
+}
+
 .co-tags-box {
   padding: 0.75rem;
   max-width: 100%;
