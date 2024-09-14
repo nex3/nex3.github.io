@@ -23,7 +23,7 @@ for (const blog of await glob("source/blog/*.md")) {
   const index = indexAfterFrontMatter(fullText);
   const text = fullText.substring(index);
 
-  const injectableLink = /\n\n(https?:\/\/[^\n]+)(\n\n|\n?$)/g;
+  const injectableLink = /^\n(https?:\/\/[^\n]+)\n$/gm;
   while (true) {
     const match = injectableLink.exec(text);
     if (!match) break;
@@ -32,6 +32,7 @@ for (const blog of await glob("source/blog/*.md")) {
     if (url.host !== "cohost.org") {
       throw new Error(`Unsupported URL "${url}" in ${blog}`);
     }
+    const author = url.pathname.split("/")[1];
 
     const response = await fetch(url);
     const { document } = new JSDOM(await response.text(), { url }).window;
@@ -60,7 +61,16 @@ for (const blog of await glob("source/blog/*.md")) {
     const prose = post.querySelector(".co-prose");
     if (!prose) {
       throw new Error(
-        `URL "${url}" in ${blog} doesn't have content. You may need to be ``logged in to view it.`,
+        `URL "${url}" in ${blog} doesn't have content. You may need to be logged in to view it.`,
+      );
+    }
+
+    const avatarPath = `${import.meta.dirname}/../source/assets/cohost/${author}.jpg`;
+    if (!fs.existsSync(avatarPath)) {
+      const response = await fetch(avatar.getAttribute("src"));
+      fs.writeFileSync(
+        avatarPath,
+        new Uint8Array(await response.arrayBuffer()),
       );
     }
 
@@ -82,10 +92,9 @@ for (const blog of await glob("source/blog/*.md")) {
 
     fs.writeFileSync(
       blog,
-      fullText.substring(0, index + match.index + 2) +
+      fullText.substring(0, index + match.index + 1) +
         replacement +
-        fullText.substring(index + match.index + match[0].length) +
-        "\n\n",
+        fullText.substring(index + match.index + match[0].length - 1),
       "utf8",
     );
   }
