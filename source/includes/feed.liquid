@@ -15,7 +15,20 @@
       <published>{{ post.date | dateToRfc3339 }}</published>
       <updated>{{ post.data.updated | default: post.date | dateToRfc3339 }}</updated>
       <author>
-        <name>{{ post.data.author | escape }}</name>
+        {%- if post.data.author.name -%}
+          <name>{{ post.data.author.name | escape }}</name>
+          {%- if post.data.author.uri -%}
+            <uri>{{ post.data.author.uri | escape }}</uri>
+          {%- endif -%}
+          {%- if post.data.author.email -%}
+            <email>{{ post.data.author.email | escape }}</email>
+          {%- endif -%}
+        {%- elsif post.data.author == "Natalie" -%}
+          <name>Natalie</name>
+          <uri>https://nex-3.com/</uri>
+        {%- else -%}
+          <name>{{ post.data.author | escape }}</name>
+        {%- endif -%}
       </author>
       {%- for tag in post.data.tags -%}
         {%- unless tag == "blog" -%}
