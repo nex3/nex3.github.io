@@ -43,7 +43,7 @@ for (const blog of await glob("source/blog/*.md")) {
 
     const post = posts[0];
     const avatar = post.querySelector("img.mask");
-    const maskShape = [...avatar.classList]
+    const avatarShape = [...avatar.classList]
       .filter((klass) => klass.startsWith("mask-"))[0]
       .substring(5);
     const displayName = post.querySelector(
@@ -81,11 +81,18 @@ for (const blog of await glob("source/blog/*.md")) {
 
     const contents = prose.innerHTML.replaceAll("<!-- -->", "");
 
+    const args = { avatarShape, displayName, time, tags, commentCount };
+    if (args.avatarShape === "circle") delete args.avatarShape;
+    if (args.tags === "") delete args.tags;
+    if (args.commentCount === 0) delete args.commentCount;
+
     let replacement =
       "{% cohostPost " +
-      [url.href, maskShape, displayName, time, tags, commentCount]
-        .map(JSON.stringify)
-        .join(", ") +
+      JSON.stringify(url.href) +
+      ",\n" +
+      Object.entries(args)
+        .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
+        .join(",\n") +
       " %}\n" +
       contents.replaceAll(/^/gm, "  ") +
       "\n{% endcohostPost %}";

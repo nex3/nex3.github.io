@@ -3,32 +3,23 @@ import { stripIndent } from "../type.js";
 
 export default createPairedComponentPlugin(
   "cohostPost",
-  (
-    liquidEngine,
-    contents,
-    url,
-    avatarShape,
-    authorDisplayName,
-    timeString,
-    tagString,
-    commentCount,
-  ) => {
-    const tags = tagString
+  (liquidEngine, contents, url, options) => {
+    const tags = (options.tags ?? "")
       .split(",")
       .map((tag) => tag.trim().replace(/^#/, ""))
       .filter((tag) => tag.length > 0);
     const author = url.match(/^https:\/\/cohost\.org\/([^\/]+)/)[1];
-    const time = new Date(Date.parse(timeString));
+    const time = new Date(Date.parse(options.time));
 
     return liquidEngine.renderFile("cohost-post", {
       contents: stripIndent(contents).trim(),
       url,
-      avatarShape,
+      avatarShape: options.avatarShape ?? "circle",
       author,
-      authorDisplayName,
+      authorDisplayName: options.displayName,
       time,
       tags,
-      commentCount,
+      commentCount: options.commentCount ?? 0,
     });
   },
 );

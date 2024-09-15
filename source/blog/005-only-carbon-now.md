@@ -17,8 +17,12 @@ entire website was riffing on it for days afterwards. (not to mention
 permanently altering my vocabulary). You know it, you love it[^2], it's the
 obituary for Ryan Reynolds:
 
-{% cohostPost "https://cohost.org/Willow/post/1127629-oh-geez-just-heard", "capsule",
-    "Willow", "2023-03-04T12:58:38.630-08:00", "#Ryan Reynolds, #he is only carbon now", 8 %}
+{% cohostPost "https://cohost.org/Willow/post/1127629-oh-geez-just-heard",
+    avatarShape: "capsule-small",
+    displayName: "willow",
+    time: "2023-03-04T20:58:38.630Z",
+    tags: "#Ryan Reynolds, #he is only carbon now",
+    commentCount: 8 %}
   <p>oh geez, just heard the news out of vancouver. ryan reynolds was torched to death by a beam of light from the heavens. yeah the report described him as being “only carbon now” which strikes me as a little insensitive but i guess that’s the modern world for you.</p>
 {% endcohostPost %}
 

@@ -27,14 +27,22 @@ function parseArgumentsBuiltin(args) {
   let tokenizer = new Tokenizer(args);
   let parsedArgs = [];
 
-  let value = tokenizer.readValue();
+  function readValue() {
+    let value = tokenizer.readHash() ?? tokenizer.readValue();
+    // readHash() treats unmarked identifiers as hash keys with undefined
+    // values, but we want to parse them as positional arguments instead.
+    if (value?.kind === 64 && value.value === undefined) value = value.name;
+    return value;
+  }
+
+  let value = readValue();
   while (value) {
     parsedArgs.push(value);
     tokenizer.skipBlank();
     if (tokenizer.peek() === ",") {
       tokenizer.advance();
     }
-    value = tokenizer.readValue();
+    value = readValue();
   }
   tokenizer.end();
 
@@ -70,10 +78,19 @@ export function createPairedComponentPlugin(shortcodeName, shortcodeFn) {
         },
         render: function* (ctx /*, emitter*/) {
           let argArray = [];
+          let namedArgs = {};
           if (this.orderedArgs) {
             for (let arg of this.orderedArgs) {
-              let b = yield evalToken(arg, ctx);
-              argArray.push(b);
+              if (arg.kind == 64) {
+                if (arg.value === undefined) {
+                  namedArgs[arg.name.content] = true;
+                } else {
+                  namedArgs[arg.name.content] = yield evalToken(arg.value, ctx);
+                }
+              } else {
+                let b = yield evalToken(arg, ctx);
+                argArray.push(b);
+              }
             }
           }
 
@@ -87,6 +104,7 @@ export function createPairedComponentPlugin(shortcodeName, shortcodeFn) {
             liquidEngine,
             html,
             ...argArray,
+            namedArgs,
           );
 
           return ret;

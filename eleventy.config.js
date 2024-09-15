@@ -18,6 +18,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(pagesPlugin);
   eleventyConfig.addPlugin(typePlugin);
 
+  eleventyConfig.setLiquidParameterParsing("builtin");
+
   eleventyConfig.addLiquidFilter("absoluteUrl", rssPlugin.absoluteUrl);
   eleventyConfig.addLiquidFilter(
     "getNewestCollectionItemDate",

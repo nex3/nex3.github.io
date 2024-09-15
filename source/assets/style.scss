@@ -912,7 +912,7 @@ small {
   }
 }
 
-@each $shape in [capsule] {
+@each $shape in [capsule-small] {
   .co-mask-#{$shape} {
     -webkit-mask-image: url(/assets/cohost/mask-#{$shape}.svg);
     mask-image: url(/assets/cohost/mask-#{$shape}.svg);

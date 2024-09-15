@@ -4,7 +4,8 @@ title: A Moment in the Sky
 date: 2023-05-29T00:36:05.962-07:00
 ---
 
-{% image "/assets/projects/a-moment-in-the-sky.png", "Link on the Light Dragon" %}
+{% image "/assets/projects/a-moment-in-the-sky.png",
+    alt: "Link on the Light Dragon" %}
   Link is standing on the Light Dragon's head in _The Legend of Zelda, Tears of
   the Kingdom_. The dragon is turning to the left, but Link is facing forward,
   watching the sun set. Flying ships and floating islands are silhouetted
