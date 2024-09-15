@@ -9,7 +9,7 @@
       <article>
         {% if post.data.title %}
           <h1>
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
+            <a href="{{ post.url }}" rel="canonical">{{ post.data.title }}</a>
           </h1>
         {% endif %}
         {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
