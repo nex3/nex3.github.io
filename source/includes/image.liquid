@@ -1,4 +1,4 @@
-{%- if description -%}
+{%- if description.size > 0 -%}
   <figure
     class="image"
     {%- if style -%}
@@ -7,17 +7,19 @@
   >
 {%- endif -%}
 
-<img
-  src="{{url}}"
-  {%- unless description -%}
-    {%- if style %}style="{{style | escape}}"{% endif -%}
-  {%- endunless -%}
-  {%- if alt -%}
-    alt="{{alt | escape}}"
-  {%- endif -%}
->
+<a href="{{url}}">
+  <img
+    src="{{url}}"
+    {%- unless description.size > 0 -%}
+      {%- if style %}style="{{style | escape}}"{% endif -%}
+    {%- endunless -%}
+    {%- if alt -%}
+      alt="{{alt | escape}}"
+    {%- endif -%}
+  >
+</a>
 
-{%- if description -%}
+{%- if description.size > 0 -%}
   <figcaption>
     <details>
       <summary>detailed image description</summary>

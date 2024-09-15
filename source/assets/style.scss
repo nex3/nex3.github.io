@@ -237,13 +237,32 @@ figure {
       font-size: 0.6em;
     }
   }
+}
 
+figure,
+.gdesc-inner {
   details {
     summary {
       @extend %sidenote;
       text-align: center;
     }
   }
+}
+
+.glightbox-clean {
+  .gslide-description {
+    min-width: 30vw;
+
+    .gdesc-inner {
+      padding: 0;
+    }
+  }
+}
+
+.glightbox-container .gslide {
+  -moz-user-select: auto;
+  -webkit-user-select: auto;
+  user-select: auto;
 }
 
 details {
