@@ -59,13 +59,13 @@ body {
   }
 
   nav {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 
     grid-column: 3;
     @include phone {
-    justify-content: space-evenly;
+      justify-content: space-evenly;
       max-width: 80%;
     }
 
@@ -154,8 +154,8 @@ a[href] {
     top: 2px;
   }
 
-  a[rel=next] {
-    transform: scale(-1, 1)
+  a[rel="next"] {
+    transform: scale(-1, 1);
   }
 }
 
