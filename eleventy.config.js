@@ -37,7 +37,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addTemplateFormats("xml", { key: "liquid" });
 
-  eleventyConfig.addTransform("unescape-newlines", function(content) {
+  eleventyConfig.addTransform("unescape-newlines", function (content) {
     return content.replaceAll("&#10;", "\n");
   });
 

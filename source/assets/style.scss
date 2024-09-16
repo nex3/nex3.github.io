@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:math";
 
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
@@ -179,6 +180,21 @@ a[href] {
   }
 }
 
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  $images-per-row: 3;
+  $gap: 1em;
+  gap: $gap;
+
+  > * {
+    flex: 1 calc(100% / $images-per-row - $gap);
+    margin-inline: 0;
+  }
+}
+
 .friend-links {
   padding-left: 0;
   display: flex;
@@ -239,8 +255,14 @@ figure {
   }
 }
 
-figure,
+figcaption,
 .gdesc-inner {
+  h6:first-child {
+    margin-top: 0;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
   details {
     summary {
       @extend %sidenote;
@@ -254,15 +276,22 @@ figure,
     min-width: 30vw;
 
     .gdesc-inner {
-      padding: 0;
+      padding: 5px;
     }
   }
 }
 
-.glightbox-container .gslide {
-  -moz-user-select: auto;
-  -webkit-user-select: auto;
-  user-select: auto;
+.glightbox-container {
+  .gslider {
+    // Support long detailed image descriptions.
+    overflow: auto;
+  }
+
+  .gslide {
+    -moz-user-select: auto;
+    -webkit-user-select: auto;
+    user-select: auto;
+  }
 }
 
 details {
@@ -325,6 +354,16 @@ h4 {
 h5,
 .larger {
   font-size: 1.25em;
+}
+
+h6 {
+  font-weight: bolder;
+  margin-bottom: 0.2rem;
+  font-size: 0.9em;
+  font-variant: small-caps;
+  + * {
+    margin-top: 0;
+  }
 }
 
 small {

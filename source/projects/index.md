@@ -73,10 +73,91 @@ what this website is for.
 * I collaborated with Mags to create several silly images. Generally I did the
   writing, Mags did the drawing.
 
-  * [A *Disco Elysium* comic](/assets/harrier-needs-legs.jpg) (Shouts out to
-    Liz Cady, [Alex Zandra], and @kokoronis on Twitter for script help.)
-  * [A *Hitman* goof](/assets/untitled-flamingo-game.png)
-  * [A catboy comic](/assets/das-catpital.png)
+  <div class="image-gallery">
+    {%- image "/assets/harrier-needs-legs.jpg",
+        title: "Harrier Needs Legs",
+        alt: "A Disco Elysium themed comic in the style of Niel Cicierega's Ariel Needs Legs",
+        style: "max-width: 400px" %}
+      Harry Du Bois is on a beach speaking to Kim Kitsuragi. They're drawn in an
+      intentionally slapdash, MS Paint-esque style.
+
+      ###### Panel 1
+      Close-up of Kim and Harry.\
+      **Harry:** Wow you're cool\
+      **Harry:** Nice car
+
+      ###### Panel 2
+      Harry and Kim are silhouetted walking along the beach.\
+      **Harry:** I'm... a cop?\
+      **Harry:** You smell like chestnuts\
+      **Harry:** I like talking to you
+
+      ###### Panel 3
+      Harry raises his index finger and looks into the sky while Kim watches
+      impassively.\
+      **Harry:** however Guillaume Le Million was the only Revacholian disco
+      artist to chart at number 1 on three non-consecutive occasions
+
+      ###### Panel 4
+      Harry shows Kim a flute. Kim continues to watch impassively.\
+      **Harry:** Yeah I'm working on a disco flute remix of The Smallest Church
+      in Saint-Saens
+
+      ###### Panel 5
+      Harry is playing the flute, spraying spittle in Kim's face. Kim is
+      grimacing.\
+      **Harry's Flute:** FEEEEEEEEEEEEEEEEEEEEE\
+      **Coeur de Metier**, a _Disco Elysium_-style skill for Kim: [Trivial:
+      Success]: Ohhh you can't not fuck him
+      ===
+      (Shouts out to Liz Cady, [Alex Zandra], and @kokoronis on Twitter for script
+      help.)
+
+      [Alex Zandra]: http://zandravandra.com
+    {%- endimage -%}
+
+    {%- image "/assets/untitled-flamingo-game.png",
+        title: "Untitled Flamingo Game",
+        alt: "Agent 47 in the style of Untitled Goose Game",
+        style: "max-width: 500px" %}
+      Agent 47 dressed in the flamingo suit from the Miami level from _Hitman 2_,
+      rendered in the style of _Untitled Goose Game_. 47 is walking along a stone
+      path in a lawn behing a green building, carrying a wrench. A _Hitman_-style
+      dumpster is nestled against the building, and in front of it a crowbar lies
+      nestled in the grass.
+    {%- endimage -%}
+
+    {%- image "/assets/das-catpital.png",
+        title: "Catpitalism",
+        alt: "A middle-aged catboy is a mortgage broker",
+        style: "max-width: 400px" %}
+
+      A middle-aged, balding catboy sits at a desk with a newton's cradle, an old
+      CRT with cat ears, and a name plaque that says "Mr. Sniffles". He looks
+      bored and annoyed. A blonde woman in a blouse sits across from him.
+
+      ###### Panel 1
+      **Woman:** But I filed the form just like you told me!\
+      **Mr. Sniffles:** I'm sorry ma'am, but you filed **fur**m Q-thirty-one. I
+      asked for Q-thirty-**mew**.
+
+      ###### Panel 2
+      We see a poster on the wall of a naked man hanging from a tree branch,
+      labeled "Hang in There!"\
+      **Mr. Sniffles:** As such, your application to re**felin**ance your
+      **mrrt**gage has been de**nyaa**ied.\
+      **Woman:** Oh my god... what happens now?\
+      **Mr. Sniffles:** **Purr**suant to **claws** 113(b), we will re**paw**sess
+      your home. Please va**cat** the premises within two **meow**nths.
+
+      ###### Panel 3
+      The woman begins sobbing.
+
+      ###### Panel 4
+      Tears stream through the womans fingers as Mr. Sniffles idly baps the
+      Newton's Cradle off the desk.
+    {%- endimage -%}
+  </div>
 
 * I designed the first few iterations of the **[MTGO] modern cube**, as well as
   the [**Nega-Cube showcase**].
