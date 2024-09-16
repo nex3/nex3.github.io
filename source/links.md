@@ -41,6 +41,11 @@ them to keep existing.
   and it's also free (although I recommend paying for premium because, again,
   I want them to keep existing.)
 
+* [**Weird Jewish Digest**](https://buttondown.com/meli) is a wonderful
+  newsletter on all things Judaism written by my friend and metamour Meli. It's
+  eclectic and charming and wonderful, and if you're Jewish or interested in
+  Judaism I recommend subscribing.
+
 * **Your local public library** is a fantastic resource in ways you may not
   even realize! Checking out books is great, and if it's hard for you to find
   time to sit down and read consider listening to audiobooks while you take a
@@ -57,9 +62,12 @@ looking for more of a taste of the old web, give them a click!
   <li><a href="https://gameboat.org/">Colin</a></li>
   <li><a href="https://eden.care/">Eden</a></li>
   <li><a href="http://cubesmasher.com/">Evan</a></li>
+  <li><a href="https://jessfrom.online/">jess</a></li>
   <li><a href="https://pastrystudent.wordpress.com/">Ket</a></li>
   <li><a href="https://emaytch.neocities.org/journal">Margot</a></li>
+  <li><a href="https://shelraphen.com/">Shel</a></li>
   <li><a href="https://valbaca.com">Val</a></li>
+  <li><a href="https://zandravandra.com/">Zandra</a></li>
 </ul>
 
 ## Friends' Projects
