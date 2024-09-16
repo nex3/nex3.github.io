@@ -1,5 +1,7 @@
 import { Tokenizer, evalToken } from "liquidjs";
 
+import { markdownSafe } from "../pages.js";
+
 // Much of this file is based on the implementation of `addPairedShortcode`,
 // licensed under the terms:
 //
@@ -99,6 +101,7 @@ export function createPairedComponentPlugin(shortcodeName, shortcodeFn) {
             ctx,
           );
 
+          // Remove newlines to avoid trigger Markdown
           let ret = yield shortcodeFn.call(
             ctx,
             liquidEngine,
@@ -107,7 +110,7 @@ export function createPairedComponentPlugin(shortcodeName, shortcodeFn) {
             namedArgs,
           );
 
-          return ret;
+          return markdownSafe(ret);
         },
       };
     });

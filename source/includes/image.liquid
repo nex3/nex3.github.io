@@ -1,30 +1,30 @@
 {%- if description.size > 0 -%}
   <figure
     class="image"
-    {%- if style -%}
+    {% if style %}
       style="{{style | escape}}"
-    {%- endif -%}
+    {% endif %}
   >
 {%- endif -%}
 
 <a href="{{url}}">
   <img
     src="{{url}}"
-    {%- unless description.size > 0 -%}
-      {%- if style %}style="{{style | escape}}"{% endif -%}
-    {%- endunless -%}
-    {%- if alt -%}
+    {% unless description.size > 0 %}
+      {% if style %}style="{{style | escape}}"{% endif %}
+    {% endunless %}
+    {% if alt %}
       alt="{{alt | escape}}"
-    {%- endif -%}
+    {% endif %}
   >
 </a>
 
-{%- if description.size > 0 -%}
+{% if description.size > 0 %}
   <figcaption>
     <details>
       <summary>detailed image description</summary>
-      {{- description | markdown -}}
+      {{ description | markdown }}
     </details>
   </figcaption>
   </figure>
-{%- endif -%}
+{% endif %}
