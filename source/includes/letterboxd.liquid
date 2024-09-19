@@ -1,0 +1,119 @@
+<div class="letterboxd-post-wrapper">
+  {% if poster %}
+    <a
+      href="https://letterboxd.com/film/{{ filmSlug }}/"
+      target="_blank"
+      rel="nofollow noopener"
+      class="lb-poster"
+      tabindex="0"
+    >
+      <img src="{{ poster }}">
+    </a>
+  {% endif %}
+  <article>
+    <header>
+      {% if poster %}
+        <a
+          href="https://letterboxd.com/film/{{ filmSlug }}/"
+          target="_blank"
+          rel="nofollow noopener"
+          class="lb-poster-small"
+          tabindex="0"
+        >
+          <img src="{{ poster }}">
+        </a>
+      {% endif %}
+      <div class="lb-info">
+        <address>
+          {% if avatar %}
+            <a
+              class="lb-avatar"
+              href="https://letterboxd.com/{{ author }}/"
+              target="_blank"
+              rel="nofollow noopener"
+              tabindex="0"
+            >
+              <img src="{{ avatar }}" title="{{ authorDisplayName | escape }}" width="24" height="24">
+            </a>
+          {% endif %}
+          <span class="lb-context">Review by</span>
+          <a
+            class="lb-author"
+            href="https://letterboxd.com/{{ author }}/"
+            target="_blank"
+            rel="nofollow noopener author"
+            tabindex="0"
+          >
+            {{ authorDisplayName | escape }}
+            {% if supporter %}
+              <span class="lb-badge lb-badge-{{ supporter }}">{{ supporter | capitalize }}</span>
+            {% endif %}
+          </a>
+        </address>
+        <h2>
+          <div>
+            <a
+              class="lb-title"
+              href="https://letterboxd.com/{{ author }}/film/{{ filmSlug }}/"
+              target="_blank"
+              rel="nofollow noopener"
+              tabindex="0"
+            >
+              {{- film -}}
+            </a>
+            <small>
+              <a
+                href="https://letterboxd.com/films/year/{{ year }}/"
+                target="_blank"
+                rel="nofollow noopener"
+                tabindex="0"
+              >
+                {{- year -}}
+              </a>
+            </small>
+          </div>
+          <span class="lb-rating lb-rating-{{ rating | times: 2 | round }}">
+            {%- for i in (1..rating) -%}
+              ★
+            {%- endfor -%}
+            {%- assign intRating = rating | modulo: 1 %}
+            {%- if intRating > 0 -%}½{%- endif -%}
+          </span>
+        </h2>
+        <time datetime="{{ date | format: 'yyyy-MM-dd' }}">
+          Watched
+          <a
+            href="https://letterboxd.com/{{ author }}//films/diary/for/{{ date | format: 'yyyy/MM' }}/"
+            target="_blank"
+            rel="nofollow noopener"
+            tabindex="0"
+          >
+            {{- date | format: 'MMM' -}}
+          </a>
+          <a
+            href="https://letterboxd.com/{{ author }}//films/diary/for/{{ date | format: 'yyyy/MM/dd' }}/"
+            target="_blank"
+            rel="nofollow noopener"
+            tabindex="0"
+          >
+            {{- date | format: 'd' -}}</a
+          >,
+          <a
+            href="https://letterboxd.com/{{ author }}//films/diary/for/{{ date | format: 'yyyy' }}/"
+            target="_blank"
+            rel="nofollow noopener"
+            tabindex="0"
+          >
+            {{- date | format: 'yyyy' -}}
+          </a>
+        </time>
+      </div>
+    </header>
+    <div class="lb-image">
+      <img
+        src="https://a.ltrbxd.com/resized/sm/upload/j6/mt/dl/j4/g6G39cC2XfEKunn3wZ7HkBjrZMe-1200-1200-675-675-crop-000000.jpg?v=3a1e8afcfe"
+      >
+    </div>
+    <div class="lb-prose">{{ contents }}</div>
+  </article>
+</div>

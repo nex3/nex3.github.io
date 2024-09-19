@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "sass:math";
+@use "sass:map";
 
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
@@ -10,13 +11,13 @@ $dim-grey: color.change(#555, $alpha: 0.6);
 
 $phone-break: 468px;
 @mixin phone {
-  @media only screen and (max-width: #{$phone-break}) {
+  @media only screen and (width <= #{$phone-break}) {
     @content;
   }
 }
 
 @mixin not-phone {
-  @media only screen and (width > #{$phone-break}) {
+  @media (width > #{$phone-break}) {
     @content;
   }
 }
@@ -26,6 +27,7 @@ html {
   scroll-behavior: smooth;
 }
 
+$body-margin: 24px;
 body {
   font-family: Inter, sans-serif;
   line-height: 1.65;
@@ -34,7 +36,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 
-  margin: 0 24px;
+  margin: 0 $body-margin;
 }
 
 .page-header {
@@ -317,6 +319,71 @@ details {
   }
 }
 
+%embed {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1.15rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  article {
+    box-shadow:
+      0px 4px 5px rgba(0, 0, 0, 0.14),
+      0px 1px 10px rgba(0, 0, 0, 0.12),
+      0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+$-ewf-row-gap: 0.5rem;
+@function create-embed-with-floater($max-width, $floater-width) {
+  @return ("max-width": $max-width, "floater-width": $floater-width);
+}
+
+@function -ewf-total-width($ewf) {
+  @return calc(
+    map.get($ewf, "max-width") + map.get($ewf, "floater-width") + $-ewf-row-gap
+  );
+}
+
+@function -ewf-breakpoint($ewf) {
+  @return calc(-ewf-total-width($ewf) + $body-margin * 2);
+}
+
+@mixin ewf-large($ewf) {
+  @media (width > #{-ewf-breakpoint($ewf)}) {
+    @content;
+  }
+}
+
+@mixin ewf-small($ewf) {
+  @media (width <= #{-ewf-breakpoint($ewf)}) {
+    @content;
+  }
+}
+
+@mixin ewf-wrapper($ewf) {
+  max-width: map.get($ewf, "max-width");
+  @include ewf-large($ewf) {
+    display: grid;
+    grid-template-columns: map.get($ewf, "floater-width") 1fr;
+    row-gap: $-ewf-row-gap;
+    column-gap: 1.5rem;
+    max-width: -ewf-total-width($ewf);
+  }
+}
+
+@mixin ewf-floater($ewf) {
+  display: block;
+  filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
+    drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
+    drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+  width: map.get($ewf, "floater-width");
+
+  @include ewf-small($ewf) {
+    display: none;
+  }
+}
+
 /* Typography */
 p {
   margin-bottom: 1.15rem;
@@ -377,20 +444,14 @@ small {
 
 // Cohost Post Embed
 
-.cohost-post-wrapper {
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1.15rem;
-  margin-left: auto;
-  margin-right: auto;
+$cohost-ewf: create-embed-with-floater(
+  $max-width: 674px,
+  $floater-width: 4rem,
+);
 
-  @include not-phone {
-    display: grid;
-    grid-template-columns: 4rem 1fr;
-    row-gap: 0.5rem;
-    column-gap: 1.5rem;
-    max-width: calc(65ch + 4rem);
-  }
+.cohost-post-wrapper {
+  @extend %embed;
+  @include ewf-wrapper($cohost-ewf);
 
   &,
   & * {
@@ -437,10 +498,6 @@ small {
   }
 
   article {
-    box-shadow:
-      0px 4px 5px rgba(0, 0, 0, 0.14),
-      0px 1px 10px rgba(0, 0, 0, 0.12),
-      0px 2px 4px rgba(0, 0, 0, 0.2);
     background-color: white;
     width: 100%;
     overflow-x: auto;
@@ -454,7 +511,6 @@ small {
       "Segoe UI Emoji",
       "Segoe UI Symbol",
       "Noto Color Emoji";
-    max-width: 65ch;
 
     > header {
       background-color: rgb(255 249 242);
@@ -908,31 +964,24 @@ small {
 }
 
 .co-avatar-large {
-  display: block;
-  filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
-    drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
-    drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
-  width: 4rem;
   height: 4rem;
   aspect-ratio: 1 / 1;
   position: relative;
+  @include ewf-floater($cohost-ewf);
 
   img {
     width: 100%;
     height: 100%;
-  }
-
-  @include phone {
-    display: none;
   }
 }
 
 .co-avatar-small {
   width: 2rem;
   height: 2rem;
+  display: none;
 
-  @include not-phone {
-    display: none;
+  @include ewf-small($cohost-ewf) {
+    display: block;
   }
 }
 
@@ -985,6 +1034,263 @@ small {
 
     &:last-child {
       color: rgb(131 37 79);
+    }
+  }
+}
+
+// Letterboxd Embed
+
+$letterboxd-ewf: create-embed-with-floater(
+  // 470px is the width of the Letterboxd column, but we also want to add the
+  // padding and border so that the actual width of the prose matches.
+  $max-width: 470px + 16px * 2 + 1px * 2,
+  $floater-width: 150px
+);
+
+.letterboxd-post-wrapper {
+  @extend %embed;
+  @include ewf-wrapper($letterboxd-ewf);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  article {
+    background: #2c3440;
+    border-radius: 5px;
+    border: 1px solid #2c3440;
+    overflow: hidden;
+    color: #9ab;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    display: flex;
+    margin-bottom: 18.462px;
+    padding: 13.846px 16px 10px;
+    color: #bcd;
+    background: #456;
+    z-index: 1;
+    font-family: Graphik-Light-Web, Inter, sans-serif;
+
+    a:hover {
+      color: color.to-gamut(
+        color.adjust(
+          #40bcf4,
+          $lightness: math.percentage(math.div(1, 16)),
+          $space: oklch
+        ),
+        $method: local-minde
+      );
+    }
+  }
+
+  .lb-poster {
+    height: 225px;
+    height: fit-content;
+    @include ewf-floater($letterboxd-ewf);
+  }
+
+  .lb-poster-small {
+    align-self: flex-start;
+    flex-shrink: 0;
+    order: 2;
+    width: 30%;
+    max-width: 110px;
+    margin-bottom: -100%;
+    display: none;
+
+    @include ewf-small($letterboxd-ewf) {
+      display: block;
+    }
+  }
+
+  .lb-poster,
+  .lb-poster-small {
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+    }
+
+    &::after {
+      content: " ";
+      box-shadow: inset 0 0 0 1px rgba(221, 238, 255, 0.1);
+      display: block;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      border-radius: 4px;
+      transition: box-shadow 0.1s;
+    }
+
+    &:hover::after {
+      box-shadow: inset 0 0 0 3px #00e054;
+    }
+  }
+
+  .lb-info {
+    align-self: center;
+    flex-grow: 1;
+    order: 1;
+    padding-right: 13.846px;
+  }
+
+  .lb-avatar {
+    margin-right: 8px;
+  }
+
+  .lb-context {
+    font-weight: 400;
+    margin-right: 3px;
+    @include ewf-small($letterboxd-ewf) {
+      display: none;
+    }
+  }
+
+  .lb-author:hover {
+    color: #cde;
+  }
+
+  .lb-context,
+  .lb-author {
+    position: relative;
+    bottom: 2px;
+  }
+
+  address {
+    display: flex;
+    align-items: center;
+    margin-bottom: 13.846px;
+    line-height: 18px;
+    max-width: 100%;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: bold;
+    color: #abc;
+
+    img {
+      border-radius: 12px;
+      margin: 0px;
+    }
+
+    .lb-badge {
+      font-size: 9.5px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      line-height: 1;
+      color: white;
+      display: inline-block;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0px;
+      margin-left: 2px;
+      position: relative;
+      text-transform: uppercase;
+      top: -1px;
+      user-select: none;
+    }
+
+    .lb-badge-pro {
+      background-color: #ee7000;
+    }
+
+    .lb-badge-patron {
+      background-color: #209ce4;
+    }
+  }
+
+  h2 {
+    margin: 0px 0px 10px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-right: 3px;
+
+    .lb-title {
+      font-family: TiemposTextWeb-Semibold, Georgia, serif;
+      color: white;
+      margin-right: 5px;
+    }
+
+    .lb-rating {
+      background: url("/assets/letterboxd-stars.svg") -390px -130px
+        no-repeat;
+      display: inline-block;
+      height: 14px;
+      overflow: hidden;
+      text-indent: 110%;
+      white-space: nowrap;
+      width: 80px;
+
+      @for $i from 1 through 10 {
+        &-#{$i} {
+          @if $i % 2 == 1 {
+            $width: calc(16px * ($i + 1) / 2 - 1px);
+            background-position-x: -485px + $width;
+            width: $width;
+          } @else {
+            width: calc(16px * $i / 2 - 2px);
+          }
+        }
+      }
+    }
+
+    small {
+      font-size: 18px;
+      font-weight: 200;
+    }
+  }
+
+  time {
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  $image-tuck: 160px;
+
+  .lb-image {
+    width: 100%;
+    height: 0px;
+    margin-bottom: $image-tuck;
+
+    img {
+      min-width: 100%;
+      width: 100%;
+      min-height: 267px;
+      object-fit: cover;
+      margin: 0px;
+      transform: translateY(-20%);
+    }
+  }
+
+  .lb-prose {
+    line-height: 1.6875;
+    font-size: 16px;
+    font-family:
+      TiemposTextWeb-Regular,
+      Georgia,
+      Atkinson Hyperlegile,
+      serif;
+    padding: $image-tuck 16px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc($image-tuck * -1 + 0.5rem);
+    z-index: 0;
+    background: linear-gradient(
+      rgba(125, 185, 232, 0) 0px,
+      rgb(22, 24, 28) calc($image-tuck + 3rem)
+    );
+
+    p {
+      margin: 0px 0px 0.625em;
     }
   }
 }
