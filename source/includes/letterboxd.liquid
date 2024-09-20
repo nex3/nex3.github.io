@@ -72,13 +72,15 @@
               </a>
             </small>
           </div>
-          <span class="lb-rating lb-rating-{{ rating | times: 2 | round }}">
-            {%- for i in (1..rating) -%}
-              ★
-            {%- endfor -%}
-            {%- assign intRating = rating | modulo: 1 %}
-            {%- if intRating > 0 -%}½{%- endif -%}
-          </span>
+          {% if rating %}
+            <span class="lb-rating lb-rating-{{ rating | times: 2 | round }}">
+              {%- for i in (1..rating) -%}
+                ★
+              {%- endfor -%}
+              {%- assign intRating = rating | modulo: 1 %}
+              {%- if intRating > 0 -%}½{%- endif -%}
+            </span>
+          {% endif %}
         </h2>
         <time datetime="{{ date | format: 'yyyy-MM-dd' }}">
           Watched
@@ -109,11 +111,9 @@
         </time>
       </div>
     </header>
-    <div class="lb-image">
-      <img
-        src="https://a.ltrbxd.com/resized/sm/upload/j6/mt/dl/j4/g6G39cC2XfEKunn3wZ7HkBjrZMe-1200-1200-675-675-crop-000000.jpg?v=3a1e8afcfe"
-      >
-    </div>
+    {% if image %}
+      <div class="lb-image"><img src="{{ image }}"></div>
+    {% endif %}
     <div class="lb-prose">{{ contents }}</div>
   </article>
 </div>

@@ -1220,8 +1220,7 @@ $letterboxd-ewf: create-embed-with-floater(
     }
 
     .lb-rating {
-      background: url("/assets/letterboxd-stars.svg") -390px -130px
-        no-repeat;
+      background: url("/assets/letterboxd-stars.svg") -390px -130px no-repeat;
       display: inline-block;
       height: 14px;
       overflow: hidden;

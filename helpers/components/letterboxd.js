@@ -20,6 +20,7 @@ export default createPairedComponentPlugin(
       date: date,
       poster: options.poster,
       avatar: options.avatar,
+      image: options.image,
       supporter: options.supporter,
     });
   },
