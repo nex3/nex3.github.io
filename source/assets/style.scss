@@ -182,6 +182,28 @@ a[href] {
   }
 }
 
+.read-more[href] {
+  display: inline-block;
+  background-color: $accent;
+  color: white;
+  padding: {
+      left: 3px;
+      right: 3px;
+      bottom: 0.5rem;
+  }
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 0.5rem;
+  vertical-align: super;
+  margin-left: 3px;
+
+  &:hover {
+    color: $accent;
+    background-color: transparent;
+  }
+}
+
 .image-gallery {
   display: flex;
   flex-wrap: wrap;

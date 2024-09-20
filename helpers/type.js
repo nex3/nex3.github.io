@@ -1,5 +1,6 @@
 import truncate from "truncate-html";
 import { markdownEngine } from "./engines.js";
+import * as crypto from "node:crypto";
 
 /**
  * Strips leading whitespace from each line of a string,
@@ -21,13 +22,24 @@ export function stripIndent(contents) {
   return contents;
 }
 
+const linkPlaceholder = crypto.randomBytes(20).toString("hex");
+
 /**
- * Truncates an HTML string without breaking tags.
+ * Truncates an HTML string without breaking tags. If a link URL is passed, add
+ * it as a "read more" after the truncation.
  *
  * @see https://github.com/oe/truncate-html
  */
-function truncateHTML(html, words) {
-  return truncate(html, words, { byWords: true, keepWhitespaces: true });
+function truncateHTML(html, words, ...named) {
+  const options = Object.fromEntries(named);
+  return truncate(html, words, {
+    byWords: true,
+    ellipsis: options.link ? `${linkPlaceholder}` : "...",
+    keepWhitespaces: true,
+  }).replace(
+    linkPlaceholder,
+    `<a href="${options.link}" class="read-more" title="Read More">…</a>`,
+  );
 }
 
 /**

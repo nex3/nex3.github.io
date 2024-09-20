@@ -13,7 +13,7 @@
           </h1>
         {% endif %}
         {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
-        {{ post.content | truncateHTML: 300 | replaceInternalLinks: post.url }}
+        {{ post.content | truncateHTML: 300, link: post.url | replaceInternalLinks: post.url }}
         {% render 'tags', tags: post.data.tags %}
       </article>
     </li>
