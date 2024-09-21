@@ -50,7 +50,13 @@
             {% endif %}
           </a>
         </address>
-        <h2 class="embed-title">{{ film | escape }} ({{ year }})</h2>
+        <h2 class="embed-title">
+          {{- film | escape }} ({{ year }})
+          {% if rating -%}
+            -
+            {% render 'star-rating', rating: rating -%}
+          {%- endif -%}
+        </h2>
         <h2>
           <div>
             <a
@@ -75,11 +81,7 @@
           </div>
           {% if rating %}
             <span class="lb-rating lb-rating-{{ rating | times: 2 | round }}">
-              {%- for i in (1..rating) -%}
-                ★
-              {%- endfor -%}
-              {%- assign intRating = rating | modulo: 1 %}
-              {%- if intRating > 0 -%}½{%- endif -%}
+              {%- render 'star-rating', rating: rating -%}
             </span>
           {% endif %}
         </h2>

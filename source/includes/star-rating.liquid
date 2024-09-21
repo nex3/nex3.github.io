@@ -1,0 +1,5 @@
+{%- for i in (1..rating) -%}
+  ★
+{%- endfor -%}
+{%- assign intRating = rating | modulo: 1 %}
+{%- if intRating > 0 -%}½{%- endif -%}
