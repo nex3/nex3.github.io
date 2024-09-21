@@ -46,7 +46,7 @@ function adjustPostForFeed(post) {
       prose = `
         <div style="
           padding: 0.75rem;
-          margin: 1rem 0 1.15rem;
+          margin: 1rem 0.2rem 1.15rem;
           border-radius: 0.5rem;
           box-shadow:
             0px 4px 5px rgba(0, 0, 0, 0.14),
