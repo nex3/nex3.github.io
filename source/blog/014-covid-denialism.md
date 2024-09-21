@@ -2,6 +2,7 @@
 author: Natalie
 title: COVID Denialism and Disability Justice
 date: 2024-09-20 17:21:00 -8
+updated: 2024-09-21 00:47:00 -8
 tags:
 - covid
 - disability
@@ -19,7 +20,7 @@ This is an analysis based on [the social model of disability](https://en.wikiped
 
 Using this model, if you exist in a society that has accepted the uncontrolled spread of COVID-19 as normal, the attempt to avoid catching this disease _is itself a disability_. Society is organized to systematically deny accommodations like mask mandates, sanitizing ventilation[^3], lockdowns and contact tracing, and free access to vaccines, prophylatics, tests, treatments, and protective equipment. Depending on the specific activity and your risk tolerance, public existence while taking reasonable COVID precautions ranges from requiring serious equipment and preparation to being outright impossible. Even if your body isn't any different than it was in 2019, you are _functionally_ disabled by the society you now exist in.
 
-If you have an existing disability, including Long COVID or even just the incremental damage that each COVID infection does to your immune system[^4], the situation is even worse. Your risk tolerances are likely to be lower lower, and you may already suffer from ableist limitations on your ability to engage in the world that are compounded by COVID. You become intrinsically multiply disabled just by virtue of the total failure of our social structures to create a world in which it's safe to exist.
+If you have an existing disability, including Long COVID or even just the incremental damage that each COVID infection does to your immune system[^4], the situation is even worse. Your risk tolerances are likely to be lower, and you may already suffer from ableist limitations on your ability to engage in the world that are compounded by COVID. You become intrinsically multiply disabled just by virtue of the total failure of our social structures to create a world in which it's safe to exist.
 
 ## The Category Myth of the Abled
 
