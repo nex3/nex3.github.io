@@ -1,7 +1,7 @@
 ---
 author: Natalie
 title: COVID Denialism and Disability Justice
-date: 2024-09-20 15:51:00 -8
+date: 2024-09-20 17:21:00 -8
 tags:
 - covid
 - disability
