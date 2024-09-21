@@ -1,6 +1,6 @@
-<div class="cohost-post-wrapper">
+<div class="cohost-post-wrapper embed">
   <a class="co-avatar-large" href="https://cohost.org/{{ author }}">
-    <img src="/assets/cohost/{{ author }}.jpg" class="co-mask-{{ avatarShape }}" alt="{{ author }}">
+    <img src="/assets/cohost/{{ author }}.jpg" class="co-mask-{{ avatarShape }} embed-image" alt="{{ author }}">
   </a>
   <article>
     <header>
@@ -12,7 +12,7 @@
           {{- authorDisplayName -}}
         </a>
         <a href="https://cohost.org/{{ author }}" class="co-handle">@{{ author }}</a>
-        {%- render 'date', date: time, link: url -%}
+        {%- render 'date', date: time, link: url, class: 'embed-link' -%}
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@
     </header>
     <hr>
     <div class="co-prose-box">
-      <div class="co-prose">{{ contents }}</div>
+      <div class="co-prose embed-prose">{{ contents }}</div>
     </div>
     {%- if tags.size > 0 -%}
       <div class="co-tags-box">

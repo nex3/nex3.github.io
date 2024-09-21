@@ -1,4 +1,4 @@
-<div class="letterboxd-post-wrapper">
+<div class="letterboxd-post-wrapper embed">
   {% if poster %}
     <a
       href="https://letterboxd.com/film/{{ filmSlug }}/"
@@ -7,7 +7,7 @@
       class="lb-poster"
       tabindex="0"
     >
-      <img src="{{ poster }}">
+      <img src="{{ poster }}" class="embed-image">
     </a>
   {% endif %}
   <article>
@@ -50,16 +50,17 @@
             {% endif %}
           </a>
         </address>
+        <h2 class="embed-title">{{ film | escape }} ({{ year }})</h2>
         <h2>
           <div>
             <a
-              class="lb-title"
+              class="lb-title embed-link"
               href="https://letterboxd.com/{{ author }}/film/{{ filmSlug }}/"
               target="_blank"
               rel="nofollow noopener"
               tabindex="0"
             >
-              {{- film -}}
+              {{- film | escape -}}
             </a>
             <small>
               <a
@@ -114,6 +115,6 @@
     {% if image %}
       <div class="lb-image"><img src="{{ image }}"></div>
     {% endif %}
-    <div class="lb-prose">{{ contents }}</div>
+    <div class="lb-prose embed-prose">{{ contents }}</div>
   </article>
 </div>

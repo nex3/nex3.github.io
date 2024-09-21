@@ -6,7 +6,8 @@
   <link href="{{ pageUrl | htmlBaseUrl: site.url }}" />
   <updated>{{ posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   {%- assign posts = posts | reverse -%}
-  {%- for post in posts limit:15 -%}
+  {%- for post_ in posts limit:15 -%}
+    {%- assign post = post_ | adjustPostForFeed -%}
     {%- assign absolutePostUrl = post.url | htmlBaseUrl: site.url %}
     <entry>
       <title>{{ post.data.title | escape }}</title>

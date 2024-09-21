@@ -187,9 +187,9 @@ a[href] {
   background-color: $accent;
   color: white;
   padding: {
-      left: 3px;
-      right: 3px;
-      bottom: 0.5rem;
+    left: 3px;
+    right: 3px;
+    bottom: 0.5rem;
   }
   border-radius: 3px;
   text-decoration: none;
@@ -1072,6 +1072,10 @@ $letterboxd-ewf: create-embed-with-floater(
 .letterboxd-post-wrapper {
   @extend %embed;
   @include ewf-wrapper($letterboxd-ewf);
+
+  .embed-title {
+    display: none;
+  }
 
   a {
     color: inherit;

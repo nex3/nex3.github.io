@@ -1,4 +1,10 @@
-<time datetime="{{ date | dateToRfc3339 }}" title="{{ date | format: "iii, MMM d, y, ppp" }}">
+<time
+  datetime="{{ date | dateToRfc3339 }}"
+  title="{{ date | format: "iii, MMM d, y, ppp" }}"
+  {% if class %}
+    class="{{ class }}"
+  {% endif %}
+>
   {%- if link -%}<a href="{{ link }}">{%- endif -%}
   {{- date | format -}}
   {%- if link -%}</a>{%- endif -%}

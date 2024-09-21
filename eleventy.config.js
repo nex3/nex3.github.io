@@ -8,6 +8,7 @@ import yaml from "js-yaml";
 
 import componentsPlugin from "./helpers/components/index.js";
 import datesPlugin from "./helpers/dates.js";
+import feedPlugin from "./helpers/feed.js";
 import pagesPlugin from "./helpers/pages.js";
 import typePlugin from "./helpers/type.js";
 
@@ -15,6 +16,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(componentsPlugin);
   eleventyConfig.addPlugin(datesPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(feedPlugin);
   eleventyConfig.addPlugin(pagesPlugin);
   eleventyConfig.addPlugin(typePlugin);
 
