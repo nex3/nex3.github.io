@@ -34,12 +34,24 @@ function truncateHTML(html, words, ...named) {
   const options = Object.fromEntries(named);
   return truncate(html, words, {
     byWords: true,
-    ellipsis: options.link ? `${linkPlaceholder}` : "...",
+    ellipsis: options.link ? `${linkPlaceholder}` : "…",
     keepWhitespaces: true,
   }).replace(
     linkPlaceholder,
     `<a href="${options.link}" class="read-more" title="Read More">…</a>`,
   );
+}
+
+/** Truncates text without breaking words. */
+export function truncateText(text, words) {
+  const regexp = /[ \n—]+/g;
+  let match;
+  for (let i =0 ; i < words; i++) {
+    match = regexp.exec(text);
+    if (!match) return text;
+  }
+
+  return text.substring(0, match.index) + '…';
 }
 
 /**
@@ -58,6 +70,7 @@ function markdownInline(content) {
 
 export default function typePlugin(eleventyConfig) {
   eleventyConfig.addLiquidFilter("truncateHTML", truncateHTML);
+  eleventyConfig.addLiquidFilter("truncateText", truncateText);
   eleventyConfig.addLiquidFilter("markdown", markdown);
   eleventyConfig.addLiquidFilter("markdownInline", markdownInline);
 }

@@ -1,11 +1,11 @@
 import { JSDOM } from "jsdom";
 import escapeHtml from "escape-html";
 
-function adjustPostForFeed(post) {
+export function simplifyEmbeds(post) {
   const data = { ...post.data };
   let url = post.url;
   const container = JSDOM.fragment(
-    `<div>${post.templateContent}</div>`,
+    `<div>${post.content}</div>`,
   ).firstElementChild;
 
   const embeds = container.querySelectorAll(".embed");
@@ -60,9 +60,9 @@ function adjustPostForFeed(post) {
     template.innerHTML = prose;
     embed.replaceWith(template.content);
   }
-  return { data, url, date: post.date, templateContent: container.innerHTML };
+  return { data, url, date: post.date, content: container.innerHTML };
 }
 
-export default function feedPlugin(eleventyConfig) {
-  eleventyConfig.addLiquidFilter("adjustPostForFeed", adjustPostForFeed);
+export default function embedPlugin(eleventyConfig) {
+  eleventyConfig.addLiquidFilter("simplifyEmbeds", simplifyEmbeds);
 }

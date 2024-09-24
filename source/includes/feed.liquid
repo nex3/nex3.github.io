@@ -7,7 +7,7 @@
   <updated>{{ posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   {%- assign posts = posts | reverse -%}
   {%- for post_ in posts limit:15 -%}
-    {%- assign post = post_ | adjustPostForFeed -%}
+    {%- assign post = post_ | simplifyEmbeds -%}
     {%- assign absolutePostUrl = post.url | htmlBaseUrl: site.url %}
     <entry>
       <title>{{ post.data.title | escape }}</title>

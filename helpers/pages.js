@@ -1,5 +1,9 @@
 import { JSDOM } from "jsdom";
 import * as crypto from "node:crypto";
+import { compile as initHtmlToText } from "html-to-text";
+
+import { simplifyEmbeds } from "./embed.js";
+import { truncateText } from "./type.js";
 
 const newlinePlaceholder = crypto.randomBytes(20).toString("hex");
 
@@ -43,9 +47,47 @@ function replaceInternalLinks(content, url) {
   return content.replace(/href="#/g, `href="${url}#`);
 }
 
+const htmlToText = initHtmlToText({
+  wordWrap: null,
+  selectors: [
+    { selector: "img", format: "skip" },
+    { selector: "figure", format: "skip" },
+    { selector: "details", format: "skip" },
+  ],
+});
+
+/**
+ * Converts data about the current page into useful metadata for OpenGraph tags.
+ */
+function metadata(collections, site) {
+  // TODO - Do this better when 11ty/eleventy#3458 is fixed.
+  let content = "";
+  if (!this.page.data?.description) {
+    const matchingEntries = collections.all.filter(
+      (collectionEntry) => collectionEntry.page === this.page,
+    );
+    if (matchingEntries.length === 1) {
+      const entry = matchingEntries[0];
+      content = entry.content;
+    }
+  }
+
+  const page = simplifyEmbeds({ ...this.page, content });
+
+  let desc = this.page.data?.description ?? truncateText(htmlToText(page.content), 150);
+  if (!desc || desc === "") desc = site.desc;
+
+  return {
+    page,
+    title: page.data.title ? `${site.title} • ${page.data.title}` : site.title,
+    desc,
+    type: page.data["og-type"] ?? "website",
+  };
+}
+
 export default function pagesPlugin(eleventyConfig) {
-  // filters...
   eleventyConfig.addLiquidFilter("getBlogSlug", getBlogSlug);
   eleventyConfig.addLiquidFilter("markdownSafe", markdownSafe);
+  eleventyConfig.addLiquidFilter("metadata", metadata);
   eleventyConfig.addLiquidFilter("replaceInternalLinks", replaceInternalLinks);
 }
