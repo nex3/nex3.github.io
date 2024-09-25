@@ -1,14 +1,16 @@
 ---
 layout: default
 ---
-{% if title %}
-  <h1>
-    <a href="{{ page.url }}">{{ title }}</a>
-  </h1>
-{% endif %}
+<article class="h-entry">
+  {% if title %}
+    <h1 class="p-name">
+      <a href="{{ page.url }}">{{ title }}</a>
+    </h1>
+  {% endif %}
 
-{% if date %}
-  <p class="attribution">{% render 'date', date: date, link: page.url %}</p>
-{% endif %}
+  {% if date %}
+    <p class="attribution">{% render 'date', date: date, link: page.url %}</p>
+  {% endif %}
 
-{{ content }}
+  <div class="e-content">{{ content }}</div>
+</article>

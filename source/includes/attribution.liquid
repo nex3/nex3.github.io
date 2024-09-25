@@ -1,6 +1,8 @@
 <p class="attribution">
-  <a href="{{ link }}" rel="canonical"
-    >Posted {% render 'date', date: date %}
-    {% if author %}by {{ author }}{% endif -%}
+  <a href="{{ link }}" rel="canonical" class="u-url u-uid"
+    >Posted {% render 'date', date: date, class: 'dt-published' %}
+    {% if author -%}
+      by <span class="p-author">{{ author }}</span>
+    {%- endif -%}
   </a>
 </p>

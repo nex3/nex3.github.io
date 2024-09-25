@@ -1,16 +1,16 @@
 ---
 layout: default
 ---
-<article>
+<article class="h-entry">
   {% if title %}
-    <h1>
+    <h1 class="p-name">
       <a href="{{ page.url }}">{{ title }}</a>
     </h1>
   {% endif %}
 
   {% render 'attribution', date: date, author: author, link: page.url %}
 
-  {{ content }}
+  <div class="e-content">{{ content }}</div>
 
   {% render 'tags', tags: tags %}
 
