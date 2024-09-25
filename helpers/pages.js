@@ -79,9 +79,9 @@ function metadata(collections, site) {
 
   return {
     page,
-    title: page.data.title ? `${site.title} • ${page.data.title}` : site.title,
+    title: page.data?.title ? `${site.title} • ${page.data.title}` : site.title,
     desc,
-    type: page.data["og-type"] ?? "website",
+    type: page.data?.["og-type"] ?? "website",
   };
 }
 

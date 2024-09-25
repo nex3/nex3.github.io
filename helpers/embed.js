@@ -2,6 +2,8 @@ import { JSDOM } from "jsdom";
 import escapeHtml from "escape-html";
 
 export function simplifyEmbeds(post) {
+  if (!post.content.includes("embed")) return post;
+
   const data = { ...post.data };
   let url = post.url;
   const container = JSDOM.fragment(
