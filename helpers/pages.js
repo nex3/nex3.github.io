@@ -72,7 +72,7 @@ function metadata(collections, site, title) {
     }
   }
 
-  const data = {...this.page.data};
+  const data = { ...this.page.data };
   if (title) data.title = title;
   const page = simplifyEmbeds({ ...this.page, data, content });
 
