@@ -74,7 +74,8 @@ function metadata(collections, site) {
 
   const page = simplifyEmbeds({ ...this.page, content });
 
-  let desc = this.page.data?.description ?? truncateText(htmlToText(page.content), 150);
+  let desc =
+    this.page.data?.description ?? truncateText(htmlToText(page.content), 150);
   if (!desc || desc === "") desc = site.desc;
 
   return {

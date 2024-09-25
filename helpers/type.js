@@ -46,12 +46,12 @@ function truncateHTML(html, words, ...named) {
 export function truncateText(text, words) {
   const regexp = /[ \n—]+/g;
   let match;
-  for (let i =0 ; i < words; i++) {
+  for (let i = 0; i < words; i++) {
     match = regexp.exec(text);
     if (!match) return text;
   }
 
-  return text.substring(0, match.index) + '…';
+  return text.substring(0, match.index) + "…";
 }
 
 /**

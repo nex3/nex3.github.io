@@ -369,7 +369,10 @@ $-embed-padding: 4rem;
 
 $-ewf-row-gap: 0.5rem;
 @function -ewf-breakpoint($floater-width) {
-  @return calc($-embed-min-width + $-embed-padding * 2 + $floater-width + $-ewf-row-gap + $body-margin * 2);
+  @return calc(
+    $-embed-min-width + $-embed-padding * 2 + $floater-width + $-ewf-row-gap +
+      $body-margin * 2
+  );
 }
 
 @mixin ewf-large($floater-width) {
