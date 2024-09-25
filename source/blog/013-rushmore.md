@@ -1,6 +1,7 @@
 ---
 author: Natalie
 date: 2024-09-20 00:40:00 -8
+repost: true
 tags:
 - nat reviews
 - rushmore

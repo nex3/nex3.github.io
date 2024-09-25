@@ -10,6 +10,8 @@ layout: default
 
   {% render 'attribution', date: date, author: author, link: page.url %}
 
+  {% if repost %}~~~ DELETE ME ~~~{% endif %}
+
   <div class="e-content">{{ content }}</div>
 
   {% render 'tags', tags: tags %}

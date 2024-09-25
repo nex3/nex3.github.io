@@ -35,6 +35,10 @@ jobs:
           message: Inject embeds
 
       - run: npm run build
+      - name: Remove unlinked pages
+        run: |
+          grep -Rl '~~~ DELETE ME ~~~' _site/ | xargs rm
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
