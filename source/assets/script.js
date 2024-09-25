@@ -3,7 +3,9 @@ if (articles.length === 0) articles = [document.querySelector("main")];
 if (!articles[0]) articles = [];
 
 for (const article of articles) {
-  const images = article.querySelectorAll("figure > a > img, :scope > a > img");
+  const images = article.querySelectorAll(
+    "figure:not(.no-popup) > a > img, :scope > a > img",
+  );
   if (images.length === 0) continue;
 
   const links = [...images].map((image) => image.parentElement);
