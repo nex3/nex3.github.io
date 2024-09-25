@@ -343,12 +343,19 @@ details {
   }
 }
 
+$-embed-min-width: 26rem;
+$-embed-padding: 4rem;
 %embed {
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 1.15rem;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
+
+  @include not-phone {
+    padding-inline: $-embed-padding;
+  }
 
   article {
     box-shadow:
@@ -358,52 +365,42 @@ details {
   }
 }
 
+// EWF: Embed With Floater
+
 $-ewf-row-gap: 0.5rem;
-@function create-embed-with-floater($max-width, $floater-width) {
-  @return ("max-width": $max-width, "floater-width": $floater-width);
+@function -ewf-breakpoint($floater-width) {
+  @return calc($-embed-min-width + $-embed-padding * 2 + $floater-width + $-ewf-row-gap + $body-margin * 2);
 }
 
-@function -ewf-total-width($ewf) {
-  @return calc(
-    map.get($ewf, "max-width") + map.get($ewf, "floater-width") + $-ewf-row-gap
-  );
-}
-
-@function -ewf-breakpoint($ewf) {
-  @return calc(-ewf-total-width($ewf) + $body-margin * 2);
-}
-
-@mixin ewf-large($ewf) {
-  @media (width > #{-ewf-breakpoint($ewf)}) {
+@mixin ewf-large($floater-width) {
+  @media (width > #{-ewf-breakpoint($floater-width)}) {
     @content;
   }
 }
 
-@mixin ewf-small($ewf) {
-  @media (width <= #{-ewf-breakpoint($ewf)}) {
+@mixin ewf-small($floater-width) {
+  @media only screen and (width <= #{-ewf-breakpoint($floater-width)}) {
     @content;
   }
 }
 
-@mixin ewf-wrapper($ewf) {
-  max-width: map.get($ewf, "max-width");
-  @include ewf-large($ewf) {
+@mixin ewf-wrapper($floater-width) {
+  @include ewf-large($floater-width) {
     display: grid;
-    grid-template-columns: map.get($ewf, "floater-width") 1fr;
+    grid-template-columns: $floater-width 1fr;
     row-gap: $-ewf-row-gap;
     column-gap: 1.5rem;
-    max-width: -ewf-total-width($ewf);
   }
 }
 
-@mixin ewf-floater($ewf) {
+@mixin ewf-floater($floater-width) {
   display: block;
   filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
     drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
     drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
-  width: map.get($ewf, "floater-width");
+  width: $floater-width;
 
-  @include ewf-small($ewf) {
+  @include ewf-small($floater-width) {
     display: none;
   }
 }
@@ -468,14 +465,11 @@ small {
 
 // Cohost Post Embed
 
-$cohost-ewf: create-embed-with-floater(
-  $max-width: 674px,
-  $floater-width: 4rem,
-);
+$cohost-floater-width: 4rem;
 
 .cohost-post-wrapper {
   @extend %embed;
-  @include ewf-wrapper($cohost-ewf);
+  @include ewf-wrapper($cohost-floater-width);
 
   &,
   & * {
@@ -991,7 +985,7 @@ $cohost-ewf: create-embed-with-floater(
   height: 4rem;
   aspect-ratio: 1 / 1;
   position: relative;
-  @include ewf-floater($cohost-ewf);
+  @include ewf-floater($cohost-floater-width);
 
   img {
     width: 100%;
@@ -1004,7 +998,7 @@ $cohost-ewf: create-embed-with-floater(
   height: 2rem;
   display: none;
 
-  @include ewf-small($cohost-ewf) {
+  @include ewf-small($cohost-floater-width) {
     display: block;
   }
 }
@@ -1064,16 +1058,11 @@ $cohost-ewf: create-embed-with-floater(
 
 // Letterboxd Embed
 
-$letterboxd-ewf: create-embed-with-floater(
-  // 470px is the width of the Letterboxd column, but we also want to add the
-  // padding and border so that the actual width of the prose matches.
-  $max-width: 470px + 16px * 2 + 1px * 2,
-  $floater-width: 150px
-);
+$letterboxd-floater-width: 150px;
 
 .letterboxd-post-wrapper {
   @extend %embed;
-  @include ewf-wrapper($letterboxd-ewf);
+  @include ewf-wrapper($letterboxd-floater-width);
 
   .embed-title {
     display: none;
@@ -1118,7 +1107,7 @@ $letterboxd-ewf: create-embed-with-floater(
   .lb-poster {
     height: 225px;
     height: fit-content;
-    @include ewf-floater($letterboxd-ewf);
+    @include ewf-floater($letterboxd-floater-width);
   }
 
   .lb-poster-small {
@@ -1130,7 +1119,7 @@ $letterboxd-ewf: create-embed-with-floater(
     margin-bottom: -100%;
     display: none;
 
-    @include ewf-small($letterboxd-ewf) {
+    @include ewf-small($letterboxd-floater-width) {
       display: block;
     }
   }
@@ -1177,7 +1166,7 @@ $letterboxd-ewf: create-embed-with-floater(
   .lb-context {
     font-weight: 400;
     margin-right: 3px;
-    @include ewf-small($letterboxd-ewf) {
+    @include ewf-small($letterboxd-floater-width) {
       display: none;
     }
   }
