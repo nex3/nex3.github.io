@@ -48,7 +48,7 @@ function replaceInternalLinks(content, url) {
 }
 
 const htmlToText = initHtmlToText({
-  wordWrap: null,
+  wordwrap: false,
   selectors: [
     { selector: "img", format: "skip" },
     { selector: "figure", format: "skip" },
