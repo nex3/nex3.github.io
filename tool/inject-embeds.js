@@ -38,17 +38,21 @@ for (const blog of await glob("source/blog/*.md")) {
   const text = fullText.substring(index);
 
   const injectableLink = /^\n(https?:\/\/[^\n]+)\n$/gm;
-  while (true) {
-    const match = injectableLink.exec(text);
-    if (!match) break;
+  const matches = [...text.matchAll(injectableLink)];
+  if (matches.length === 0) continue;
 
-    const replacement = await tagForUrl(new URL(match[1]), blog);
-    fs.writeFileSync(
-      blog,
-      fullText.substring(0, index + match.index + 1) +
-        replacement +
-        fullText.substring(index + match.index + match[0].length - 1),
-      "utf8",
+  let result = "";
+  let lastMatch;
+  for (let i = 0; i < matches.length; i++) {
+    const match = matches[i];
+    result += text.substring(
+      lastMatch ? lastMatch.index + lastMatch[0].length - 1 : 0,
+      match.index + 1,
     );
+    result += await tagForUrl(new URL(match[1]), blog);
+    lastMatch = match;
   }
+  result += text.substring(lastMatch.index + lastMatch[0].length - 1);
+
+  fs.writeFileSync(blog, fullText.substring(0, index) + result, "utf8");
 }
