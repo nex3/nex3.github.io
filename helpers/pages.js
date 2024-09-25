@@ -59,7 +59,7 @@ const htmlToText = initHtmlToText({
 /**
  * Converts data about the current page into useful metadata for OpenGraph tags.
  */
-function metadata(collections, site) {
+function metadata(collections, site, title) {
   // TODO - Do this better when 11ty/eleventy#3458 is fixed.
   let content = "";
   if (!this.page.data?.description) {
@@ -72,7 +72,9 @@ function metadata(collections, site) {
     }
   }
 
-  const page = simplifyEmbeds({ ...this.page, content });
+  const data = {...this.page.data};
+  if (title) data.title = title;
+  const page = simplifyEmbeds({ ...this.page, data, content });
 
   let desc =
     this.page.data?.description ?? truncateText(htmlToText(page.content), 150);
