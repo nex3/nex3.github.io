@@ -6,6 +6,7 @@ updated: 2024-09-21 00:47:00 -8
 tags:
 - covid
 - disability
+- article
 ---
 
 This is a post whose seeds have been bouncing around in my head for years. I always intended to write it up and publish it on Cohost, and so the twilight of that storied website seems like as good a forcing function as any.

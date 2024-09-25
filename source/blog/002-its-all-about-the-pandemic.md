@@ -2,7 +2,7 @@
 title: it's all about the pandemic again
 author: Natalie
 date: 2024-09-10 10:00:00 -8
-tags: [cohost, covid]
+tags: [cohost, covid, article]
 ---
 
 When Cohost goes, with it goes the era of my life I spent on social media. Now that I've tasted the rich fruit of what's possible, I'll never be able to go back wholeheartedly to a site where my timeline is constantly deluged with the latest atrocity, where there's no room for me to write an essay, where I can't even see and share porn. I have loved ones I've followed since before we were even friends whom I won't follow anywhere anymore. It is, inescapably, a paradigm change in how I use the internet.

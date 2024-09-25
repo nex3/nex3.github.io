@@ -35,12 +35,17 @@ what this website is for.
   make quorum. These have gradually evolved into being mildly-elaborate
   streamed productions, and you can see [older videos] on YouTube.
 
+* I periodically write [**medium-form non-fiction**] on this very blog. My
+  current favorite is ["COVID Denialism and Disability Justice"].
+
 [Alex Zandra]: http://zandravandra.com
 [**Moddy**]: https://cubecobra.com/cube/overview/moddy
 [cube]: https://luckypaper.co/what-is-a-cube/
 [MTGO]: https://www.mtgo.com/
 [**cube rotisserie drafts**]: https://moddyrotty.thecleanupstep.com/
 [older videos]: https://www.youtube.com/watch?v=Q8uOwzE_AnI&list=PLKAnuqKqTCpJdQahE5clqBp6TRnO3hF3h
+[**medium-form non-fiction**]: /tag/article/
+["COVID Denialism and Disability Justice"]: /blog/covid-denialism/
 
 ## Finished
 
