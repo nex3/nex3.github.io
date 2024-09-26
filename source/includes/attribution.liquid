@@ -2,7 +2,20 @@
   <a href="{{ link }}" rel="canonical" class="u-url u-uid"
     >Posted {% render 'date', date: date, class: 'dt-published' %}
     {% if author -%}
-      by <span class="p-author">{{ author }}</span>
+      by
+      <span class="p-author h-card">
+        <span class="p-name">{{ author }}</span>
+        {%- if author == 'Natalie' -%}
+          {%- assign authorUrl = authorUrl | default: '/' -%}
+          {%- assign authorImage = authorImage | default: '/assets/avatar.webp' -%}
+        {%- endif -%}
+        {%- if authorUrl -%}
+          <data class="p-url" value="{{ authorUrl }}"></data>
+        {%- endif -%}
+        {%- if authorImage -%}
+          <data class="p-logo" value="{{ authorImage }}"></data>
+        {%- endif -%}
+      </span>
     {%- endif -%}
   </a>
 </p>
