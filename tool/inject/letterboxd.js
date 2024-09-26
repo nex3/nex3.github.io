@@ -77,9 +77,14 @@ export async function letterboxdTag(maybeRedirectUrl) {
       .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
       .join(",\n") +
     " %}\n" +
-    document
-      .querySelector(".review.body-text > div > div")
-      .innerHTML.replaceAll(/^/gm, "  ") +
+    (
+      await prettier.format(
+        document.querySelector(".review.body-text > div > div").innerHTML,
+        { parser: "html", printWidth: 78 },
+      )
+    )
+      .trim()
+      .replaceAll(/^/gm, "  ") +
     "\n{% endletterboxd %}"
   );
 }

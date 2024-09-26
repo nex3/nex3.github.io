@@ -2,7 +2,11 @@ import * as fs from "node:fs";
 import { URL } from "node:url";
 
 import { glob } from "glob";
+import { JSDOM } from "jsdom";
+import fetch from "node-fetch";
+
 import { cohostTag } from "./inject/cohost.js";
+import { hEntryToTag } from "./inject/h-entry.js";
 import { letterboxdTag } from "./inject/letterboxd.js";
 
 function indexAfterFrontMatter(string) {
@@ -28,6 +32,10 @@ async function tagForUrl(url, blog) {
       return await letterboxdTag(url);
 
     default:
+      const response = await fetch(url);
+      const html = await response.text();
+      const result = await hEntryToTag(html, url);
+      if (result) return result;
       throw new Error(`Unsupported URL "${url}" in ${blog}`);
   }
 }

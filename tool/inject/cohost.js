@@ -1,4 +1,3 @@
-import { JSDOM } from "jsdom";
 import fetch from "node-fetch";
 
 export async function cohostTag(url) {
@@ -59,7 +58,9 @@ export async function cohostTag(url) {
       .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
       .join(",\n") +
     " %}\n" +
-    contents.replaceAll(/^/gm, "  ") +
+    (await prettier.format(contents, { parser: "html", printWidth: 78 }))
+      .trim()
+      .replaceAll(/^/gm, "  ") +
     "\n{% endcohostPost %}"
   );
 }
