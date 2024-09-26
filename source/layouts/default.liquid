@@ -5,9 +5,12 @@
   </head>
   <body>
     <header class="page-header">
-      <a href="/" class="page-header__logo" title="Go home">
-        <img src="/assets/avatar.webp" width="48">
-      </a>
+      <div class="page-header__logo h-card">
+        <data class="p-name" value="{{ site.author | escape }}"></data>
+        <a href="/" class="u-url u-uid" title="Go home">
+          <img src="/assets/avatar.webp" width="48" class="u-logo">
+        </a>
+      </div>
 
       <nav>
         <a href="/">Home</a>

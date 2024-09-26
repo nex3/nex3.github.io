@@ -25,7 +25,7 @@
             <email>{{ post.data.author.email | escape }}</email>
           {%- endif -%}
         {%- elsif post.data.author == "Natalie" -%}
-          <name>Natalie</name>
+          <name>{{ site.author | escape }}</name>
           <uri>https://nex-3.com/</uri>
         {%- else -%}
           <name>{{ post.data.author | escape }}</name>
