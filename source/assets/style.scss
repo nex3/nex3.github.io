@@ -221,51 +221,6 @@ a[href] {
   }
 }
 
-.friend-links {
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  column-gap: 10px;
-  row-gap: 30px;
-
-  $width: 250px;
-  li {
-    max-width: $width;
-    list-style: none;
-  }
-
-  figure {
-    margin: 0;
-  }
-
-  figcaption {
-    font-size: 1em;
-    text-align: justify;
-  }
-
-  img {
-    width: 70%;
-    margin-bottom: 5px;
-    margin-inline: auto;
-    display: block;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-
-    &:not([src]) {
-      border: 1px solid black;
-    }
-
-    &:not(.no-circle) {
-      border-radius: math.div($width, 2);
-    }
-  }
-
-  a {
-    font-weight: bold;
-  }
-}
-
 h1.tag {
   text-align: center;
   color: $dim-grey;
