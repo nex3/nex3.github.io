@@ -139,7 +139,7 @@ Here are the special class names I'm using:
 [`<time>` element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
 [h-card]: https://microformats.org/wiki/h-card
 
-Of these, only `h-entry`, `h-url`, and `e-content` are _really_ critical. There
+Of these, only `h-entry`, `u-url`, and `e-content` are _really_ critical. There
 are a handful of other features defined in the spec, including a way to indicate
 which post you're replying to, that you should check out if you're interested.
 But these are the most critical.
