@@ -65,7 +65,7 @@ before I run my [embed injector] on it:
 [embed injector]: https://github.com/nex3/nex3.github.io/blob/main/tool/inject-embeds.js
 
 ```liquid
-
+ 
 https://nex-3.com/blog/once-i-add-the/
 
 
