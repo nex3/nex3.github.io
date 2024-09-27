@@ -1,6 +1,8 @@
+import * as crypto from "node:crypto";
+import { URL } from "node:url";
+
 import truncate from "truncate-html";
 import { markdownEngine } from "./engines.js";
-import * as crypto from "node:crypto";
 
 /**
  * Strips leading whitespace from each line of a string,
@@ -54,6 +56,12 @@ export function truncateText(text, words) {
   return text.substring(0, match.index) + "…";
 }
 
+/** Returns the hostname of the given URL. */
+function urlHostname(url) {
+  if (typeof url === "string") url = new URL(url);
+  return url.hostname;
+}
+
 /**
  * Renders block of Markdown into HTML.
  */
@@ -71,6 +79,7 @@ function markdownInline(content) {
 export default function typePlugin(eleventyConfig) {
   eleventyConfig.addLiquidFilter("truncateHTML", truncateHTML);
   eleventyConfig.addLiquidFilter("truncateText", truncateText);
+  eleventyConfig.addLiquidFilter("urlHostname", urlHostname);
   eleventyConfig.addLiquidFilter("markdown", markdown);
   eleventyConfig.addLiquidFilter("markdownInline", markdownInline);
 }

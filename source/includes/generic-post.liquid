@@ -1,0 +1,50 @@
+<div class="generic-post-wrapper embed">
+  {% if authorAvatar %}
+    <a class="gp-avatar-large" href="{{ authorUrl | default: url }}">
+      <img
+        src="{{ authorAvatar }}"
+        class="embed-image"
+        {% if authorAvatarAlt or author %}
+          alt="{{ authorAvatarAlt | default: author }}"
+        {% endif %}
+        width="64"
+      >
+    </a>
+  {% endif %}
+  <article>
+    <header>
+      <a href="{{ url }}" class="attribution embed-link" rel="canonical">
+        Posted
+        {% if time %}
+          {%- render 'date', date: time -%}
+        {% else %}
+          to
+          {{ url | urlHostname -}}
+        {% endif %}
+        {% if author %}by {{ author }}{% endif %}
+      </a>
+
+      {% if authorAvatar %}
+        <a class="gp-avatar-small" href="{{ authorUrl | default: url }}">
+          <img
+            src="{{ authorAvatar }}"
+            {% if authorAvatarAlt or author %}
+              alt="{{ authorAvatarAlt | default: author }}"
+            {% endif %}
+          >
+        </a>
+      {% endif %}
+    </header>
+    {% if title %}
+      <h1>{{ title | escape }}</h1>
+    {% endif %}
+    <div class="gp-prose embed-prose">{{ contents }}</div>
+    {%- if tags.size > 0 -%}
+      <ul class="gp-tags">
+        {%- for tag in tags -%}
+          <li>#{{ tag }}</li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </article>
+</div>

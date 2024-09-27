@@ -5,6 +5,7 @@ import markdownItAttrs from "markdown-it-attrs";
 import rssPlugin from "@11ty/eleventy-plugin-rss";
 import * as sass from "sass";
 import yaml from "js-yaml";
+import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 
 import componentsPlugin from "./helpers/components/index.js";
 import datesPlugin from "./helpers/dates.js";
@@ -20,6 +21,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(embedPlugin);
   eleventyConfig.addPlugin(objectsPlugin);
   eleventyConfig.addPlugin(pagesPlugin);
+  eleventyConfig.addPlugin(syntaxHighlightPlugin);
   eleventyConfig.addPlugin(typePlugin);
 
   eleventyConfig.setLiquidParameterParsing("builtin");

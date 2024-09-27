@@ -3,18 +3,15 @@ import * as prettier from "prettier";
 
 /// If {@link items} has a single h-card, returns its value.
 function getCard(items) {
-  const cards = items.where(
+  const cards = items.filter(
     (item) => item.type.length === 1 && item.type[0] === "h-card",
   );
-  if (entries.length != 1) return null;
+  if (cards.length != 1) return null;
   return cards[0];
 }
 
 export async function hEntryToTag(html, url) {
-  const { items } = mf2(html, {
-    baseUrl: url.toString(),
-    experimental: { metaformats: true },
-  });
+  const { items } = mf2(html, { baseUrl: url.toString() });
 
   const entries = items.filter(
     (item) => item.type.length === 1 && item.type[0] === "h-entry",
@@ -27,7 +24,7 @@ export async function hEntryToTag(html, url) {
 
   const args = {};
   args.name = entry.properties.name?.[0];
-  args.published = entry.properties.published?.[0];
+  args.time = entry.properties.published?.[0];
   args.tags = entry.properties.category?.map((tag) => `#${tag}`)?.join(", ");
 
   let author = entry.properties.author?.[0] ?? getCard(items);
@@ -39,6 +36,10 @@ export async function hEntryToTag(html, url) {
   args.authorUrl = author?.properties?.url?.[0];
   args.authorAvatar =
     author?.properties?.photo?.[0] ?? author?.properties?.logo?.[0];
+  if (typeof args.authorAvatar === "object") {
+    args.authorAvatarAlt = args.authorAvatar.alt;
+    args.authorAvatar = args.authorAvatar.value;
+  }
 
   let inReplyTo = entry.properties["in-reply-to"]?.[0];
   if (typeof inReplyTo === "string") {

@@ -458,6 +458,103 @@ small {
   color: $grey;
 }
 
+// Generic Post Embed
+
+$generic-floater-width: 4rem;
+
+.generic-post-wrapper {
+  @extend %embed;
+  @include ewf-wrapper($generic-floater-width);
+
+  &,
+  & * {
+    box-sizing: border-box;
+  }
+
+  article {
+    background-color: white;
+    border-radius: 0.5rem;
+
+    > header {
+      color: rgb(130 127 124);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem;
+      line-height: 1rem;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      time {
+        font-variant-numeric: tabular-nums;
+        font-size: 0.75rem;
+        flex: none;
+      }
+    }
+  }
+}
+
+.gp-prose {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  overflow-wrap: break-word;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.gp-tags {
+  color: rgb(104 102 100);
+  line-height: 1;
+  overflow-wrap: break-word;
+  overflow-y: hidden;
+  width: 100%;
+  position: relative;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  padding: 0.75rem;
+  width: 100%;
+
+  > li {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+}
+
+.gp-avatar-large {
+  height: 4rem;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  @include ewf-floater($generic-floater-width);
+}
+
+.gp-avatar-small {
+  width: 2rem;
+  height: 2rem;
+  display: none;
+
+  @include ewf-small($generic-floater-width) {
+    display: block;
+  }
+}
+
+.gp-avatar-large,
+.gp-avatar-small {
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+  }
+}
+
 // Cohost Post Embed
 
 $cohost-floater-width: 4rem;
