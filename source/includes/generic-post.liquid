@@ -11,7 +11,11 @@
       >
     </a>
   {% endif %}
-  <article>
+  <article
+    {% if quote %}
+      class="gp-quote"
+    {% endif %}
+  >
     <header>
       <a href="{{ url }}" class="attribution embed-link" rel="canonical">
         Posted
@@ -38,7 +42,12 @@
     {% if title %}
       <h1>{{ title | escape }}</h1>
     {% endif %}
-    <div class="gp-prose embed-prose">{{ contents }}</div>
+    <div class="gp-prose embed-prose">
+      {{- contents -}}
+      {%- if quote -%}
+        <p><a href="{{ url }}" class="read-more" title="Read More">…</a></p>
+      {%- endif -%}
+    </div>
     {%- if tags.size > 0 -%}
       <ul class="gp-tags">
         {%- for tag in tags -%}

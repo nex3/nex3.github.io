@@ -23,6 +23,7 @@ export default createPairedComponentPlugin(
       inReplyUrl: options.inReplyUrl,
       inReplyName: options.inReplyName,
       inReplyAuthor: options.inReplyAuthor,
+      quote: options.quote,
     });
   },
 );
