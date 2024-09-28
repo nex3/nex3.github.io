@@ -360,6 +360,29 @@ $-embed-padding: 4rem;
       0px 1px 10px rgba(0, 0, 0, 0.12),
       0px 2px 4px rgba(0, 0, 0, 0.2);
   }
+
+  h1 {
+    font-size: 2.441em;
+    @include phone {
+      font-size: 2em;
+    }
+  }
+
+  h2 {
+    font-size: 1.953em;
+  }
+
+  h3 {
+    font-size: 1.563em;
+  }
+
+  h4 {
+    font-size: 1.25em;
+  }
+
+  h5 {
+    font-size: 1.1em;
+  }
 }
 
 // EWF: Embed With Floater
@@ -431,19 +454,6 @@ h2 {
   font-size: 2.441em;
 }
 
-h3 {
-  font-size: 1.953em;
-}
-
-h4 {
-  font-size: 1.563em;
-}
-
-h5,
-.larger {
-  font-size: 1.25em;
-}
-
 h6 {
   font-weight: bolder;
   margin-bottom: 0.2rem;
@@ -501,6 +511,12 @@ $generic-floater-width: 4rem;
         font-size: 0.75rem;
         flex: none;
       }
+    }
+
+    > h1 {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      margin-top: 1rem;
     }
   }
 }
