@@ -11,49 +11,46 @@
       >
     </a>
   {% endif %}
-  <article
-    {% if quote %}
-      class="gp-quote"
-    {% endif %}
-  >
-    <header>
-      <a href="{{ url }}" class="attribution embed-link" rel="canonical">
-        Posted
-        {% if time %}
-          {%- render 'date', date: time -%}
-        {% else %}
-          to
-          {{ url | urlHostname -}}
-        {% endif %}
-        {% if author %}by {{ author }}{% endif %}
-      </a>
 
-      {% if authorAvatar %}
-        <a class="gp-avatar-small" href="{{ authorUrl | default: url }}">
-          <img
-            src="{{ authorAvatar }}"
-            {% if authorAvatarAlt or author %}
-              alt="{{ authorAvatarAlt | default: author }}"
-            {% endif %}
-          >
-        </a>
+  {% if quote %}<blockquote cite="{{ url }}">{% else %}<article>{% endif %}
+  <header>
+    <a href="{{ url }}" class="attribution embed-link" rel="canonical">
+      Posted
+      {% if time %}
+        {%- render 'date', date: time -%}
+      {% else %}
+        to
+        {{ url | urlHostname -}}
       {% endif %}
-    </header>
-    {% if name %}
-      <h1 class="embed-title">{{ name | escape }}</h1>
+      {% if author %}by {{ author }}{% endif %}
+    </a>
+
+    {% if authorAvatar %}
+      <a class="gp-avatar-small" href="{{ authorUrl | default: url }}">
+        <img
+          src="{{ authorAvatar }}"
+          {% if authorAvatarAlt or author %}
+            alt="{{ authorAvatarAlt | default: author }}"
+          {% endif %}
+        >
+      </a>
     {% endif %}
-    <div class="gp-prose embed-prose">
-      {{- contents -}}
-      {%- if quote -%}
-        <p><a href="{{ url }}" class="read-more" title="Read More">…</a></p>
-      {%- endif -%}
-    </div>
-    {%- if tags.size > 0 -%}
-      <ul class="gp-tags">
-        {%- for tag in tags -%}
-          <li>#{{ tag }}</li>
-        {%- endfor -%}
-      </ul>
+  </header>
+  {% if name %}
+    <h1 class="embed-title">{{ name | escape }}</h1>
+  {% endif %}
+  <div class="gp-prose embed-prose">
+    {{- contents -}}
+    {%- if quote -%}
+      <p><a href="{{ url }}" class="read-more" title="Read More">…</a></p>
     {%- endif -%}
-  </article>
+  </div>
+  {%- if tags.size > 0 -%}
+    <ul class="gp-tags">
+      {%- for tag in tags -%}
+        <li>#{{ tag }}</li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+  {% if quote %}</blockquote>{% else %}</article>{% endif %}
 </div>

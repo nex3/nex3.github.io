@@ -486,7 +486,7 @@ $generic-floater-width: 4rem;
     box-sizing: border-box;
   }
 
-  article {
+  > article {
     background-color: white;
     border-radius: 0.5rem;
 
@@ -519,31 +519,33 @@ $generic-floater-width: 4rem;
       margin-top: 1rem;
     }
   }
-}
 
-.gp-quote {
-  position: relative;
+  > blockquote {
+    @extend article;
+    position: relative;
+    margin: 0;
 
-  &::before,
-  .gp-prose::after {
-    position: absolute;
-    font-size: 10rem;
-    color: transparent;
-    font-family:
-      Atkinson Hyperlegible,
-      serif;
-    text-shadow: 0 0 2px color.scale($faint-grey);
-  }
+    &::before,
+    .gp-prose::after {
+      position: absolute;
+      font-size: 10rem;
+      color: transparent;
+      font-family:
+        Atkinson Hyperlegible,
+        serif;
+      text-shadow: 0 0 2px color.scale($faint-grey);
+    }
 
-  &::before {
-    content: "“";
-    top: -2.5rem;
-  }
+    &::before {
+      content: "“";
+      top: -2.5rem;
+    }
 
-  .gp-prose::after {
-    content: "”";
-    right: 0;
-    bottom: -8rem;
+    .gp-prose::after {
+      content: "”";
+      right: 0;
+      bottom: -8rem;
+    }
   }
 }
 
