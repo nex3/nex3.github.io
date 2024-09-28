@@ -1,7 +1,8 @@
 ---
 author: Natalie
 title: Reblogging posts with h-entry
-date: 2024-09-25 23:38:00 -8
+date: 2024-09-26 23:38:00 -8
+updated: 2024-09-27 23:10:00 -8
 tags: [meta, web]
 ---
 

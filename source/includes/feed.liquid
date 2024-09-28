@@ -37,7 +37,9 @@
         {%- endunless -%}
       {%- endfor -%}
       {%- if post.data.repost -%}<category>repost</category>{%- endif -%}
-      <content type="html">{{ post.templateContent | renderTransforms: post.data.page, site.url | escape }}</content>
+      <content type="html">
+        {{- post.content | renderTransforms: post.data.page, site.url | escape -}}
+      </content>
     </entry>
   {% endfor %}
 </feed>
