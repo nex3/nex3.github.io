@@ -39,8 +39,8 @@
         </a>
       {% endif %}
     </header>
-    {% if title %}
-      <h1>{{ title | escape }}</h1>
+    {% if name %}
+      <h1 class="embed-title">{{ name | escape }}</h1>
     {% endif %}
     <div class="gp-prose embed-prose">
       {{- contents -}}
