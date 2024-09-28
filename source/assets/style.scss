@@ -116,6 +116,10 @@ main {
   margin-bottom: 8px;
 }
 
+.simple-content {
+  display: none;
+}
+
 a[href] {
   color: $accent;
   &:hover {

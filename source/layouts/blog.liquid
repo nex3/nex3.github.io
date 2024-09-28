@@ -12,7 +12,13 @@ layout: default
 
   {% if repost %}~~~ DELETE ME ~~~{% endif %}
 
-  <div class="e-content">{{ content }}</div>
+  {% assign simpleContent = content | simplifyContent %}
+  {% if simpleContent != content %}
+    <div>{{ content }}</div>
+    <div class="e-content simple-content">{{ simpleContent }}</div>
+  {% else %}
+    <div class="e-content">{{ content }}</div>
+  {% endif %}
 
   {% render 'tags', tags: tags %}
 

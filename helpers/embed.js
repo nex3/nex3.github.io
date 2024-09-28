@@ -1,6 +1,13 @@
 import { JSDOM } from "jsdom";
 import escapeHtml from "escape-html";
 
+/**
+ * Returns a version of {@link post} where embeds are simplified into a format
+ * with basic inline CSS.
+ *
+ * If there's only a single embed and no other content, this replaces the post's
+ * metadata with that of the embed.
+ */
 export function simplifyEmbeds(post) {
   if (!post.content.includes("embed")) return post;
 
@@ -23,9 +30,13 @@ export function simplifyEmbeds(post) {
       if (image.classList.contains("embed-image-horizontal")) {
         image.style.display = "block";
         image.style.width = "100%";
+        image.style.marginBottom = "1rem";
       } else {
         image.style.float = "left";
         image.style.maxWidth = "150px";
+        image.style.marginTop = "1rem";
+        image.style.marginRight = "1rem";
+        image.style.borderRadius = "75px";
       }
     }
 
@@ -65,6 +76,12 @@ export function simplifyEmbeds(post) {
   return { data, url, date: post.date, content: container.innerHTML };
 }
 
+/** Like {@link simplifyEmbeds}, but only returns the content. */
+export function simplifyContent(content) {
+  return simplifyEmbeds({ content }).content;
+}
+
 export default function embedPlugin(eleventyConfig) {
   eleventyConfig.addLiquidFilter("simplifyEmbeds", simplifyEmbeds);
+  eleventyConfig.addLiquidFilter("simplifyContent", simplifyContent);
 }
