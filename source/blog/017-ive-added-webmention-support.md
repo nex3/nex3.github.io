@@ -9,4 +9,4 @@ fun and I'm happy to have this blog set up to play real nice with all these
 interoperable standards... but so far I don't know anyone else who I can
 actually interoperate with.
 
-[microformats]: http://localhost:8080/blog/reblogging-posts-with-h-entry/
+[microformats]: http://nex-3.com/blog/reblogging-posts-with-h-entry/
