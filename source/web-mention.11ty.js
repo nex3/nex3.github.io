@@ -78,7 +78,7 @@ async function checkWebMentions(data) {
       }
     }
   }
-  if (pairs.length === 0) return; 
+  if (pairs.length === 0) return;
 
   for (const [source, target] of pairs) {
     const endpoint = await getWebMentionEndpoint(target);

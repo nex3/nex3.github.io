@@ -47,7 +47,9 @@
     {% endif %}
   </header>
   {% if name %}
-    <h1 class="p-name">{{ name | escape }}</h1>
+    <h1 class="p-name">
+      <a href="{{url}}">{{ name | escape }}</a>
+    </h1>
   {% endif %}
   <div class="gp-prose e-content">
     {{- contents -}}
