@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+s<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ title | escape }}</title>
   <id>{{ pageUrl | htmlBaseUrl: site.url }}</id>
@@ -10,7 +10,9 @@
     {%- assign post = post_ | simplifyEmbeds -%}
     {%- assign absolutePostUrl = post.url | htmlBaseUrl: site.url %}
     <entry>
-      <title>{{ post.data.title | escape }}</title>
+      {% if post.data.title %}
+        <title>{{ post.data.title | escape }}</title>
+      {% endif %}
       <link href="{{ absolutePostUrl }}" rel="alternate"/>
       <id>{{ absolutePostUrl }}</id>
       <published>{{ post.date | dateToRfc3339 }}</published>
@@ -33,7 +35,7 @@
       </author>
       {%- for tag in post.data.tags -%}
         {%- unless tag == "blog" -%}
-          <category>{{ tag | escape }}</category>
+          <category term="{{ tag | escape }}" label="{{ tag | escape }}"/>
         {%- endunless -%}
       {%- endfor -%}
       {%- if post.data.repost -%}<category>repost</category>{%- endif -%}
