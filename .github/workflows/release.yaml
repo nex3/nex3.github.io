@@ -18,17 +18,7 @@ jobs:
       - run: npm ci
 
       - run: node tool/inject-embeds.js
-      - name: Check if the repo is clean
-        id: check-clean-1
-        run: |
-          if [[ ! -z "$(git diff-index --name-only HEAD --)" ]]; then
-            echo "clean=false" >> $GITHUB_OUTPUT;
-          else
-            echo "clean=true" >> $GITHUB_OUTPUT;
-          fi
-
       - uses: EndBug/add-and-commit@v9
-        if: ${{ ! steps.check-clean-1.clean }}
         with:
           author_name: Nattlebot Robobaum
           author_email: nattlebot@nex-3.com
@@ -37,17 +27,7 @@ jobs:
       - run: npm run build
         env:
           CHECK_WEBMENTIONS: true
-      - name: Check if the repo is clean
-        id: check-clean-2
-        run: |
-          if [[ ! -z "$(git diff-index --name-only HEAD --)" ]]; then
-            echo "clean=false" >> $GITHUB_OUTPUT;
-          else
-            echo "clean=true" >> $GITHUB_OUTPUT;
-          fi
-
       - uses: EndBug/add-and-commit@v9
-        if: ${{ ! steps.check-clean-2.clean }}
         with:
           author_name: Nattlebot Robobaum
           author_email: nattlebot@nex-3.com
