@@ -354,7 +354,8 @@ $-embed-padding: 4rem;
     padding-inline: $-embed-padding;
   }
 
-  article, blockquote {
+  article,
+  blockquote {
     box-shadow:
       0px 4px 5px rgba(0, 0, 0, 0.14),
       0px 1px 10px rgba(0, 0, 0, 0.12),
@@ -486,7 +487,8 @@ $generic-floater-width: 4rem;
     box-sizing: border-box;
   }
 
-  > article, > blockquote {
+  > article,
+  > blockquote {
     background-color: white;
     border-radius: 0.5rem;
     grid-column: 1 / -1;
@@ -588,7 +590,8 @@ $generic-floater-width: 4rem;
   position: relative;
   @include ewf-floater($generic-floater-width);
 
-  + article, + blockquote {
+  + article,
+  + blockquote {
     grid-column: auto;
   }
 }

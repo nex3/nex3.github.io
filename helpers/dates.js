@@ -1,4 +1,4 @@
-import {TZDate} from "@date-fns/tz";
+import { TZDate } from "@date-fns/tz";
 import {
   format as formatBase,
   formatDistanceToNow as formatDistanceBase,
