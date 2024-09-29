@@ -56,7 +56,7 @@ async function checkWebMentions(data) {
   if (!process.env["CHECK_WEBMENTIONS"]) return;
 
   console.log("Checking webmentions...");
-  const last = data.webmention["last-check"];
+  const last = data["web-mention"]["last-check"];
   const now = new Date();
   const pairs = [];
   for (const post of data.collections.blog) {
@@ -98,10 +98,10 @@ async function checkWebMentions(data) {
   }
 
   const yaml = YAML.parse(
-    fs.readFileSync("source/data/webmention.yml", "utf8"),
+    fs.readFileSync("source/data/web-mention.yml", "utf8"),
   );
   yaml["last-check"] = now;
-  fs.writeFileSync("source/data/webmention.yml", YAML.stringify(yaml), "utf8");
+  fs.writeFileSync("source/data/web-mention.yml", YAML.stringify(yaml), "utf8");
 }
 
 export default async function (data) {
