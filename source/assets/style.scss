@@ -354,7 +354,7 @@ $-embed-padding: 4rem;
     padding-inline: $-embed-padding;
   }
 
-  article {
+  article, blockquote {
     box-shadow:
       0px 4px 5px rgba(0, 0, 0, 0.14),
       0px 1px 10px rgba(0, 0, 0, 0.12),
@@ -486,9 +486,10 @@ $generic-floater-width: 4rem;
     box-sizing: border-box;
   }
 
-  > article {
+  > article, > blockquote {
     background-color: white;
     border-radius: 0.5rem;
+    grid-column: 1 / -1;
 
     > header {
       color: rgb(130 127 124);
@@ -521,7 +522,6 @@ $generic-floater-width: 4rem;
   }
 
   > blockquote {
-    @extend article;
     position: relative;
     margin: 0;
 
@@ -587,6 +587,10 @@ $generic-floater-width: 4rem;
   aspect-ratio: 1 / 1;
   position: relative;
   @include ewf-floater($generic-floater-width);
+
+  + article, + blockquote {
+    grid-column: auto;
+  }
 }
 
 .gp-avatar-small {
