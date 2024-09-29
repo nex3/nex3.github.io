@@ -1,8 +1,8 @@
-<div class="cohost-post-wrapper embed">
+<div class="cohost-post-wrapper h-entry">
   <a class="co-avatar-large" href="https://cohost.org/{{ author }}">
     <img
       src="/assets/cohost/{{ author }}.jpg"
-      class="co-mask-{{ avatarShape }} embed-image"
+      class="co-mask-{{ avatarShape }}"
       alt="{{ author }}"
       width="64"
     >
@@ -10,14 +10,27 @@
   <article>
     <header>
       <div>
-        <a class="co-avatar-small" href="https://cohost.org/{{ author }}">
-          <img src="/assets/cohost/{{ author }}.jpg" class="co-mask-{{ avatarShape }}" alt="{{ author }}">
-        </a>
-        <a rel="author" href="https://cohost.org/{{ author }}" title="{{ authorDisplayName }}">
-          {{- authorDisplayName -}}
-        </a>
-        <a href="https://cohost.org/{{ author }}" class="co-handle">@{{ author }}</a>
-        {%- render 'date', date: time, link: url, class: 'embed-link' -%}
+        <div class="p-author h-card">
+          <a class="co-avatar-small" href="https://cohost.org/{{ author }}">
+            <img
+              src="/assets/cohost/{{ author }}.jpg"
+              class="co-mask-{{ avatarShape }} u-logo"
+              alt="{{ author }}"
+            >
+          </a>
+          <a
+            class="p-name u-url"
+            rel="author"
+            href="https://cohost.org/{{ author }}"
+            title="{{ authorDisplayName }}"
+          >
+            {{- authorDisplayName -}}
+          </a>
+          <a href="https://cohost.org/{{ author }}" class="co-handle p-nickname">
+            {{- author | prepend: '@' -}}
+          </a>
+        </div>
+        {%- render 'date', date: time, link: url, class: 'dt-published u-url u-uid' -%}
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -33,13 +46,18 @@
     </header>
     <hr>
     <div class="co-prose-box">
-      <div class="co-prose embed-prose">{{ contents }}</div>
+      <div class="co-prose e-content">{{ contents }}</div>
     </div>
     {%- if tags.size > 0 -%}
       <div class="co-tags-box">
         <div class="co-tags">
           {%- for tag in tags -%}
-            <a href="https://cohost.org/{{ author }}/tagged/{{ tag | url_encode }}">#{{ tag }}</a>
+            <a
+              href="https://cohost.org/{{ author }}/tagged/{{ tag | url_encode }}"
+              class="p-category"
+            >
+              {{ tag | prepend: '#' -}}
+            </a>
           {%- endfor -%}
         </div>
       </div>

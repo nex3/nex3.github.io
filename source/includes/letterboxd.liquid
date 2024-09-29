@@ -1,4 +1,4 @@
-<div class="letterboxd-post-wrapper embed">
+<div class="letterboxd-post-wrapper h-entry">
   {% if poster %}
     <a
       href="https://letterboxd.com/film/{{ filmSlug }}/"
@@ -7,7 +7,7 @@
       class="lb-poster"
       tabindex="0"
     >
-      <img src="{{ poster }}" class="embed-image" width="150">
+      <img src="{{ poster }}" class="u-featured" width="150">
     </a>
   {% endif %}
   <article>
@@ -24,33 +24,41 @@
         </a>
       {% endif %}
       <div class="lb-info">
-        <address>
+        <address class="p-author h-card">
+          <data class="p-nickname">{{ author }}</data>
           {% if avatar %}
             <a
-              class="lb-avatar"
+              class="lb-avatar u-logo"
               href="https://letterboxd.com/{{ author }}/"
               target="_blank"
               rel="nofollow noopener"
               tabindex="0"
             >
-              <img src="{{ avatar }}" title="{{ authorDisplayName | escape }}" width="24" height="24">
+              <img
+                src="{{ avatar }}"
+                title="{{ authorDisplayName | escape }}"
+                width="24"
+                height="24"
+              >
             </a>
           {% endif %}
           <span class="lb-context">Review by</span>
           <a
-            class="lb-author"
+            class="lb-author u-url u-uid"
             href="https://letterboxd.com/{{ author }}/"
             target="_blank"
             rel="nofollow noopener author"
             tabindex="0"
           >
-            {{ authorDisplayName | escape }}
+            <span class="p-name">{{ authorDisplayName | escape }}</span>
             {% if supporter %}
-              <span class="lb-badge lb-badge-{{ supporter }}">{{ supporter | capitalize }}</span>
+              <span class="lb-badge lb-badge-{{ supporter }}">
+                {{- supporter | capitalize -}}
+              </span>
             {% endif %}
           </a>
         </address>
-        <h2 class="embed-title">
+        <h2 class="p-name">
           {{- film | escape }} ({{ year }})
           {% if rating -%}
             -
@@ -60,7 +68,7 @@
         <h2>
           <div>
             <a
-              class="lb-title embed-link"
+              class="lb-title u-url u-uid u-repost-of"
               href="https://letterboxd.com/{{ author }}/film/{{ filmSlug }}/"
               target="_blank"
               rel="nofollow noopener"
@@ -85,7 +93,7 @@
             </span>
           {% endif %}
         </h2>
-        <time datetime="{{ date | format: 'yyyy-MM-dd' }}">
+        <time datetime="{{ date | format: 'yyyy-MM-dd' }}" class="dt-published">
           Watched
           <a
             href="https://letterboxd.com/{{ author }}//films/diary/for/{{ date | format: 'yyyy/MM' }}/"
@@ -117,6 +125,6 @@
     {% if image %}
       <div class="lb-image"><img src="{{ image }}"></div>
     {% endif %}
-    <div class="lb-prose embed-prose">{{ contents }}</div>
+    <div class="lb-prose e-content">{{ contents }}</div>
   </article>
 </div>

@@ -1209,7 +1209,8 @@ $letterboxd-floater-width: 150px;
   @extend %embed;
   @include ewf-wrapper($letterboxd-floater-width);
 
-  .embed-title {
+  .p-name,
+  .p-nickname {
     display: none;
   }
 

@@ -1,9 +1,8 @@
-<div class="generic-post-wrapper embed">
+<div class="generic-post-wrapper h-entry">
   {% if authorAvatar %}
     <a class="gp-avatar-large" href="{{ authorUrl | default: url }}">
       <img
         src="{{ authorAvatar }}"
-        class="embed-image"
         {% if authorAvatarAlt or author %}
           alt="{{ authorAvatarAlt | default: author }}"
         {% endif %}
@@ -14,15 +13,26 @@
 
   {% if quote %}<blockquote cite="{{ url }}">{% else %}<article>{% endif %}
   <header>
-    <a href="{{ url }}" class="attribution embed-link" rel="canonical">
+    <a href="{{ url }}" class="attribution u-repost-of u-url" rel="canonical">
       Posted
       {% if time %}
-        {%- render 'date', date: time -%}
+        {%- render 'date', date: time, class: 'dt-published' -%}
       {% else %}
         to
         {{ url | urlHostname -}}
       {% endif %}
-      {% if author %}by {{ author }}{% endif %}
+      {% if author %}
+        by
+        <span class="p-author h-card">
+          {% if authorUrl %}
+            <data class="u-url" value="{{ authorUrl }}"></data>
+          {% endif %}
+          {% if authorAvatar %}
+            <data class="u-logo" value="{{ authorAvatar }}"></data>
+          {% endif %}
+          <span class="p-name">{{ author | escape }}</span>
+        </span>
+      {% endif %}
     </a>
 
     {% if authorAvatar %}
@@ -37,9 +47,9 @@
     {% endif %}
   </header>
   {% if name %}
-    <h1 class="embed-title">{{ name | escape }}</h1>
+    <h1 class="p-name">{{ name | escape }}</h1>
   {% endif %}
-  <div class="gp-prose embed-prose">
+  <div class="gp-prose e-content">
     {{- contents -}}
     {%- if quote -%}
       <p><a href="{{ url }}" class="read-more" title="Read More">…</a></p>
@@ -48,7 +58,7 @@
   {%- if tags.size > 0 -%}
     <ul class="gp-tags">
       {%- for tag in tags -%}
-        <li>#{{ tag }}</li>
+        <li class="p-category">#{{ tag }}</li>
       {%- endfor -%}
     </ul>
   {%- endif -%}

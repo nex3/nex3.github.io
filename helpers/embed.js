@@ -1,5 +1,25 @@
 import { JSDOM } from "jsdom";
 import escapeHtml from "escape-html";
+import { mf2 } from "microformats-parser";
+
+/** Converts the MF2 metadata for an h-card item to invisible HTML. */
+function serializeHCard(item) {
+  var html = `<div class="p-author ${item.type[0]}">`;
+  for (const property of [
+    "p-name",
+    "p-nickname",
+    "u-url",
+    "u-uid",
+    "u-logo",
+    "u-photo",
+  ]) {
+    const unprefixed = property.split("-")[1];
+    for (const value of item.properties[unprefixed] ?? []) {
+      html += `<data class="${property}" value=${escapeHtml(value)}></data>`;
+    }
+  }
+  return html + "</div>";
+}
 
 /**
  * Returns a version of {@link post} where embeds are simplified into a format
@@ -9,55 +29,104 @@ import escapeHtml from "escape-html";
  * metadata with that of the embed.
  */
 export function simplifyEmbeds(post) {
-  if (!post.content.includes("embed")) return post;
+  if (!post.content.includes("h-entry")) return post;
 
   const data = { ...post.data };
   let url = post.url;
+  const { items } = mf2(post.content, {
+    baseUrl: new URL(url, "https://nex-3.com/").toString(),
+  });
   const container = JSDOM.fragment(
     `<div>${post.content}</div>`,
   ).firstElementChild;
 
-  const embeds = container.querySelectorAll(".embed");
+  const embeds = container.querySelectorAll(".h-entry");
   const replaceDataWithEmbed =
     embeds.length === 1 &&
     container.childElementCount === 1 &&
-    container.firstElementChild.classList.contains("embed");
-  for (const embed of embeds) {
-    let prose = embed.querySelector(".embed-prose").innerHTML;
+    container.firstElementChild.classList.contains("h-entry");
+  const entries = items.filter(
+    (item) => item.type.length === 1 && item.type[0] === "h-entry",
+  );
+  if (embeds.length != entries.length) {
+    throw new Error(
+      `JSDOM and mf2 detected a different number of h-entries for ${url}`,
+    );
+  }
 
-    const image = embed.querySelector(".embed-image");
+  for (let i = 0; i < embeds.length; i++) {
+    const entry = entries[i];
+    let prose = entry.properties.content?.[0]?.html ?? "";
+
+    let author = entry.properties.author?.[0];
+    if (typeof author === "string") {
+      author = { type: ["h-card"], properties: { name: [author] } };
+    }
+    let authorName = author.properties.name?.[0];
+    let authorNickname = author.properties.nickname?.[0];
+    let authorUrl = author.properties.url?.[0];
+    let authorLogo = author.properties.logo?.[0];
+    let authorPhoto = author.properties.logo?.[0];
+
+    let image = entry.properties.featured?.[0];
+    let imageHtml;
     if (image) {
-      if (image.classList.contains("embed-image-horizontal")) {
-        image.style.display = "block";
-        image.style.width = "100%";
-        image.style.marginBottom = "1rem";
-      } else {
-        image.style.float = "left";
-        image.style.maxWidth = "150px";
-        image.style.marginTop = "1rem";
-        image.style.marginRight = "1rem";
-        image.style.borderRadius = "75px";
+      imageHtml = `
+        <img
+          src="${image}"
+          width="150"
+          style="
+            float: left;
+            width: auto;
+            max-width: 150px;
+            margin-top: 1rem;
+            margin-right: 1rem;
+          "
+          ${
+            replaceDataWithEmbed && entry.properties.featured?.[0]
+              ? 'class="u-featured"'
+              : ""
+          }
+        >
+      `.replaceAll(/[ \n]+/g, " ");
+    } else {
+      image = author?.properties?.photo?.[0] ?? author?.properties?.logo?.[0];
+
+      if (image) {
+        imageHtml = `
+          <img src="${image}" width="64" style="
+            float: left;
+            width: auto;
+            max-width: 64x;
+            margin-top: 1rem;
+            margin-right: 1rem;
+            border-radius: 32px;
+          ">
+        `.replaceAll(/[ \n]+/g, " ");
       }
     }
 
-    const title = embed.querySelector(".embed-title");
-    const link = embed.querySelector(".embed-link");
+    const title = entry.properties.name?.[0];
+    const link = entry.properties.url?.[0];
     if (replaceDataWithEmbed) {
       if (title) data.title = title.textContent;
       if (link) url = link.href;
-      if (image) prose = image.outerHTML + " " + prose;
+      if (imageHtml) prose = imageHtml + " " + prose;
     } else {
+      const urlClass = entry.properties["repost-of"]?.[0]
+        ? "u-url u-repost-of"
+        : "u-url";
       if (title) {
-        let titleHtml = "<h1>";
-        if (link) titleHtml += `<a href="${link.href}">`;
-        titleHtml += escapeHtml(title.textContent);
+        let titleHtml = '<h1 class="p-name">';
+        if (link) titleHtml += `<a class="${urlClass}" href="${link}">`;
+        titleHtml += escapeHtml(title);
         if (link) titleHtml += "</a>";
         titleHtml += "</h1>";
         prose = titleHtml + "\n" + prose;
       }
-      if (image) prose = image.outerHTML + "\n" + prose;
+      if (imageHtml) prose = imageHtml + "\n" + prose;
       prose = `
-        <div style="
+        <div class="h-entry" style="
           padding: 0.75rem;
           margin: 1rem 0.2rem 1.15rem;
           border-radius: 0.5rem;
@@ -65,13 +134,21 @@ export function simplifyEmbeds(post) {
             0px 4px 5px rgba(0, 0, 0, 0.14),
             0px 1px 10px rgba(0, 0, 0, 0.12),
             0px 2px 4px rgba(0, 0, 0, 0.2);
-        ">${prose}</div>
+        ">
+          ${
+            link && !title
+              ? `<data class="${urlClass}" value="${link}"></data>`
+              : ""
+          }
+          ${author ? serializeHCard(author) : ""}
+          <div class="e-content">${prose}</div>
+        </div>
       `.replaceAll(/[ \n]+/g, " ");
     }
 
     const template = new JSDOM().window.document.createElement("template");
     template.innerHTML = prose;
-    embed.replaceWith(template.content);
+    embeds[i].replaceWith(template.content);
   }
   return { data, url, date: post.date, content: container.innerHTML };
 }
