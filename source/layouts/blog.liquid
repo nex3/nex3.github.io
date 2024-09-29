@@ -13,8 +13,6 @@ layout: default
     <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
   {% endif %}
 
-  {% if repost %}~~~ DELETE ME ~~~{% endif %}
-
   {% assign simpleContent = content | simplifyContent %}
   {% if simpleContent != content %}
     <div>{{ content }}</div>

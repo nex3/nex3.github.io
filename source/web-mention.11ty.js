@@ -7,10 +7,7 @@ import { JSDOM } from "jsdom";
 import { mf2 } from "microformats-parser";
 import YAML from "yaml";
 
-export const pagination = {
-  data: "collections.blog",
-  alias: "posts",
-};
+export const data = { permalink: false };
 
 /**
  * Returns the set of links defined directly inside {@link post}, but *not* in
@@ -106,5 +103,5 @@ async function checkWebMentions(data) {
 
 export default async function (data) {
   await checkWebMentions(data);
-  return "~~~ DELETE ME ~~~";
+  return "";
 }

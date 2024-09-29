@@ -34,13 +34,6 @@ function escapeNewlines(node) {
 }
 
 /**
- * Removes leading id (e.g. `001-`) from blog filenames.
- */
-function getBlogSlug(page) {
-  return page.fileSlug.replace(/^(\d*-)/, "");
-}
-
-/**
  * Appends full page URL to internal links (for embedding in another page).
  */
 function replaceInternalLinks(content, url) {
@@ -89,7 +82,6 @@ function metadata(collections, site, title) {
 }
 
 export default function pagesPlugin(eleventyConfig) {
-  eleventyConfig.addLiquidFilter("getBlogSlug", getBlogSlug);
   eleventyConfig.addLiquidFilter("markdownSafe", markdownSafe);
   eleventyConfig.addLiquidFilter("metadata", metadata);
   eleventyConfig.addLiquidFilter("replaceInternalLinks", replaceInternalLinks);

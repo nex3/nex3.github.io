@@ -1,5 +1,0 @@
-layout: blog
-tags:
-  - blog
-permalink: "/blog/{{ page | getBlogSlug }}/index.html"
-date: git created
