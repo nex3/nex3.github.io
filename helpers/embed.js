@@ -109,8 +109,8 @@ export function simplifyEmbeds(post) {
     const title = entry.properties.name?.[0];
     const link = entry.properties.url?.[0];
     if (replaceDataWithEmbed) {
-      if (title) data.title = title.textContent;
-      if (link) url = link.href;
+      if (title) data.title = title;
+      if (link) url = link;
       if (imageHtml) prose = imageHtml + " " + prose;
     } else {
       const urlClass = entry.properties["repost-of"]?.[0]
