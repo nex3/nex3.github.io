@@ -8,7 +8,7 @@ layout: default
     </h1>
   {% endif %}
 
-  {% render 'attribution', date: date, author: author, link: page.url %}
+  {% render 'attribution', date: page.date, author: author, link: page.url %}
   {% if updated %}
     <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
   {% endif %}
