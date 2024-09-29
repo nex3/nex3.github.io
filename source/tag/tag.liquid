@@ -14,4 +14,4 @@ permalink: "/tag/{{ posts.tag | url_encode }}/{{ posts.slug }}/"
   <a href="{{realPermalink}}feed.xml"><img src="/assets/rss.svg" alt="#{{ posts.tag }} Feed"></a>
 </h1>
 
-{% render 'blog-posts', posts: posts.posts, pagination: posts.pagination %}
+{% render 'blog-posts', posts: posts.posts, pagination: posts.pagination, site: site %}

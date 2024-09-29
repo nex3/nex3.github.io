@@ -8,4 +8,4 @@ pagination:
   reverse: true
 permalink: '/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html'
 ---
-{% render 'blog-posts', posts: posts, pagination: pagination %}
+{% render 'blog-posts', posts: posts, pagination: pagination, site: site %}

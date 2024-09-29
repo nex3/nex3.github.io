@@ -2,28 +2,38 @@
   {% render 'pager', pagination: pagination %}
 {% endunless %}
 
-<ul class="blog-posts">
-  {% for post in posts %}
-    <li>
-      {% unless forloop.first %}<hr>{% endunless %}
-      <article>
-        {% if post.data.title and not post.data.repost %}
-          <h1>
-            <a href="{{ post.url }}" rel="canonical">{{ post.data.title }}</a>
-          </h1>
-        {% endif %}
-        {% unless post.data.repost %}
-          {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
-        {% endunless %}
-        {% if post.data.repost %}
-          {{ post.content }}
-        {% else %}
-          {{ post.content | truncateHTML: 300, link: post.url | replaceInternalLinks: post.url }}
-        {% endif %}
-        {% render 'tags', tags: post.data.tags %}
-      </article>
-    </li>
-  {% endfor %}
-</ul>
+<div class="h-feed">
+  <data class="p-name" value="House of Nettles"></data>
+  <data class="u-photo" value="/assets/avatar.webp"></data>
+  <div class="p-author h-card">
+    <data class="p-name" value="{{ site.author | escape }}"></data>
+    <data class="u-url u-uid" value="/"></data>
+    <data class="u-logo" value="/assets/avatar.webp"></data>
+  </div>
+
+  <ul class="blog-posts">
+    {% for post in posts %}
+      <li>
+        {% unless forloop.first %}<hr>{% endunless %}
+        <article class="h-entry">
+          {% if post.data.title and not post.data.repost %}
+            <h1 class="p-name">
+              <a href="{{ post.url }}" rel="canonical">{{ post.data.title }}</a>
+            </h1>
+          {% endif %}
+          {% unless post.data.repost %}
+            {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
+          {% endunless %}
+          {% if post.data.repost %}
+            {{ post.content }}
+          {% else %}
+            {{ post.content | truncateHTML: 300, link: post.url | replaceInternalLinks: post.url }}
+          {% endif %}
+          {% render 'tags', tags: post.data.tags %}
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 
 {% render 'pager', pagination: pagination %}
