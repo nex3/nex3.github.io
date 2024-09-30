@@ -97,7 +97,7 @@ export function simplifyEmbeds(post) {
           <img src="${image}" width="64" style="
             float: left;
             width: auto;
-            max-width: 64x;
+            max-width: 64px;
             margin-top: 1rem;
             margin-right: 1rem;
             border-radius: 32px;
