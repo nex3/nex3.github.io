@@ -1,6 +1,8 @@
 ---
 repost: true
 tags: [art, comic, erotica]
+commentary:
+- "I'm gonna add an 18+ mode at some point but for now you gotta click through for your smut"
 ---
 
 {% genericPost "https://taylor-titmouse.tumblr.com/post/762813849248366592/have-you-heard-about-the-sickos-selection-me-and",

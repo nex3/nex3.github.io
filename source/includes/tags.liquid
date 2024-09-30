@@ -1,6 +1,9 @@
 {%- assign tags = tags | omit: 'blog' -%}
-{% if tags %}
+{% if commentary or tags %}
   <ol class="tags">
+    {% for tag in commentary %}
+      <li><a class="p-category">{{- tag | escape -}}</a></li>
+    {% endfor %}
     {% for tag in tags %}
       <li>
         <a href="/tag/{{ tag | url_encode }}" class="p-category">

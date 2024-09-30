@@ -244,16 +244,16 @@ h1.tag {
 
 .tags {
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 0.7rem;
+  color: $dim-grey;
 
   li {
     list-style: none;
+    display: inline;
+    margin-right: 0.7rem;
   }
 
   a {
-    color: $dim-grey;
+    color: inherit;
 
     &::before {
       content: "#";

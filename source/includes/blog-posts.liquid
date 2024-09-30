@@ -29,7 +29,7 @@
           {% else %}
             {{ post.content | truncateHTML: 300, link: post.url | replaceInternalLinks: post.url }}
           {% endif %}
-          {% render 'tags', tags: post.data.tags %}
+          {% render 'tags', tags: post.data.tags, commentary: post.data.commentary %}
         </article>
       </li>
     {% endfor %}
