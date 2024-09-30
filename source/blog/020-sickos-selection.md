@@ -1,7 +1,6 @@
 ---
-reblog: true
+repost: true
 tags: [art, comic, erotica]
-reblog: true
 ---
 
 {% genericPost "https://taylor-titmouse.tumblr.com/post/762813849248366592/have-you-heard-about-the-sickos-selection-me-and",
