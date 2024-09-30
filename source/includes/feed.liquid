@@ -20,8 +20,8 @@
       <author>
         {%- if post.data.author.name -%}
           <name>{{ post.data.author.name | escape }}</name>
-          {%- if post.data.author.uri -%}
-            <uri>{{ post.data.author.uri | escape }}</uri>
+          {%- if post.data.author.url -%}
+            <uri>{{ post.data.author.url | escape }}</uri>
           {%- endif -%}
           {%- if post.data.author.email -%}
             <email>{{ post.data.author.email | escape }}</email>

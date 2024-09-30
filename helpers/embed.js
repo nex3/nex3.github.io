@@ -112,6 +112,12 @@ export function simplifyEmbeds(post) {
       if (title) data.title = title;
       if (link) url = link;
       if (imageHtml) prose = imageHtml + " " + prose;
+      if (authorName) {
+        data.author = {
+          name: authorName,
+          url: authorUrl
+        };
+      }
     } else {
       const urlClass = entry.properties["repost-of"]?.[0]
         ? "u-url u-repost-of"

@@ -1,6 +1,7 @@
 export const layout = "blog";
 export const tags = ["blog"];
 export const date = "git created";
+export const author = "Natalie";
 
 /**
  * Removes leading id (e.g. `001-`) from blog filenames.
