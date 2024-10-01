@@ -116,3 +116,49 @@ export function createPairedComponentPlugin(shortcodeName, shortcodeFn) {
     });
   };
 }
+
+/**
+ * Creates an unpaired liquid tag that runs the given function and injects the
+ * result into the document as HTML.
+ */
+export function createUnpairedComponentPlugin(shortcodeName, shortcodeFn) {
+  return function (eleventyConfig) {
+    eleventyConfig.addLiquidTag(shortcodeName, function (liquidEngine) {
+      return {
+        parse(tagToken, remainTokens) {
+          this.name = tagToken.name;
+
+          this.orderedArgs = parseArgumentsBuiltin(tagToken.args);
+        },
+        render: function* (ctx /*, emitter*/) {
+          let argArray = [];
+          let namedArgs = {};
+          if (this.orderedArgs) {
+            for (let arg of this.orderedArgs) {
+              if (arg.kind == 64) {
+                if (arg.value === undefined) {
+                  namedArgs[arg.name.content] = true;
+                } else {
+                  namedArgs[arg.name.content] = yield evalToken(arg.value, ctx);
+                }
+              } else {
+                let b = yield evalToken(arg, ctx);
+                argArray.push(b);
+              }
+            }
+          }
+
+          // Remove newlines to avoid trigger Markdown
+          let ret = yield shortcodeFn.call(
+            ctx,
+            liquidEngine,
+            ...argArray,
+            namedArgs,
+          );
+
+          return markdownSafe(ret);
+        },
+      };
+    });
+  };
+}

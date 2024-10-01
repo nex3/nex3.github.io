@@ -1,6 +1,7 @@
 ---
 title: one last selfie for the road
 tags: [selfie, article, covid]
+updated: 2024-10-01T02:05:26.200Z
 commentary:
 - originally posted this on cohost
 - maybe the last thing I'll port over as I write it
@@ -14,7 +15,7 @@ Posting selfies to social media was an inseparable part of this. As my style bec
 
 When COVID began, I went from taking and posting selfies almost on a weekly basis to nearly not taking them at all. I no longer felt I had any reason to dress up. Wearing lipstick felt foolish when it would just get ruined by a mask. I wasn't getting any new clothes, because I hate having to remember to send back online orders I don't like. My trademark blue hair was growing out, because even after the vaccine made it feasible to be masked indoors with strangers I couldn't bear the pain of trying to find a salon that still required them. I didn't realize until my roots had overtaken me how much the blue had become a part of my self-image, how much it hurt to look in the mirror and not see the self in my heart.
 
-Little by little, I pulled myself out of that hole. Although the pandemic is very much still present and I am very much still taking precautions, I found ways to allow my sense of style to flourish in between those precautions. I'll put on lipstick just because I feel like it. @JhoiraArtificer took careful measurements so I could do online shopping with minimal risk of send-backs. Every now and then I'll even strap on a P100 respirator and go to a physical store. I asked around and found [a local salon](https://www.pinkrubysalons.com/) that not only still requires masks, but is queer- and disabled-owned.
+Little by little, I pulled myself out of that hole. Although the pandemic is very much still present and I am very much still taking precautions, I found ways to allow my sense of style to flourish in between those precautions. I'll put on lipstick just because I feel like it. {% mention "Liz" %} took careful measurements so I could do online shopping with minimal risk of send-backs. Every now and then I'll even strap on a P100 respirator and go to a physical store. I asked around and found [a local salon](https://www.pinkrubysalons.com/) that not only still requires masks, but is queer- and disabled-owned.
 
 And I started taking selfies again. I took selfies to give myself a reason to care about my appearance again. I took selfies as a reward for putting in the work to make myself look and feel good. I took selfies to send to friends, I took selfies to flirt, I took selfies with pals, I took selfies at beaches and forests and birthdays and the precious few weddings that were safe enough for me to attend. I took selfies to remind the world that I existed, and to remind _myself_ as well. And many of those selfies ended up here.
 

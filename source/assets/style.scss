@@ -113,6 +113,13 @@ main {
 }
 
 article {
+  .h-card {
+    font-weight: bold;
+    a {
+      text-decoration: none;
+    }
+  }
+
   img {
     margin: 0 auto;
     max-width: 100%;

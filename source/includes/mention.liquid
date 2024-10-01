@@ -1,0 +1,27 @@
+<span class="h-card">
+  {%- if url -%}
+    <a
+      href="{{ url | escape }}"
+      class="
+        p-name u-url
+        {% if uid == url %}u-uid{% endif %}
+      "
+    >
+      {{- text | escape -}}
+    </a>
+  {%- else -%}
+    <span class="p-name">{{ text | escape }}</span>
+  {%- endif -%}
+  {%- if uid and uid != url -%}
+    <data class="u-uid" value="{{ uid | escape }}"></data>
+  {%- endif -%}
+  {%- if nickname -%}
+    <data class="p-nickname" value="{{ nickname | escape }}"></data>
+  {%- endif -%}
+  {%- if logo -%}
+    <data class="u-logo" value="{{ logo | escape }}"></data>
+  {%- endif -%}
+  {%- if photo -%}
+    <data class="u-photo" value="{{ photo | escape }}"></data>
+  {%- endif -%}
+</span>
