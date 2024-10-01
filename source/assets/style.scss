@@ -113,17 +113,17 @@ main {
 }
 
 .e-content {
-  .h-card {
-    font-weight: bold;
-    a {
-      text-decoration: none;
-    }
-  }
-
   img {
     margin: 0 auto;
     max-width: 100%;
     display: block;
+  }
+}
+
+.mention {
+  font-weight: bold;
+  a {
+    text-decoration: none;
   }
 }
 
@@ -656,11 +656,12 @@ $cohost-floater-width: 4rem;
       gap: 0.5rem;
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
-      font-weight: normal;
       color: $dim-grey;
+      font-weight: normal;
 
       a {
         color: inherit;
+        text-decoration: none;
       }
     }
   }
@@ -668,6 +669,9 @@ $cohost-floater-width: 4rem;
 
 .ask-asker {
   font-weight: bold;
+  a {
+    text-decoration: none;
+  }
 }
 
 .ask-avatar-large {
