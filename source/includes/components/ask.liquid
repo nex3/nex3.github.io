@@ -1,0 +1,54 @@
+<div class="ask-wrapper h-entry">
+  {% if avatar %}
+    <a
+      class="ask-avatar-large"
+      {% if url %}
+        href="{{ url | escape }}"
+      {% endif %}
+    >
+      <img src="{{ avatar | escape }}" alt="{{ text | escape }}" width="64">
+    </a>
+  {% endif %}
+
+  <article>
+    <header class="p-author h-card">
+      {% if name and text != name %}
+        <data class="p-name" value="{{ name | escape }}"></data>
+      {% endif %}
+      {% if nickname and text != nickname %}
+        <data class="p-nickname" value="{{ nickname | escape }}"></data>
+      {% endif %}
+
+      <a
+        class="ask-avatar-small"
+        {% if url %}
+          href="{{ url | escape }}"
+        {% endif %}
+      >
+        <img src="{{ avatar | escape }}" alt="{{ text | escape }}" class="u-logo">
+      </a>
+
+      {% if url %}<a class="u-url" href="{{ url | escape }}">{% endif %}
+      <span
+        class="
+          ask-asker
+          {% if text == name %}
+            p-name
+          {% elsif text == nickname %}
+            p-nickname
+          {% endif %}
+        "
+      >
+        {{- text | escape -}}
+      </span>
+      {% if url %}</a>{% endif %}
+      asked:
+    </header>
+
+    {% if title %}
+      <h1 class="p-name">{{ title | escape }}</h1>
+    {% endif %}
+
+    <div class="e-content">{{ contents | markdown }}</div>
+  </article>
+</div>

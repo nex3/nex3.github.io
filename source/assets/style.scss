@@ -375,6 +375,11 @@ $-embed-padding: 4rem;
       0px 4px 5px rgba(0, 0, 0, 0.14),
       0px 1px 10px rgba(0, 0, 0, 0.12),
       0px 2px 4px rgba(0, 0, 0, 0.2);
+
+    > .p-name,
+    > .e-content > :first-child {
+      margin-top: 0;
+    }
   }
 
   h1 {
@@ -574,10 +579,6 @@ $generic-floater-width: 4rem;
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.75;
-
-  > :first-child {
-    margin-top: 0;
-  }
 }
 
 .gp-tags {
@@ -626,6 +627,76 @@ $generic-floater-width: 4rem;
   img {
     width: 100%;
     height: 100%;
+    border-radius: 2rem;
+  }
+}
+
+// Ask Embed
+
+$cohost-floater-width: 4rem;
+
+.ask-wrapper {
+  @extend %embed;
+  @include ewf-wrapper($cohost-floater-width);
+
+  &,
+  & * {
+    box-sizing: border-box;
+  }
+
+  article {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+
+    > header {
+      width: 100%;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      font-weight: normal;
+      color: $dim-grey;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.ask-asker {
+  font-weight: bold;
+}
+
+.ask-avatar-large {
+  height: 4rem;
+  position: relative;
+  @include ewf-floater($cohost-floater-width);
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.ask-avatar-small {
+  width: 2rem;
+  height: 2rem;
+  display: none;
+  float: right;
+  position: relative;
+  bottom: 2px;
+
+  @include ewf-small($cohost-floater-width) {
+    display: block;
+  }
+}
+
+.ask-avatar-large,
+.ask-avatar-small {
+  img {
     border-radius: 2rem;
   }
 }
@@ -683,7 +754,6 @@ $cohost-floater-width: 4rem;
   }
 
   article {
-    background-color: white;
     width: 100%;
     overflow-x: auto;
     border-radius: 0.5rem;

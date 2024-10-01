@@ -1,6 +1,7 @@
 import markdown from "markdown-it";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItFootnote from "markdown-it-footnote";
+import markdownPrismJs from "@11ty/eleventy-plugin-syntaxhighlight/src/markdownSyntaxHighlightOptions.js";
 
 /**
  * Returns Markdown engine with custom configuration and plugins.
@@ -13,4 +14,5 @@ export const markdownEngine = markdown({
   typographer: false,
 })
   .use(markdownItAttrs)
-  .use(markdownItFootnote);
+  .use(markdownItFootnote)
+  .set({ highlight: markdownPrismJs() });
