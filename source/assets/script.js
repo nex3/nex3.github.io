@@ -4,7 +4,7 @@ if (!articles[0]) articles = [];
 
 for (const article of articles) {
   const images = article.querySelectorAll(
-    "figure:not(.no-popup) > a > img, :scope > a > img",
+    "figure:not(.no-popup) > a > img, :scope > a > img, :scope > p > a > img",
   );
   if (images.length === 0) continue;
 
@@ -22,7 +22,7 @@ for (const article of articles) {
       const figure = images[i].parentElement.parentElement;
       if (figure.tagName === "FIGURE") {
         caption = figure.children[1];
-        if (caption.tagName === "FIGCAPTION") {
+        if (caption && caption.tagName === "FIGCAPTION") {
           result.description = caption.innerHTML;
         }
       }
