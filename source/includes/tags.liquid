@@ -2,7 +2,9 @@
 {% if commentary or tags %}
   <ol class="tags">
     {% for tag in commentary %}
-      <li><a class="p-category">{{- tag | escape -}}</a></li>
+      <li>
+        <a class="p-category">{{- tag | escape -}}</a>
+      </li>
     {% endfor %}
     {% for tag in tags %}
       <li>

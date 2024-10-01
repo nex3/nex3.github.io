@@ -115,7 +115,7 @@ export function simplifyEmbeds(post) {
       if (authorName) {
         data.author = {
           name: authorName,
-          url: authorUrl
+          url: authorUrl,
         };
       }
     } else {
