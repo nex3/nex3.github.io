@@ -11,7 +11,7 @@ export default createPairedComponentPlugin(
     const author = url.match(/^https:\/\/cohost\.org\/([^\/]+)/)[1];
     const time = new Date(Date.parse(options.time));
 
-    return liquidEngine.renderFile("cohost-post", {
+    return liquidEngine.renderFile("components/cohost-post", {
       contents: stripIndent(contents).trim(),
       url,
       avatarShape: options.avatarShape ?? "circle",

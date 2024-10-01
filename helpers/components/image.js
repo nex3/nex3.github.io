@@ -9,7 +9,7 @@ export default createPairedComponentPlugin(
       .map((text) => text.trim())
       .map((text) => (text === "" ? undefined : text));
 
-    return liquidEngine.renderFile("image", {
+    return liquidEngine.renderFile("components/image", {
       description,
       caption,
       url,

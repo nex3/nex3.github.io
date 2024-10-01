@@ -10,7 +10,7 @@ export default createPairedComponentPlugin(
       .filter((tag) => tag.length > 0);
     const time = options.time ? new Date(Date.parse(options.time)) : undefined;
 
-    return liquidEngine.renderFile("generic-post", {
+    return liquidEngine.renderFile("components/generic-post", {
       contents: stripIndent(contents).trim(),
       url,
       name: options.name,

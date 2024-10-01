@@ -29,7 +29,7 @@ export default createUnpairedComponentPlugin(
       options.name ??= text;
     }
 
-    return liquidEngine.renderFile("mention", {
+    return liquidEngine.renderFile("components/mention", {
       text,
       ...options,
     });

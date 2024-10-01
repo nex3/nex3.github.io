@@ -9,7 +9,7 @@ export default createPairedComponentPlugin(
     );
     const date = new Date(Date.parse(options.date));
 
-    return liquidEngine.renderFile("letterboxd", {
+    return liquidEngine.renderFile("components/letterboxd", {
       contents: stripIndent(contents).trim(),
       author,
       filmSlug,
