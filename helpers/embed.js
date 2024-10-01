@@ -14,8 +14,10 @@ function serializeHCard(item) {
     "u-photo",
   ]) {
     const unprefixed = property.split("-")[1];
-    for (const value of item.properties[unprefixed] ?? []) {
-      html += `<data class="${property}" value=${escapeHtml(value)}></data>`;
+    for (let value of item.properties[unprefixed] ?? []) {
+      if (typeof value === "object") value = value.value;
+      value = escapeHtml(value.toString());
+      html += `<data class="${property}" value="${value}"></data>`;
     }
   }
   return html + "</div>";
@@ -69,7 +71,9 @@ export function simplifyEmbeds(post) {
     let authorNickname = author.properties.nickname?.[0];
     let authorUrl = author.properties.url?.[0];
     let authorLogo = author.properties.logo?.[0];
-    let authorPhoto = author.properties.logo?.[0];
+    if (typeof authorLogo === "object") authorLogo = authorLogo.url;
+    let authorPhoto = author.properties.photo?.[0];
+    if (typeof authorPhoto === "object") authorLogo = authorLogo.url;
 
     let image = entry.properties.featured?.[0];
     let imageHtml;
@@ -93,7 +97,7 @@ export function simplifyEmbeds(post) {
         >
       `.replaceAll(/[ \n]+/g, " ");
     } else {
-      image = author?.properties?.photo?.[0] ?? author?.properties?.logo?.[0];
+      image = authorLogo ?? authorPhoto;
 
       if (image) {
         imageHtml = `

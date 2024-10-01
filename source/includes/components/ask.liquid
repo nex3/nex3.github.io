@@ -25,10 +25,10 @@
           href="{{ url | escape }}"
         {% endif %}
       >
-        <img src="{{ avatar | escape }}" alt="{{ text | escape }}" class="u-logo">
+        <img class="u-logo" src="{{ avatar | escape }}" alt="{{ text | escape }}">
       </a>
 
-      {% if url %}<a class="u-url" href="{{ url | escape }}">{% endif %}
+      {% if url %}<a class="u-url" href="{{ url | escape }}">{% endif -%}
       <span
         class="
           ask-asker
@@ -41,7 +41,7 @@
       >
         {{- text | escape -}}
       </span>
-      {% if url %}</a>{% endif %}
+      {%- if url %}</a>{% endif %}
       asked:
     </header>
 
