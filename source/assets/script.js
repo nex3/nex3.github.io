@@ -3,9 +3,11 @@ if (articles.length === 0) articles = [document.querySelector("main")];
 if (!articles[0]) articles = [];
 
 for (const article of articles) {
-  const images = article.querySelectorAll(
-    "figure:not(.no-popup) > a > img, :scope > a > img, :scope > p > a > img",
-  );
+  const images = article.querySelectorAll(`
+    .e-content figure:not(.no-popup) > a > img,
+    .e-content > a > img,
+    .e-content > p > a > img
+  `);
   if (images.length === 0) continue;
 
   const links = [...images].map((image) => image.parentElement);

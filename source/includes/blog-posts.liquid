@@ -24,11 +24,13 @@
           {% unless post.data.repost %}
             {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
           {% endunless %}
-          {% if post.data.repost %}
-            {{ post.content }}
-          {% else %}
-            {{ post.content | truncateHTML: 300, link: post.url | replaceInternalLinks: post.url }}
-          {% endif %}
+          <div class="e-content">
+            {% if post.data.repost %}
+              {{ post.content }}
+            {% else %}
+              {{ post.content | truncateHTML: 300, link: post.url | replaceInternalLinks: post.url }}
+            {% endif %}
+          </div>
           {% render 'tags', tags: post.data.tags, commentary: post.data.commentary %}
         </article>
       </li>
