@@ -29,16 +29,19 @@ function serializeHCard(item) {
  * metadata with that of the embed.
  */
 export function simplifyEmbeds(post) {
-  if (!post.content.includes("h-entry")) return post;
-
   const data = { ...post.data };
+  const container = JSDOM.fragment(
+    `<div>${post.content}</div>`,
+  ).firstElementChild;
+
+  data.image ??= container.querySelector("img[src]")?.src;
+
+  if (!post.content.includes("h-entry")) return { ...post, data };
+
   let url = post.url;
   const { items } = mf2(post.content, {
     baseUrl: new URL(url, "https://nex-3.com/").toString(),
   });
-  const container = JSDOM.fragment(
-    `<div>${post.content}</div>`,
-  ).firstElementChild;
 
   const embeds = container.querySelectorAll(".h-entry");
   const replaceDataWithEmbed =

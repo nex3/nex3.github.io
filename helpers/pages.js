@@ -44,6 +44,7 @@ const htmlToText = initHtmlToText({
   wordwrap: false,
   selectors: [
     { selector: "img", format: "skip" },
+    { selector: "a", options: { ignoreHref: true } },
     { selector: "figure", format: "skip" },
     { selector: "details", format: "skip" },
   ],
@@ -77,6 +78,7 @@ function metadata(collections, site, title) {
     page,
     title: page.data?.title ? `${site.title} • ${page.data.title}` : site.title,
     desc,
+    image: page.data.image ?? "/assets/avatar.webp",
     type: page.data?.["og-type"] ?? "website",
   };
 }
