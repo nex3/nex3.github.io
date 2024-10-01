@@ -1,5 +1,5 @@
 ---
-tags: [meta, web]
+tags: [meta, web, tumblr]
 ---
 
 I was all set to set up a custom Tumblr scraper so I could reblog art and stuff

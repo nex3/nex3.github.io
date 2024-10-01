@@ -15,7 +15,11 @@
     {% for post in posts %}
       <li>
         {% unless forloop.first %}<hr>{% endunless %}
-        <article class="h-entry">
+        <article class="blog-post h-entry">
+          {% if post.data.reply %}
+            <data class="u-in-reply-to" value="{{ post.data.reply | escape }}"></data>
+          {% endif %}
+
           {% if post.data.title and not post.data.repost %}
             <h1 class="p-name">
               <a href="{{ post.url }}" rel="canonical">{{ post.data.title }}</a>
@@ -24,7 +28,7 @@
           {% unless post.data.repost %}
             {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
           {% endunless %}
-          <div class="e-content">
+          <div class="e-content blog-prose">
             {% if post.data.repost %}
               {{ post.content }}
             {% else %}

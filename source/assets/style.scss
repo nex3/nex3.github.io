@@ -112,7 +112,25 @@ main {
   }
 }
 
-.e-content {
+.blog-post {
+  > .u-in-reply-to ~ .blog-prose > .h-entry:last-of-type {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      width: 4rem;
+      height: 4rem;
+      bottom: -5rem;
+      right: 0;
+      content: "";
+      background-image: url(/assets/reply.svg);
+      background-size: contain;
+      opacity: 0.2;
+    }
+  }
+}
+
+.blog-prose {
   img {
     margin: 0 auto;
     max-width: 100%;

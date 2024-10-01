@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-<article class="h-entry">
-  {% if title %}
+<article class="blog-post h-entry">
+  {% if title and not reply %}
     <h1 class="p-name">
-      <a href="{{ page.url }}">{{ title }}</a>
+      <a href="{{ page.url | escape }}">{{ title | escape }}</a>
     </h1>
   {% endif %}
 
@@ -13,12 +13,16 @@ layout: default
     <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
   {% endif %}
 
+  {% if reply %}
+    <data class="u-in-reply-to" value="{{ reply | escape }}"></data>
+  {% endif %}
+
   {% assign simpleContent = content | simplifyContent %}
   {% if simpleContent != content %}
-    <div>{{ content }}</div>
+    <div class="blog-prose">{{ content }}</div>
     <div class="e-content simple-content">{{ simpleContent }}</div>
   {% else %}
-    <div class="e-content">{{ content }}</div>
+    <div class="blog-prose e-content">{{ content }}</div>
   {% endif %}
 
   {% render 'tags', tags: tags, commentary: commentary %}
