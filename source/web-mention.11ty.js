@@ -35,7 +35,14 @@ function embedLinks(post, baseUrl) {
 
 /** If {@link url} supports WebMentions, returns the associated endpoint. */
 async function getWebMentionEndpoint(url) {
-  const response = await fetch(url);
+  let response;
+  try {
+    response = await fetch(url);
+  } catch (error) {
+    console.error(`Error fetching ${url}:`);
+    console.error(error);
+    return undefined;
+  }
   if (!response.ok) return undefined;
 
   return (
@@ -50,7 +57,7 @@ async function getWebMentionEndpoint(url) {
  * Checks whether any blog posts have new WebMentions that need to be sent out.
  */
 async function checkWebMentions(data) {
-  if (!process.env["CHECK_WEBMENTIONS"]) return;
+  if (!process.env["CHECK_WEB_MENTIONS"]) return;
 
   console.log("Checking webmentions...");
   const last = data["web-mention"]["last-check"];
@@ -58,16 +65,18 @@ async function checkWebMentions(data) {
   const pairs = [];
   for (const post of data.collections.blog) {
     if (last < (post.data.updated ?? post.data.date)) {
-      var url = new URL(post.url, data.site.url).toString();
+      const url = new URL(post.url, data.site.url).toString();
       const links = new Set(
         [
           ...(post.data.repost ? [] : linksFromPostBody(post, url)),
           ...embedLinks(post, url),
-        ].filter(
-          (url) =>
-            !url.startsWith("about:blank") &&
-            !url.startsWith(post.data.site.url),
-        ),
+        ]
+          .map((url) => new URL(url, data.site.url).toString())
+          .filter(
+            (url) =>
+              !url.startsWith("about:blank") &&
+              !url.startsWith(post.data.site.url),
+          ),
       );
 
       for (const link of links) {

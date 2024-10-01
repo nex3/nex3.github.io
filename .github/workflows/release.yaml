@@ -26,7 +26,7 @@ jobs:
 
       - run: npm run build
         env:
-          CHECK_WEBMENTIONS: true
+          CHECK_WEB_MENTIONS: true
       - uses: EndBug/add-and-commit@v9
         with:
           author_name: Nattlebot Robobaum
