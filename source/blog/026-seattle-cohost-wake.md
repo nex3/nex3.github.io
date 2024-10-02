@@ -1,5 +1,6 @@
 ---
 title: Seattle Cohost Wake
+updated: 2024-10-02T09:22:01Z
 tags: [cohost, seattle]
 commentary:
 - thank you all again for coming out
