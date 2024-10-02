@@ -6,7 +6,9 @@ title: About
 # About
 
 <p class="attribution">
-   Avatar by <a href="https://subspaceskater.com/">@subspaceskater</a>
+   Avatar by <a href="https://subspaceskater.com/">@subspaceskater</a>,
+   eggbug emoji by <a href="https://nocturne.works/emoji/free">Caius
+   Nocturne</a>
 </p>
 
 I'm Natalie and this is my little slice of online, an attempt to carve out an

@@ -717,7 +717,7 @@ $cohost-floater-width: 4rem;
 
 .ask-avatar-large,
 .ask-avatar-small {
-  img {
+  img:not([src="/assets/eggbug-tuesday.png"]) {
     border-radius: 2rem;
   }
 }

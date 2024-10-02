@@ -1,14 +1,12 @@
 <div class="ask-wrapper h-entry">
-  {% if avatar %}
-    <a
-      class="ask-avatar-large"
-      {% if url %}
-        href="{{ url | escape }}"
-      {% endif %}
-    >
-      <img src="{{ avatar | escape }}" alt="{{ text | escape }}" width="64">
-    </a>
-  {% endif %}
+  <a
+    class="ask-avatar-large"
+    {% if url %}
+      href="{{ url | escape }}"
+    {% endif %}
+  >
+    <img src="{{ avatar | default: "/assets/eggbug-tuesday.png" | escape }}" alt="{{ text | escape }}" width="64">
+  </a>
 
   <article>
     <header class="p-author h-card">
@@ -25,7 +23,11 @@
           href="{{ url | escape }}"
         {% endif %}
       >
-        <img class="u-logo" src="{{ avatar | escape }}" alt="{{ text | escape }}">
+        <img
+          class="u-logo"
+          src="{{ avatar | default: "/assets/eggbug-tuesday.png" | escape }}"
+          alt="{{ text | escape }}"
+        >
       </a>
 
       {% if url %}<a class="u-url" href="{{ url | escape }}">{% endif -%}
