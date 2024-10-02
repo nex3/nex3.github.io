@@ -254,12 +254,11 @@ a[href] {
   flex-wrap: wrap;
   align-items: center;
 
-  $images-per-row: 3;
   $gap: 1em;
   gap: $gap;
 
   > * {
-    flex: 1 calc(100% / $images-per-row - $gap);
+    flex: 1 calc(100% / var(--images-per-row, 3) - $gap);
     margin-inline: 0;
   }
 }

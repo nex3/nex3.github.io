@@ -13,6 +13,7 @@ export default createPairedComponentPlugin(
       description,
       caption,
       url,
+      link: options?.link,
       alt: options?.alt,
       title: options?.title,
       style: options?.style,

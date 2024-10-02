@@ -6,6 +6,7 @@ for (const article of articles) {
   const images = article.querySelectorAll(`
     .e-content figure:not(.no-popup) > a > img,
     .e-content > a > img,
+    .image-gallery > a > img,
     .e-content > p > a > img
   `);
   if (images.length === 0) continue;
