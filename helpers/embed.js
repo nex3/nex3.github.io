@@ -2,17 +2,15 @@ import { JSDOM } from "jsdom";
 import escapeHtml from "escape-html";
 import { mf2 } from "microformats-parser";
 
-/** Converts the MF2 metadata for an h-card item to invisible HTML. */
+/** Converts the MF2 metadata for an h-card item to HTML. */
 function serializeHCard(item) {
-  var html = `<div class="p-author ${item.type[0]}">`;
-  for (const property of [
-    "p-name",
-    "p-nickname",
-    "u-url",
-    "u-uid",
-    "u-logo",
-    "u-photo",
-  ]) {
+  var html = `<strong class="p-author ${item.type[0]}">`;
+
+  for (const property of ["p-nickname", "u-uid", "u-logo", "u-photo"]) {
+    if (property === "p-nickname" && !item.properties.name?.[0]) {
+      continue;
+    }
+
     const unprefixed = property.split("-")[1];
     for (let value of item.properties[unprefixed] ?? []) {
       if (typeof value === "object") value = value.value;
@@ -20,7 +18,15 @@ function serializeHCard(item) {
       html += `<data class="${property}" value="${value}"></data>`;
     }
   }
-  return html + "</div>";
+
+  const url = item.properties.url?.[0];
+  if (url) html += `<a class="u-url" href="${escapeHtml(url)}">`;
+  html +=
+    '<span class="p-name">' +
+    escapeHtml(item.properties.name?.[0] ?? item.properties.nickname?.[0]) +
+    "</span>";
+  if (url) html += "</a>";
+  return html + "</strong>";
 }
 
 /**
@@ -61,6 +67,7 @@ export function simplifyEmbeds(post) {
 
   for (let i = 0; i < embeds.length; i++) {
     const entry = entries[i];
+    const embed = embeds[i];
     let prose = entry.properties.content?.[0]?.html ?? "";
 
     let author = entry.properties.author?.[0];
@@ -75,50 +82,11 @@ export function simplifyEmbeds(post) {
     let authorPhoto = author.properties.photo?.[0];
     if (typeof authorPhoto === "object") authorLogo = authorLogo.url;
 
-    let image = entry.properties.featured?.[0];
-    let imageHtml;
-    if (image) {
-      imageHtml = `
-        <img
-          src="${image}"
-          width="150"
-          style="
-            float: left;
-            width: auto;
-            max-width: 150px;
-            margin-top: 1rem;
-            margin-right: 1rem;
-          "
-          ${
-            replaceDataWithEmbed && entry.properties.featured?.[0]
-              ? 'class="u-featured"'
-              : ""
-          }
-        >
-      `.replaceAll(/[ \n]+/g, " ");
-    } else {
-      image = authorLogo ?? authorPhoto;
-
-      if (image) {
-        imageHtml = `
-          <img src="${image}" width="64" style="
-            float: left;
-            width: auto;
-            max-width: 64px;
-            margin-top: 1rem;
-            margin-right: 1rem;
-            border-radius: 32px;
-          ">
-        `.replaceAll(/[ \n]+/g, " ");
-      }
-    }
-
     const title = entry.properties.name?.[0];
     const link = entry.properties.url?.[0];
     if (replaceDataWithEmbed) {
       if (title) data.title = title;
       if (link) url = link;
-      if (imageHtml) prose = imageHtml + " " + prose;
       if (authorName) {
         data.author = {
           name: authorName,
@@ -137,9 +105,9 @@ export function simplifyEmbeds(post) {
         titleHtml += "</h1>";
         prose = titleHtml + "\n" + prose;
       }
-      if (imageHtml) prose = imageHtml + "\n" + prose;
+
       prose = `
-        <div class="h-entry" style="
+        <blockquote class="h-entry" style="
           padding: 0.75rem;
           margin: 1rem 0.2rem 1.15rem;
           border-radius: 0.5rem;
@@ -149,19 +117,32 @@ export function simplifyEmbeds(post) {
             0px 2px 4px rgba(0, 0, 0, 0.2);
         ">
           ${
+            author
+              ? `
+                  <p>
+                    ${serializeHCard(author)}
+                    ${
+                      embed.classList.contains("ask-wrapper")
+                        ? "asked"
+                        : "wrote"
+                    }:
+                  </p>
+                `
+              : ""
+          }
+          ${
             link && !title
               ? `<data class="${urlClass}" value="${link}"></data>`
               : ""
           }
-          ${author ? serializeHCard(author) : ""}
           <div class="e-content">${prose}</div>
-        </div>
+        </blockquote>
       `.replaceAll(/[ \n]+/g, " ");
     }
 
     const template = new JSDOM().window.document.createElement("template");
     template.innerHTML = prose;
-    embeds[i].replaceWith(template.content);
+    embed.replaceWith(template.content);
   }
   return { data, url, date: post.date, content: container.innerHTML };
 }
