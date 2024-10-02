@@ -919,13 +919,19 @@ $cohost-floater-width: 4rem;
 
   :where(ol > li) {
     font-weight: 40;
-    color: #6b7280;
     padding-inline-start: 0.375em;
+
+    &::marker {
+      color: #6b7280;
+    }
   }
 
   :where(ul > li) {
-    color: #d1d5db;
     padding-inline-start: 0.375em;
+
+    &::marker {
+      color: #d1d5db;
+    }
   }
 
   > :where(ul, ol) > {

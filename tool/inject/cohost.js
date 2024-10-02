@@ -1,4 +1,8 @@
+import * as fs from "node:fs";
+
+import { JSDOM } from "jsdom";
 import fetch from "node-fetch";
+import * as prettier from "prettier";
 
 export async function cohostTag(url) {
   const author = url.pathname.split("/")[1];
@@ -32,7 +36,7 @@ export async function cohostTag(url) {
     );
   }
 
-  const avatarPath = `${import.meta.dirname}/../source/assets/cohost/${author}.jpg`;
+  const avatarPath = `${import.meta.dirname}/../../source/assets/cohost/${author}.jpg`;
   if (!fs.existsSync(avatarPath)) {
     const response = await fetch(avatar.getAttribute("src"));
     fs.writeFileSync(avatarPath, new Uint8Array(await response.arrayBuffer()));
