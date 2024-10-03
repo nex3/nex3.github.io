@@ -12,6 +12,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          # We need full history to determine blog authoring dates
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: "v22"
