@@ -3,7 +3,17 @@ reply: https://nex-3.com/blog/doing-my-level-best-to/
 tags: [rss]
 ---
 
-https://nex-3.com/blog/doing-my-level-best-to/
+{% genericPost "https://nex-3.com/blog/doing-my-level-best-to/",
+    time: "2024-10-03T01:24:58Z",
+    tags: "#rss, #mastodon",
+    author: "Natalie",
+    authorUrl: "https://nex-3.com/",
+    authorAvatar: "/assets/avatar.webp" %}
+  <p>
+    doing my level best to replace my "click over to Cohost" instinct with
+    "click over to my RSS reader" instead of "click over to Mastodon"
+  </p>
+{% endgenericPost %}
 
 it's actually really nice to take the time I'd normally spend purposelessly[^1]
 browsing social media and spend it reading a blog post instead. I read pretty
