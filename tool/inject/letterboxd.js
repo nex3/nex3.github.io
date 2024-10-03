@@ -1,5 +1,6 @@
 import { JSDOM } from "jsdom";
 import fetch from "node-fetch";
+import * as prettier from "prettier";
 
 export async function letterboxdTag(maybeRedirectUrl) {
   const reviewResponse = await fetch(maybeRedirectUrl);
