@@ -19,13 +19,14 @@
       {% endif %}
 
       {% render 'external-attribution',
-           url: mention.url,
-           verb: "Mentioned",
-           nofollow: true,
-           date: mention.published,
-           author: mention.author.name,
-           authorUrl: mention.author.url,
-           authorAvatar: mention.author.logo %}
+        url: mention.url,
+        verb: 'Mentioned',
+        nofollow: true,
+        date: mention.published,
+        author: mention.author.name,
+        authorUrl: mention.author.url,
+        authorAvatar: mention.author.logo
+      %}
 
       {% if mention.content %}
         <div class="e-content">{{ mention.content.html }}</div>

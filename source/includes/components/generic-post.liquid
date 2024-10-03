@@ -14,12 +14,13 @@
   {% if quote %}<blockquote cite="{{ url }}">{% else %}<article>{% endif %}
   <header>
     {% render 'external-attribution',
-         url: url,
-         class: 'u-repost-of',
-         date: time,
-         author: author,
-         authorUrl: authorUrl,
-         authorAvatar: authorAvatar %}
+      url: url,
+      class: 'u-repost-of',
+      date: time,
+      author: author,
+      authorUrl: authorUrl,
+      authorAvatar: authorAvatar
+    %}
 
     {% if authorAvatar %}
       <a class="gp-avatar-small" href="{{ authorUrl | default: url }}">
