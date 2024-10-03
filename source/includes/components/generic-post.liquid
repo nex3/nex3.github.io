@@ -19,7 +19,7 @@
         {%- render 'date', date: time, class: 'dt-published' -%}
       {% else %}
         to
-        {{ url | urlHostname -}}
+        {{ url | urlHostname | escape -}}
       {% endif %}
       {% if author %}
         by

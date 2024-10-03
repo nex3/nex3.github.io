@@ -5,7 +5,14 @@
     class="{{ class }}"
   {% endif %}
 >
-  {%- if link -%}<a href="{{ link }}">{%- endif -%}
+  {%- if link -%}
+    <a
+      href="{{ link | escape }}"
+      {% if nofollow %}
+        rel="nofollow"
+      {% endif %}
+    >
+  {%- endif -%}
   {{- date | format -}}
   {%- if link -%}</a>{%- endif -%}
 </time>

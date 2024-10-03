@@ -27,6 +27,64 @@ layout: default
 
   {% render 'tags', tags: tags, commentary: commentary %}
 
+  {% if webMentions %}
+    <h2 class="wm-header">Web Mentions ({{ webMentions | size }})</h2>
+    <ol class="web-mentions">
+      {% for mention in webMentions %}
+        <li class="u-comment h-cite">
+          {% if mention.author %}
+            {% if mention.author.logo %}
+              <a
+                class="wm-avatar"
+                {% if mention.author.url %}
+                  href="{{ mention.author.url | escape }}" rel="nofollow"
+                {% endif %}
+                ><img
+                  class="u-logo"
+                  src="{{ mention.author.logo.value | escape }}"
+                  {% if mention.author.logo.alt %}
+                    alt="{{ mention.author.logo.alt | escape }}"
+                  {% endif %}
+              ></a>
+            {% endif %}
+          {% endif %}
+
+          <span class="attribution">
+            {% if mention.author %}
+              <span class="p-author h-card">
+                {% if mention.author.logo %}
+                  <data class="u-logo" value="{{ mention.author.logo | escape }}"></data>
+                {% endif %}
+                {% if mention.author.url %}
+                  <a href="{{ mention.author.url | escape }}" rel="nofollow" class="u-url">
+                {%- endif -%}
+                {{ mention.author.name | escape }}
+                {%- if mention.author.url -%}
+                  </a>
+                {% endif %}
+              </span>
+              mentioned this
+            {% else %}
+              <span class="wm-details"> mentioned
+            {% endif %}
+            on
+            <a href="{{ mention.url | escape }}" rel="nofollow">
+              {{- mention.url | urlHostname | escape -}}
+            </a>
+            {% if mention.published %}
+              at
+              {% render 'date', date: mention.published, link: mention.url, class: 'dt-published' %}
+            {% endif %}
+          </span>
+
+          {% if mention.content %}
+            <div class="e-content">{{ mention.content.html }}</div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  {% endif %}
+
   <div class="commentbox"></div>
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>
