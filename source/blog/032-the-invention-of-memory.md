@@ -1,7 +1,10 @@
 ---
 reply: https://emilysdupree.substack.com/p/the-invention-of-memory
 tags: [covid, link]
-commentary: [I hate substack too but this is good enough to be worth a read]
+updated: 2024-10-03T05:17:39.999Z
+commentary:
+- "I love people's link roundups but I wanna do mine more like reblogs"
+- I hate substack too but this is good enough to be worth a read
 ---
 
 {% genericPost 'https://emilysdupree.substack.com/p/the-invention-of-memory',
