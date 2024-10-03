@@ -4,6 +4,7 @@ tags: [rss]
 ---
 
 {% genericPost "https://topposts.net/post/1727931611456/",
+    time: "2024-10-03T05:00:11Z",
     author: "@topghost",
     authorUrl: "https://topposts.net/post/1727931611456/",
     authorAvatar: "https://topposts.net/img/moon-dutiful.jpg?v=4e58b6acac05" %}
