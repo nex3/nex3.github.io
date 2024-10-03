@@ -1,6 +1,6 @@
 <div class="generic-post-wrapper h-entry">
   {% if authorAvatar %}
-    <a class="gp-avatar-large" href="{{ authorUrl | default: url }}">
+    <a class="gp-avatar" href="{{ authorUrl | default: url }}">
       <img
         src="{{ authorAvatar }}"
         {% if authorAvatarAlt or author %}
@@ -21,18 +21,8 @@
       authorUrl: authorUrl,
       authorAvatar: authorAvatar
     %}
-
-    {% if authorAvatar %}
-      <a class="gp-avatar-small" href="{{ authorUrl | default: url }}">
-        <img
-          src="{{ authorAvatar }}"
-          {% if authorAvatarAlt or author %}
-            alt="{{ authorAvatarAlt | default: author }}"
-          {% endif %}
-        >
-      </a>
-    {% endif %}
   </header>
+
   {% if name %}
     <h1 class="p-name">
       <a href="{{url}}">{{ name | escape }}</a>
