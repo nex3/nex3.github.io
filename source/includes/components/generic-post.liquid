@@ -13,27 +13,13 @@
 
   {% if quote %}<blockquote cite="{{ url }}">{% else %}<article>{% endif %}
   <header>
-    <a href="{{ url }}" class="attribution u-repost-of u-url" rel="canonical">
-      Posted
-      {% if time %}
-        {%- render 'date', date: time, class: 'dt-published' -%}
-      {% else %}
-        to
-        {{ url | urlHostname | escape -}}
-      {% endif %}
-      {% if author %}
-        by
-        <span class="p-author h-card">
-          {% if authorUrl %}
-            <data class="u-url" value="{{ authorUrl }}"></data>
-          {% endif %}
-          {% if authorAvatar %}
-            <data class="u-logo" value="{{ authorAvatar }}"></data>
-          {% endif %}
-          <span class="p-name">{{ author | escape }}</span>
-        </span>
-      {% endif %}
-    </a>
+    {% render 'external-attribution',
+         url: url,
+         class: 'u-repost-of',
+         date: time,
+         author: author,
+         authorUrl: authorUrl,
+         authorAvatar: authorAvatar %}
 
     {% if authorAvatar %}
       <a class="gp-avatar-small" href="{{ authorUrl | default: url }}">

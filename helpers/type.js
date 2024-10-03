@@ -62,6 +62,13 @@ function urlHostname(url) {
   return url.hostname;
 }
 
+/** Returns whether the given URL is for this site. */
+function isSiteUrl(url) {
+  url = url.toString();
+  if (!url.startsWith("http://") && !url.startsWith("https://")) return true;
+  return url.startsWith("https://nex-3.com");
+}
+
 /**
  * Renders block of Markdown into HTML.
  */
@@ -77,9 +84,10 @@ function markdownInline(content) {
 }
 
 export default function typePlugin(eleventyConfig) {
+  eleventyConfig.addLiquidFilter("isSiteUrl", isSiteUrl);
+  eleventyConfig.addLiquidFilter("markdown", markdown);
+  eleventyConfig.addLiquidFilter("markdownInline", markdownInline);
   eleventyConfig.addLiquidFilter("truncateHTML", truncateHTML);
   eleventyConfig.addLiquidFilter("truncateText", truncateText);
   eleventyConfig.addLiquidFilter("urlHostname", urlHostname);
-  eleventyConfig.addLiquidFilter("markdown", markdown);
-  eleventyConfig.addLiquidFilter("markdownInline", markdownInline);
 }
