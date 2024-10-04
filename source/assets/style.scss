@@ -687,10 +687,25 @@ small {
 }
 
 .wm-header {
-  font-size: 20.8px;
-  font-weight: bold;
+  font-size: 20px;
   padding: 5px 15px;
   border-bottom: 1px solid #eee;
+}
+
+.wm-form {
+  font-size: 14px;
+  margin-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  label {
+    display: block;
+  }
+
+  input {
+    height: 22px;
+  }
 }
 
 // Generic Post Embed

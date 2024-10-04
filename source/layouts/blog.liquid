@@ -27,9 +27,8 @@ layout: default
 
   {% render 'tags', tags: tags, commentary: commentary %}
 
-  {% if webMentions %}
-    {% render 'web-mentions', webMentions: webMentions %}
-  {% endif %}
+  {% assign url = page.url | htmlBaseUrl: site.url %}
+  {% render 'web-mentions', webMentions: webMentions, url: url %}
 
   <div class="commentbox"></div>
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
