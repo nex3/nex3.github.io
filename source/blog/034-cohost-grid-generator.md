@@ -4,8 +4,7 @@ tags: [ask, utilities]
 
 {% ask "Brendan McLeod",
      title: "Cohost grid generator!",
-     url: "https://www.brendanmcleod.dev/",
-     avatar: "https://pbs.twimg.com/profile_images/1471546893083807747/WFrJ8bnx_400x400.jpg" %}
+     url: "https://www.brendanmcleod.dev/" %}
   Hey, just wanted to thank you for making cohost grid generator, and hoping that you will keep it up online! It works great with bearblog and it makes my media posts look nice!
 {% endask %}
 
