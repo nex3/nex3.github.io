@@ -3,8 +3,6 @@
 @use "sass:meta";
 @use "sass:map";
 
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
 $accent: #2d9cdb;
 $highlight: #bdecff;
 $grey: #555;
@@ -35,7 +33,16 @@ html {
 
 $body-margin: 24px;
 body {
-  font-family: Inter, sans-serif;
+  font-family:
+    Atkinson Hyperlegible,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+  font-size: 17px;
   line-height: 1.65;
 
   display: flex;
@@ -92,14 +99,14 @@ body {
 
     a {
       margin: 0 12px;
-      font-size: 1.25em;
+      font-size: 20px;
       &:not(:hover):not(:focus) {
         color: currentColor;
         text-decoration: none;
       }
     }
     img {
-      width: 1.1em;
+      width: 17.6px;
       vertical-align: middle;
     }
   }
@@ -107,7 +114,7 @@ body {
 
 main {
   flex-grow: 1;
-  max-width: 90ch;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 
@@ -123,9 +130,9 @@ main {
 
     &::after {
       position: absolute;
-      width: 6rem;
-      height: 6rem;
-      bottom: -6rem;
+      width: 96px;
+      height: 96px;
+      bottom: -96px;
       right: 0;
       content: "";
       background-image: url(/assets/reply.svg);
@@ -183,7 +190,7 @@ a[href] {
 }
 
 .footnotes {
-  font-size: 0.8em;
+  font-size: 12.8px;
 
   &-sep {
     border-color: $dim-grey;
@@ -196,11 +203,11 @@ a[href] {
 
 .pager {
   display: flex;
-  gap: 1rem;
+  gap: 16px;
   justify-content: center;
 
   img {
-    width: 1rem;
+    width: 16px;
     position: relative;
     top: 2px;
   }
@@ -216,7 +223,7 @@ a[href] {
     list-style: none;
 
     > hr {
-      width: calc(100% + 12ch);
+      width: calc(100% + 120px);
       max-width: 96vw;
       margin-left: 50%;
       transform: translateX(-50%);
@@ -226,8 +233,8 @@ a[href] {
       border: none;
       border-top: 1px solid $dim-grey;
       border-bottom: 1px solid $dim-grey;
-      margin-top: 2rem;
-      margin-bottom: 3rem;
+      margin-top: 32px;
+      margin-bottom: 48px;
     }
   }
 }
@@ -239,12 +246,12 @@ a[href] {
   padding: {
     left: 3px;
     right: 3px;
-    bottom: 0.5rem;
+    bottom: 8px;
   }
   border-radius: 3px;
   text-decoration: none;
   font-weight: bold;
-  line-height: 0.5rem;
+  line-height: 8px;
   vertical-align: super;
   margin-left: 3px;
 
@@ -259,7 +266,7 @@ a[href] {
   flex-wrap: wrap;
   align-items: center;
 
-  $gap: 1em;
+  $gap: 16px;
   gap: $gap;
 
   > * {
@@ -271,10 +278,10 @@ a[href] {
 h1.tag {
   text-align: center;
   color: $dim-grey;
-  font-size: 2em;
+  font-size: 32px;
 
   img {
-    width: 1.5rem;
+    width: 24px;
     filter: grayscale(1);
   }
 }
@@ -286,7 +293,7 @@ h1.tag {
   li {
     list-style: none;
     display: inline;
-    margin-right: 0.7rem;
+    margin-right: 11.2px;
   }
 
   a {
@@ -301,7 +308,7 @@ h1.tag {
 figure {
   display: flex;
   flex-direction: column;
-  margin: 0.5rem 1rem;
+  margin: 8px 16px;
 
   img {
     width: 100%;
@@ -309,9 +316,9 @@ figure {
 }
 
 figcaption {
-  font-size: 0.8em;
+  font-size: 12.8px;
   @include phone {
-    font-size: 0.6em;
+    font-size: 9.6px;
   }
 }
 
@@ -320,7 +327,7 @@ figcaption,
   h6:first-child {
     margin-top: 0;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 13.6px;
   }
 
   details {
@@ -399,13 +406,13 @@ details {
 // width of the image. This will allow th eembed to collapse correctly for
 // smaller screen sizes.
 
-$-embed-min-width: 26rem;
-$-embed-padding: 4rem;
-$-embed-column-gap: 1.5rem;
+$-embed-min-width: 416px;
+$-embed-padding: 64px;
+$-embed-column-gap: 24px;
 %embed {
   width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1.15rem;
+  margin-top: 16px;
+  margin-bottom: 18.4px;
   margin-left: auto;
   margin-right: auto;
 
@@ -422,7 +429,7 @@ $-embed-column-gap: 1.5rem;
 
   > article,
   > blockquote {
-    border-radius: 0.5rem;
+    border-radius: 8px;
     box-shadow:
       0px 4px 5px rgba(0, 0, 0, 0.14),
       0px 1px 10px rgba(0, 0, 0, 0.12),
@@ -442,7 +449,7 @@ $-embed-column-gap: 1.5rem;
     }
 
     > div {
-      margin-top: 1rem;
+      margin-top: 16px;
       grid-row: 2;
       grid-column: 1/-1;
     }
@@ -450,7 +457,7 @@ $-embed-column-gap: 1.5rem;
     > div:not(.e-content) {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 16px;
 
       > * {
         margin-block: 0;
@@ -482,26 +489,26 @@ $-embed-column-gap: 1.5rem;
   }
 
   h1 {
-    font-size: 2.441em;
+    font-size: 39.056px;
     @include phone {
-      font-size: 2em;
+      font-size: 32px;
     }
   }
 
   h2 {
-    font-size: 1.953em;
+    font-size: 31.248px;
   }
 
   h3 {
-    font-size: 1.563em;
+    font-size: 25.008px;
   }
 
   h4 {
-    font-size: 1.25em;
+    font-size: 20px;
   }
 
   h5 {
-    font-size: 1.1em;
+    font-size: 17.6px;
   }
 }
 
@@ -517,8 +524,8 @@ $-embed-column-gap: 1.5rem;
  )) {
     grid-row: 1;
     grid-column: 3;
-    margin-top: 0.75rem;
-    margin-right: 0.75rem;
+    margin-top: 12px;
+    margin-right: 12px;
     filter: none;
     z-index: 2;
 
@@ -530,7 +537,7 @@ $-embed-column-gap: 1.5rem;
 
 /* Typography */
 p {
-  margin-bottom: 1.15rem;
+  margin-bottom: 18.4px;
 }
 
 h1,
@@ -538,26 +545,26 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 2.75rem 0 1.05rem;
+  margin: 44px 0 16.8px;
   font-weight: 400;
   line-height: 1.15;
 }
 
 h1 {
-  font-size: 3.052em;
+  font-size: 48.832px;
   @include phone {
-    font-size: 2.6em;
+    font-size: 41.6px;
   }
 }
 
 h2 {
-  font-size: 2.441em;
+  font-size: 39.056px;
 }
 
 h6 {
   font-weight: bolder;
-  margin-bottom: 0.2rem;
-  font-size: 0.9em;
+  margin-bottom: 3.2px;
+  font-size: 14.4px;
   font-variant: small-caps;
   + * {
     margin-top: 0;
@@ -565,11 +572,11 @@ h6 {
 }
 
 small {
-  font-size: 0.8em;
+  font-size: 12.8px;
 }
 
 %sidenote {
-  font-size: 0.8em;
+  font-size: 12.8px;
   color: $grey;
 }
 
@@ -593,13 +600,13 @@ small {
       0px 4px 5px rgba(0, 0, 0, 0.14),
       0px 1px 10px rgba(0, 0, 0, 0.12),
       0px 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-    margin-top: 0.5rem;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 8px;
     display: grid;
     grid-template-columns: min-content min-content 1fr;
     grid-template-rows: min-content min-content;
-    gap: 0.5rem;
+    gap: 8px;
   }
 
   .u-comment:not(:has(.e-content)) {
@@ -610,8 +617,8 @@ small {
 
     .wm-avatar {
       display: block;
-      width: 2rem;
-      height: 2rem;
+      width: 32px;
+      height: 32px;
     }
   }
 
@@ -641,8 +648,8 @@ small {
   grid-row: span 2;
   grid-column: 1;
   display: block;
-  width: 3rem;
-  height: 3rem;
+  width: 48px;
+  height: 48px;
 
   @include phone {
     grid-column: 2;
@@ -652,7 +659,7 @@ small {
   img {
     width: 100%;
     height: 100%;
-    border-radius: 1.5rem;
+    border-radius: 24px;
     filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
       drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
       drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
@@ -660,7 +667,7 @@ small {
 }
 
 .wm-header {
-  font-size: 1.3rem;
+  font-size: 20.8px;
   font-weight: bold;
   padding: 5px 15px;
   border-bottom: 1px solid #eee;
@@ -675,17 +682,17 @@ small {
   > article,
   > blockquote {
     background-color: white;
-    padding: 0.75rem;
+    padding: 12px;
 
     > header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      line-height: 1rem;
+      line-height: 16px;
 
       time {
         font-variant-numeric: tabular-nums;
-        font-size: 0.75rem;
+        font-size: 12px;
         flex: none;
       }
     }
@@ -695,47 +702,44 @@ small {
     &::before,
     .gp-prose::after {
       position: absolute;
-      font-size: 10rem;
+      font-size: 160px;
       color: transparent;
-      font-family:
-        Atkinson Hyperlegible,
-        serif;
       text-shadow: 0 0 2px color.scale($faint-grey);
     }
 
     &::before {
       content: "“";
-      top: -2.5rem;
+      top: -40px;
     }
 
     .gp-prose::after {
       content: "”";
       right: 0;
-      bottom: -8rem;
+      bottom: -128px;
     }
   }
 
   > a {
-    $width: 4rem;
+    $width: 64px;
     height: $width;
     aspect-ratio: 1 / 1;
 
     @include embed-image($width) {
-      width: 2rem;
-      height: 2rem;
+      width: 32px;
+      height: 32px;
     }
 
     img {
-      border-radius: 2rem;
+      border-radius: 32px;
     }
   }
 }
 
 .gp-prose {
   overflow-wrap: break-word;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.75;
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 
 .gp-tags {
@@ -747,30 +751,30 @@ small {
   position: relative;
   list-style: none;
   padding-left: 0;
-  margin-top: 1rem;
+  margin-top: 16px;
   width: 100%;
 
   > li {
     display: inline-block;
-    margin-right: 0.5rem;
+    margin-right: 8px;
   }
 }
 
 // Ask Embed
 
-$generic-avatar-width: 4rem;
+$generic-avatar-width: 64px;
 .ask-wrapper {
   @extend %embed;
 
   > article {
     width: 100%;
     overflow-x: auto;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
+    border-radius: 8px;
+    padding: 12px;
 
     > header {
       width: 100%;
-      gap: 0.5rem;
+      gap: 8px;
       color: $dim-grey;
       font-weight: normal;
 
@@ -788,8 +792,8 @@ $generic-avatar-width: 4rem;
   > a {
     height: $generic-avatar-width;
     @include embed-image($generic-avatar-width) {
-      width: 2rem;
-      height: 2rem;
+      width: 32px;
+      height: 32px;
     }
 
     img:not([src="/assets/eggbug-tuesday.png"]) {
@@ -857,16 +861,7 @@ $generic-avatar-width: 4rem;
   > article {
     width: 100%;
     overflow-x: auto;
-    border-radius: 0.5rem;
-    font-family:
-      Atkinson Hyperlegible,
-      ui-sans-serif,
-      system-ui,
-      sans-serif,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-      "Noto Color Emoji";
+    border-radius: 8px;
 
     > header {
       grid-column: 2;
@@ -876,15 +871,15 @@ $generic-avatar-width: 4rem;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-      padding: 0.75rem;
+      gap: 8px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      padding: 12px;
       border-bottom: 1px solid rgb(191, 186, 181);
 
       > div {
         line-height: 1;
-        gap: 0.5rem;
+        gap: 8px;
         align-items: center;
         flex-wrap: wrap;
         flex-direction: row;
@@ -911,8 +906,8 @@ $generic-avatar-width: 4rem;
       time {
         color: rgb(130 127 124);
         font-variant-numeric: tabular-nums;
-        font-size: 0.75rem;
-        line-height: 1rem;
+        font-size: 12px;
+        line-height: 16px;
         flex: none;
         display: block;
       }
@@ -923,8 +918,8 @@ $generic-avatar-width: 4rem;
         transition-property: transform;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 24px;
+        height: 24px;
       }
     }
 
@@ -934,9 +929,9 @@ $generic-avatar-width: 4rem;
       border-top: 1px solid rgb(191, 186, 181);
       width: 100%;
       max-width: 100%;
-      border-bottom-right-radius: 0.5rem;
-      border-bottom-left-radius: 0.5rem;
-      padding: 0.75rem;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      padding: 12px;
 
       > div {
         display: flex;
@@ -950,14 +945,14 @@ $generic-avatar-width: 4rem;
     aspect-ratio: 1 / 1;
     @include embed-image($generic-avatar-width) {
       grid-column: 2;
-      width: 2rem + 0.75rem;
-      height: 2rem + 0.75rem * 2;
+      width: 32px + 12px;
+      height: 32px + 12px * 2;
       margin: 0;
-      padding: 0.75rem {
+      padding: 12px {
         right: 0;
       }
       background-color: rgb(255 249 242);
-      border-top-left-radius: 0.5rem;
+      border-top-left-radius: 8px;
       border-bottom: 1px solid rgb(191, 186, 181);
     }
 
@@ -979,17 +974,17 @@ $generic-avatar-width: 4rem;
 }
 
 .co-prose {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 12px;
+  padding-right: 12px;
   overflow-wrap: break-word;
   overflow: hidden;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.75;
   color: #191919;
 
   :where(p) {
-    margin-top: 1.25em;
-    margin-bottom: 1.25em;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   :where(a) {
@@ -1007,9 +1002,9 @@ $generic-avatar-width: 4rem;
   }
 
   :where(ul, ol) {
-    margin-top: 1.25em;
-    margin-bottom: 1.25em;
-    padding-inline-start: 1.625em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-inline-start: 26px;
   }
 
   :where(ol) {
@@ -1022,7 +1017,7 @@ $generic-avatar-width: 4rem;
 
   :where(ol > li) {
     font-weight: 40;
-    padding-inline-start: 0.375em;
+    padding-inline-start: 6px;
 
     &::marker {
       color: #6b7280;
@@ -1030,7 +1025,7 @@ $generic-avatar-width: 4rem;
   }
 
   :where(ul > li) {
-    padding-inline-start: 0.375em;
+    padding-inline-start: 6px;
 
     &::marker {
       color: #d1d5db;
@@ -1039,45 +1034,45 @@ $generic-avatar-width: 4rem;
 
   > :where(ul, ol) > {
     :where(li p) {
-      margin-top: 0.75em;
-      margin-bottom: 0.75em;
+      margin-top: 12px;
+      margin-bottom: 12px;
     }
 
     :where(li p:first-child) {
-      margin-top: 1.25em;
+      margin-top: 20px;
     }
 
     :where(li p:last-child) {
-      margin-bottom: 1.25em;
+      margin-bottom: 20px;
     }
   }
 
   :where(ul ul, ul ol, ol ul, ol ol) {
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 
   :where(dl) {
-    margin-top: 1.25em;
-    margin-bottom: 1.25em;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   :where(dd) {
-    margin-top: 0.5em;
-    padding-inline-start: 1.625em;
+    margin-top: 8px;
+    padding-inline-start: 26px;
   }
 
   :where(dt) {
     color: #111827;
     font-weight: 600;
-    margin-top: 1.25em;
+    margin-top: 20px;
   }
 
   :where(hr) {
     color: #e5e7eb;
     border-top-width: 1px;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 
   :where(hr + *) {
@@ -1088,12 +1083,12 @@ $generic-avatar-width: 4rem;
     font-weight: 500;
     font-style: italic;
     color: #111827;
-    border-inline-start-width: 0.25rem;
+    border-inline-start-width: 4px;
     border-inline-start-color: #e5e7eb;
     quotes: "\201C" "\201D" "\2018" "\2019";
-    margin-top: 1.6em;
-    margin-bottom: 1.6em;
-    padding-inline-start: 1em;
+    margin-top: 25.6px;
+    margin-bottom: 25.6px;
+    padding-inline-start: 16px;
   }
 
   :where(blockquote p:first-of-type)::before {
@@ -1114,17 +1109,17 @@ $generic-avatar-width: 4rem;
 
   :where(h1) {
     font-weight: 800;
-    font-size: 2.25em;
+    font-size: 36px;
     margin-top: 0;
-    margin-bottom: 0.8888889em;
+    margin-bottom: 14.2222224px;
     line-height: 1.1111111;
   }
 
   :where(h2) {
     font-weight: 700;
-    font-size: 1.5em;
-    margin-top: 2em;
-    margin-bottom: 1em;
+    font-size: 24px;
+    margin-top: 32px;
+    margin-bottom: 16px;
     line-height: 1.3333333;
   }
 
@@ -1135,9 +1130,9 @@ $generic-avatar-width: 4rem;
 
   :where(h3) {
     font-weight: 600;
-    font-size: 1.25em;
-    margin-top: 1.6em;
-    margin-bottom: 0.6em;
+    font-size: 20px;
+    margin-top: 25.6px;
+    margin-bottom: 9.6px;
     line-height: 1.6;
   }
 
@@ -1148,25 +1143,25 @@ $generic-avatar-width: 4rem;
 
   :where(h4) {
     font-weight: 600;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    margin-top: 24px;
+    margin-bottom: 8px;
     line-height: 1.5;
   }
 
   :where(img) {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 
   :where(picture) {
     display: block;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 
   :where(video) {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 
   :where(kbd) {
@@ -1176,18 +1171,18 @@ $generic-avatar-width: 4rem;
     box-shadow:
       0 0 0 1px rgb(17 24 39 / 10%),
       0 3px 0 rgb(17 24 39 / 10%);
-    font-size: 0.875em;
-    border-radius: 0.3125rem;
-    padding-top: 0.1875em;
-    padding-inline-end: 0.375em;
-    padding-bottom: 0.1875em;
-    padding-inline-start: 0.375em;
+    font-size: 14px;
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-inline-end: 6px;
+    padding-bottom: 3px;
+    padding-inline-start: 6px;
   }
 
   :where(code) {
     color: #111827;
     font-weight: 600;
-    font-size: 0.875em;
+    font-size: 14px;
 
     &::before,
     &::after {
@@ -1204,15 +1199,15 @@ $generic-avatar-width: 4rem;
     background-color: #1f2937;
     overflow-x: auto;
     font-weight: 400;
-    font-size: 0.875em;
+    font-size: 14px;
     line-height: 1.7142857;
-    margin-top: 1.7142857em;
-    margin-bottom: 1.7142857em;
-    border-radius: 0.375rem;
-    padding-top: 0.8571429em;
-    padding-inline-end: 1.1428571em;
-    padding-bottom: 0.8571429em;
-    padding-inline-start: 1.1428571em;
+    margin-top: 27.4285712px;
+    margin-bottom: 27.4285712px;
+    border-radius: 6px;
+    padding-top: 13.7142864px;
+    padding-inline-end: 18.2857136px;
+    padding-bottom: 13.7142864px;
+    padding-inline-start: 18.2857136px;
   }
 
   :where(pre code) {
@@ -1235,9 +1230,9 @@ $generic-avatar-width: 4rem;
     width: 100%;
     table-layout: auto;
     text-align: start;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    font-size: 0.875em;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    font-size: 14px;
     line-height: 1.7142857;
   }
 
@@ -1245,9 +1240,9 @@ $generic-avatar-width: 4rem;
     color: #fff;
     font-weight: 600;
     vertical-align: bottom;
-    padding-inline-end: 0.5714286em;
-    padding-bottom: 0.5714286em;
-    padding-inline-start: 0.5714286em;
+    padding-inline-end: 9.1428576px;
+    padding-bottom: 9.1428576px;
+    padding-inline-start: 9.1428576px;
   }
 
   :where(thead th, body td):where(:first-child) {
@@ -1281,15 +1276,15 @@ $generic-avatar-width: 4rem;
   }
 
   :where(tbody td, tfoot td) {
-    padding-top: 0.5714286em;
-    padding-inline-end: 0.5714286em;
-    padding-bottom: 0.5714286em;
-    padding-inline-start: 0.5714286em;
+    padding-top: 9.1428576px;
+    padding-inline-end: 9.1428576px;
+    padding-bottom: 9.1428576px;
+    padding-inline-start: 9.1428576px;
   }
 
   :where(figure) {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 
   :where(figure > *) {
@@ -1299,9 +1294,9 @@ $generic-avatar-width: 4rem;
 
   :where(figcaption) {
     color: var(--tw-prose-captions);
-    font-size: 0.875em;
+    font-size: 14px;
     line-height: 1.4285714;
-    margin-top: 0.8571429em;
+    margin-top: 13.7142864px;
   }
 
   :where(picture > img) {
@@ -1310,8 +1305,8 @@ $generic-avatar-width: 4rem;
   }
 
   :where(li) {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 
   > :where(:first-child) {
@@ -1331,7 +1326,7 @@ $generic-avatar-width: 4rem;
 }
 
 .co-tags-box {
-  padding-inline: 0.75rem;
+  padding-inline: 12px;
   max-width: 100%;
   width: 100%;
 }
@@ -1345,7 +1340,7 @@ $generic-avatar-width: 4rem;
   position: relative;
 
   > a {
-    margin-right: 0.5rem;
+    margin-right: 8px;
   }
 }
 
@@ -1365,8 +1360,8 @@ $generic-avatar-width: 4rem;
   width: max-content;
 
   a {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
@@ -1374,12 +1369,12 @@ $generic-avatar-width: 4rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.75rem;
+  gap: 12px;
 
   svg {
     color: rgb(25 25 25);
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
 
     &:last-child {
       color: rgb(131 37 79);
@@ -1417,7 +1412,10 @@ $letterboxd-poster-width: 150px;
     color: #bcd;
     background: #456;
     z-index: 1;
-    font-family: Graphik-Light-Web, Inter, sans-serif;
+    font-family:
+      Graphik-Light-Web,
+      Atkinson Hyperlegible,
+      sans-serif;
 
     a:hover {
       color: color.to-gamut(
@@ -1437,9 +1435,9 @@ $letterboxd-poster-width: 150px;
     @include embed-image($letterboxd-poster-width) {
       background: #456;
       margin: 0;
-      padding-top: 0.75rem;
-      padding-right: 0.75rem;
-      width: calc(110px + 0.75rem);
+      padding-top: 12px;
+      padding-right: 12px;
+      width: calc(110px + 12px);
       min-height: 100%;
       border: none;
 
@@ -1602,15 +1600,15 @@ $letterboxd-poster-width: 150px;
     padding: $image-tuck 16px 0px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc($image-tuck * -1 + 0.5rem);
+    margin-top: calc($image-tuck * -1 + 8px);
     z-index: 0;
     background: linear-gradient(
       rgba(125, 185, 232, 0) 0px,
-      rgb(22, 24, 28) calc($image-tuck + 3rem)
+      rgb(22, 24, 28) calc($image-tuck + 48px)
     );
 
     p {
-      margin: 0px 0px 0.625em;
+      margin: 0px 0px 10px;
     }
   }
 }
