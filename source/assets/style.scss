@@ -306,6 +306,11 @@ h1.tag {
   }
 }
 
+fieldset {
+  border: none;
+  padding: 0;
+}
+
 figure {
   display: flex;
   flex-direction: column;
