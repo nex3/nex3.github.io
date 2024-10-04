@@ -1,5 +1,7 @@
 ---
+reply: https://moonbase.lgbt/blog/nes-pictionary-in-memoriam/
 tag: [cohost, tech, link]
+updated: 2024-10-04T03:59:02.042Z
 ---
 
 {% genericPost 'https://moonbase.lgbt/blog/nes-pictionary-in-memoriam/',
