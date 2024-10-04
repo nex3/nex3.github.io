@@ -308,7 +308,7 @@ h1.tag {
 figure {
   display: flex;
   flex-direction: column;
-  margin: 8px 16px;
+  margin: 8px auto;
 
   img {
     width: 100%;
@@ -317,6 +317,7 @@ figure {
 
 figcaption {
   font-size: 12.8px;
+  text-align: center;
   @include phone {
     font-size: 9.6px;
   }
