@@ -48,9 +48,12 @@ export async function webMentions() {
       mention.author = { type: "card", name: mention.author };
     }
 
-    mention.author.logo ??= mention.author.photo;
-    if (typeof mention.author?.logo === "string") {
-      mention.author.logo = { value: mention.author.logo };
+    if (mention.author.name === "") delete mention.author;
+    if (mention.author) {
+      mention.author.logo ??= mention.author.photo;
+      if (typeof mention.author.logo === "string") {
+        mention.author.logo = { value: mention.author.logo };
+      }
     }
 
     if (mention.content?.html) {
