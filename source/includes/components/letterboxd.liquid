@@ -12,17 +12,6 @@
   {% endif %}
   <article>
     <header>
-      {% if poster %}
-        <a
-          href="https://letterboxd.com/film/{{ filmSlug }}/"
-          target="_blank"
-          rel="nofollow noopener"
-          class="lb-poster-small"
-          tabindex="0"
-        >
-          <img src="{{ poster }}">
-        </a>
-      {% endif %}
       <div class="lb-info">
         <address class="p-author h-card">
           <data class="p-nickname">{{ author }}</data>
@@ -122,9 +111,11 @@
         </time>
       </div>
     </header>
-    {% if image %}
-      <div class="lb-image"><img src="{{ image }}"></div>
-    {% endif %}
-    <div class="lb-prose e-content">{{ contents }}</div>
+    <div>
+      {% if image %}
+        <div class="lb-image"><img src="{{ image }}"></div>
+      {% endif %}
+      <div class="lb-prose e-content">{{ contents }}</div>
+    </div>
   </article>
 </div>

@@ -17,19 +17,6 @@
         <data class="p-nickname" value="{{ nickname | escape }}"></data>
       {% endif %}
 
-      <a
-        class="ask-avatar-small"
-        {% if url %}
-          href="{{ url | escape }}"
-        {% endif %}
-      >
-        <img
-          class="u-logo"
-          src="{{ avatar | default: "/assets/eggbug-tuesday.png" | escape }}"
-          alt="{{ text | escape }}"
-        >
-      </a>
-
       {% if url %}<a class="u-url" href="{{ url | escape }}">{% endif -%}
       <span
         class="
@@ -47,10 +34,12 @@
       asked:
     </header>
 
-    {% if title %}
-      <h1 class="p-name">{{ title | escape }}</h1>
-    {% endif %}
+    <div>
+      {% if title %}
+        <h1 class="p-name">{{ title | escape }}</h1>
+      {% endif %}
 
-    <div class="e-content">{{ contents | markdown }}</div>
+      <div class="e-content">{{ contents | markdown }}</div>
+    </div>
   </article>
 </div>

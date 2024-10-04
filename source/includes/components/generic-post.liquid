@@ -23,23 +23,25 @@
     %}
   </header>
 
-  {% if name %}
-    <h1 class="p-name">
-      <a href="{{url}}">{{ name | escape }}</a>
-    </h1>
-  {% endif %}
-  <div class="gp-prose e-content">
-    {{- contents -}}
-    {%- if quote -%}
-      <p><a href="{{ url }}" class="read-more" title="Read More">…</a></p>
+  <div>
+    {% if name %}
+      <h1 class="p-name">
+        <a href="{{url}}">{{ name | escape }}</a>
+      </h1>
+    {% endif %}
+    <div class="gp-prose e-content">
+      {{- contents -}}
+      {%- if quote -%}
+        <p><a href="{{ url }}" class="read-more" title="Read More">…</a></p>
+      {%- endif -%}
+    </div>
+    {%- if tags.size > 0 -%}
+      <ul class="gp-tags">
+        {%- for tag in tags -%}
+          <li class="p-category">#{{ tag }}</li>
+        {%- endfor -%}
+      </ul>
     {%- endif -%}
   </div>
-  {%- if tags.size > 0 -%}
-    <ul class="gp-tags">
-      {%- for tag in tags -%}
-        <li class="p-category">#{{ tag }}</li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
   {% if quote %}</blockquote>{% else %}</article>{% endif %}
 </div>

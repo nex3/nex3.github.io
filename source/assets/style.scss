@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "sass:math";
+@use "sass:meta";
 @use "sass:map";
 
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
@@ -26,6 +27,10 @@ $phone-break: 468px;
 html {
   font-size: 100%;
   scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 $body-margin: 24px;
@@ -351,7 +356,6 @@ figcaption,
 
 details {
   border: 1px solid transparent;
-  box-sizing: border-box;
   padding: 5px;
   transition-property: background-color, border-color;
   transition-duration: 300ms;
@@ -372,33 +376,108 @@ details {
   }
 }
 
+// A component extending %embed should have the following structure:
+//
+// ```html
+// <div>
+//   <a><img></a> <!-- optional -->
+//   <article> <!-- or <blockquote> -->
+//     <header></header>
+//     <div>
+//       <!-- optional additional rows -->
+//       <div class="e-content">
+//       <!-- optional additional rows -->
+//     </div>
+//   </article>
+// </div>
+// ```
+//
+// If `div > article > div` contains no elements other than `e-content`, the
+// `e-content` may be placed there directly.
+//
+// A selector targeting `div > a` should `@include embed-image` and pass it the
+// width of the image. This will allow th eembed to collapse correctly for
+// smaller screen sizes.
+
 $-embed-min-width: 26rem;
 $-embed-padding: 4rem;
+$-embed-column-gap: 1.5rem;
 %embed {
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 1.15rem;
   margin-left: auto;
   margin-right: auto;
-  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns: min-content 1fr min-content;
+  // We can in theory make this repeat arbitrarily high. Using auto-fit doesn't
+  // work because it won't play nicely with the subgrid in the article.
+  grid-template-rows: min-content 1fr;
 
   @include not-phone {
     padding-inline: $-embed-padding;
   }
 
-  article,
-  blockquote {
+  > article,
+  > blockquote {
+    border-radius: 0.5rem;
     box-shadow:
       0px 4px 5px rgba(0, 0, 0, 0.14),
       0px 1px 10px rgba(0, 0, 0, 0.12),
       0px 2px 4px rgba(0, 0, 0, 0.2);
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
+    position: relative;
+    margin: 0;
 
-    > .e-content > :first-child {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+
+    > header {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    > div {
+      margin-top: 1rem;
+      grid-row: 2;
+      grid-column: 1/-1;
+    }
+
+    > div:not(.e-content) {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      > * {
+        margin-block: 0;
+      }
+    }
+
+    .e-content > :first-child {
       margin-top: 0;
     }
 
-    > .e-content > :last-child {
+    .e-content > :last-child {
       margin-bottom: 0;
+    }
+  }
+
+  > a {
+    display: block;
+    filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
+      drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
+      drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+    grid-column: 1;
+    grid-row: 1 / -1;
+    margin-right: $-embed-column-gap;
+
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -426,46 +505,26 @@ $-embed-padding: 4rem;
   }
 }
 
-// EWF: Embed With Floater
+// Defines the width for an embed's image and moves it to the embed's corner for
+// smaller screen sizes. This can be passed a content block to inject into the
+// smaller-sized media query.
+@mixin embed-image($width) {
+  width: $width;
 
-$-ewf-row-gap: 0.5rem;
-@function -ewf-breakpoint($floater-width) {
-  @return calc(
-    $-embed-min-width + $-embed-padding * 2 + $floater-width + $-ewf-row-gap +
-      $body-margin * 2
-  );
-}
+  @media only screen and (width <= calc(
+ $-embed-min-width + $-embed-padding * 2 + $width +
+ $-embed-column-gap + $body-margin * 2
+ )) {
+    grid-row: 1;
+    grid-column: 3;
+    margin-top: 0.75rem;
+    margin-right: 0.75rem;
+    filter: none;
+    z-index: 2;
 
-@mixin ewf-large($floater-width) {
-  @media (width > #{-ewf-breakpoint($floater-width)}) {
-    @content;
-  }
-}
-
-@mixin ewf-small($floater-width) {
-  @media only screen and (width <= #{-ewf-breakpoint($floater-width)}) {
-    @content;
-  }
-}
-
-@mixin ewf-wrapper($floater-width) {
-  @include ewf-large($floater-width) {
-    display: grid;
-    grid-template-columns: $floater-width 1fr;
-    row-gap: $-ewf-row-gap;
-    column-gap: 1.5rem;
-  }
-}
-
-@mixin ewf-floater($floater-width) {
-  display: block;
-  filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
-    drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
-    drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
-  width: $floater-width;
-
-  @include ewf-small($floater-width) {
-    display: none;
+    @if meta.content-exists() {
+      @content;
+    }
   }
 }
 
@@ -612,36 +671,17 @@ small {
 .generic-post-wrapper {
   @extend %embed;
   display: grid;
-  grid-template-columns: min-content 1fr min-content;
-  grid-template-rows: repeat(4, min-content);
-
-  &,
-  & * {
-    box-sizing: border-box;
-  }
 
   > article,
   > blockquote {
     background-color: white;
-    border-radius: 0.5rem;
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-template-rows: subgrid;
-    grid-row: 1 / -1;
-    grid-column: 2 / -1;
     padding: 0.75rem;
-
-    > * {
-      grid-column: 1/-1;
-    }
 
     > header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       line-height: 1rem;
-      grid-row: 1;
-      grid-column: 1;
 
       time {
         font-variant-numeric: tabular-nums;
@@ -649,18 +689,9 @@ small {
         flex: none;
       }
     }
-
-    > h1 {
-      margin-top: 1rem;
-      margin-bottom: 0;
-      grid-row: 2;
-    }
   }
 
   > blockquote {
-    position: relative;
-    margin: 0;
-
     &::before,
     .gp-prose::after {
       position: absolute;
@@ -683,13 +714,27 @@ small {
       bottom: -8rem;
     }
   }
+
+  > a {
+    $width: 4rem;
+    height: $width;
+    aspect-ratio: 1 / 1;
+
+    @include embed-image($width) {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    img {
+      border-radius: 2rem;
+    }
+  }
 }
 
 .gp-prose {
   overflow-wrap: break-word;
   font-size: 1rem;
   line-height: 1.75;
-  grid-row: 3;
   margin-top: 1rem;
 }
 
@@ -704,7 +749,6 @@ small {
   padding-left: 0;
   margin-top: 1rem;
   width: 100%;
-  grid-row: 4;
 
   > li {
     display: inline-block;
@@ -712,62 +756,21 @@ small {
   }
 }
 
-.gp-avatar {
-  display: block;
-  filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
-    drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
-    drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
-  $width: 4rem;
-  width: $width;
-  height: $width;
-  aspect-ratio: 1 / 1;
-  grid-column: 1;
-  grid-row: 1 / -1;
-  margin-right: 1.5rem;
-
-  @include ewf-small($width) {
-    grid-row: 1;
-    grid-column: 3;
-    margin-top: 0.75rem;
-    margin-right: 0.75rem;
-    filter: none;
-    width: 2rem;
-    height: 2rem;
-    z-index: 1;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
-  }
-}
-
 // Ask Embed
 
-$cohost-floater-width: 4rem;
-
+$generic-avatar-width: 4rem;
 .ask-wrapper {
   @extend %embed;
-  @include ewf-wrapper($cohost-floater-width);
 
-  &,
-  & * {
-    box-sizing: border-box;
-  }
-
-  article {
+  > article {
     width: 100%;
     overflow-x: auto;
     border-radius: 0.5rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding: 0.75rem;
 
     > header {
       width: 100%;
       gap: 0.5rem;
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
       color: $dim-grey;
       font-weight: normal;
 
@@ -781,6 +784,18 @@ $cohost-floater-width: 4rem;
       margin-top: 0;
     }
   }
+
+  > a {
+    height: $generic-avatar-width;
+    @include embed-image($generic-avatar-width) {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    img:not([src="/assets/eggbug-tuesday.png"]) {
+      border-radius: math.div($generic-avatar-width, 2);
+    }
+  }
 }
 
 .ask-asker {
@@ -790,48 +805,14 @@ $cohost-floater-width: 4rem;
   }
 }
 
-.ask-avatar-large {
-  height: 4rem;
-  position: relative;
-  @include ewf-floater($cohost-floater-width);
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.ask-avatar-small {
-  width: 2rem;
-  height: 2rem;
-  display: none;
-  float: right;
-  position: relative;
-  bottom: 2px;
-
-  @include ewf-small($cohost-floater-width) {
-    display: block;
-  }
-}
-
-.ask-avatar-large,
-.ask-avatar-small {
-  img:not([src="/assets/eggbug-tuesday.png"]) {
-    border-radius: 2rem;
-  }
-}
-
 // Cohost Post Embed
-
-$cohost-floater-width: 4rem;
 
 .cohost-post-wrapper {
   @extend %embed;
-  @include ewf-wrapper($cohost-floater-width);
+  grid-template-columns: min-content min-content 1fr;
 
   &,
   & * {
-    box-sizing: border-box;
     border-width: 0;
     border-style: solid;
     border-color: #ded9d3;
@@ -873,7 +854,7 @@ $cohost-floater-width: 4rem;
     outline-color: rgb(131, 37, 79);
   }
 
-  article {
+  > article {
     width: 100%;
     overflow-x: auto;
     border-radius: 0.5rem;
@@ -888,6 +869,7 @@ $cohost-floater-width: 4rem;
       "Noto Color Emoji";
 
     > header {
+      grid-column: 2;
       background-color: rgb(255 249 242);
       display: flex;
       width: 100%;
@@ -898,6 +880,7 @@ $cohost-floater-width: 4rem;
       border-top-left-radius: 0.5rem;
       border-top-right-radius: 0.5rem;
       padding: 0.75rem;
+      border-bottom: 1px solid rgb(191, 186, 181);
 
       > div {
         line-height: 1;
@@ -945,13 +928,10 @@ $cohost-floater-width: 4rem;
       }
     }
 
-    > hr {
-      border-color: rgb(191 186 181);
-    }
-
-    > footer {
+    > div > footer {
       background-color: rgb(255 249 242);
       color: rgb(130 127 124);
+      border-top: 1px solid rgb(191, 186, 181);
       width: 100%;
       max-width: 100%;
       border-bottom-right-radius: 0.5rem;
@@ -962,6 +942,33 @@ $cohost-floater-width: 4rem;
         display: flex;
         justify-content: space-between;
       }
+    }
+  }
+
+  > a {
+    height: $generic-avatar-width;
+    aspect-ratio: 1 / 1;
+    @include embed-image($generic-avatar-width) {
+      grid-column: 2;
+      width: 2rem + 0.75rem;
+      height: 2rem + 0.75rem * 2;
+      margin: 0;
+      padding: 0.75rem {
+        right: 0;
+      }
+      background-color: rgb(255 249 242);
+      border-top-left-radius: 0.5rem;
+      border-bottom: 1px solid rgb(191, 186, 181);
+    }
+
+    img {
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      object-fit: cover;
     }
   }
 }
@@ -976,8 +983,6 @@ $cohost-floater-width: 4rem;
   padding-right: 0.75rem;
   overflow-wrap: break-word;
   overflow: hidden;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.75;
   color: #191919;
@@ -1326,7 +1331,7 @@ $cohost-floater-width: 4rem;
 }
 
 .co-tags-box {
-  padding: 0.75rem;
+  padding-inline: 0.75rem;
   max-width: 100%;
   width: 100%;
 }
@@ -1341,43 +1346,6 @@ $cohost-floater-width: 4rem;
 
   > a {
     margin-right: 0.5rem;
-  }
-}
-
-.co-avatar-large {
-  height: 4rem;
-  aspect-ratio: 1 / 1;
-  position: relative;
-  @include ewf-floater($cohost-floater-width);
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.co-avatar-small {
-  width: 2rem;
-  height: 2rem;
-  display: none;
-
-  @include ewf-small($cohost-floater-width) {
-    display: block;
-  }
-}
-
-.co-avatar-large,
-.co-avatar-small {
-  img {
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
   }
 }
 
@@ -1421,11 +1389,9 @@ $cohost-floater-width: 4rem;
 
 // Letterboxd Embed
 
-$letterboxd-floater-width: 150px;
-
+$letterboxd-poster-width: 150px;
 .letterboxd-post-wrapper {
   @extend %embed;
-  @include ewf-wrapper($letterboxd-floater-width);
 
   .p-name,
   .p-nickname {
@@ -1443,13 +1409,10 @@ $letterboxd-floater-width: 150px;
     border: 1px solid #2c3440;
     overflow: hidden;
     color: #9ab;
-    display: flex;
-    flex-direction: column;
   }
 
   header {
     display: flex;
-    margin-bottom: 18.462px;
     padding: 13.846px 16px 10px;
     color: #bcd;
     background: #456;
@@ -1468,51 +1431,28 @@ $letterboxd-floater-width: 150px;
     }
   }
 
-  .lb-poster {
+  > a {
     height: 225px;
     height: fit-content;
-    @include ewf-floater($letterboxd-floater-width);
-  }
+    @include embed-image($letterboxd-poster-width) {
+      background: #456;
+      margin: 0;
+      padding-top: 0.75rem;
+      padding-right: 0.75rem;
+      width: calc(110px + 0.75rem);
+      min-height: 100%;
+      border: none;
 
-  .lb-poster-small {
-    align-self: flex-start;
-    flex-shrink: 0;
-    order: 2;
-    width: 30%;
-    max-width: 110px;
-    margin-bottom: -100%;
-    display: none;
-
-    @include ewf-small($letterboxd-floater-width) {
-      display: block;
+      img {
+        margin-bottom: -18.462px;
+        width: 110px;
+        height: 165px;
+      }
     }
-  }
-
-  .lb-poster,
-  .lb-poster-small {
-    position: relative;
 
     img {
-      width: 100%;
       border-radius: 4px;
       display: block;
-    }
-
-    &::after {
-      content: " ";
-      box-shadow: inset 0 0 0 1px rgba(221, 238, 255, 0.1);
-      display: block;
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      pointer-events: none;
-      border-radius: 4px;
-      transition: box-shadow 0.1s;
-    }
-
-    &:hover::after {
-      box-shadow: inset 0 0 0 3px #00e054;
     }
   }
 
@@ -1530,7 +1470,7 @@ $letterboxd-floater-width: 150px;
   .lb-context {
     font-weight: 400;
     margin-right: 3px;
-    @include ewf-small($letterboxd-floater-width) {
+    @include phone {
       display: none;
     }
   }
