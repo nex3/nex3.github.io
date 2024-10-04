@@ -556,7 +556,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Patua One, Atkinson Hyperlegible,     ui-serif,
+  font-family:
+    Patua One,
+    Atkinson Hyperlegible,
+    ui-serif,
     system-ui,
     serif,
     "Apple Color Emoji",
@@ -721,6 +724,12 @@ small {
       font-size: 160px;
       color: transparent;
       text-shadow: 0 0 2px color.scale($faint-grey);
+      font-family:
+        Patua One,
+        Atkinson Hyperlegible,
+        ui-serif,
+        system-ui,
+        serif;
     }
 
     &::before {
