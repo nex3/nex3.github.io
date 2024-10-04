@@ -21,6 +21,7 @@
     "@shopify/prettier-plugin-liquid": "^1.5.0",
     "date-fns": "^4.0.0",
     "eleventy-auto-cache-buster": "^0.6.1",
+    "exif-be-gone": "^1.5.1",
     "get-webmention-url": "^2.0.0",
     "glightbox": "~3.2.0",
     "glob": "^11.0.0",
