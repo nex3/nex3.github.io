@@ -1,10 +1,22 @@
 <div class="generic-post-wrapper h-entry">
+  {% if inReplyUrl %}
+  <div class="u-in-reply-to h-cite">
+    <data name="u-url" value="{{ inReplyUrl | escape }}"></data>
+    {% if inReplyName %}
+      <data name="p-name" value="{{ inReplyName | escape }}"></data>
+    {% endif %}
+    {% if inReplyAuthor %}
+      <data name="p-author" value="{{ inReplyAuthor | escape }}"></data>
+    {% endif %}
+  </div>
+  {% endif %}
+
   {% if authorAvatar %}
-    <a class="gp-avatar" href="{{ authorUrl | default: url }}">
+    <a class="gp-avatar" href="{{ authorUrl | default: url | escape }}">
       <img
-        src="{{ authorAvatar }}"
+        src="{{ authorAvatar | escape }}"
         {% if authorAvatarAlt or author %}
-          alt="{{ authorAvatarAlt | default: author }}"
+          alt="{{ authorAvatarAlt | default: author | escape }}"
         {% endif %}
         width="64"
       >
@@ -26,19 +38,19 @@
   <div>
     {% if name %}
       <h1 class="p-name">
-        <a href="{{url}}">{{ name | escape }}</a>
+        <a href="{{ url | escape }}">{{ name | escape }}</a>
       </h1>
     {% endif %}
     <div class="gp-prose e-content">
       {{- contents -}}
       {%- if quote -%}
-        <p><a href="{{ url }}" class="read-more" title="Read More">…</a></p>
+        <p><a href="{{ url | escape }}" class="read-more" title="Read More">…</a></p>
       {%- endif -%}
     </div>
     {%- if tags.size > 0 -%}
       <ul class="gp-tags">
         {%- for tag in tags -%}
-          <li class="p-category">#{{ tag }}</li>
+          <li class="p-category">#{{ tag | escape }}</li>
         {%- endfor -%}
       </ul>
     {%- endif -%}
