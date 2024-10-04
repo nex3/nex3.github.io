@@ -138,6 +138,7 @@ main {
       background-image: url(/assets/reply.svg);
       background-size: contain;
       opacity: 0.1;
+      pointer-events: none;
     }
   }
 }
@@ -730,6 +731,7 @@ small {
         ui-serif,
         system-ui,
         serif;
+      pointer-events: none;
     }
 
     &::before {
