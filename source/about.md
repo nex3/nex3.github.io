@@ -5,11 +5,13 @@ title: About
 
 # About
 
-<p class="attribution">
-   Avatar by <a href="https://subspaceskater.com/">@subspaceskater</a>,
-   eggbug emoji by <a href="https://nocturne.works/emoji/free">Caius
-   Nocturne</a>
-</p>
+<ul class="attribution">
+  <li>Avatar by <a href="https://subspaceskater.com/">@subspaceskater</a></li>
+  <li>
+    Eggbug emoji by <a href="https://nocturne.works/emoji/free">Caius Nocturne</a>
+  </li>
+  <li>Star icon by <a href="https://github.com/primer/octicons/">GitHub</a></li>
+</ul>
 
 I'm Natalie and this is my little slice of online, an attempt to carve out an
 alternative to social media that straddles the line between being being a blog

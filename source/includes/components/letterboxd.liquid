@@ -1,4 +1,15 @@
 <div class="letterboxd-post-wrapper h-entry">
+  <data
+    class="p-name"
+    value="
+      {{- film | escape }} ({{ year }})
+      {% if rating -%}
+        -
+        {% render 'star-rating-text', rating: rating -%}
+      {%- endif -%}
+    "
+  ></data>
+
   {% if poster %}
     <a
       href="https://letterboxd.com/film/{{ filmSlug }}/"
@@ -13,7 +24,7 @@
     <header>
       <div class="lb-info">
         <address class="p-author h-card">
-          <data class="p-nickname">{{ author }}</data>
+          <data class="p-nickname" value="{{ author | escape }}"></data>
           {% if avatar %}
             <a
               class="lb-avatar u-logo"
@@ -46,13 +57,6 @@
             {% endif %}
           </a>
         </address>
-        <h2 class="p-name">
-          {{- film | escape }} ({{ year }})
-          {% if rating -%}
-            -
-            {% render 'star-rating', rating: rating -%}
-          {%- endif -%}
-        </h2>
         <h2>
           <div>
             <a
@@ -76,9 +80,7 @@
             </small>
           </div>
           {% if rating %}
-            <span class="lb-rating lb-rating-{{ rating | times: 2 | round }}">
-              {%- render 'star-rating', rating: rating -%}
-            </span>
+            {% render 'star-rating-html', rating: rating %}
           {% endif %}
         </h2>
         <time datetime="{{ date | format: 'yyyy-MM-dd' }}" class="dt-published">

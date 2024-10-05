@@ -3,6 +3,14 @@
 @use "sass:meta";
 @use "sass:map";
 
+@font-face {
+  font-family: "star";
+  src:
+    url("./star.eot") format("embedded-opentype"),
+    url("./star.woff2") format("woff2"),
+    url("./star.woff") format("woff");
+}
+
 $accent: #2d9cdb;
 $highlight: #bdecff;
 $grey: #555;
@@ -197,6 +205,20 @@ a[href] {
   }
 }
 
+  ul.attribution {
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 5px;
+    justify-content: space-evenly;
+
+    li {
+        list-style: none;
+    }
+  }
+
+
 .footnotes {
   font-size: 12.8px;
 
@@ -280,6 +302,42 @@ a[href] {
   > * {
     flex: 1 calc(100% / var(--images-per-row, 3) - $gap);
     margin-inline: 0;
+  }
+}
+
+.star-rating {
+  color: #00000000;
+  position: relative;
+  display: inline-block;
+  font-family: star;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  width: 5em;
+
+  &::before {
+    color: rgba(146, 161, 204, 0.23);
+    content: "★★★★★";
+    position: absolute;
+  }
+  &::after {
+    color: gold;
+    content: "★★★★★";
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    left: 0;
+  }
+
+  @for $i from 1 through 10 {
+    &-#{$i}::after {
+      $width: calc(1em * ($i + 1) / 2);
+      width: $width;
+    }
   }
 }
 
@@ -1460,11 +1518,6 @@ $letterboxd-poster-width: 150px;
 .letterboxd-post-wrapper {
   @extend %embed;
 
-  .p-name,
-  .p-nickname {
-    display: none;
-  }
-
   a {
     color: inherit;
     text-decoration: none;
@@ -1610,28 +1663,6 @@ $letterboxd-poster-width: 150px;
       margin-right: 5px;
     }
 
-    .lb-rating {
-      background: url("/assets/letterboxd-stars.svg") -390px -130px no-repeat;
-      display: inline-block;
-      height: 14px;
-      overflow: hidden;
-      text-indent: 110%;
-      white-space: nowrap;
-      width: 80px;
-
-      @for $i from 1 through 10 {
-        &-#{$i} {
-          @if $i % 2 == 1 {
-            $width: calc(16px * ($i + 1) / 2 - 1px);
-            background-position-x: -485px + $width;
-            width: $width;
-          } @else {
-            width: calc(16px * $i / 2 - 2px);
-          }
-        }
-      }
-    }
-
     small {
       font-size: 18px;
       font-weight: 200;
@@ -1682,5 +1713,9 @@ $letterboxd-poster-width: 150px;
     p {
       margin: 0px 0px 10px;
     }
+  }
+
+  .star-rating::after {
+    color: #00c030;
   }
 }
