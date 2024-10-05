@@ -1,14 +1,14 @@
 <div class="generic-post-wrapper h-entry">
   {% if inReplyUrl %}
-  <div class="u-in-reply-to h-cite">
-    <data name="u-url" value="{{ inReplyUrl | escape }}"></data>
-    {% if inReplyName %}
-      <data name="p-name" value="{{ inReplyName | escape }}"></data>
-    {% endif %}
-    {% if inReplyAuthor %}
-      <data name="p-author" value="{{ inReplyAuthor | escape }}"></data>
-    {% endif %}
-  </div>
+    <div class="u-in-reply-to h-cite">
+      <data name="u-url" value="{{ inReplyUrl | escape }}"></data>
+      {% if inReplyName %}
+        <data name="p-name" value="{{ inReplyName | escape }}"></data>
+      {% endif %}
+      {% if inReplyAuthor %}
+        <data name="p-author" value="{{ inReplyAuthor | escape }}"></data>
+      {% endif %}
+    </div>
   {% endif %}
 
   {% if authorAvatar %}

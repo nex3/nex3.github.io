@@ -788,21 +788,23 @@ small {
     }
   }
 
-&:has(+ .generic-post-wrapper) {
+  &:has(+ .generic-post-wrapper) {
     margin-bottom: 6px;
-     > article, > blockquote {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-}
+    > article,
+    > blockquote {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
 
- + .generic-post-wrapper {
+  + .generic-post-wrapper {
     margin-top: 0;
-     > article, > blockquote {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-}
+    > article,
+    > blockquote {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
 }
 
 .gp-prose {
