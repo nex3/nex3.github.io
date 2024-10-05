@@ -5,17 +5,8 @@
     rel="nofollow"
   {% endif %}
 >
-  {{ verb | default: 'Posted' | escape }}
-  {% if date %}
-    {% render 'date', date: date, class: 'dt-published' %}
-  {% endif %}
-  {% unless url | isSiteUrl %}
-    on
-    {{ url | urlHostname | escape }}
-  {% endunless %}
   {% if author %}
-    by
-    <span class="p-author h-card">
+    <span class="p-author h-card mention">
       {% if authorAvatar %}
         <data class="u-logo" value="{{ authorAvatar | escape }}"></data>
       {% endif %}
@@ -25,4 +16,12 @@
       {{ author | escape }}
     </span>
   {% endif %}
+  {{ verb | default: 'posted' | escape }}
+  {% if date %}
+    {% render 'date', date: date, class: 'dt-published' %}
+  {% endif %}
+  {% unless url | isSiteUrl %}
+    on
+    {{ url | urlHostname | escape }}
+  {% endunless %}
 </a>

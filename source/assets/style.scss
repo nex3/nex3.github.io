@@ -152,9 +152,16 @@ main {
 }
 
 .mention {
+  color: $accent;
   font-weight: bold;
-  a {
+  a[href] {
+    color: inherit;
     text-decoration: none;
+  }
+
+  .attribution-external & {
+    color: $grey;
+    font-size: 1.1em;
   }
 }
 

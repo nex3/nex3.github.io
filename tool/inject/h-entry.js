@@ -10,6 +10,14 @@ function getCard(items) {
   return cards[0];
 }
 
+/// Resolves {@link url} relative to {@link base}.
+///
+/// If {@link url} is undefined or null, returns it as-is.
+function resolveUrl(url, base) {
+  if (!url) return url;
+  return new URL(url, base).toString();
+}
+
 export async function hEntryToTag(html, url) {
   const { items } = mf2(html, { baseUrl: url.toString() });
 
@@ -25,7 +33,9 @@ export async function hEntryToTag(html, url) {
   const args = {};
   args.name = entry.properties.name?.[0];
   args.time = entry.properties.published?.[0];
-  args.tags = entry.properties.category?.map((tag) => `#${tag}`)?.join(", ");
+  args.tags = entry.properties.category
+    ?.map((tag) => (tag.startsWith("#") ? tag : `#${tag}`))
+    ?.join(", ");
 
   let author = entry.properties.author?.[0] ?? getCard(items);
   if (typeof author === "string") {
@@ -33,7 +43,7 @@ export async function hEntryToTag(html, url) {
   }
   args.author =
     author?.properties?.nickname?.[0] ?? author?.properties?.name?.[0];
-  args.authorUrl = author?.properties?.url?.[0];
+  args.authorUrl = resolveUrl(author?.properties?.url?.[0], url);
   args.authorAvatar =
     author?.properties?.photo?.[0] ?? author?.properties?.logo?.[0];
   if (typeof args.authorAvatar === "object") {
@@ -45,13 +55,13 @@ export async function hEntryToTag(html, url) {
   if (typeof inReplyTo === "string") {
     inReplyTo = { type: ["h-cite"], properties: { url: [inReplyTo] } };
   }
-  args.inReplyUrl = inReplyTo?.properties?.url?.[0];
+  args.inReplyUrl = resolveUrl(inReplyTo?.properties?.url?.[0], url);
   args.inReplyName = inReplyTo?.properties?.name?.[0];
   args.inReplyAuthor = inReplyTo?.properties?.author?.[0];
 
   return (
     "{% genericPost " +
-    JSON.stringify(entry.properties.url?.[0] ?? url) +
+    JSON.stringify(resolveUrl(entry.properties.url?.[0], url) ?? url) +
     ",\n" +
     Object.entries(args)
       .filter(([_, value]) => value)
