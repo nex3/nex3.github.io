@@ -1,5 +1,7 @@
 ---
+reply: https://social.lol/@birming/113249770971765687
 tags: [web]
+updated: 2024-10-05T00:14:02.653Z
 ---
 
 {% genericPost "http://nex-3.com/blog/my-least-favorite-thing/",
