@@ -1,6 +1,10 @@
 ---
 repost: true
 tags: [nat reviews, island of lost souls, letterboxd]
+updated: 2024-10-06T10:10:45Z
+commentary:
+- one of those reviews where I didn't know what I was gonna say when I started
+- and by the end I appreciated the film way more
 ---
 
 {% letterboxd "https://letterboxd.com/nex3/film/island-of-lost-souls/",
