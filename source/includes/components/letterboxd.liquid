@@ -3,9 +3,9 @@
     class="p-name"
     value="
       {{- film | escape }} ({{ year }})
-      {% if rating -%}
-        -
-        {% render 'star-rating-text', rating: rating -%}
+      {%- if rating -%}
+        {{- " - " -}}
+        {%- render 'star-rating-text', rating: rating -%}
       {%- endif -%}
     "
   ></data>

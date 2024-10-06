@@ -4,7 +4,7 @@
     value="
       {{- game | escape }}
       {% if rating -%}
-        -
+        {{- " - " -}}
         {% render 'star-rating-text', rating: rating -%}
       {%- endif -%}
     "
