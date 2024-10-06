@@ -1,0 +1,93 @@
+<div class="backloggd-post-wrapper h-entry">
+  <data
+    class="p-name"
+    value="
+      {{- film | escape }} ({{ year }})
+      {% if rating -%}
+        -
+        {% render 'star-rating-text', rating: rating -%}
+      {%- endif -%}
+    "
+  ></data>
+
+  {% if poster %}
+    <a
+      href="{{ gameUrl | escape }}/"
+      target="_blank"
+      rel="nofollow noopener"
+      tabindex="0"
+    >
+      <img src="{{ poster | escape }}" class="u-featured" width="150">
+    </a>
+  {% endif %}
+
+  <article>
+    <header>
+      {% if avatar %}
+        <a
+          class="bl-avatar u-logo"
+          href="https://backloggd.com/u/{{ author | escape }}/"
+          target="_blank"
+          rel="nofollow noopener"
+          tabindex="0"
+        >
+          <img
+            src="{{ avatar | escape }}"
+            title="{{ authorDisplayName | escape }}"
+            width="40"
+            height="40"
+          >
+        </a>
+      {% endif %}
+
+      <div>
+        <address class="p-author h-card">
+          {% if avatar %}
+            <data class="u-logo" value="{{ avatar | escape }}"></data>
+          {% endif %}
+          <a
+            class="u-url u-uid"
+            href="https://backloggd.com/u/{{ author | escape }}/"
+            target="_blank"
+            rel="nofollow noopener author"
+            tabindex="0"
+          >
+            <span class="p-nickname">{{ author | escape }}</span>
+            {% if backer %}
+              <span class="bl-backer">BACKER</span>
+            {% endif %}
+          </a>
+        </address>
+        reviewed
+        <a class="u-url u-uid" rel="canonical" href="{{ url | escape }}">
+          {{- game | escape -}}
+        </a>
+      </div>
+      <div>
+        {% if rating %}
+          {% render 'star-rating-html', rating: rating %}
+        {% endif %}
+        {% if status and statusUrl %}
+          <a class="bl-status" href="{{ statusUrl | escape }}">
+            {{- status | escape -}}
+          </a>
+        {% endif %}
+        {% if platform and platformUrl %}
+          on
+          <a href="{{ platformUrl | escape }}">
+            {{- platform | escape -}}
+          </a>
+        {% endif %}
+      </div>
+    </header>
+    <div>
+      {% if image %}
+        <div class="bl-image"><img src="{{ image }}"></div>
+      {% endif %}
+      <div class="bl-prose e-content">{{ contents }}</div>
+      <time datetime="{{ date | format: 'yyyy-MM-dd' }}" class="dt-published">
+        <a href="{{ gameUrl | escape}}"> Reviewed on {{ date | format: 'MMM d, yyyy' }} </a>
+      </time>
+    </div>
+  </article>
+</div>

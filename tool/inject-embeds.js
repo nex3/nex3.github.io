@@ -8,6 +8,7 @@ import fetch from "node-fetch";
 import { cohostTag } from "./inject/cohost.js";
 import { hEntryToTag } from "./inject/h-entry.js";
 import { letterboxdTag } from "./inject/letterboxd.js";
+import { backloggdTag } from "./inject/backloggd.js";
 
 function indexAfterFrontMatter(string) {
   const boundary = /^---/gm;
@@ -30,6 +31,10 @@ async function tagForUrl(url, blog) {
     case "letterboxd.com":
     case "boxd.it":
       return await letterboxdTag(url);
+
+    case "www.backloggd.com":
+    case "backloggd.com":
+      return await backloggdTag(url);
 
     default:
       const response = await fetch(url);

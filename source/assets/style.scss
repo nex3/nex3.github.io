@@ -205,19 +205,18 @@ a[href] {
   }
 }
 
-  ul.attribution {
-    padding-left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 16px;
-    row-gap: 5px;
-    justify-content: space-evenly;
+ul.attribution {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 5px;
+  justify-content: space-evenly;
 
-    li {
-        list-style: none;
-    }
+  li {
+    list-style: none;
   }
-
+}
 
 .footnotes {
   font-size: 12.8px;
@@ -316,27 +315,32 @@ a[href] {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  vertical-align: bottom;
-  width: 5em;
+  vertical-align: middle;
+
+  $spacing: 2px;
+  letter-spacing: $spacing;
+  width: calc(5em + $spacing * 4);
 
   &::before {
     color: rgba(146, 161, 204, 0.23);
     content: "★★★★★";
     position: absolute;
+    letter-spacing: $spacing;
   }
   &::after {
     color: gold;
     content: "★★★★★";
+    letter-spacing: $spacing;
     position: absolute;
     display: inline-block;
     overflow: hidden;
+    top: 0;
     left: 0;
   }
 
   @for $i from 1 through 10 {
     &-#{$i}::after {
-      $width: calc(1em * ($i + 1) / 2);
-      width: $width;
+      width: math.percentage(math.div($i, 10));
     }
   }
 }
@@ -510,6 +514,7 @@ $-embed-column-gap: 24px;
     grid-column: 2 / -1;
     position: relative;
     margin: 0;
+    overflow: hidden;
 
     display: grid;
     grid-template-columns: subgrid;
@@ -1565,6 +1570,7 @@ $letterboxd-poster-width: 150px;
       width: calc(110px + 12px);
       min-height: 100%;
       border: none;
+      border-top-right-radius: 8px;
 
       img {
         margin-bottom: -18.462px;
@@ -1676,7 +1682,6 @@ $letterboxd-poster-width: 150px;
   }
 
   $image-tuck: 160px;
-
   .lb-image {
     width: 100%;
     height: 0px;
@@ -1717,5 +1722,206 @@ $letterboxd-poster-width: 150px;
 
   .star-rating::after {
     color: #00c030;
+  }
+}
+
+// Backloggd Embed
+
+$backloggd-poster-width: $letterboxd-poster-width;
+$backloggd-bg-color: #16181c;
+.backloggd-post-wrapper {
+  @extend %embed;
+  font-family:
+    Roboto,
+    Atkinson Hyperlegible,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  address {
+    display: inline;
+    font-size: 1rem;
+    font-style: normal;
+  }
+
+  $header-bg: #242832;
+  $secondary-text: #8f9ca7;
+  header {
+    background: $header-bg;
+    padding: 12px;
+    color: $secondary-text;
+    font-weight: 300;
+    font-size: 0.875rem;
+    z-index: 1;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: min-content 1fr;
+    column-gap: 15px;
+
+    a {
+      color: #cbd4dc;
+      font-weight: normal;
+      &:hover {
+        color: white;
+      }
+    }
+
+    > div {
+      align-self: center;
+    }
+  }
+
+  > a {
+    $aspect-ratio: math.div(60, 81);
+    height: math.div($backloggd-poster-width, $aspect-ratio);
+    height: fit-content;
+    @include embed-image($backloggd-poster-width) {
+      background: $header-bg;
+      margin: 0;
+      padding-top: 12px;
+      padding-right: 12px;
+      width: calc(110px + 12px);
+      min-height: 100%;
+      border: none;
+      border-top-right-radius: 8px;
+
+      img {
+        margin-bottom: -60px;
+        width: 110px;
+        height: math.div(110px, $aspect-ratio);
+      }
+    }
+
+    img {
+      border-radius: 4px;
+      display: block;
+    }
+  }
+
+  article {
+    background-color: $backloggd-bg-color;
+  }
+
+  .star-rating {
+    font-size: 16px;
+    margin-right: 4px;
+
+    &::after {
+      color: #ea377a;
+    }
+  }
+
+  time {
+    padding: 16px;
+    padding-top: 0;
+    color: $secondary-text;
+    font-weight: 200;
+    font-size: 0.9rem;
+    text-align: right;
+
+    a:hover {
+      color: white;
+    }
+  }
+}
+
+.bl-avatar {
+  width: 40px;
+  height: 40px;
+  grid-row: 1 / -1;
+  align-self: center;
+}
+
+.bl-status {
+  padding-left: 8px;
+  position: relative;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 5px;
+    left: -1px;
+    border-radius: 4px;
+  }
+
+  @each $name,
+    $color
+      in (
+        "played": #ea377a,
+        "completed": #43b94f,
+        "retired": #4b7bd4,
+        "shelved": #e69b3e,
+        "abandoned": #ea4747
+      )
+  {
+    &[href$=":#{$name}/"]::before {
+      background-color: $color;
+    }
+  }
+}
+
+$backloggd-image-tuck: 160px;
+.bl-image {
+  width: 100%;
+  height: 0px;
+  margin-bottom: $backloggd-image-tuck;
+
+  img {
+    min-width: 100%;
+    width: 100%;
+    min-height: 267px;
+    object-fit: cover;
+    margin: 0px;
+    transform: translateY(-20%);
+  }
+}
+
+.bl-backer {
+  background-color: #ea377a;
+  color: #16181c;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  font-weight: 600;
+  padding: 2px 4px;
+  vertical-align: text-top;
+}
+
+.bl-prose {
+  line-height: 1.6875;
+  padding: $backloggd-image-tuck 16px 0px;
+  margin-top: calc($backloggd-image-tuck * -1 + 8px);
+  z-index: 1;
+  background: linear-gradient(
+    rgba($backloggd-bg-color, 0) 0px,
+    $backloggd-bg-color calc($backloggd-image-tuck + 48px)
+  );
+  color: #ccdbf1;
+  font-family:
+    Noto Sans,
+    Atkinson Hyperlegible,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+  font-weight: 375;
+  font-size: 0.917rem;
+
+  p {
+    margin: 0px 0px 10px;
   }
 }
