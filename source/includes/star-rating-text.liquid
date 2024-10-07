@@ -1,4 +1,5 @@
-{%- for i in (1..rating) -%}
+{%- assign ratingFloor = rating | floor -%}
+{%- for i in (1..ratingFloor) -%}
   ★
 {%- endfor -%}
 {%- assign intRating = rating | modulo: 1 %}
