@@ -1,5 +1,5 @@
 ---
-updated: 2024-10-07T09:15:26+0000
+updated: 2024-10-07T09:15:26Z
 tags: [food, gbbo, the great american baking show]
 commentary:
 - Prue knows but she also knows it's specific to the UK
