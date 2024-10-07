@@ -3,6 +3,12 @@ import { createUnpairedComponentPlugin } from "./base.js";
 const knownMentions = {};
 for (const person of [
   {
+    name: "Christa",
+    nickname: "OhPoorPup",
+    url: "https://soundretro.co/",
+    uid: "https://soundretro.co/",
+  },
+  {
     name: "Liz",
     nickname: "JhoiraArtificer",
     url: "https://seaslug.garden/",
