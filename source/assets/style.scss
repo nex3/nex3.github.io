@@ -639,6 +639,7 @@ h3,
 h4,
 h5,
 h6 {
+  // prettier-ignore
   font-family: list.join((Patua One,), $text-font);
   font-weight: 400;
 }
@@ -813,6 +814,7 @@ small {
       font-size: 160px;
       color: transparent;
       text-shadow: 0 0 2px color.scale($faint-grey);
+      // prettier-ignore
       font-family: list.join((Patua One,), $text-font-no-emoji);
       pointer-events: none;
     }
@@ -860,6 +862,13 @@ small {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
+  }
+
+  // If any reply has an avatar, all replies should be sized as though they did.
+  &:not(:has(> a)):has(~ .generic-post-wrapper > a),
+  &:has(> a) ~ .generic-post-wrapper:not(:has(> a)) {
+    min-width: 64px;
+    grid-template-columns: (64px + 24px) 1fr min-content;
   }
 }
 
@@ -1890,6 +1899,7 @@ $backloggd-image-tuck: 160px;
     $backloggd-bg-color calc($backloggd-image-tuck + 48px)
   );
   color: #ccdbf1;
+  // prettier-ignore
   font-family: list.join((Noto Sans,), $text-font);
   font-weight: 375;
   font-size: 0.917rem;
