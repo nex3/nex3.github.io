@@ -972,6 +972,7 @@ $generic-avatar-width: 64px;
 
     img:not([src="/assets/eggbug-tuesday.png"]) {
       border-radius: math.div($generic-avatar-width, 2);
+      object-fit: cover;
     }
   }
 }
