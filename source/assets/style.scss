@@ -578,18 +578,13 @@ $-embed-column-gap: 24px;
     grid-row: 3;
     margin-top: 8px;
     font-size: 0.9rem;
+    display: flex;
     justify-content: right;
 
-    &,
-    & a[href],
-    & .p-author {
+    .p-author {
       display: flex;
       column-gap: 3px;
       align-items: center;
-    }
-
-    data {
-      display: none;
     }
 
     a[href] {
@@ -599,10 +594,6 @@ $-embed-column-gap: 24px;
       &:hover {
         text-decoration: underline;
       }
-    }
-
-    .p-author {
-      display: flex;
     }
 
     .p-name {

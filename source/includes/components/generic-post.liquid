@@ -66,9 +66,11 @@
       {% if viaTime %}
         <time class="dt-published" datetime="{{ viaTime | escape }}"></time>
       {% endif %}
-      via
       <div class="p-author h-card">
-        <span class="p-name">{{ via | escape }}</span>
+        <span>
+          via
+          <span class="p-name">{{ via | escape }}</span>
+        </span>
         {% if viaAuthorUrl %}
           <data class="u-url" value="{{ viaAuthorUrl | escape }}"></data>
         {%- endif -%}
