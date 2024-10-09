@@ -11,19 +11,11 @@ export default createPairedComponentPlugin(
     const time = options.time ? new Date(Date.parse(options.time)) : undefined;
 
     return liquidEngine.renderFile("components/generic-post", {
+      ...options,
       contents: stripIndent(contents).trim(),
       url,
-      name: options.name,
       time,
       tags,
-      author: options.author,
-      authorUrl: options.authorUrl,
-      authorAvatar: options.authorAvatar,
-      authorAvatarAlt: options.authorAvatarAlt,
-      inReplyUrl: options.inReplyUrl,
-      inReplyName: options.inReplyName,
-      inReplyAuthor: options.inReplyAuthor,
-      quote: options.quote,
     });
   },
 );

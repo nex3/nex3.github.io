@@ -479,6 +479,7 @@ details {
 //       <!-- optional additional rows -->
 //     </div>
 //   </article>
+//   <div class="h-cite">via <!-- ... --></div> <!-- optional -->
 // </div>
 // ```
 //
@@ -504,7 +505,7 @@ $-embed-column-gap: 24px;
   grid-template-columns: min-content 1fr min-content;
   // We can in theory make this repeat arbitrarily high. Using auto-fit doesn't
   // work because it won't play nicely with the subgrid in the article.
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content 1fr min-content;
 
   @include not-phone {
     padding-inline: $-embed-padding;
@@ -517,7 +518,7 @@ $-embed-column-gap: 24px;
       0px 4px 5px rgba(0, 0, 0, 0.14),
       0px 1px 10px rgba(0, 0, 0, 0.12),
       0px 2px 4px rgba(0, 0, 0, 0.2);
-    grid-row: 1 / -1;
+    grid-row: 1 / 3;
     grid-column: 2 / -1;
     position: relative;
     margin: 0;
@@ -569,6 +570,52 @@ $-embed-column-gap: 24px;
     img {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  > .h-cite {
+    grid-column: 2 / -1;
+    grid-row: 3;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    justify-content: right;
+
+    &,
+    & a[href],
+    & .p-author {
+      display: flex;
+      column-gap: 3px;
+      align-items: center;
+    }
+
+    data {
+      display: none;
+    }
+
+    a[href] {
+      color: $dim-grey;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .p-author {
+      display: flex;
+    }
+
+    .p-name {
+      color: $grey;
+      font-weight: bold;
+    }
+
+    img {
+      display: inline;
+      $width: 24px;
+      width: $width;
+      height: $width;
+      border-radius: math.div($width, 2);
     }
   }
 

@@ -56,4 +56,31 @@
     {%- endif -%}
   </div>
   {% if quote %}</blockquote>{% else %}</article>{% endif %}
+
+  {% if via %}
+    <div class="h-cite">
+      {% if viaUrl %}<a href="{{ viaUrl | escape }}" class="u-url">{% endif -%}
+      {% if viaName %}
+        <data class="p-name" value="{{ viaName | escape }}"></data>
+      {% endif %}
+      {% if viaTime %}
+        <time class="dt-published" datetime="{{ viaTime | escape }}"></time>
+      {% endif %}
+      via
+      <div class="p-author h-card">
+        <span class="p-name">{{ via | escape }}</span>
+        {% if viaAuthorUrl %}
+          <data class="u-url" value="{{ viaAuthorUrl | escape }}"></data>
+        {%- endif -%}
+        {%- if viaAuthorAvatar -%}
+          <img
+            class="u-logo"
+            src="{{ viaAuthorAvatar | escape }}"
+            alt="{{ viaAuthorAvatarAlt | default: via | escape }}"
+          >
+        {%- endif -%}
+      </div>
+      {%- if viaUrl %}</a>{% endif -%}
+    </div>
+  {% endif %}
 </div>
