@@ -1,10 +1,11 @@
 ---
 repost: true
 tags: [covid, climate change]
+updated: 2024-10-10T06:27:04Z
 ---
 
 {% genericPost 'https://lydz.gay/blog/inhaling-dread/',
-    title: 'Inhaling Dread',
+    name: 'Inhaling Dread',
     time: '2024-10-08',
     tags: '#Photography, #Lydia Writes',
     author: 'Lydia',
