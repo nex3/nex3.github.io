@@ -2,7 +2,7 @@
 author: Natalie
 title: Reblogging posts with h-entry
 date: 2024-09-26 23:38:00 -8
-updated: 2024-09-27 23:10:00 -8
+updated: 2024-10-10 02:11:00 -8
 tags: [meta, web]
 ---
 
@@ -103,7 +103,7 @@ names annotated with the HTML. Here's the simplified HTML for the post above:
       <span class="p-author h-card">
         <span class="p-name">Natalie</span>
         <data class="u-url" value="/"></data>
-        <data class="p-logo" value="/assets/avatar.webp"></data>
+        <data class="u-logo" value="/assets/avatar.webp"></data>
       </span>
     </a>
   </p>
