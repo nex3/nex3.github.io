@@ -28,14 +28,6 @@ jobs:
           message: Inject embeds
 
       - run: npm run build
-        env:
-          CHECK_WEB_MENTIONS: true
-      - uses: EndBug/add-and-commit@v9
-        with:
-          author_name: Nattlebot Robobaum
-          author_email: nattlebot@nex-3.com
-          message: Update WebMention date
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
@@ -54,3 +46,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  mention:
+    name: Send Webmentions
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # We need full history to determine blog authoring dates
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "v22"
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          CHECK_WEB_MENTIONS: true
+      - uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Nattlebot Robobaum
+          author_email: nattlebot@nex-3.com
+          message: Update WebMention date
+    
