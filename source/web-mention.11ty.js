@@ -57,15 +57,23 @@ async function getWebMentionEndpoint(url) {
  * Checks whether any blog posts have new WebMentions that need to be sent out.
  */
 async function checkWebMentions(data) {
-  if (!process.env["CHECK_WEB_MENTIONS"]) return;
+  if (
+    !process.env["CHECK_WEB_MENTIONS"] &&
+    !process.env["CHECK_WEB_MENTIONS_DRY_RUN"]
+  ) {
+    return;
+  }
 
   console.log("Checking webmentions...");
   const last = data["web-mention"]["last-check"];
   const now = new Date();
   const pairs = [];
   for (const post of data.collections.blog) {
-    if (last < (post.data.updated ?? post.data.date)) {
-      const url = new URL(post.url, data.site.url).toString();
+    if (last < (post.data.updated ?? post.date)) {
+      const url = new URL(
+        post.data.repost ? data.site.url : post.url,
+        data.site.url,
+      ).toString();
       const links = new Set(
         [
           ...(post.data.repost ? [] : linksFromPostBody(post, url)),
@@ -74,13 +82,12 @@ async function checkWebMentions(data) {
           .map((url) => new URL(url, data.site.url).toString())
           .filter(
             (url) =>
-              !url.startsWith("about:blank") &&
-              !url.startsWith(post.data.site.url),
+              !url.startsWith("about:blank") && !url.startsWith(data.site.url),
           ),
       );
 
       for (const link of links) {
-        pairs.push([post.data.repost ? data.site.url : url, link]);
+        pairs.push([url, link]);
       }
     }
   }
@@ -93,16 +100,19 @@ async function checkWebMentions(data) {
     console.log(
       `Sending web mention from ${source} to ${endpoint} for ${target}`,
     );
-    const response = await fetch(endpoint, {
-      method: "POST",
-      body: new URLSearchParams([
-        ["source", source],
-        ["target", target],
-      ]),
-    });
-    console.log(`${response.status} ${response.statusText}`);
+    if (!process.env["CHECK_WEB_MENTIONS_DRY_RUN"]) {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: new URLSearchParams([
+          ["source", source],
+          ["target", target],
+        ]),
+      });
+      console.log(`${response.status} ${response.statusText}`);
+    }
   }
 
+  if (process.env["CHECK_WEB_MENTIONS_DRY_RUN"]) return;
   const yaml = YAML.parse(
     fs.readFileSync("source/data/web-mention.yml", "utf8"),
   );
