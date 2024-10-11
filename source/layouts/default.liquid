@@ -3,7 +3,11 @@
   <head>
     {% include 'head.liquid', content: page.data.content %}
   </head>
-  <body>
+  <body
+    {% if class %}
+      class="{{ class | escape }}"
+    {% endif %}
+  >
     <header class="page-header">
       <div class="page-header__logo h-card">
         <data class="p-name" value="{{ site.author | escape }}"></data>

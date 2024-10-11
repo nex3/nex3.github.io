@@ -29,6 +29,13 @@ for (const person of [
     uid: "https://holomancy.neocities.org/",
     logo: "https://files.mastodon.social/accounts/avatars/113/168/433/261/726/485/original/8721d4919e0a65d7.png",
   },
+  {
+    name: "Stelle",
+    nickname: "subspaceskater",
+    url: "https://subspaceskater.com/",
+    uid: "https://subspaceskater.com/",
+    logo: "https://64.media.tumblr.com/6ba2d5140aaa120f51da07e0a0f8c57b/b67a552f15ed86e0-35/s96x96u_c1/a2251fda11d2ff229c9bd891905aaa9356d96e10.jpg",
+  },
 ]) {
   if (person.name) knownMentions[person.name] = person;
   if (person.nickname) knownMentions[person.nickname] = person;

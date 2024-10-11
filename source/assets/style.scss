@@ -352,6 +352,28 @@ ul.attribution {
   }
 }
 
+.page-404 {
+  h1 {
+    font-size: 8rem;
+    text-align: center;
+    margin: 0;
+    transform: rotate(-6deg) translate(-10px);
+
+    @include phone {
+      font-size: 6rem;
+    }
+  }
+
+  img {
+    max-height: 800px;
+    object-fit: contain;
+  }
+}
+
+figcaption.via {
+  @extend %citation;
+}
+
 h1.tag {
   text-align: center;
   color: $dim-grey;
@@ -391,6 +413,7 @@ figure {
   display: flex;
   flex-direction: column;
   margin: 8px auto;
+  max-width: max-content;
 
   img {
     width: 100%;
@@ -419,6 +442,10 @@ figcaption,
       text-align: center;
     }
   }
+}
+
+data:not(:has(*)) {
+  display: none;
 }
 
 .glightbox-clean {
@@ -576,38 +603,7 @@ $-embed-column-gap: 24px;
   > .h-cite {
     grid-column: 2 / -1;
     grid-row: 3;
-    margin-top: 8px;
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: right;
-
-    .p-author {
-      display: flex;
-      column-gap: 3px;
-      align-items: center;
-    }
-
-    a[href] {
-      color: $dim-grey;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    .p-name {
-      color: $grey;
-      font-weight: bold;
-    }
-
-    img {
-      display: inline;
-      $width: 24px;
-      width: $width;
-      height: $width;
-      border-radius: math.div($width, 2);
-    }
+    @extend %citation;
   }
 
   h1 {
@@ -631,6 +627,42 @@ $-embed-column-gap: 24px;
 
   h5 {
     font-size: 17.6px;
+  }
+}
+
+%citation {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: right;
+
+  .h-card {
+    display: flex;
+    column-gap: 3px;
+    align-items: center;
+  }
+
+  a[href] {
+    color: $dim-grey;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .p-name,
+  .p-nickname {
+    color: $grey;
+    font-weight: bold;
+  }
+
+  img {
+    display: inline;
+    $width: 24px;
+    width: $width;
+    height: $width;
+    border-radius: math.div($width, 2);
   }
 }
 
@@ -694,7 +726,6 @@ h2 {
 }
 
 h6 {
-  font-weight: bolder;
   margin-bottom: 3.2px;
   font-size: 14.4px;
   font-variant: small-caps;
