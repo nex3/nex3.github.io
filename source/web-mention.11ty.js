@@ -82,7 +82,9 @@ async function checkWebMentions(data) {
           .map((url) => new URL(url, data.site.url).toString())
           .filter(
             (url) =>
-              !url.startsWith("about:blank") && !url.startsWith(data.site.url),
+              !url.startsWith("about:blank") &&
+              !url.startsWith(data.site.url) &&
+              !url.startsWith(data.site.url.replace("https://", "http://")),
           ),
       );
 
