@@ -94,12 +94,9 @@ export function simplifyEmbeds(post) {
         };
       }
     } else {
-      const urlClass = entry.properties["repost-of"]?.[0]
-        ? "u-url u-repost-of"
-        : "u-url";
       if (title) {
         let titleHtml = '<h1 class="p-name">';
-        if (link) titleHtml += `<a class="${urlClass}" href="${link}">`;
+        if (link) titleHtml += `<a class="u-url" href="${link}">`;
         titleHtml += escapeHtml(title);
         if (link) titleHtml += "</a>";
         titleHtml += "</h1>";
@@ -130,11 +127,7 @@ export function simplifyEmbeds(post) {
                 `
               : ""
           }
-          ${
-            link && !title
-              ? `<data class="${urlClass}" value="${link}"></data>`
-              : ""
-          }
+          ${link && !title ? `<data class="u-url" value="${link}"></data>` : ""}
           <div class="e-content">${prose}</div>
         </blockquote>
       `.replaceAll(/[ \n]+/g, " ");
@@ -152,7 +145,18 @@ export function simplifyContent(content) {
   return simplifyEmbeds({ content }).content;
 }
 
+/** Returns url of the last h-entry {@link content}. */
+function lastLink(content, url) {
+  const { items } = mf2(content, {
+    baseUrl: new URL(url || null, "https://nex-3.com/").toString(),
+  });
+  return items
+    .filter((item) => item.type.length === 1 && item.type[0] === "h-entry")
+    .at(-1).properties.url[0];
+}
+
 export default function embedPlugin(eleventyConfig) {
+  eleventyConfig.addLiquidFilter("lastLink", lastLink);
   eleventyConfig.addLiquidFilter("simplifyEmbeds", simplifyEmbeds);
   eleventyConfig.addLiquidFilter("simplifyContent", simplifyContent);
 }

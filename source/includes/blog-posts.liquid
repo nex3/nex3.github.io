@@ -16,8 +16,15 @@
       <li>
         {% unless forloop.first %}<hr>{% endunless %}
         <article class="blog-post h-entry">
-          {% if post.data.reply %}
-            <data class="u-in-reply-to" value="{{ post.data.reply | escape }}"></data>
+          {% if post.data.reply or post.data.repost %}
+            {% assign lastLink = post.content | lastLink: post.url %}
+            <data
+              class="
+                {% if post.data.reply %}u-in-reply-to{% endif %}
+                {% if post.data.repost %}u-repost-of{% endif %}
+              "
+              value="{{ lastLink | escape }}"
+            ></data>
           {% endif %}
 
           {% if post.data.title and not post.data.repost %}
