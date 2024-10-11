@@ -13,28 +13,28 @@ for (const person of [
     nickname: "JhoiraArtificer",
     url: "https://seaslug.garden/",
     uid: "https://seaslug.garden/",
-    logo: "https://seaslug.garden/wp-content/uploads/2024/09/lizseal-1024x1024.webp",
+    photo: "https://seaslug.garden/wp-content/uploads/2024/09/lizseal-1024x1024.webp",
   },
   {
     name: "Lydia",
     nickname: "lydz",
     url: "https://lydz.gay/",
     uid: "https://lydz.gay/",
-    logo: "https://lydz.gay/img/fsJohDi4CF-100.png",
+    photo: "https://lydz.gay/img/fsJohDi4CF-100.png",
   },
   {
     name: "Rose",
     nickname: "holomancy",
     url: "https://holomancy.neocities.org/",
     uid: "https://holomancy.neocities.org/",
-    logo: "https://files.mastodon.social/accounts/avatars/113/168/433/261/726/485/original/8721d4919e0a65d7.png",
+    photo: "https://files.mastodon.social/accounts/avatars/113/168/433/261/726/485/original/8721d4919e0a65d7.png",
   },
   {
     name: "Stelle",
     nickname: "subspaceskater",
     url: "https://subspaceskater.com/",
     uid: "https://subspaceskater.com/",
-    logo: "https://64.media.tumblr.com/6ba2d5140aaa120f51da07e0a0f8c57b/b67a552f15ed86e0-35/s96x96u_c1/a2251fda11d2ff229c9bd891905aaa9356d96e10.jpg",
+    photo: "https://64.media.tumblr.com/6ba2d5140aaa120f51da07e0a0f8c57b/b67a552f15ed86e0-35/s96x96u_c1/a2251fda11d2ff229c9bd891905aaa9356d96e10.jpg",
   },
 ]) {
   if (person.name) knownMentions[person.name] = person;
@@ -51,7 +51,7 @@ export default createUnpairedComponentPlugin(
       options.name ??= person.name;
       options.url ??= person.url;
       options.nickname ??= person.nickname;
-      options.logo ??= person.logo;
+      options.photo ??= person.photo;
     } else if (!options.name && !options.nickname) {
       options.name ??= text;
     }

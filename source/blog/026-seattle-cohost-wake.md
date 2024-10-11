@@ -16,7 +16,7 @@ experienced in isolation either.
 
 [it was announced]: https://cohost.org/staff/post/7611443-cohost-to-shut-down
 
-I talked to {% mention 'my wife', name: 'Liz' %} and {% mention 'Xandra', name: 'Xandra Granade', nickname: 'xgranade', url: 'https://www.xgranade.com/', logo: 'https://stockroom.wandering.shop/accounts/avatars/109/604/192/683/321/627/original/9b735fdf5d0b6834.png' %}
+I talked to {% mention 'my wife', name: 'Liz' %} and {% mention 'Xandra', name: 'Xandra Granade', nickname: 'xgranade', url: 'https://www.xgranade.com/', photo: 'https://stockroom.wandering.shop/accounts/avatars/109/604/192/683/321/627/original/9b735fdf5d0b6834.png' %}
 who had also made some rumblings about some sort of meet-up, we decided on a
 place and time, and I sent out [an open invitation]‎[^1]. We knew Seattle was a
 pretty big Cohost city, but based on the [Philly] and [Boston] turnouts we

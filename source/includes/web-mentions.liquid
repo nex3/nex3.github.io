@@ -13,16 +13,16 @@
     {% for mention in webMentions %}
       <li class="u-comment h-cite">
         {% if mention.author %}
-          {% if mention.author.logo %}
+          {% if mention.author.photo %}
             <a
               class="wm-avatar"
               {% if mention.author.url %}
                 href="{{ mention.author.url | escape }}" rel="nofollow"
               {% endif %}
               ><img
-                src="{{ mention.author.logo.value | escape }}"
-                {% if mention.author.logo.alt %}
-                  alt="{{ mention.author.logo.alt | escape }}"
+                src="{{ mention.author.photo.value | escape }}"
+                {% if mention.author.photo.alt %}
+                  alt="{{ mention.author.photo.alt | escape }}"
                 {% endif %}
             ></a>
           {% endif %}
@@ -35,7 +35,7 @@
           date: mention.published,
           author: mention.author.name,
           authorUrl: mention.author.url,
-          authorAvatar: mention.author.logo
+          authorAvatar: mention.author.photo
         %}
 
         {% if mention.content %}

@@ -4,16 +4,16 @@
     {% if author -%}
       by
       <span class="p-author h-card">
-        <span class="p-name">{{ author }}</span>
+        <span class="p-name">{{ author | escape }}</span>
         {%- if author == 'Natalie' -%}
           {%- assign authorUrl = authorUrl | default: '/' -%}
           {%- assign authorImage = authorImage | default: '/assets/avatar.webp' -%}
         {%- endif -%}
         {%- if authorUrl -%}
-          <data class="u-url" value="{{ authorUrl }}"></data>
+          <data class="u-url" value="{{ authorUrl | escape }}"></data>
         {%- endif -%}
         {%- if authorImage -%}
-          <data class="p-logo" value="{{ authorImage }}"></data>
+          <data class="u-photo" value="{{ authorImage | escape }}"></data>
         {%- endif -%}
       </span>
     {%- endif -%}

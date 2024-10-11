@@ -25,7 +25,7 @@
     <header>
       {% if avatar %}
         <a
-          class="bl-avatar u-logo"
+          class="bl-avatar u-photo"
           href="https://backloggd.com/u/{{ author | escape }}/"
           target="_blank"
           rel="nofollow noopener"
@@ -43,7 +43,7 @@
       <div>
         <address class="p-author h-card">
           {% if avatar %}
-            <data class="u-logo" value="{{ avatar | escape }}"></data>
+            <data class="u-photo" value="{{ avatar | escape }}"></data>
           {% endif %}
           <a
             class="u-url u-uid"

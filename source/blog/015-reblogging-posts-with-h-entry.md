@@ -103,7 +103,7 @@ names annotated with the HTML. Here's the simplified HTML for the post above:
       <span class="p-author h-card">
         <span class="p-name">Natalie</span>
         <data class="u-url" value="/"></data>
-        <data class="u-logo" value="/assets/avatar.webp"></data>
+        <data class="u-photo" value="/assets/avatar.webp"></data>
       </span>
     </a>
   </p>
@@ -130,7 +130,7 @@ Here are the special class names I'm using:
   [h-card] with the following metadata:
   * `p-name` is my name.
   * `u-url` is my personal URL, which is to say this website.
-  * `p-logo` is the URL of my avatar, so people reblogging me have something to
+  * `u-photo` is the URL of my avatar, so people reblogging me have something to
     show by my posts.
 * `p-name` isn't used here because this post is untitled, but if it had a title
   that would be the class for it.
