@@ -1,5 +1,6 @@
 ---
 tags: [meta, web, tumblr]
+updated: 2024-10-12T10:41:44Z
 ---
 
 {% genericPost "/blog/i-was-all-set-to-set/",
@@ -11,7 +12,7 @@ tags: [meta, web, tumblr]
   <p>
     I was all set to set up a custom Tumblr scraper so I could reblog art and
     stuff on here, but it turns out Tumblr already uses
-    <a href="http://localhost:8080/blog/reblogging-posts-with-h-entry"
+    <a href="/blog/reblogging-posts-with-h-entry"
       >the h-entry microformat</a
     >
     out of the box! I don't have to do anything special at all! Except maybe to
