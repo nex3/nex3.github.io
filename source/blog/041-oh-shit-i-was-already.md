@@ -1,11 +1,8 @@
----
-reply: https://topposts.net/post/1728110041120/
----
-
 {% genericPost "https://topposts.net/post/1728110041120/",
     time: "2024-10-05T06:34:01Z",
     author: "@topghost",
-    authorAvatar: "https://topposts.net/img/moon-dutiful.jpg?v=4e58b6acac05" %}
+    authorAvatar: "https://topposts.net/img/moon-dutiful.jpg?v=4e58b6acac05",
+    reply: true %}
   <p>
     bcj regularly posts about things that are happening in other online
     timelines without linking to them and I am FORCED to do that in response to

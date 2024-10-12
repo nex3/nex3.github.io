@@ -1,5 +1,4 @@
 ---
-reply: https://shelraphen.com/kol-tzedek-synagogue-and-masks-a-call-for-accountability/
 tags: [covid, disability, link]
 ---
 
@@ -9,7 +8,8 @@ tags: [covid, disability, link]
     author: 'Shel Raphen',
     authorUrl: 'https://shelraphen.com/',
     authorAvatar: "https://shelraphen.com/content/images/2024/09/IMG_1092-1.jpeg",
-    quote: true %}
+    quote: true,
+    reply: true %}
   <p>This was the last community space where I felt fully included. This was the last community space where I could meet a new person by chance, and not have my mask be a social barrier. In other community spaces, people do not try to socialize with me. Unmasked people avoid me so long as I am wearing a mask. I have conducted experiments. During times of low-transmission, I have experimented with taking my mask off in community events where people previously had ignored me despite my generally outgoing personality. Suddenly, everyone becomes very interested in talking to me. People welcome me to the space as if I am new. I tell people that we had actually met before—multiple times, in this same space. They ask where I had been this whole time. I tell them, right here, the whole time, wearing a mask. At the next event, I will put my mask back on, and those same people will go back to ignoring me when I greet them by name. Kol Tzedek was the only space where this was not an issue, because everyone was wearing a mask.</p>
   <p>[...]</p>
   <p>I wish we could have negotiated. I wish we could have agreed to compromises. I wish it was not just a venting session where fifty disabled people cried in our own ways and a middle-aged cis woman took notes with a blank facial expression. I remember at one point, she asked me why I do not simply attend virtual services. I am grateful for the existence of virtual services in this world, but to suggest that they are comparable to an in-person community space is a joke. If virtual services were just as good as in-person services, then why don't the able-bodied people just attend virtual services? Why did I donate hundreds of dollars to fundraise for an expensive new ADA-compliant building for the synagogue? Why would I give 5% of my annual income to a local synagogue just to attend virtual services? There are plenty of free online options I could have gone to instead.</p>

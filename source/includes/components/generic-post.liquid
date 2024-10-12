@@ -1,4 +1,9 @@
-<div class="generic-post-wrapper h-entry">
+<div
+  class="
+    generic-post-wrapper h-entry
+    {% if reply %}u-in-reply-to{% else %}u-repost-of{% endif %}
+  "
+>
   {% if inReplyUrl %}
     <div class="u-in-reply-to h-cite">
       <data name="u-url" value="{{ inReplyUrl | escape }}"></data>

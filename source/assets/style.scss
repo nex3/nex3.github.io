@@ -136,6 +136,10 @@ main {
 }
 
 .blog-post {
+  &.repost > .attribution {
+    display: none;
+  }
+
   > .u-in-reply-to ~ .blog-prose > .h-entry:last-of-type {
     position: relative;
 

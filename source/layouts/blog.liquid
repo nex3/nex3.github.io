@@ -2,7 +2,7 @@
 layout: default
 ---
 <article class="blog-post h-entry">
-  {% if title and not reply %}
+  {% if title %}
     <h1 class="p-name">
       <a href="{{ page.url | escape }}">{{ title | escape }}</a>
     </h1>
@@ -11,10 +11,6 @@ layout: default
   {% render 'attribution', date: page.date, author: author, link: page.url %}
   {% if updated %}
     <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
-  {% endif %}
-
-  {% if reply %}
-    <data class="u-in-reply-to" value="{{ reply | escape }}"></data>
   {% endif %}
 
   {% assign simpleContent = content | simplifyContent %}
@@ -27,12 +23,14 @@ layout: default
 
   {% render 'tags', tags: tags, commentary: commentary %}
 
-  {% assign url = page.url | htmlBaseUrl: site.url %}
-  {% render 'web-mentions', webMentions: webMentions, url: url %}
+  {% if not repost %}
+    {% assign url = page.url | htmlBaseUrl: site.url %}
+    {% render 'web-mentions', webMentions: webMentions, url: url %}
 
-  <div class="commentbox"></div>
-  <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-  <script>
-    commentBox('5765991539671040-proj', { sortOrder: 'oldest' });
-  </script>
+    <div class="commentbox"></div>
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>
+      commentBox('5765991539671040-proj', { sortOrder: 'oldest' });
+    </script>
+  {% endif %}
 </article>

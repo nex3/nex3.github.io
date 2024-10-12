@@ -30,7 +30,11 @@ function embedLinks(post, baseUrl) {
     .flatMap((item) => [
       ...(item.properties.url ?? []),
       ...(item.properties["repost-of"] ?? []),
-    ]);
+      ...(item.properties["in-reply-to"] ?? []),
+    ])
+    .map((urlOrItem) =>
+      typeof urlOrItem === "string" ? urlOrItem : urlOrItem.properties.url,
+    );
 }
 
 /** If {@link url} supports WebMentions, returns the associated endpoint. */
@@ -70,10 +74,7 @@ async function checkWebMentions(data) {
   const pairs = [];
   for (const post of data.collections.blog) {
     if (last < (post.data.updated ?? post.date)) {
-      const url = new URL(
-        post.data.repost ? data.site.url : post.url,
-        data.site.url,
-      ).toString();
+      const url = new URL(post.url, data.site.url).toString();
       const links = new Set(
         [
           ...(post.data.repost ? [] : linksFromPostBody(post, url)),

@@ -1,5 +1,4 @@
 ---
-reply: https://nex-3.com/blog/its-actually-really-nice/
 tags: [rss]
 ---
 
@@ -8,7 +7,8 @@ tags: [rss]
     tags: "#rss, #mastodon",
     author: "Natalie",
     authorUrl: "https://nex-3.com/",
-    authorAvatar: "/assets/avatar.webp" %}
+    authorAvatar: "/assets/avatar.webp",
+    reply: true %}
   <p>
     doing my level best to replace my "click over to Cohost" instinct with
     "click over to my RSS reader" instead of "click over to Mastodon"

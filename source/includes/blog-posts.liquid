@@ -15,26 +15,18 @@
     {% for post in posts %}
       <li>
         {% unless forloop.first %}<hr>{% endunless %}
-        <article class="blog-post h-entry">
-          {% if post.data.reply or post.data.repost %}
-            {% assign lastLink = post.content | lastLink: post.url %}
-            <data
-              class="
-                {% if post.data.reply %}u-in-reply-to{% endif %}
-                {% if post.data.repost %}u-repost-of{% endif %}
-              "
-              value="{{ lastLink | escape }}"
-            ></data>
-          {% endif %}
-
+        <article
+          class="
+            blog-post h-entry
+            {% if post.data.repost %}repost{% endif %}
+          "
+        >
           {% if post.data.title and not post.data.repost %}
             <h1 class="p-name">
               <a href="{{ post.url }}" rel="canonical">{{ post.data.title }}</a>
             </h1>
           {% endif %}
-          {% unless post.data.repost %}
-            {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
-          {% endunless %}
+          {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
           <div class="e-content blog-prose">
             {% if post.data.repost %}
               {{ post.content }}

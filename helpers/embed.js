@@ -103,8 +103,12 @@ export function simplifyEmbeds(post) {
         prose = titleHtml + "\n" + prose;
       }
 
+      const classes = ["h-entry"];
+      for (const klass of ["u-repost-of", "u-in-reply-to"]) {
+        if (embed.classList.contains(klass)) classes.push(klass);
+      }
       prose = `
-        <blockquote class="h-entry" style="
+        <blockquote class="${classes.join(' ')}" style="
           padding: 0.75rem;
           margin: 1rem 0.2rem 1.15rem;
           border-radius: 0.5rem;

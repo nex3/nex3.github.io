@@ -1,12 +1,12 @@
 ---
-reply: https://entangled.one/post/1727799262-i-look-at-my/
 tags: [web]
 ---
 
 {% genericPost "https://entangled.one/post/1727799262-i-look-at-my/",
     tags: "#website",
     author: "li (occuring)",
-    quote: true %}
+    quote: true,
+    reply: true %}
   <p>
     however. please 😮‍💨 at me if i am only ever posting about computer or
     website. to lightly paraphrase something a friend pointed out… the real

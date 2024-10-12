@@ -1,5 +1,4 @@
 ---
-reply: https://topposts.net/post/1727931611456/
 tags: [rss]
 ---
 
@@ -7,7 +6,8 @@ tags: [rss]
     time: "2024-10-03T05:00:11Z",
     author: "@topghost",
     authorUrl: "https://topposts.net/post/1727931611456/",
-    authorAvatar: "https://topposts.net/img/moon-dutiful.jpg?v=4e58b6acac05" %}
+    authorAvatar: "https://topposts.net/img/moon-dutiful.jpg?v=4e58b6acac05",
+    reply: true %}
   <p>
     something I will say that has been very nice about using RSS again... going
     back to reading "oldest first" and having read/unread status. fight me

@@ -1,5 +1,4 @@
 ---
-reply: https://pervocracy.com/sex/kink-at-pride/
 tags: [erotica, fiction, discourse, link]
 ---
 
@@ -10,7 +9,8 @@ tags: [erotica, fiction, discourse, link]
     time: '2024-10-01T13:36:08-04:00',
     author: 'Cliff',
     authorUrl: 'https://pervocracy.com/',
-    quote: true %}
+    quote: true,
+    reply: true %}
   {% image 'https://pervocracy.com/wp-content/uploads/2024/10/20240608_134030.jpg',
       alt: 'A delta truck at pride',
       style: 'max-width: 573px' %}

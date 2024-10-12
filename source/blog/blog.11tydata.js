@@ -14,7 +14,7 @@ function getBlogSlug(page) {
 }
 
 export function permalink(data) {
-  return data.repost ? false : `/blog/${getBlogSlug(data.page)}/index.html`;
+  return `/blog/${getBlogSlug(data.page)}/index.html`;
 }
 
 export async function webMentions() {

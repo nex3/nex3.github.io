@@ -1,5 +1,4 @@
 ---
-reply: https://files.platinumtulip.net/tulip-left.png
 tags: [style, disability, link]
 ---
 
@@ -10,7 +9,8 @@ tags: [style, disability, link]
     authorAvatar: 'https://files.platinumtulip.net/tulip-left.png',
     authorUrl: 'https://platinumtulip.bearblog.dev/',
     tags: "#makeup, #thoughts",
-    quote: true %}
+    quote: true,
+    reply: true %}
   <p>when i was younger, i was honestly pretty disinterested in makeup and fashion trends. i found it alienating; i did not fit in with what was popular among the youth of my assigned gender. and i think i knew that it was a futile effort to even attempt fitting in. no, i knew i was a little weirdo who felt infinitely more comfortable hiding behind a computer screen.</p>
 
   <p>but there was one day where i was at the local drugstore, and i made a shortcut through the makeup section to get to the pharmacy. something caught my eye. it was a display of eyeshadow quads, all featuring different color palettes. and i stopped for a moment, curious about the color combinations. color theory was already a pretty big interest of mine at that point; i had been doing a ton of limited color palette drawing exercises, and the quads on display reminded me of the palettes i'd use for practice.</p>

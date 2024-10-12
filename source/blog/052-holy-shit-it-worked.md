@@ -1,6 +1,5 @@
 ---
 tags: [android, enshittification]
-reply: https://app.commentbox.io/5765991539671040-proj?id=commentbox&url=https%3A%2F%2Fnex-3.com%2Fblog%2Fso-apparently-you-cant%2F%23commentbox&tlc_param=tlc&background_color=&text_color=&subtext_color=&sort_order=oldest#dd4fe67e3a48c37a5acfc318ed14c462
 ---
 
 {% genericPost "https://nex-3.com/blog/so-apparently-you-cant/",
@@ -8,7 +7,8 @@ reply: https://app.commentbox.io/5765991539671040-proj?id=commentbox&url=https%3
     tags: "#android, #enshittification",
     author: "Natalie",
     authorAvatar: "/assets/avatar.webp",
-    authorUrl: "https://nex-3.com/" %}
+    authorUrl: "https://nex-3.com/",
+    reply: true %}
   <p>
     so apparently you can't add a bookmark of a particular page to your home
     screen on Android if that page happens to be on a site that supports being a

@@ -1,5 +1,4 @@
 ---
-reply: /blog/i-was-all-set-to-set/
 tags: [meta, web, tumblr]
 ---
 
@@ -7,7 +6,8 @@ tags: [meta, web, tumblr]
     time: "2024-09-29T23:49:49Z",
     author: "Natalie",
     authorUrl: "/",
-    authorAvatar: "/assets/avatar.webp" %}
+    authorAvatar: "/assets/avatar.webp",
+    reply: true %}
   <p>
     I was all set to set up a custom Tumblr scraper so I could reblog art and
     stuff on here, but it turns out Tumblr already uses

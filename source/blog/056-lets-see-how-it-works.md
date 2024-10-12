@@ -1,5 +1,4 @@
 ---
-reply: https://postnow.site/
 tags: [rss, web]
 ---
 
@@ -7,7 +6,8 @@ tags: [rss, web]
     name: "An Annoying thing about feed readers",
     time: "2024-10-08T20:15:09-0500",
     tags: "#rss",
-    author: "bcj" %}
+    author: "bcj",
+    reply: true %}
   <p>
     I've put some effort into making my site look as close to not bad as I know
     and to make things from friends I reply to look distinct and then feedbin
