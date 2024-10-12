@@ -65,3 +65,15 @@ more visibility.
 * [**CD-ROM Journal**](http://cdrom.ca/) is my friend Misty's log of various
   interesting things she finds in her archival work and beyond. It's slow-paced,
   thoughtful, and it still works in Netscape 5.
+
+## Blogs
+
+I don't like public "following" lists on social media, and having a list of
+links to my friends' blogs feels too similar to me. Sorry! But if you want to
+link back to this site, feel free to use this icon:
+
+<img src="/assets/house-of-nettles.gif" alt="House of Nettles" style="margin-block: auto">
+
+The avatar is by {% mention 'subspaceskater' %}, {% mention 'Zandra' %} did the
+layout, and I made the nettle leaf (with substantial help from a photo
+reference).
