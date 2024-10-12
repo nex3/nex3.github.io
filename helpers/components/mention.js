@@ -39,6 +39,14 @@ for (const person of [
     photo:
       "https://64.media.tumblr.com/6ba2d5140aaa120f51da07e0a0f8c57b/b67a552f15ed86e0-35/s96x96u_c1/a2251fda11d2ff229c9bd891905aaa9356d96e10.jpg",
   },
+  {
+    name: "Zandra",
+    nickname: "ZandraVandra",
+    url: "https://zandravandra.com/",
+    uid: "https://zandravandra.com/",
+    photo:
+      "https://zandravandra.com/images/1000/10809271/zandravatar_blurry.jpg",
+  },
 ]) {
   if (person.name) knownMentions[person.name] = person;
   if (person.nickname) knownMentions[person.nickname] = person;
@@ -46,7 +54,7 @@ for (const person of [
 
 export default createUnpairedComponentPlugin(
   "mention",
-  (liquidEngine, text, options) => {
+  async (liquidEngine, text, options) => {
     options ??= {};
 
     if ((options.name ?? options.nickname ?? text) in knownMentions) {
@@ -59,9 +67,11 @@ export default createUnpairedComponentPlugin(
       options.name ??= text;
     }
 
-    return liquidEngine.renderFile("components/mention", {
-      text,
-      ...options,
-    });
+    return (
+      await liquidEngine.renderFile("components/mention", {
+        text,
+        ...options,
+      })
+    ).trim();
   },
 );

@@ -1,6 +1,9 @@
 {%- if description or caption or title -%}
   <figure
-    class="image"
+    class="
+      image
+      {% if class %}{{ class | escape }}{% endif %}
+    "
     {% if style %}
       style="{{style | escape}}"
     {% endif %}
@@ -11,7 +14,8 @@
   <img
     src="{{url}}"
     {% unless description or caption or title %}
-      {% if style %}style="{{style | escape}}"{% endif %}
+      {% if style %}style="{{ style | escape }}"{% endif %}
+      {% if class %}class="{{ class | escape }}"{% endif %}
     {% endunless %}
     {% if alt %}
       alt="{{alt | escape}}"

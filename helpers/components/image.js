@@ -10,13 +10,10 @@ export default createPairedComponentPlugin(
       .map((text) => (text === "" ? undefined : text));
 
     return liquidEngine.renderFile("components/image", {
+      ...options,
       description,
       caption,
       url,
-      link: options?.link,
-      alt: options?.alt,
-      title: options?.title,
-      style: options?.style,
     });
   },
 );
