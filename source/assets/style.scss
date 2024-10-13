@@ -139,8 +139,16 @@ main {
   &.repost > .attribution {
     display: none;
   }
+}
 
-  > .u-in-reply-to ~ .blog-prose > .h-entry:last-of-type {
+.blog-prose {
+  img {
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .h-entry.u-in-reply-to:last-of-type {
     position: relative;
 
     &::after {
@@ -155,14 +163,6 @@ main {
       opacity: 0.1;
       pointer-events: none;
     }
-  }
-}
-
-.blog-prose {
-  img {
-    margin: 0 auto;
-    max-width: 100%;
-    display: block;
   }
 }
 
