@@ -1,5 +1,6 @@
 ---
-tags: [theater, judaism]
+tags: [theater, judaism, wifeposting]
+updated: 2024-10-14T07:16:30Z
 ---
 
 The scene opens on the second day of Rosh Hashanah as the dawn light comes up,
