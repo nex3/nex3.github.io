@@ -1,1 +1,0 @@
-people say kids are easily amused but I think it's way more true for adults. I could go toe to toe with any child on appreciating the simple delight of a shiny rock or a colorful picture book, but I defy any six year old to fully savor the sublime joy of getting a new dryer that _doesn't even need an external vent_
