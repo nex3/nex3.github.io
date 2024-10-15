@@ -67,7 +67,7 @@ async function previousEntryToTag(entry, items, baseUrl) {
     }
   }
 
-  return results.map(result => `${result}\n\n`).join('');
+  return results.map((result) => `${result}\n\n`).join("");
 }
 
 export async function hEntryToTag(html, url) {
@@ -107,23 +107,24 @@ async function parsedHEntryToTag(entry, items, url, baseUrl) {
   args.inReplyName = inReplyTo?.properties?.name?.[0];
   args.inReplyAuthor = inReplyTo?.properties?.author?.[0];
 
-  return previous + (
-    "{% genericPost " +
-    JSON.stringify(resolveUrl(entry.properties.url?.[0], baseUrl) ?? url) +
-    ",\n" +
-    Object.entries(args)
-      .filter(([_, value]) => value)
-      .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
-      .join(",\n") +
-    " %}\n" +
-    (
-      await prettier.format(entry.properties.content?.[0]?.html ?? "", {
-        parser: "html",
-        printWidth: 78,
-      })
-    )
-      .trim()
-      .replaceAll(/^/gm, "  ") +
-    "\n{% endgenericPost %}"
+  return (
+    previous +
+    ("{% genericPost " +
+      JSON.stringify(resolveUrl(entry.properties.url?.[0], baseUrl) ?? url) +
+      ",\n" +
+      Object.entries(args)
+        .filter(([_, value]) => value)
+        .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
+        .join(",\n") +
+      " %}\n" +
+      (
+        await prettier.format(entry.properties.content?.[0]?.html ?? "", {
+          parser: "html",
+          printWidth: 78,
+        })
+      )
+        .trim()
+        .replaceAll(/^/gm, "  ") +
+      "\n{% endgenericPost %}")
   );
 }
