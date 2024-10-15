@@ -50,9 +50,14 @@ export async function webMentions() {
 
     if (mention.author.name === "") delete mention.author;
     if (mention.author) {
+      if (mention.author.url === "") delete mention.author.url;
       mention.author.photo ??= mention.author.logo;
       if (typeof mention.author.photo === "string") {
-        mention.author.photo = { value: mention.author.photo };
+        if (mention.author.photo === "") {
+          delete mention.author.photo;
+        } else {
+          mention.author.photo = { value: mention.author.photo };
+        }
       }
     }
 

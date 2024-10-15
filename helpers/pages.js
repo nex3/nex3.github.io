@@ -85,18 +85,7 @@ function metadata(collections, site, title) {
   };
 }
 
-async function webMentions(permalink) {
-  const { url } = this.page;
-  if (!url) return [];
-  const response = await fetch(
-    `https://webmention.io/api/mentions.jf2?target=https://nex-3.com${url}`,
-  );
-  if (!response.ok) return [];
-  return (await response.json()).children;
-}
-
 export default function pagesPlugin(eleventyConfig) {
-  eleventyConfig.addLiquidFilter("webMentions", webMentions);
   eleventyConfig.addLiquidFilter("markdownSafe", markdownSafe);
   eleventyConfig.addLiquidFilter("metadata", metadata);
   eleventyConfig.addLiquidFilter("replaceInternalLinks", replaceInternalLinks);

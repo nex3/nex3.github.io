@@ -771,9 +771,25 @@ small {
     padding: 12px;
     margin-top: 8px;
     display: grid;
-    grid-template-columns: min-content min-content 1fr;
+    grid-template-columns: min-content 1fr;
     grid-template-rows: min-content min-content;
     gap: 8px;
+    grid-template-areas:
+      "avatar attribution"
+      "avatar content";
+
+    @include phone {
+      grid-template-columns: 1fr min-content;
+      grid-template-areas:
+        "attribution avatar"
+        "content content";
+    }
+
+    &:not(:has(.wm-avatar)) {
+      grid-template-areas:
+        "attribution attribution"
+        "content content";
+    }
   }
 
   .u-comment:not(:has(.e-content)) {
@@ -790,17 +806,11 @@ small {
   }
 
   .attribution {
-    grid-row: 1;
-    grid-column: 2 / span 2;
-
-    @include phone {
-      grid-column: 3;
-    }
+    grid-area: attribution;
   }
 
   .e-content {
-    grid-row: 2;
-    grid-column: 2 / span 2;
+    grid-area: content;
 
     > :first-child {
       margin-top: 0;
@@ -812,15 +822,15 @@ small {
 }
 
 .wm-avatar {
-  grid-row: span 2;
-  grid-column: 1;
+  grid-area: avatar;
   display: block;
   width: 48px;
   height: 48px;
 
   @include phone {
-    grid-column: 2;
-    grid-row: 1;
+    align-self: center;
+    width: 32px;
+    height: 32px;
   }
 
   img {
