@@ -1,0 +1,1 @@
+I should write a novel about a middle aged English professor in a loveless marriage having a torrid affair with his stunningly attractive undergraduate student. like I just think it would be really funny for a polyamorous lesbian in a terrific marriage to write one of those books
