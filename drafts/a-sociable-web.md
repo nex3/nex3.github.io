@@ -172,11 +172,24 @@ The potency of performance can be turned to harm, though. The desire for
 applause can wrap itself around your heart until *everything* starts to feel
 like a performance. Performances can be a great joy and a source of profound
 connection, and having room for them is crucial. But they cannot be the bread
-and butter of social interaction. There must be plenty of room for simple
-conversations with no thought of an audience beyond the participants in any
-healthy social situation.
+and butter of social interaction. Any healthy social situation must have plenty of room for simple
+conversations with no thought of an audience beyond the participants.
 
 #### ...and Technology
+
+Performance is the handle by which social media grabs hold of your attention and refuses ever to let go. Performance is the food it feeds you as you scroll your infinite timeline, and the heart of the skinner box it uses to keep you posting forever. This is harmful. Cohost absolutely made the right call by dramatically minimizing this effect by removing metrics such as like counts for posts and follower counts for people.
+
+But like many vital nutrients, while too much focus on performance is toxic, you need at least some to thrive. And this is something that individual web sites struggle with[^analytics]. You can implement anonymous "likes" like Medium's claps or BearBlog's up arrow, but without faces attached this feels impersonal. And attaching a face while still making "liking" a post simple and quick all but requires some sort of centralized account[^wm-likes].
+
+[^analytics]: Adding analytics seems at first blush like a solution to this, albeit one that's usually quite invasive. But I think it doesn't address the core issue, because it only measures passive behavior, not active feedback. It's the difference between reading ticket sale numbers in an office and hearing the applause on stage.
+
+[^wm-likes]: The Webmention protocol combined with h-entry can explicitly express a "like", but to like a post you must establish a long-lived link to it on a site you control which is absolutely not simple. You could make a generalized "Webmention like" app that's just designed to do this, and it would be usable enough as a browser extension or dedicated button, but that's basically just reinventing a centralized account. 
+
+I think comments are a critical part of the solution here. Even a simple "hell yeah" or "love this!" comment feels personal, and there are plenty of comment systems that make posting without an account relatively painless. And "making a comment" feels enough weightier than "liking a post" that a small signup flow reads as less egregious, even if the end purpose is the same.
+
+Reposts are even more valuable as a form of "applause". Not only do they bring a post to a new audience, but they're the strongest possible endorsement. Nothing makes me feel more like my writing is appreciated than seeing it show up in a friend's link roundup, and I think the roundups people like [Dante](https://blog.dante.cool/link-roundup-8-ghouls-and-goblins-and-games/), [Shel](https://shelraphen.com/community-roundup-week-of-2024-10-06-11/), [Nicky](https://nickyflowers.com/blog/post_101424.html), and many more have been doing are among the most valuable contributions to building a sustainable culture for a sociable web.
+
+And I do think culture is the critical factor for nourishing performance without letting it become toxic. For sure, there are technological aspects as well: Webmentions are crucial for allowing an author to actually *see* reposts, and h-entry makes it far easier to create a repost *and* adds a lot of ezpressive power to Webmentions. But none of that matters if we don't establish a culture where we tell people when we appreciate their posts and share them if we think our friends will appreciate them as well.
 
 ### Meeting People
 
