@@ -43,6 +43,15 @@ for (const form of document.querySelectorAll(".wm-form")) {
     const submit = e.target.querySelector("input[type=submit]");
     const fieldset = e.target.querySelector("fieldset");
 
+    // No point in awaiting this, we can't see any information from it anyway
+    // thanks to `mode: 'no-cors'`. We have to construct `new FormData()` before
+    // we disable the fieldset or those entries won't be available.
+    fetch(e.target.action, {
+      method: e.target.method,
+      mode: "no-cors",
+      body: new FormData(e.target),
+    });
+
     url.value = "";
     submit.value = "Sent!";
     fieldset.disabled = true;
@@ -50,13 +59,5 @@ for (const form of document.querySelectorAll(".wm-form")) {
       fieldset.disabled = false;
       submit.value = "Send";
     }, 2000);
-
-    // No point in awaiting this, we can't see any information from it anyway
-    // thanks to `mode: 'no-cors'`.
-    fetch(e.target.action, {
-      method: e.target.method,
-      mode: "no-cors",
-      body: new FormData(e.target),
-    });
   });
 }
