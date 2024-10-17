@@ -31,7 +31,7 @@
             {% if post.data.repost %}
               {{ post.content }}
             {% else %}
-              {{ post.content | truncateHTML: 300, link: post.url | replaceInternalLinks: post.url }}
+              {{ post.content | truncateHTML: 500, link: post.url | replaceInternalLinks: post.url }}
             {% endif %}
           </div>
           {% render 'tags', tags: post.data.tags, commentary: post.data.commentary %}
