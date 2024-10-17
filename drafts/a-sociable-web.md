@@ -61,8 +61,8 @@ fun. I don't mean to try to avoid conflict entirely, which is neither possible
 nor truly desirable. But to envision a sociable web is to envision a place where
 interactions that make your world richer are easy to realize, and those that
 make your life worse easy to curtail. I want to be able to chat in public
-without the world overhearing, to meet new people without and be able to block
-creeps, and to have conversations without being dogpiled.
+without the world overhearing, to meet new people and be able to block creeps,
+and to have conversations without being dogpiled.
 
 ## Social Pillars
 
@@ -72,7 +72,7 @@ doomed flaws, is a huge part of millions of people's lives for a reason, and
 it's not *just* because of its exploitative monopolization of users' attention.
 It meets real needs people have for connection and communication in a space
 that's decoupled[^decoupled] from physical proximity. If we can identify the
-healthy interactions and cut them away from the rotten habitat that is for now
+healthy interactions and cut them away from the rotten habitat that is (for now)
 their only home, we can start building a web that is genuinely for us.
 
 [^decoupled]: To a degree. Language barriers, time zones, networks of existing
@@ -98,20 +98,20 @@ reason I make a point of [posting jokes] on this blog, even when they're
 [incredibly dumb].
 
 [posting jokes]: /blog/in-a-kosher-household-youll/
-[incredibly dumb]: blog/monsterfuckers-when-the/
+[incredibly dumb]: /blog/monsterfuckers-when-the/
 
 Conversations are also (at least in physical reality) local. Even when
 conversing in a public space or a crowded party, most of the time you're just
 talking with a small number of people. People may drop in and out, but there's
 no expectation that everyone in the room will hear everything you say.
 
-Without a doubt, conversation the fundamental building block of human
+Without a doubt, conversation is the fundamental building block of human
 interaction. Without conversation, you have nothing. Silence. Void.
 
 #### ...and Technology
 
 I see conversation as one of the key failures of the old-school "blogosphere".
-You could post all you want, but there was no way to actually turn those posts
+You could post all you wanted, but there was no way to actually turn those posts
 into a conversation. Comment sections met this need to a degree, but without the
 ability to make a long-form response to a long-form post *and have the original
 author actually see it* a culture of back-and-forth never blossomed.
@@ -191,7 +191,7 @@ participants.
 
 Performance is the handle by which social media grabs hold of your attention and
 refuses ever to let go. Performance is the food it feeds you as you scroll your
-infinite timeline, and the heart of the skinner box it uses to keep you posting
+infinite timeline, and the heart of the Skinner box it uses to keep you posting
 forever. This is harmful. Cohost absolutely made the right call by dramatically
 minimizing this effect by removing metrics such as like counts for posts and
 follower counts for people.
@@ -236,7 +236,7 @@ to building a sustainable culture for a sociable web.
 And I do think culture is the deciding factor for nourishing performance without
 letting it become toxic. For sure, there are technological aspects as well:
 Webmentions are crucial for allowing an author to actually *see* reposts, and
-h-entry makes it far easier to create a repost *and* adds a lot of ezpressive
+h-entry makes it far easier to create a repost *and* adds a lot of expressive
 power to Webmentions. But none of that matters if we don't establish a culture
 where we tell people when we appreciate their posts and share them if we think
 our friends will appreciate them as well.
@@ -249,7 +249,7 @@ to you, and there was a moment when you first met them. In order for a social
 context to fully function, to be more than just a group chat, there must be a way
 to build new relationships with people you don't already know.
 
-There are two parts of this that are equally important. First, you have to have
+There are two parts to this that are equally important. First, you have to have
 a way to actually literally see new people in your daily social experiences. If
 you're only ever interacting with the same group of friends, you'll never meet
 anyone new. There needs to be some amount of circulation: being introduced to
@@ -274,7 +274,7 @@ transitively through other friends who I met through social media. My life would
 be immeasurably different if I'd never created a Twitter account, and most of
 that difference would be the connections I would have never established with
 people who are now beloved friends. But despite all that, I don't think social
-media is actually very successful at making it possible to meat people.
+media is actually very successful at making it possible to meet people.
 
 There were *specific historical contexts* in which it worked well, to be sure.
 The little slice of queer Twitter I was part of in the mid-10s, after the most
@@ -285,11 +285,11 @@ someone unfollows you or doesn't follow back is intrinsically somewhat poisonous
 to establishing friendships—but they did function.
 
 But those contexts were always contingent, small loopholes that were doomed to
-close. The structure of social media[, the arc upon which it bends, pulls
-towards a world where parasocial relationships are everything, because
-parasocial relationships are profitable[^parasocial-fediverse]. Their structure
-already mirrors the distribution of content for profit, and so are far easier to
-midas-touch into the gold standard of the internet era: advertising. [X dot com]
+close. The structure of social media, the arc upon which it bends, pulls towards
+a world where parasocial relationships are everything, because parasocial
+relationships are profitable[^parasocial-fediverse]. Their structure already
+mirrors the distribution of content for profit, and so are far easier to
+Midas-touch into the gold standard of the internet era: advertising. [X dot com]
 is no longer the hot new kid on the block; it has far fewer users than TikTok,
 Instagram, and YouTube, all of which are fundamentally about *sharing media*
 rather than communicating. The only outlier is Facebook, which itself has fan
