@@ -3,6 +3,15 @@ import { createUnpairedComponentPlugin } from "./base.js";
 const knownMentions = {};
 for (const person of [
   {
+    givenName: "Blackle",
+    familyName: "Mori",
+    name: "Blackle Mori",
+    url: "https://www.blackle-mori.com/",
+    uid: "https://www.blackle-mori.com/",
+    photo:
+      "https://lethargic.talkative.fish/fileserver/01M8H3ETEZ71CY4QX9DW4TB7JM/attachment/original/01HR0N5F2THMKKF4MXF3M2PBXW.png",
+  },
+  {
     name: "Christa",
     nickname: "OhPoorPup",
     url: "https://soundretro.co/",
@@ -49,28 +58,53 @@ for (const person of [
   },
 ]) {
   if (person.name) knownMentions[person.name] = person;
+  if (person.givenName) knownMentions[person.givenName] = person;
   if (person.nickname) knownMentions[person.nickname] = person;
 }
+
+/** A map from JS-style field names to their h-card equivalents. */
+const jsToHCard = {
+  name: "p-name",
+  givenName: "p-given-name",
+  familyName: "p-family-name",
+  nickname: "p-nickname",
+  url: "u-url",
+  uid: "u-uid",
+  photo: "u-photo",
+};
 
 export default createUnpairedComponentPlugin(
   "mention",
   async (liquidEngine, text, options) => {
-    options ??= {};
+    const textClasses = [];
+    const urlClasses = [];
+    const additionalData = [];
 
-    if ((options.name ?? options.nickname ?? text) in knownMentions) {
-      const person = knownMentions[options.name ?? options.nickname ?? text];
-      options.name ??= person.name;
-      options.url ??= person.url;
-      options.nickname ??= person.nickname;
-      options.photo ??= person.photo;
-    } else if (!options.name && !options.nickname) {
-      options.name ??= text;
+    const person =
+      knownMentions[
+        options.name ?? options.nickname ?? options.givenName ?? text
+      ] ?? (options.name || options.nickname ? {} : { name: text });
+
+    const url = options.url ?? person.url;
+    for (const [jsProp, hCardProp] of Object.entries(jsToHCard)) {
+      const value = options[jsProp] ?? person[jsProp];
+      if (!value) continue;
+      if (text === value) {
+        textClasses.push(hCardProp);
+      } else if (url === value) {
+        urlClasses.push(hCardProp);
+      } else {
+        additionalData.push([hCardProp, value]);
+      }
     }
 
     return (
       await liquidEngine.renderFile("components/mention", {
         text,
-        ...options,
+        url,
+        textClasses,
+        urlClasses,
+        additionalData,
       })
     ).trim();
   },

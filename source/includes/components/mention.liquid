@@ -1,27 +1,18 @@
 <span class="mention h-card">
   {%- if url -%}
     <a
-      href="{{ url | escape }}"
       class="
-        p-name u-url
-        {% if uid == url %}u-uid{% endif %}
+        {{- textClasses | join: " " | escape }}
+        {{ urlClasses | join: " " | escape -}}
       "
+      href="{{ url | escape }}"
     >
       {{- text | escape -}}
     </a>
   {%- else -%}
-    <span class="p-name">{{ text | escape }}</span>
+    <span class="{{ textClasses | join: " " | escape }}">{{ text | escape }}</span>
   {%- endif -%}
-  {%- if uid and uid != url -%}
-    <data class="u-uid" value="{{ uid | escape }}"></data>
-  {%- endif -%}
-  {%- if nickname -%}
-    <data class="p-nickname" value="{{ nickname | escape }}"></data>
-  {%- endif -%}
-  {%- if logo -%}
-    <data class="u-logo" value="{{ logo | escape }}"></data>
-  {%- endif -%}
-  {%- if photo -%}
-    <data class="u-photo" value="{{ photo | escape }}"></data>
-  {%- endif -%}
+  {%- for pair in additionalData -%}
+    <data class="{{ pair[0] | escape }}" value="{{ pair[1] | escape }}"></data>
+  {%- endfor -%}
 </span>
