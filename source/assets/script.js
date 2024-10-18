@@ -1,13 +1,13 @@
-let articles = document.querySelectorAll("article");
+let articles = document.querySelectorAll("article:not(article *)");
 if (articles.length === 0) articles = [document.querySelector("main")];
 if (!articles[0]) articles = [];
 
 for (const article of articles) {
   const images = article.querySelectorAll(`
-    .e-content figure:not(.no-popup) > a > img,
-    .e-content > a > img,
-    .image-gallery > a > img,
-    .e-content > p > a > img
+    .e-content figure:not(.no-popup) > a > img:not(.simple-content *),
+    .e-content > a > img:not(.simple-content *),
+    .e-content > p > a > img:not(.simple-content *),
+    .image-gallery a > img
   `);
   if (images.length === 0) continue;
 
