@@ -83,22 +83,25 @@ export async function tumblrTag(url) {
 
   return (
     `{% genericPost ${JSON.stringify(urlString)},\n` +
-      Object.entries(args)
-        .filter(([_, value]) => value)
-        .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
-        .join(",\n") +
-      " %}\n" +
-      (
-        await prettier.format(npf2html(post.content, {
-    layout: post.layout,
-    askingAvatar: post.asking_avatar
-  }), {
+    Object.entries(args)
+      .filter(([_, value]) => value)
+      .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
+      .join(",\n") +
+    " %}\n" +
+    (
+      await prettier.format(
+        npf2html(post.content, {
+          layout: post.layout,
+          askingAvatar: post.asking_avatar,
+        }),
+        {
           parser: "html",
           printWidth: 78,
-        })
+        },
       )
-        .trim()
-        .replaceAll(/^/gm, "  ") +
-      "\n{% endgenericPost %}"
+    )
+      .trim()
+      .replaceAll(/^/gm, "  ") +
+    "\n{% endgenericPost %}"
   );
 }
