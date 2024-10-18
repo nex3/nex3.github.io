@@ -5,10 +5,11 @@ import { glob } from "glob";
 import { JSDOM } from "jsdom";
 import fetch from "node-fetch";
 
+import { backloggdTag } from "./inject/backloggd.js";
 import { cohostTag } from "./inject/cohost.js";
 import { hEntryToTag } from "./inject/h-entry.js";
 import { letterboxdTag } from "./inject/letterboxd.js";
-import { backloggdTag } from "./inject/backloggd.js";
+import { tumblrTag } from "./inject/tumblr.js";
 
 function indexAfterFrontMatter(string) {
   const boundary = /^---/gm;
@@ -36,7 +37,13 @@ async function tagForUrl(url, blog) {
     case "backloggd.com":
       return await backloggdTag(url);
 
+    case "tumblr.com":
+    case "www.tumblr.com":
+      return await tumblrTag(url);
+
     default:
+      if (url.hostname.endsWith(".tumblr.com")) return await tumblrTag(url);
+
       const response = await fetch(url);
       const html = await response.text();
       const result = await hEntryToTag(html, url);
