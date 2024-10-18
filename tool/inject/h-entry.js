@@ -27,13 +27,16 @@ function resolveUrl(url, base) {
  * ambiguous.
  */
 function findEntry(items, urlToFind, baseUrl) {
-  const candidates = items.filter(
+  let candidates = items.filter(
     (item) =>
       item.type.includes("h-entry") &&
       (item.properties.url ?? []).some(
         (url) => resolveUrl(url, baseUrl) == urlToFind,
       ),
   );
+  if (candidates.length === 0) {
+    candidates = items.filter((item) => item.type.includes("h-entry"));
+  }
   if (candidates.length < 2) return candidates[0] ?? null;
   throw new Error(
     `URL ${url} has multiple top-level h-entries with matching URL`,
@@ -72,7 +75,9 @@ async function previousEntryToTag(entry, items, baseUrl) {
 
 export async function hEntryToTag(html, url) {
   const { items } = mf2(html, { baseUrl: url.toString() });
-  return parsedHEntryToTag(findEntry(items, url, url), items, url, url);
+  const entry = findEntry(items, url, url);
+  if (!entry) throw new Error(`No matching h-entry found in ${url}`);
+  return parsedHEntryToTag(entry, items, url, url);
 }
 
 async function parsedHEntryToTag(entry, items, url, baseUrl) {
