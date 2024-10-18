@@ -670,16 +670,22 @@ $-embed-column-gap: 24px;
   }
 }
 
+// The breakpoint at which an embed with the given floater width should pull the
+// floater into itself.
+@function embed-breakpoint($floater-width) {
+  @return calc(
+    $-embed-min-width + $-embed-padding * 2 + $floater-width +
+      $-embed-column-gap + $body-margin * 2
+  );
+}
+
 // Defines the width for an embed's image and moves it to the embed's corner for
 // smaller screen sizes. This can be passed a content block to inject into the
 // smaller-sized media query.
 @mixin embed-image($width) {
   width: $width;
 
-  @media only screen and (width <= calc(
- $-embed-min-width + $-embed-padding * 2 + $width +
- $-embed-column-gap + $body-margin * 2
- )) {
+  @media only screen and (width <= #{embed-breakpoint($width)}) {
     grid-row: 1;
     grid-column: 3;
     margin-top: 12px;
@@ -868,6 +874,7 @@ small {
 // Generic Post Embed
 
 .generic-post-wrapper {
+  $floater-width: 64px;
   @extend %embed;
   display: grid;
 
@@ -915,11 +922,10 @@ small {
   }
 
   > a {
-    $width: 64px;
-    height: $width;
+    height: $floater-width;
     aspect-ratio: 1 / 1;
 
-    @include embed-image($width) {
+    @include embed-image($floater-width) {
       width: 32px;
       height: 32px;
     }
@@ -947,11 +953,14 @@ small {
     }
   }
 
-  // If any reply has an avatar, all replies should be sized as though they did.
-  &:not(:has(> a)):has(~ .generic-post-wrapper > a),
-  &:has(> a) ~ .generic-post-wrapper:not(:has(> a)) {
-    min-width: 64px;
-    grid-template-columns: (64px + 24px) 1fr min-content;
+  @media only screen and (width > #{embed-breakpoint($floater-width)}) {
+    // If any reply has an avatar, all replies should be sized as though they
+    // did.
+    &:not(:has(> a)):has(~ .generic-post-wrapper > a),
+    &:has(> a) ~ .generic-post-wrapper:not(:has(> a)) {
+      min-width: 64px;
+      grid-template-columns: (64px + 24px) 1fr min-content;
+    }
   }
 }
 
