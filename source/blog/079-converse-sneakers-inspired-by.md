@@ -1,5 +1,4 @@
 ---
-repost: true
 tags: [fashion]
 commentary:
 - "I am not a big sneaker person but I would make an exception for something this cool"
