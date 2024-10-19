@@ -16,7 +16,7 @@ I think it's most interesting to approach this question from the social
 direction rather than the technological. Our first priority should be a set of
 social goals for interacting on the internet, and only with that understanding
 firmly in hand can we start usefully interrogating the way technology gives rise
-to or fight against the sort of interactions we want. My ultimate aim is to
+to or fights against the sort of interactions we want. My ultimate aim is to
 articulate a clear vision of a way to interact with people's websites that's not
 just a pastime or a research process, but that can meet social needs—to imagine
 what I'll call a "sociable web".
@@ -62,18 +62,18 @@ nor truly desirable. But to envision a sociable web is to envision a place where
 interactions that make your world richer are easy to realize, and those that
 make your life worse easy to curtail. I want to be able to chat in public
 without the world overhearing, to meet new people and be able to block creeps,
-and to have conversations without being overwhelmed by a sea of bad faith.
+and to have conversations without being drowned in a sea of bad faith.
 
 ## Social Pillars
 
 The first step towards understanding what a sociable web could be is to
 understand the social goals we're trying to achieve. Social media, for all its
 doomed flaws, is a huge part of millions of people's lives for a reason, and
-it's not *just* because of it exploitatively monopolizes its users' attention.
-It meets real needs people have for connection and communication in a space
-that's decoupled[^decoupled] from physical proximity. If we can identify the
-healthy interactions and cut them away from the rotten habitat that is (for now)
-their only home, we can start building a web that is genuinely for us.
+it's not *just* because it exploitatively monopolizes its users' attention. It
+meets real needs people have for connection and communication in a space that's
+decoupled[^decoupled] from physical proximity. If we can identify the healthy
+interactions and cut them away from the rotten habitat that is (for now) their
+only home, we can start building a web that is genuinely for us.
 
 [^decoupled]: To a degree. Language barriers, time zones, networks of existing
   friends, and barriers to technological access all put some pressure even on
@@ -223,9 +223,9 @@ reads as less egregious, even if the end purpose is the same.
 Reposts are even more valuable as a form of "applause". Not only do they bring a
 post to a new audience, but they're the strongest possible endorsement. Nothing
 makes me feel more like my writing is appreciated than seeing it show up in a
-friend's link roundup, andI  think the roundups people like [Dante], [Shel],
-[Nicky], [Caoimhe], and many more have been doing are among the most valuable contributions
-to building a sustainable culture for a sociable web.
+friend's link roundup, and I think the roundups people like [Dante], [Shel],
+[Nicky], [Caoimhe], and many more have been doing are among the most valuable
+contributions to building a sustainable culture for a sociable web.
 
 [Dante]: https://blog.dante.cool/link-roundup-8-ghouls-and-goblins-and-games/
 [Shel]: https://shelraphen.com/community-roundup-week-of-2024-10-06-11/
@@ -392,10 +392,10 @@ server and know the IP of someone who's a problem, you can *probably* IP-ban
 them, but there's no other way to block them from looking at your site (and even
 an IP ban is easy to circumvent). There is some intrinsic protection just by
 virtue of how relatively low-bandwidth the communication channels on individual
-websites are—it's a lot harder for someone to dogpile you someone when sending
-you a message isn't just two taps away for all their followers—but that only
-goes so far. I don't know if there's a great solution here, especially given
-that no public presence will ever be truly safe from dedicates harassment.
+websites are—it's a lot harder for someone to dogpile you when sending you a
+message isn't just two taps away for all their followers—but that only goes so
+far. I don't know if there's a great solution here, especially given that no
+public presence will ever be truly safe from dedicated harassment.
 
 Smaller-scale avoidance is somewhat easier. RSS readers could in principle
 filter out reposts from people you don't want to see—the only one I know for
