@@ -32,7 +32,7 @@ const linkPlaceholder = crypto.randomBytes(20).toString("hex");
  *
  * @see https://github.com/oe/truncate-html
  */
-function truncateHTML(html, words, ...named) {
+export function truncateHTML(html, words, ...named) {
   const options = Object.fromEntries(named);
   return truncate(html, words, {
     byWords: true,

@@ -1,6 +1,8 @@
 import escapeHtml from "escape-html";
 import sanitizeHtml from "sanitize-html";
 
+import { truncateHTML } from "../../helpers/type.js";
+
 export const layout = "blog";
 export const tags = ["blog"];
 export const date = "git created";
@@ -24,7 +26,9 @@ export async function webMentions() {
   const perPage = 50;
   const endpoint =
     `https://webmention.io/api/mentions.jf2` +
-    `?wm-property[]=in-reply-to&wm-property[]=mention-of` +
+    `?wm-property[]=in-reply-to` +
+    `&wm-property[]=repost-of` +
+    `&wm-property[]=mention-of` +
     `&per-page=${perPage}` +
     `&sort-dir=up` +
     `&target=https://nex-3.com${escape(url)}`;
@@ -43,42 +47,52 @@ export async function webMentions() {
     if (children.length < perPage) break;
   }
 
-  return allMentions.map((mention) => {
-    if (typeof mention.author === "string") {
-      mention.author = { type: "card", name: mention.author };
-    }
+  return allMentions
+    .filter(
+      (mention) =>
+        // Don't show transparent reposts, but do show ones that add content.
+        mention["wm-property"] !== "repost-of" || "content" in mention,
+    )
+    .map((mention) => {
+      if (typeof mention.author === "string") {
+        mention.author = { type: "card", name: mention.author };
+      }
 
-    if (mention.author.name === "") delete mention.author;
-    if (mention.author) {
-      if (mention.author.url === "") delete mention.author.url;
-      mention.author.photo ??= mention.author.logo;
-      if (typeof mention.author.photo === "string") {
-        if (mention.author.photo === "") {
-          delete mention.author.photo;
-        } else {
-          mention.author.photo = { value: mention.author.photo };
+      if (mention.author.name === "") delete mention.author;
+      if (mention.author) {
+        if (mention.author.url === "") delete mention.author.url;
+        mention.author.photo ??= mention.author.logo;
+        if (typeof mention.author.photo === "string") {
+          if (mention.author.photo === "") {
+            delete mention.author.photo;
+          } else {
+            mention.author.photo = { value: mention.author.photo };
+          }
         }
       }
-    }
 
-    if (mention.content?.html) {
-      mention.content.html = sanitizeHtml(mention.content.html, {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-        allowedClasses: {
-          "*": [/^(p|u|dt|h|e)-/],
-        },
-      });
-    } else if (mention.content?.text) {
-      mention.content.html = escapeHtml(mention.content.text);
-    }
+      if (mention.content?.html) {
+        mention.content.html = sanitizeHtml(mention.content.html, {
+          allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+          allowedClasses: {
+            "*": [/^(p|u|dt|h|e)-/],
+          },
+        });
 
-    if (mention.published) {
-      mention.published = new Date(Date.parse(mention.published));
-    }
-    if (mention.updated) {
-      mention.updated = new Date(Date.parse(mention.updated));
-    }
+        if (mention["wm-property"] === "repost-of") {
+          mention.content.html = truncateHTML(mention.content.html, 72);
+        }
+      } else if (mention.content?.text) {
+        mention.content.html = escapeHtml(mention.content.text);
+      }
 
-    return mention;
-  });
+      if (mention.published) {
+        mention.published = new Date(Date.parse(mention.published));
+      }
+      if (mention.updated) {
+        mention.updated = new Date(Date.parse(mention.updated));
+      }
+
+      return mention;
+    });
 }

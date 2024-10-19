@@ -28,9 +28,14 @@
           {% endif %}
         {% endif %}
 
+        {% if mention['wm-property'] == 'repost-of' %}
+          {% assign verb = 'reposted' %}
+        {% else %}
+          {% assign verb = 'mentioned' %}
+        {% endif %}
         {% render 'external-attribution',
           url: mention.url,
-          verb: 'mentioned',
+          verb: 'reposted',
           nofollow: true,
           date: mention.published,
           author: mention.author.name,
