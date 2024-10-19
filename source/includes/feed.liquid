@@ -10,9 +10,7 @@
     {%- assign post = post_ | simplifyEmbeds -%}
     {%- assign absolutePostUrl = post.url | htmlBaseUrl: site.url %}
     <entry>
-      {% if post.data.title %}
-        <title>{{ post.data.title | escape }}</title>
-      {% endif %}
+      <title>{{ post.data.title | escape }}</title>
       <link href="{{ absolutePostUrl }}" rel="alternate"/>
       <id>{{ absolutePostUrl }}</id>
       <published>{{ post.date | dateToRfc3339 }}</published>
