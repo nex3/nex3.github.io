@@ -27,10 +27,7 @@ layout: default
     {% assign url = page.url | htmlBaseUrl: site.url %}
     {% render 'web-mentions', webMentions: webMentions, url: url %}
 
-    <div class="commentbox"></div>
-    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-    <script>
-      commentBox('5765991539671040-proj', { sortOrder: 'oldest' });
-    </script>
+    <script defer src="https://comments.friendsofeggbug.org/comentario.js"></script>
+    <comentario-comments></comentario-comments>
   {% endif %}
 </article>
