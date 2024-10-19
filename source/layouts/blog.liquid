@@ -27,7 +27,9 @@ layout: default
     {% assign url = page.url | htmlBaseUrl: site.url %}
     {% render 'web-mentions', webMentions: webMentions, url: url %}
 
-    <script defer src="https://comments.friendsofeggbug.org/comentario.js"></script>
-    <comentario-comments></comentario-comments>
+    {% if eleventy.env.runMode != 'serve' %}
+      <script defer src="https://comments.friendsofeggbug.org/comentario.js"></script>
+      <comentario-comments theme="light"></comentario-comments>
+    {% endif %}
   {% endif %}
 </article>
