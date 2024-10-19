@@ -9,7 +9,9 @@ export const pagination = {
     for (const tag of collections) {
       if (tag === "blog" || tag === "all") continue;
 
-      const posts = data.collections[tag];
+      const posts = data.collections[tag].toSorted(
+        (post1, post2) => post2.page.date - post1.page.date,
+      );
       const postsPerPage = 10;
       const tagResults = [];
       for (let i = 0; i < posts.length; i += postsPerPage) {
