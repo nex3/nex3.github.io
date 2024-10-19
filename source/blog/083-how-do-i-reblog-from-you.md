@@ -1,5 +1,6 @@
 ---
 tags: [ask, web, meta]
+updated: 2024-10-19T01:08:16Z
 ---
 
 {% ask 'Obspogon',
@@ -29,7 +30,7 @@ put these on:
   that's not something that makes a lot of sense in a static site context.
 
 * A simple `<a>` tag whose `href` is my post.
-* The root element of an [`h-card`](https://microformats.org/wiki/h-card) that
+* The root element of an [`h-cite`](https://microformats.org/wiki/h-cite) that
   provides more metadata about my post.
 * The root element of an [`h-entry`](https://microformats.org/wiki/h-card) fully
   embeds my post in your blog. (This is technically non-standard but it's what I
