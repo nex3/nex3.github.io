@@ -330,8 +330,8 @@ commenter's website (as am I at the moment—there's a lot not to like about
 CommentBox but this tops the list for me).
 
 Having people repost and respond to your posts is also an excellent way to get a
-sense of them, because you're seeing them in their native habitat as it were: on
-their own blog, writing primarily for their audience. But this does require
+sense of them, because you're seeing them in their native habitat, as it were:
+on their own blog, writing primarily for their audience. But this does require
 actually being notified when those reposts happen, which requires the use of a
 technology like Webmentions on both ends of the interaction.
 
@@ -348,8 +348,8 @@ technology like Webmentions on both ends of the interaction.
 
 The final pillar is I think the most difficult all around: in a healthy social
 space it must be possible not just to have healthy interactions, but to avoid
-unhealthy ones. This is, interestingly, something that's not entirely solved in
-person, either—I imagine that the delicate dance of navigating which of your
+unhealthy ones. This is, interestingly, something that's not even entirely
+solved in person—I imagine that the delicate dance of navigating which of your
 feuding friends to invite to which parties is a tale as old as the concept of "a
 party" itself. But in person you can at least always walk away when someone you
 can't stand walks up, and if someone is being belligerent enough you can toss
@@ -418,8 +418,8 @@ corrosive power of capitalism, but so too is no corner of the world impervious
 to the power of human flourishing.
 
 I think we can create a sociable web. In fact, I think we will—but whether that
-starts now or takes years depends on us. What it will look like, I'm not
-sure—that's why here I've chosen to focus on the social goals first and make the
+starts now or takes years depends on us. What it will look like, I'm not sure.
+That's why here I've chosen to focus on the social goals first and make the
 technology secondary. But I *do* believe that enough technology exists now to at
 least take a stab at it, and I want you to join me in that.
 
