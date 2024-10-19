@@ -78,12 +78,12 @@ export async function webMentions() {
             "*": [/^(p|u|dt|h|e)-/],
           },
         });
-
-        if (mention["wm-property"] === "repost-of") {
-          mention.content.html = truncateHTML(mention.content.html, 72);
-        }
       } else if (mention.content?.text) {
         mention.content.html = escapeHtml(mention.content.text);
+      }
+
+      if (mention["wm-property"] === "repost-of") {
+        mention.content.html = truncateHTML(mention.content.html, 72);
       }
 
       if (mention.published) {
@@ -94,5 +94,13 @@ export async function webMentions() {
       }
 
       return mention;
+    })
+    .sort((mention1, mention2) => {
+      if (mention1.published && mention2.published) {
+        return mention1.published - mention2.published;
+      }
+      if (mention1.published) return 1;
+      if (mention2.published) return -1;
+      return 0;
     });
 }

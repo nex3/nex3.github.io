@@ -1,4 +1,4 @@
-<h2 class="wm-header">Webmentions ({{ webMentions | size }})</h2>
+<h2 class="wm-header">Webmentions ({{ webMentions.size }})</h2>
 <form class="wm-form" action="https://webmention.io/nex-3.com/webmention" method="post">
   <label for="wm-source">Mentioned this post on your site? Send me the link:</label>
   <fieldset>
@@ -30,12 +30,14 @@
 
         {% if mention['wm-property'] == 'repost-of' %}
           {% assign verb = 'reposted' %}
+        {% elsif mention['wm-property'] == 'in-reply-to' %}
+          {% assign verb = 'replied' %}
         {% else %}
           {% assign verb = 'mentioned' %}
         {% endif %}
         {% render 'external-attribution',
           url: mention.url,
-          verb: 'reposted',
+          verb: verb,
           nofollow: true,
           date: mention.published,
           author: mention.author.name,
