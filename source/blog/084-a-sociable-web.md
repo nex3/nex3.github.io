@@ -1,6 +1,7 @@
 ---
 tags: [web, article]
 title: A Sociable Web
+date: 2024-10-19T03:27:07Z
 ---
 
 The process of building out this site has inevitably involved design choices
