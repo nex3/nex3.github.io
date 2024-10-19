@@ -241,6 +241,18 @@ ul.attribution {
   font-family: $text-font-no-emoji;
 }
 
+.footnote-item:target {
+  padding-right: 5px;
+
+  &:target {
+    border-right: 3px solid $faint-grey;
+
+    &::marker {
+      font-weight: bold;
+    }
+  }
+}
+
 .pager {
   display: flex;
   gap: 16px;
