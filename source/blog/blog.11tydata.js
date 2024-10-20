@@ -113,20 +113,21 @@ export async function webMentions() {
       mention.content.html = truncateHTML(mention.content.html, 72);
     }
 
-    if (mention.published) {
-      mention.published = new Date(Date.parse(mention.published));
-    }
-    if (mention.updated) {
-      mention.updated = new Date(Date.parse(mention.updated));
+    for (const prop of ["wm-received", "published", "updated"]) {
+      if (mention[prop]) {
+        mention[prop] = new Date(Date.parse(mention[prop]));
+      }
     }
   }
 
   allMentions.sort((mention1, mention2) => {
-    if (mention1.published && mention2.published) {
-      return mention1.published - mention2.published;
+    const date1 = mention1.published ?? mention1["wm-received"];
+    const date2 = mention2.published ?? mention2["wm-received"];
+    if (date1 && date2) {
+      return date1 - date2;
     }
-    if (mention1.published) return 1;
-    if (mention2.published) return -1;
+    if (date1) return -1;
+    if (date2) return 1;
     return 0;
   });
 
