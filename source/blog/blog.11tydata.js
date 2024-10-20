@@ -1,7 +1,9 @@
 import escapeHtml from "escape-html";
+import { mf2 } from "microformats-parser";
 import sanitizeHtml from "sanitize-html";
 
 import { truncateHTML } from "../../helpers/type.js";
+import { findEntry, stripInitialEmbeds } from "../../helpers/embed.js";
 
 export const layout = "blog";
 export const tags = ["blog"];
@@ -40,71 +42,97 @@ export async function webMentions() {
       console.error(
         `${response.status} ${response.statusText} fetching ${endpoint}`,
       );
-      return allMentions;
+      break;
     }
     const { children } = await response.json();
-    allMentions.push(...children);
+    allMentions.push(
+      ...children.filter(
+        (mention) =>
+          // Don't show transparent reposts, but do show ones that add content.
+          mention["wm-property"] !== "repost-of" || "content" in mention,
+      ),
+    );
     if (children.length < perPage) break;
   }
 
-  return allMentions
-    .filter(
-      (mention) =>
-        // Don't show transparent reposts, but do show ones that add content.
-        mention["wm-property"] !== "repost-of" || "content" in mention,
-    )
-    .map((mention) => {
-      if (typeof mention.author === "string") {
-        mention.author = { type: "card", name: mention.author };
-      }
+  for (const mention of allMentions) {
+    if (typeof mention.author === "string") {
+      mention.author = { type: "card", name: mention.author };
+    }
 
-      if (mention.author.name === "") delete mention.author;
-      if (mention.author) {
-        if (mention.author.url === "") delete mention.author.url;
-        mention.author.photo ??= mention.author.logo;
-        if (typeof mention.author.photo === "string") {
-          if (mention.author.photo === "") {
-            delete mention.author.photo;
-          } else {
-            mention.author.photo = { value: mention.author.photo };
-          }
+    if (mention.author.name === "") delete mention.author;
+    if (mention.author) {
+      if (mention.author.url === "") delete mention.author.url;
+      mention.author.photo ??= mention.author.logo;
+      if (typeof mention.author.photo === "string") {
+        if (mention.author.photo === "") {
+          delete mention.author.photo;
+        } else {
+          mention.author.photo = { value: mention.author.photo };
         }
       }
+    }
 
-      if (mention.content?.html) {
-        mention.content.html = sanitizeHtml(mention.content.html, {
-          allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-          allowedClasses: {
-            "*": [/^(p|u|dt|h|e)-/],
-          },
-        });
-      } else if (mention.content?.text) {
-        mention.content.html = escapeHtml(mention.content.text);
-      }
-
+    if (mention.content?.html) {
       if (
-        mention.content?.html &&
-        (mention["wm-property"] === "repost-of" ||
-          mention["wm-property"] === "mention-of")
+        mention.content.html.includes("h-entry") ||
+        mention.content.html.includes("h-card") ||
+        mention.content.html.includes("h-cite")
       ) {
-        mention.content.html = truncateHTML(mention.content.html, 72);
+        mention.content.html = await reparseMentionContent(mention);
       }
 
-      if (mention.published) {
-        mention.published = new Date(Date.parse(mention.published));
-      }
-      if (mention.updated) {
-        mention.updated = new Date(Date.parse(mention.updated));
-      }
+      mention.content.html = sanitizeHtml(mention.content.html, {
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+        allowedClasses: {
+          "*": [/^(p|u|dt|h|e)-/],
+        },
+      });
+    } else if (mention.content?.text) {
+      mention.content.html = escapeHtml(mention.content.text);
+    }
 
-      return mention;
-    })
-    .sort((mention1, mention2) => {
-      if (mention1.published && mention2.published) {
-        return mention1.published - mention2.published;
-      }
-      if (mention1.published) return 1;
-      if (mention2.published) return -1;
-      return 0;
-    });
+    if (
+      mention.content?.html &&
+      (mention["wm-property"] === "repost-of" ||
+        mention["wm-property"] === "mention-of")
+    ) {
+      mention.content.html = truncateHTML(mention.content.html, 72);
+    }
+
+    if (mention.published) {
+      mention.published = new Date(Date.parse(mention.published));
+    }
+    if (mention.updated) {
+      mention.updated = new Date(Date.parse(mention.updated));
+    }
+  }
+
+  allMentions.sort((mention1, mention2) => {
+    if (mention1.published && mention2.published) {
+      return mention1.published - mention2.published;
+    }
+    if (mention1.published) return 1;
+    if (mention2.published) return -1;
+    return 0;
+  });
+
+  return allMentions;
+}
+
+/**
+ * Tries to re-download the contents of {@link mention.url} and parse the
+ * content again so we can properly omit initial nested h-entries, because
+ * webmention.io does not.
+ */
+async function reparseMentionContent(mention) {
+  const response = await fetch(mention.url);
+  if (!response.ok) return mention.content.html;
+
+  const { items } = mf2(await response.text(), { baseUrl: mention.url });
+  const html = findEntry(items, mention.url, mention.url)?.properties
+    .content?.[0]?.html;
+  if (!html) return mention.content.html;
+
+  return stripInitialEmbeds(html);
 }

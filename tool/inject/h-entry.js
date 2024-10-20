@@ -1,7 +1,8 @@
 import fetch from "node-fetch";
-
 import { mf2 } from "microformats-parser";
 import * as prettier from "prettier";
+
+import { findEntry, stripInitialEmbeds } from "../../helpers/embed.js";
 
 /// If {@link items} has a single h-card, returns its value.
 function getCard(items) {
@@ -18,29 +19,6 @@ function getCard(items) {
 function resolveUrl(url, base) {
   if (!url) return url;
   return new URL(url, base).toString();
-}
-
-/**
- * Returns the h-entry in {@link items} with URL {@link urlToFind}.
- *
- * Returns null if there is no matching entry and throws an error if it's
- * ambiguous.
- */
-function findEntry(items, urlToFind, baseUrl) {
-  let candidates = items.filter(
-    (item) =>
-      item.type.includes("h-entry") &&
-      (item.properties.url ?? []).some(
-        (url) => resolveUrl(url, baseUrl) == urlToFind,
-      ),
-  );
-  if (candidates.length === 0) {
-    candidates = items.filter((item) => item.type.includes("h-entry"));
-  }
-  if (candidates.length < 2) return candidates[0] ?? null;
-  throw new Error(
-    `URL ${url} has multiple top-level h-entries with matching URL`,
-  );
 }
 
 /**
@@ -123,10 +101,13 @@ async function parsedHEntryToTag(entry, items, url, baseUrl) {
         .join(",\n") +
       " %}\n" +
       (
-        await prettier.format(entry.properties.content?.[0]?.html ?? "", {
-          parser: "html",
-          printWidth: 78,
-        })
+        await prettier.format(
+          stripInitialEmbeds(entry.properties.content?.[0]?.html ?? ""),
+          {
+            parser: "html",
+            printWidth: 78,
+          },
+        )
       )
         .trim()
         .replaceAll(/^/gm, "  ") +

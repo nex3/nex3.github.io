@@ -2,6 +2,29 @@ import { JSDOM } from "jsdom";
 import escapeHtml from "escape-html";
 import { mf2 } from "microformats-parser";
 
+/**
+ * Returns the h-entry in {@link items} with URL {@link urlToFind}.
+ *
+ * Returns null if there is no matching entry and throws an error if it's
+ * ambiguous.
+ */
+export function findEntry(items, urlToFind, baseUrl) {
+  let candidates = items.filter(
+    (item) =>
+      item.type.includes("h-entry") &&
+      (item.properties.url ?? []).some(
+        (url) => new URL(url, baseUrl).toString() == urlToFind,
+      ),
+  );
+  if (candidates.length === 0) {
+    candidates = items.filter((item) => item.type.includes("h-entry"));
+  }
+  if (candidates.length < 2) return candidates[0] ?? null;
+  throw new Error(
+    `URL ${url} has multiple top-level h-entries with matching URL`,
+  );
+}
+
 /** Converts the MF2 metadata for an h-card item to HTML. */
 function serializeHCard(item) {
   var html = `<strong class="p-author ${item.type[0]}">`;
@@ -147,6 +170,30 @@ export function simplifyEmbeds(post) {
 /** Like {@link simplifyEmbeds}, but only returns the content. */
 export function simplifyContent(content) {
   return simplifyEmbeds({ content }).content;
+}
+
+/**
+ * Removes any h-entry or h-cite embeds from the beginning of {@link content}.
+ */
+export function stripInitialEmbeds(content) {
+  if (!content.includes("h-entry") && !content.includes("h-cite")) {
+    return content;
+  }
+
+  const container = JSDOM.fragment(`<div>${content}</div>`).firstElementChild;
+
+  for (const child of container.children) {
+    if (
+      child.classList.contains("h-entry") ||
+      child.classList.contains("h-cite")
+    ) {
+      child.remove();
+    } else {
+      break;
+    }
+  }
+
+  return container.innerHTML;
 }
 
 /** Returns url of the last h-entry {@link content}. */
