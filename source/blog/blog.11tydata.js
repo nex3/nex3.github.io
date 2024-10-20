@@ -48,8 +48,10 @@ export async function webMentions() {
     allMentions.push(
       ...children.filter(
         (mention) =>
+          // Don't show self-mentions
+          !mention.url.startsWith("https://nex-3.com/") &&
           // Don't show transparent reposts, but do show ones that add content.
-          mention["wm-property"] !== "repost-of" || "content" in mention,
+          (mention["wm-property"] !== "repost-of" || "content" in mention),
       ),
     );
     if (children.length < perPage) break;
