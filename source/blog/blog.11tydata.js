@@ -87,6 +87,17 @@ export async function webMentions() {
         allowedClasses: {
           "*": [/^(p|u|dt|h|e)-/],
         },
+        // Remove internal links
+        transformTags: {
+          a: (tagName, attribs) =>
+            attribs.href?.startsWith("#")
+              ? { tagName, attribs: {} }
+              : { tagName, attribs },
+        },
+        // Filter out footnote returns. transformTags runs before
+        // exclusiveFilter so these won't have hrefs.
+        exclusiveFilter: (frame) =>
+          frame.tag === "a" && !frame.attribs.href && frame.text === "↩︎",
       });
     } else if (mention.content?.text) {
       mention.content.html = escapeHtml(mention.content.text);
