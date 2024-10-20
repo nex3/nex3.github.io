@@ -82,7 +82,11 @@ export async function webMentions() {
         mention.content.html = escapeHtml(mention.content.text);
       }
 
-      if (mention["wm-property"] === "repost-of") {
+      if (
+        mention.content?.html &&
+        (mention["wm-property"] === "repost-of" ||
+          mention["wm-property"] === "mention-of")
+      ) {
         mention.content.html = truncateHTML(mention.content.html, 72);
       }
 

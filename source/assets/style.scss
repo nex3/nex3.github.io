@@ -2095,7 +2095,7 @@ body main .comentario-root.comentario-root {
     grid-area: content;
   }
 
-  .comentario-toolbar {
+  .comentario-toolbar:not(.comentario-comment-editor *) {
     grid-area: footer;
     margin-top: -6px;
 
