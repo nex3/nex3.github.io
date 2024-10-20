@@ -18,6 +18,14 @@ for (const person of [
     uid: "https://soundretro.co/",
   },
   {
+    givenName: "Damien",
+    familyName: "Erambert",
+    name: "Damien Erambert",
+    nickname: "eramdam",
+    url: "https://damien.zone/",
+    uid: "https://damien.zone/",
+  },
+  {
     name: "Liz",
     nickname: "JhoiraArtificer",
     url: "https://seaslug.garden/",
