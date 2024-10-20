@@ -544,11 +544,14 @@ $-embed-column-gap: 24px;
 
   display: grid;
 
-  grid-template-columns: min-content 1fr min-content;
+  grid-template-columns: min-content min-content 1fr min-content;
   grid-template-rows: min-content 1fr min-content;
 
   @include not-phone {
-    padding-inline: $-embed-padding;
+    // This isn't _quite_ accurate because it doesn't factor in additional
+    // body padding.
+    $min-width: 468px;
+    padding-inline: min($-embed-padding, (100vw - $min-width) / 2);
   }
 
   > article,
@@ -570,7 +573,7 @@ $-embed-column-gap: 24px;
 
     > header {
       grid-row: 1;
-      grid-column: 1;
+      grid-column: 2;
     }
 
     > div {
@@ -691,14 +694,19 @@ $-embed-column-gap: 24px;
 // Defines the width for an embed's image and moves it to the embed's corner for
 // smaller screen sizes. This can be passed a content block to inject into the
 // smaller-sized media query.
-@mixin embed-image($width) {
+@mixin embed-image($width, $side: left) {
+  @if $side != left and $side != right {
+    @error "Invalid side #{side}";
+  }
+
   width: $width;
 
   @media only screen and (width <= #{embed-breakpoint($width)}) {
     grid-row: 1;
-    grid-column: 3;
-    margin-top: 12px;
-    margin-right: 12px;
+    grid-column: if($side == left, 2, 4);
+    margin: 12px {
+        bottom: 0;
+    }
     filter: none;
     z-index: 2;
 
@@ -794,9 +802,9 @@ small {
       "avatar content";
 
     @include phone {
-      grid-template-columns: 1fr min-content;
+      grid-template-columns: min-content 1fr;
       grid-template-areas:
-        "attribution avatar"
+        "avatar attribution"
         "content content";
     }
 
@@ -852,9 +860,12 @@ small {
     width: 100%;
     height: 100%;
     border-radius: 24px;
-    filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
-      drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
-      drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+
+    @include not-phone {
+      filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
+        drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
+        drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+    }
   }
 }
 
@@ -1664,7 +1675,7 @@ $letterboxd-poster-width: 150px;
   > a {
     height: 225px;
     height: fit-content;
-    @include embed-image($letterboxd-poster-width) {
+    @include embed-image($letterboxd-poster-width, $side: right) {
       background: #456;
       margin: 0;
       padding-top: 12px;
@@ -1691,7 +1702,6 @@ $letterboxd-poster-width: 150px;
     align-self: center;
     flex-grow: 1;
     order: 1;
-    padding-right: 13.846px;
   }
 
   .lb-avatar {
@@ -2045,9 +2055,9 @@ body main .comentario-root.comentario-root {
     padding-bottom: 0;
 
     @include phone {
-      grid-template-columns: 1fr min-content;
+      grid-template-columns: min-content 1fr;
       grid-template-areas:
-        "attribution avatar"
+        "avatar attribution"
         "content content"
         "footer footer";
     }
@@ -2061,6 +2071,7 @@ body main .comentario-root.comentario-root {
         drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
 
       @include phone {
+        filter: none;
         align-self: center;
       }
     }
