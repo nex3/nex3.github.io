@@ -546,8 +546,6 @@ $-embed-column-gap: 24px;
   display: grid;
 
   grid-template-columns: min-content 1fr min-content;
-  // We can in theory make this repeat arbitrarily high. Using auto-fit doesn't
-  // work because it won't play nicely with the subgrid in the article.
   grid-template-rows: min-content 1fr min-content;
 
   @include not-phone {
@@ -2011,5 +2009,121 @@ $backloggd-image-tuck: 160px;
 
   p {
     margin: 0px 0px 10px;
+  }
+}
+
+// Comentario style overrides
+
+body main .comentario-root.comentario-root {
+  .comentario-card {
+    position: relative;
+  }
+
+  .comentario-card-self {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-areas:
+      "avatar attribution"
+      "avatar content"
+      "avatar footer";
+    gap: 8px;
+
+    @include phone {
+      grid-template-columns: 1fr min-content;
+      grid-template-areas:
+        "attribution avatar"
+        "content content"
+        "footer footer";
+    }
+
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow:
+      0px 4px 5px rgba(0, 0, 0, 0.14),
+      0px 1px 10px rgba(0, 0, 0, 0.12),
+      0px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    padding-bottom: 0;
+
+    .comentario-avatar,
+    .comentario-avatar-img {
+      grid-area: avatar;
+      align-self: center;
+      margin: 0;
+      filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
+        drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
+        drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  .comentario-card-expand-spacer {
+    border-color: transparent !important;
+    .comentario-comments > .comentario-card > & {
+      display: none;
+    }
+  }
+
+  .comentario-card-expand-toggler {
+    border-color: $faint-grey !important;
+    position: absolute;
+    left: -12px;
+    width: 12px;
+    height: 100%;
+  }
+
+  .comentario-card-expand-body {
+    overflow: visible;
+  }
+
+  .comentario-card-header {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+  }
+
+  .comentario-name-container {
+    grid-area: attribution;
+    display: block;
+    margin-bottom: 0;
+    line-height: 16px;
+  }
+
+  .comentario-card-body {
+    grid-area: content;
+  }
+
+  .comentario-toolbar {
+    grid-area: footer;
+    margin-top: -6px;
+
+    // Align the reply button with the right edge of the text
+    > :first-child {
+      position: relative;
+      left: calc((-32px + 1em) / 2);
+    }
+  }
+
+  .comentario-name-wrap,
+  .comentario-name,
+  .comentario-subtitle {
+    display: inline;
+    color: $dim-grey;
+    --cmntr-color: #{$grey};
+    font-size: 12.8px;
+  }
+
+  .comentario-name-wrap {
+    font-size: 1.1em;
+  }
+
+  .comentario-subtitle::before {
+    content: " commented ";
+  }
+
+  .comentario-badge {
+    display: none;
   }
 }
