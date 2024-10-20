@@ -42,7 +42,7 @@ $phone-break: 468px;
 }
 
 html {
-  font-size: 100%;
+  font-size: 17px;
   scroll-behavior: smooth;
 }
 
@@ -53,7 +53,6 @@ html {
 $body-margin: 24px;
 body {
   font-family: $text-font;
-  font-size: 17px;
   line-height: 1.65;
 
   display: flex;
@@ -2015,8 +2014,15 @@ $backloggd-image-tuck: 160px;
 // Comentario style overrides
 
 body main .comentario-root.comentario-root {
+  --cmntr-color: black;
+  font-size: 1rem;
+
   .comentario-card {
     position: relative;
+    border-top: none;
+    + .commentario-card {
+      margin-top: 8px;
+    }
   }
 
   .comentario-card-self {
@@ -2029,14 +2035,6 @@ body main .comentario-root.comentario-root {
       "avatar footer";
     gap: 8px;
 
-    @include phone {
-      grid-template-columns: 1fr min-content;
-      grid-template-areas:
-        "attribution avatar"
-        "content content"
-        "footer footer";
-    }
-
     overflow: hidden;
     border-radius: 8px;
     box-shadow:
@@ -2046,30 +2044,47 @@ body main .comentario-root.comentario-root {
     padding: 12px;
     padding-bottom: 0;
 
+    @include phone {
+      grid-template-columns: 1fr min-content;
+      grid-template-areas:
+        "attribution avatar"
+        "content content"
+        "footer footer";
+    }
+
     .comentario-avatar,
     .comentario-avatar-img {
       grid-area: avatar;
-      align-self: center;
       margin: 0;
       filter: drop-shadow(0px 4px 5px rgba(25, 25, 25, 0.14))
         drop-shadow(0px 1px 10px rgba(25, 25, 25, 0.12))
         drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+
+      @include phone {
+        align-self: center;
+      }
     }
   }
 
   .comentario-card-expand-spacer {
     border-color: transparent !important;
-    .comentario-comments > .comentario-card > & {
-      display: none;
-    }
   }
 
   .comentario-card-expand-toggler {
     border-color: $faint-grey !important;
-    position: absolute;
-    left: -12px;
-    width: 12px;
-    height: 100%;
+  }
+
+  .comentario-comments > .comentario-card > {
+    .comentario-card-expand-spacer {
+      display: none;
+    }
+
+    .comentario-card-expand-toggler {
+      position: absolute;
+      left: -12px;
+      width: 12px;
+      height: 100%;
+    }
   }
 
   .comentario-card-expand-body {
@@ -2086,6 +2101,7 @@ body main .comentario-root.comentario-root {
 
   .comentario-name-container {
     grid-area: attribution;
+    align-self: center;
     display: block;
     margin-bottom: 0;
     line-height: 16px;
@@ -2125,5 +2141,9 @@ body main .comentario-root.comentario-root {
 
   .comentario-badge {
     display: none;
+  }
+
+  pre {
+    line-height: 1;
   }
 }
