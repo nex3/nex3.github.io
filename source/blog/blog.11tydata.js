@@ -148,5 +148,5 @@ async function reparseMentionContent(mention) {
     .content?.[0]?.html;
   if (!html) return mention.content.html;
 
-  return stripInitialEmbeds(html);
+  return stripInitialEmbeds(html, mention.url);
 }

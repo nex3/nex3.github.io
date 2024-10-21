@@ -167,15 +167,19 @@ export function simplifyEmbeds(post) {
   return { data, url, date: post.date, content: container.innerHTML };
 }
 
-/** Like {@link simplifyEmbeds}, but only returns the content. */
-export function simplifyContent(content) {
-  return simplifyEmbeds({ content }).content;
+/**
+ * Like {@link simplifyEmbeds}, but only returns the content and strips any
+ * initial embeds it contains.
+ */
+export function simplifyContent(content, baseUrl = "https://nex-3.com/") {
+  return simplifyEmbeds({ content: stripInitialEmbeds(content, baseUrl) })
+    .content;
 }
 
 /**
  * Removes any h-entry or h-cite embeds from the beginning of {@link content}.
  */
-export function stripInitialEmbeds(content) {
+export function stripInitialEmbeds(content, baseUrl) {
   if (!content.includes("h-entry") && !content.includes("h-cite")) {
     return content;
   }
@@ -187,7 +191,22 @@ export function stripInitialEmbeds(content) {
       child.classList.contains("h-entry") ||
       child.classList.contains("h-cite")
     ) {
-      child.remove();
+      // Don't omit URL-less embeds like asks, because they don't have a
+      // canonical location elsewhere.
+      const { items } = mf2(child.outerHTML, { baseUrl });
+      const urls = items[0]?.properties?.url;
+      if (!urls) break;
+
+      const fragment = JSDOM.fragment();
+      for (const url of urls) {
+        const link = new JSDOM().window.document.createElement("link");
+        link.setAttribute("href", url);
+        link.className = [...child.classList]
+          .filter((c) => c.startsWith("u-"))
+          .join(" ");
+        fragment.append(link);
+      }
+      child.replaceWith(fragment);
     } else {
       break;
     }

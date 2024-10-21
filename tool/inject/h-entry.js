@@ -102,7 +102,10 @@ async function parsedHEntryToTag(entry, items, url, baseUrl) {
       " %}\n" +
       (
         await prettier.format(
-          stripInitialEmbeds(entry.properties.content?.[0]?.html ?? ""),
+          stripInitialEmbeds(
+            entry.properties.content?.[0]?.html ?? "",
+            baseUrl,
+          ),
           {
             parser: "html",
             printWidth: 78,

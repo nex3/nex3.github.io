@@ -705,7 +705,7 @@ $-embed-column-gap: 24px;
     grid-row: 1;
     grid-column: if($side == left, 2, 4);
     margin: 12px {
-        bottom: 0;
+      bottom: 0;
     }
     filter: none;
     z-index: 2;
