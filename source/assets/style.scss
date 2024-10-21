@@ -980,7 +980,7 @@ small {
     &:not(:has(> a)):has(~ .generic-post-wrapper > a),
     &:has(> a) ~ .generic-post-wrapper:not(:has(> a)) {
       min-width: 64px;
-      grid-template-columns: (64px + 24px) 1fr min-content;
+      grid-template-columns: (64px + 24px) min-content 1fr min-content;
     }
   }
 }
