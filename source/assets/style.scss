@@ -874,6 +874,14 @@ small {
   font-size: 20px;
   padding: 5px 15px;
   border-bottom: 1px solid #eee;
+
+  a {
+    float: right;
+    font-family: $text-font;
+    $size: 0.7em;
+    font-size: $size;
+    margin-top: calc(((1em / $size) - 1) * 1em);
+  }
 }
 
 .wm-form {
