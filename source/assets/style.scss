@@ -2038,12 +2038,12 @@ body main .comentario-root.comentario-root {
 
   .comentario-card-self {
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: min-content 1fr 1fr;
     grid-template-rows: min-content 1fr min-content;
     grid-template-areas:
-      "avatar attribution"
-      "avatar content"
-      "avatar footer";
+      "avatar attribution attribution"
+      "avatar content content"
+      "avatar footer footer";
     gap: 8px;
 
     overflow: hidden;
@@ -2056,11 +2056,10 @@ body main .comentario-root.comentario-root {
     padding-bottom: 0;
 
     @include phone {
-      grid-template-columns: min-content 1fr;
       grid-template-areas:
-        "avatar attribution"
-        "content content"
-        "footer footer";
+        "avatar attribution attribution"
+        "content content content"
+        "footer footer footer";
     }
 
     .comentario-avatar,
@@ -2117,6 +2116,15 @@ body main .comentario-root.comentario-root {
     display: block;
     margin-bottom: 0;
     line-height: 16px;
+    &:has(+ .commentario-moderation-notice) {
+      grid-column: 2;
+    }
+  }
+
+  .comentario-moderation-notice {
+    grid-row: 1;
+    grid-column: 3;
+    padding: 0;
   }
 
   .comentario-card-body {
