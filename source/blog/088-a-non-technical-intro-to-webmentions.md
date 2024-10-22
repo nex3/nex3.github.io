@@ -1,9 +1,10 @@
 ---
 tags: [web, article]
 title: A Non-Technical Intro to Webmentions
+updated: 2024-10-22T02:44:30Z
 ---
 
-I keep bringing up "Webmentions' in the context of discussing [the sociable web]
+I keep bringing up "Webmentions" in the context of discussing [the sociable web]
 and advocating for more people to adopt more social technologies on their
 websites, but I always run into a wall: there's no good place to link people to
 so they can understand more about what that means. All the existing explanations
