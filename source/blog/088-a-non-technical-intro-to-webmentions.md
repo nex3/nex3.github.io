@@ -1,7 +1,7 @@
 ---
 tags: [web, article]
 title: A Non-Technical Intro to Webmentions
-updated: 2024-10-22T07:36:39Z
+updated: 2024-10-22T20:09:44Z
 ---
 
 I keep bringing up "Webmentions" in the context of discussing [the sociable web]
@@ -141,14 +141,23 @@ don't despair—webmention.app has your back. It takes a bit of doing, but you c
 set it up to [send Webmentions every time your RSS feed updates][wm-rss][^wmapp-auth],
 which will work with just about any blog under the sun.
 
-[wm-rss]: https://webmention.app/docs#using-ifttt-to-trigger-checks
+https://candiedreptile.club/bloglet/posts/2024-10-22-Webmentions.html
 
-[^wmapp-auth]: This documentation includes adding `&token=...` to the hook URL.
-  You can get a token by signing into webmention.app with a GitHub URL, but I
-  don't think you really need to. Without a token, you can only make four
-  requests per URL per hour, but if you're only sending one request per page
-  anyways that won't matter. So you should be able to safely leave off the
-  `&token=...` bit.
+**Edit:** Apparently the [old documentation][wm-rss][^wmapp-auth] for setting
+this up now costs money, since IFTTT doesn't provide free webhook support
+anymore. Fortunately, [Karma Chameleon has new instructions] for setting it up
+with [make.com] instead, which *is* free.
+
+[wm-rss]: https://webmention.app/docs#using-ifttt-to-trigger-checks
+[Karma Chameleon has new instructions]: https://candiedreptile.club/bloglet/posts/2024-10-22-Webmentions.html
+[make.com]: https://make.com
+
+[^wmapp-auth]: If you do choose to follow this documentation, note that it
+  includes adding `&token=...` to the hook URL. You can get a token by signing
+  into webmention.app with a GitHub URL, but I don't think you really need to.
+  Without a token, you can only make four requests per URL per hour, but if
+  you're only sending one request per page anyways that won't matter. So you
+  should be able to safely leave off the `&token=...` bit.
 
 ## How do I receive Webmentions?
 
