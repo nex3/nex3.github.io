@@ -32,6 +32,11 @@ notifications feed on a social media site, and appreciate that people like what
 you're up to. I get all my Webmentions delivered to me as an RSS feed (more on
 that below), and I'll always check out the links to see what people are saying.
 
+{% image '/assets/088/recent-mentions.webp' %}
+===
+My Webmention notification feed on webmention.io
+{% endimage %}
+
 In addition to being the easiest to set up, I think this is actually the most
 useful thing to do with Webmentions. Having a way to see when people reply to
 your posts makes [conversation] possible and seeing people's appreciation
@@ -62,6 +67,17 @@ with my avatar and the original posting date and everything.
   knowledge, and fortunately the engine itself is open source so it's unlikely
   to collapse completely. Just maybe choose a hosting provider that's not
   WordPress.com.
+
+<div class="image-gallery">
+  {%- image '/assets/088/reply-to-liz.webp' -%}
+    ===
+    My post replying to Liz
+  {%- endimage -%}
+  {%- image '/assets/088/comment-on-lizs-blog.webp' -%}
+    ===
+    My post as a reply on Liz's blog
+  {%- endimage -%}
+</div>
 
 Making this work nicely requires a bit of setup on the part of the page that
 contains the link, though. A computer isn't smart enough to take any old webpage
@@ -102,7 +118,8 @@ post. A link without a class is just treated as a generic mention.)
   appreciation of a post, also usually without additional content. You might,
   for example, have a page on your website that's just there to contain "like"
   links. I personally don't use this one, because I find commenting to be a more
-  personal way of expressing my appreciation, even if it's just a little ":yeah".
+  personal way of expressing my appreciation, even if it's just a little
+  ":yeah:".
 
 There are more relationships between pages that aren't as widely supported, like
 RSVPs to events, reviews of media, translations of posts, and so on. But these
@@ -120,10 +137,10 @@ Blog software and plugins that support Webmentions will usually automatically
 handle this for you, sending them out every time you make a post (or edit it, so
 that websites know to update any Webmentions they display). But if it doesn't,
 don't despair—webmention.app has your back. It takes a bit of doing, but you can
-set it up to [send Webmentions every time your RSS feed updates][^wmapp-auth],
+set it up to [send Webmentions every time your RSS feed updates][wm-rss][^wmapp-auth],
 which will work with just about any blog under the sun.
 
-[send Webmentions every time your RSS feed updates]: https://webmention.app/docs#using-ifttt-to-trigger-checks
+[wm-rss]: https://webmention.app/docs#using-ifttt-to-trigger-checks
 
 [^wmapp-auth]: This documentation includes adding `&token=...` to the hook URL.
   You can get a token by signing into webmention.app with a GitHub URL, but I
@@ -156,7 +173,7 @@ be what you're used to. But I'll guide you through that as well.
 
    ```html
    <link rel="me" href="mailto:me@example.org">
-   <link rel="webmention" href="https://webmention.io/me.example.org/webmention" />
+   <link rel="webmention" href="https://webmention.io/me.example.org/webmention">
    ```
 
    If possible, these should go just before the `</head>` in your HTML. That

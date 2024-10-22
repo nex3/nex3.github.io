@@ -4,9 +4,9 @@ if (!articles[0]) articles = [];
 
 for (const article of articles) {
   const images = article.querySelectorAll(`
-    .e-content figure:not(.no-popup) > a > img:not(.simple-content *),
-    .e-content > a > img:not(.simple-content *),
-    .e-content > p > a > img:not(.simple-content *),
+    figure:not(.no-popup) > a > img,
+    .blog-prose > a > img,
+    .blog-prose > p > a > img,
     .image-gallery a > img
   `);
   if (images.length === 0) continue;
