@@ -1,7 +1,8 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import markdownIt from "markdown-it";
-import markdownItFootnote from "markdown-it-footnote";
 import markdownItAttrs from "markdown-it-attrs";
+import markdownItFootnote from "markdown-it-footnote";
+import markdownItNamedHeadings from "markdown-it-named-headings";
 import rssPlugin from "@11ty/eleventy-plugin-rss";
 import * as sass from "sass";
 import yaml from "js-yaml";
@@ -55,20 +56,9 @@ export default function (eleventyConfig) {
   };
 
   const md = markdownIt(markdownItOptions)
-    .use(markdownItFootnote)
     .use(markdownItAttrs)
-    .use(function (md) {
-      // Recognize Mediawiki links ([[text]])
-      md.linkify.add("[[", {
-        validate: /^\s?([^\[\]\|\n\r]+)(\|[^\[\]\|\n\r]+)?\s?\]\]/,
-        normalize: (match) => {
-          const parts = match.raw.slice(2, -2).split("|");
-          parts[0] = parts[0].replace(/.(md|markdown)\s?$/i, "");
-          match.text = (parts[1] || parts[0]).trim();
-          match.url = `/notes/${parts[0].trim()}/`;
-        },
-      });
-    });
+    .use(markdownItFootnote)
+    .use(markdownItNamedHeadings);
 
   eleventyConfig.addFilter("markdownify", (string) => {
     return md.render(string);
