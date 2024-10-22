@@ -51,11 +51,11 @@ notifications, it's a great way to become more interconnected.
 If someone makes a post on their blog that's replying to yours and sends you a
 Webmention, you can display that reply like a comment underneath your post. This
 is pretty common for out-of-the-box Webmention plugins, like [this one for
-WordPress][^wordpress]. You can see it in action on {% mention Liz %}'s
+WordPress][][^wordpress]. You can see it in action on {% mention Liz %}'s
 WordPress blog where [my reply on this blog] shows up [as a comment on hers],
 with my avatar and the original posting date and everything.
 
-[the one for WordPress]: https://wordpress.org/plugins/webmention/
+[this one for WordPress]: https://wordpress.org/plugins/webmention/
 [Liz's WordPress blog]: https://seaslug.garden/?p=69
 [my reply on this blog]: /blog/10-official-years-of-type-1/
 [as a comment on hers]: https://seaslug.garden/?p=69#comment-63
