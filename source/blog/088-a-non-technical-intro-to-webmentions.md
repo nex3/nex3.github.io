@@ -1,7 +1,7 @@
 ---
 tags: [web, article]
 title: A Non-Technical Intro to Webmentions
-updated: 2024-10-22T02:44:30Z
+updated: 2024-10-22T07:36:39Z
 ---
 
 I keep bringing up "Webmentions" in the context of discussing [the sociable web]
@@ -112,7 +112,7 @@ post. A link without a class is just treated as a generic mention.)
 
 * Reposts (`class="u-repost-of"`): This usually indicates that you're reposting
   some or all of the content of another post with minimal additional content of
-  your own. This is modeled on the Twitter retween more than the Tumblr reblog,
+  your own. This is modeled on the Twitter retweet more than the Tumblr reblog,
   which I think is better expressed as a reply.
 
 * Likes (`class="u-like-of"`): This indicates that you're expressing
