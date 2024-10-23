@@ -350,7 +350,10 @@ ul.attribution {
     letter-spacing: $spacing;
   }
   &::after {
-    color: gold;
+    color: color.to-gamut(
+      color.scale(gold, $lightness: -7.5%, $space: oklch),
+      $method: local-minde
+    );
     content: "★★★★★";
     letter-spacing: $spacing;
     position: absolute;
@@ -362,7 +365,7 @@ ul.attribution {
 
   @for $i from 1 through 10 {
     &-#{$i}::after {
-      width: math.percentage(math.div($i, 10));
+      width: calc(10% * $i + 0.5px);
     }
   }
 }
