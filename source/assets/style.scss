@@ -431,7 +431,7 @@ figure {
   max-width: max-content;
 
   img {
-    width: 100%;
+    width: min-content;
     height: auto;
   }
 }
