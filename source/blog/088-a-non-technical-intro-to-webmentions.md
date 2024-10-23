@@ -141,54 +141,6 @@ don't despair—webmention.app has your back. It takes a bit of doing, but you c
 set it up to [send Webmentions every time your RSS feed updates][wm-rss][^wmapp-auth],
 which will work with just about any blog under the sun.
 
-{% genericPost "https://candiedreptile.club/bloglet/posts/2024-10-22-Webmentions.html",
- %}
-  <p>
-    Setup is ongoing, but I am implementing webmentions on this blog in order to
-    notify other webmention-using bloggers that I've linked to their posts &amp;
-    receive notifications when my posts are linked elsewhere in their turn.
-    Introduction to the concept and invaluable help was provided by
-    <a href="https://nex-3.com/blog/a-non-technical-intro-to-webmentions"
-      >A Non-Technical Intro to Webmentions</a
-    >
-    by Natalie Nex-3. It's very clear and helpful.
-  </p>
-  <p>
-    For automatic outgoing webmention processing when an RSS feed is updated,
-    Natalie recommends <a href="https://webmention.app/">webmention.app</a>,
-    which in its turn recommends IFTTT, which is how I learned that IFTTT
-    doesn't offer free webhooks anymore as of this year. Woe! Sorrow! Bullshit!
-    With some fumbling I've gotten an equivalent set up on
-    <a href="https://candiedreptile.club/bloglet/posts/make.com">make.com</a>
-    and this post is my test of whether that is working.
-  </p>
-  <p>To set up webmention.app as a Make.com scenario:</p>
-  <ol>
-    <li>
-      Add a module of the type "RSS" and choose "Watch RSS feed items." Enter
-      your RSS feed URL.
-    </li>
-    <li>Hover over the right side of that bubble and "Add another module."</li>
-    <li>Choose the module "HTTP" and the action "Make a request".</li>
-    <li>
-      Begin the URL field with "https://webmention.app/check?url=". Then, insert
-      the placeholder representing the RSS feed item's post URL. (See below.)
-      Add your webmention.app token to the end if you're using one.
-    </li>
-    <li>Change Method to POST.</li>
-    <li>Click "Run Once" in the bottom left to save the scenario.</li>
-    <li>
-      Underneath that, choose how often you'd like the scenario to run and
-      toggle the switch to ON.
-    </li>
-  </ol>
-  <img
-    alt="Screenshot of the HTTP module. Tokens representing the various aspects of the RSS feed entries are listed to the left of the input box. URL is circled, indicating you should click that one. You want the one highest in the list, at the root, not the Source or Image URL."
-    src="https://candiedreptile.club/bloglet/images/make.png"
-    class="center"
-  />
-{% endgenericPost %}
-
 **Edit:** Apparently the [old documentation][wm-rss][^wmapp-auth] for setting
 this up now costs money, since IFTTT doesn't provide free webhook support
 anymore. Fortunately, [Karma Chameleon has new instructions] for setting it up
