@@ -189,7 +189,7 @@ main {
     display: block;
   }
 
-  .h-entry.u-in-reply-to:last-of-type {
+  .h-entry.u-in-reply-to:has(+ :not(.h-entry)) {
     position: relative;
 
     &::after {
