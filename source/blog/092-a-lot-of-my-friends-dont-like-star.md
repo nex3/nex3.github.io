@@ -1,5 +1,6 @@
 ---
-tag: [nat reviews, "⟵ kinda"]
+tags: [nat reviews, ⟵ kinda]
+updated: 2024-10-24T01:59:33Z
 ---
 
 A lot of my friends don't like star ratings for media, and I get it. It's

@@ -22,11 +22,43 @@ $text-font: list.join(
   ("Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji")
 );
 
-$accent: #2d9cdb;
-$highlight: #bdecff;
-$grey: #555;
-$dim-grey: color.change($grey, $alpha: 0.6);
-$faint-grey: color.change($grey, $alpha: 0.3);
+:root {
+  background-color: white;
+  color: black;
+  $accent: #2d9cdb;
+  $highlight: #bdecff;
+  --accent: #{$accent};
+  --highlight: #{$highlight};
+
+  @mixin greys($grey) {
+    --grey: #{$grey};
+    --dim-grey: #{color.change($grey, $alpha: 0.6)};
+    --faint-grey: #{color.change($grey, $alpha: 0.3)};
+  }
+
+  @include greys(#555);
+
+  @media (prefers-color-scheme: dark) {
+    $background: #2a2a2a;
+    background-color: $background;
+    color: white;
+    --accent: #{color.to-gamut(
+        color.scale($accent, $lightness: 20%, $space: oklch),
+        $method: local-minde
+      )};
+    --highlight: #{color.to-gamut(
+        color.change(
+          $highlight,
+          $lightness: color.channel($background, "lightness", $space: oklch) +
+            100% - color.channel($highlight, "lightness", $space: oklch),
+          $space: oklch
+        ),
+        $method: local-minde
+      )};
+
+    @include greys(#aaa);
+  }
+}
 
 $phone-break: 468px;
 @mixin phone {
@@ -166,7 +198,7 @@ main {
 }
 
 .mention {
-  color: $accent;
+  color: var(--accent);
   font-weight: bold;
   a[href] {
     color: inherit;
@@ -174,7 +206,7 @@ main {
   }
 
   .attribution-external & {
-    color: $grey;
+    color: var(--grey);
     font-size: 1.1em;
   }
 }
@@ -189,12 +221,12 @@ main {
 }
 
 a[href] {
-  color: $accent;
+  color: var(--accent);
   &:hover {
     text-decoration: none;
   }
   &:focus {
-    outline: 2px solid $accent;
+    outline: 2px solid var(--accent);
     outline-offset: 4px;
   }
   h1 & {
@@ -206,8 +238,8 @@ a[href] {
 .attribution {
   @extend %sidenote;
   a[href] {
-    color: $grey;
-    text-decoration-color: $grey;
+    color: var(--grey);
+    text-decoration-color: var(--grey);
   }
 }
 
@@ -228,7 +260,7 @@ ul.attribution {
   font-size: 12.8px;
 
   &-sep {
-    border-color: $dim-grey;
+    border-color: var(--dim-grey);
     border-top-width: 1px;
     border-style: dashed;
     border-bottom: none;
@@ -244,7 +276,7 @@ ul.attribution {
   padding-right: 5px;
 
   &:target {
-    border-right: 3px solid $faint-grey;
+    border-right: 3px solid var(--faint-grey);
 
     &::marker {
       font-weight: bold;
@@ -282,8 +314,8 @@ ul.attribution {
       height: 3px;
       position: relative;
       border: none;
-      border-top: 1px solid $dim-grey;
-      border-bottom: 1px solid $dim-grey;
+      border-top: 1px solid var(--dim-grey);
+      border-bottom: 1px solid var(--dim-grey);
       margin-top: 32px;
       margin-bottom: 48px;
     }
@@ -292,7 +324,7 @@ ul.attribution {
 
 .read-more[href] {
   display: inline-block;
-  background-color: $accent;
+  background-color: var(--accent);
   color: white;
   padding: {
     left: 3px;
@@ -307,7 +339,7 @@ ul.attribution {
   margin-left: 3px;
 
   &:hover {
-    color: $accent;
+    color: var(--accent);
     background-color: transparent;
   }
 }
@@ -394,7 +426,7 @@ figcaption.via {
 
 h1.tag {
   text-align: center;
-  color: $dim-grey;
+  color: var(--dim-grey);
   font-size: 32px;
 
   img {
@@ -405,7 +437,7 @@ h1.tag {
 
 .tags {
   padding: 0;
-  color: $dim-grey;
+  color: var(--dim-grey);
 
   li {
     list-style: none;
@@ -469,6 +501,7 @@ data:not(:has(*)) {
 
 .glightbox-clean {
   .gslide-description {
+    background-color: inherit;
     min-width: 30vw;
 
     .gdesc-inner {
@@ -497,8 +530,8 @@ details {
   transition-duration: 300ms;
 
   &[open] {
-    border-color: $grey;
-    background-color: $highlight;
+    border-color: var(--grey);
+    background-color: var(--highlight);
   }
 
   summary {
@@ -663,7 +696,7 @@ $-embed-column-gap: 24px;
   }
 
   a[href] {
-    color: $dim-grey;
+    color: var(--dim-grey);
     text-decoration: none;
 
     &:hover {
@@ -673,7 +706,7 @@ $-embed-column-gap: 24px;
 
   .p-name,
   .p-nickname {
-    color: $grey;
+    color: var(--grey);
     font-weight: bold;
   }
 
@@ -771,11 +804,11 @@ small {
 
 %sidenote {
   font-size: 12.8px;
-  color: $grey;
+  color: var(--grey);
 }
 
 .attribution-external[href] {
-  color: $dim-grey;
+  color: var(--dim-grey);
   text-decoration: none;
 
   &:hover {
@@ -876,7 +909,7 @@ small {
 .wm-header {
   font-size: 20px;
   padding: 5px 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--grey);
 
   a {
     float: right;
@@ -912,7 +945,6 @@ small {
 
   > article,
   > blockquote {
-    background-color: white;
     padding: 12px;
 
     > header {
@@ -935,10 +967,11 @@ small {
       position: absolute;
       font-size: 160px;
       color: transparent;
-      text-shadow: 0 0 2px color.scale($faint-grey);
+      text-shadow: 0 0 2px var(--faint-grey);
       // prettier-ignore
       font-family: list.join((Patua One,), $text-font-no-emoji);
       pointer-events: none;
+      z-index: -1;
     }
 
     &::before {
@@ -1035,7 +1068,7 @@ $generic-avatar-width: 64px;
     > header {
       width: 100%;
       gap: 8px;
-      color: $dim-grey;
+      color: var(--dim-grey);
       font-weight: normal;
 
       a {
@@ -1120,6 +1153,7 @@ $generic-avatar-width: 64px;
   }
 
   > article {
+    background-color: white;
     width: 100%;
     overflow-x: auto;
     border-radius: 8px;
@@ -2036,7 +2070,7 @@ $backloggd-image-tuck: 160px;
 // Comentario style overrides
 
 body main .comentario-root.comentario-root {
-  --cmntr-color: black;
+  --cmntr-color: var(--text);
   font-size: 1rem;
 
   .comentario-card {
@@ -2093,7 +2127,7 @@ body main .comentario-root.comentario-root {
   }
 
   .comentario-card-expand-toggler {
-    border-color: $faint-grey !important;
+    border-color: var(--faint-grey) !important;
   }
 
   .comentario-comments > .comentario-card > {
@@ -2157,8 +2191,8 @@ body main .comentario-root.comentario-root {
   .comentario-name,
   .comentario-subtitle {
     display: inline;
-    color: $dim-grey;
-    --cmntr-color: #{$grey};
+    color: var(--dim-grey);
+    --cmntr-color: var(--grey);
     font-size: 12.8px;
   }
 
