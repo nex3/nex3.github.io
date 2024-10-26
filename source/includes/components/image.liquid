@@ -10,15 +10,18 @@
   >
 {%- endif -%}
 
-<a href="{{link | default: url}}">
+<a href="{{ link | default: url | escape }}">
   <img
-    src="{{url}}"
+    src="{{ highRes | default: url | escape }}"
     {% unless description or caption or title %}
       {% if style %}style="{{ style | escape }}"{% endif %}
       {% if class %}class="{{ class | escape }}"{% endif %}
     {% endunless %}
     {% if alt %}
-      alt="{{alt | escape}}"
+      alt="{{ alt | escape }}"
+    {% endif %}
+    {% if highRes %}
+      srcset="{{ url | escape }}, {{ highRes | escape }} 2x"
     {% endif %}
   >
 </a>

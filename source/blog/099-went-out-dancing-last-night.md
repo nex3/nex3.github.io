@@ -3,7 +3,9 @@ tags: [selfie, music]
 title: went out dancing last night
 ---
 
-{% image '/assets/099/dance-outfit-small.webp', link: '/assets/099/dance-outfit.webp' %}
+{% image '/assets/099/dance-outfit-small.webp',
+    highRes: '/assets/099/dance-outfit-medium.webp'
+    link: '/assets/099/dance-outfit.webp' %}
   Me in a leather jacket, wearing a sheer top with snakes running up it and
   matching snake earrings.
 {% endimage %}
