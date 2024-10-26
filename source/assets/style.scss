@@ -777,12 +777,7 @@ h5 {
   line-height: 1.15;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6):not(.co-prose-box *) {
   // prettier-ignore
   font-family: list.join((Patua One,), $text-font);
   font-weight: 400;
