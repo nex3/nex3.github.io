@@ -1,4 +1,4 @@
-import { JSDOM } from "jsdom";
+import * as cheerio from "cheerio";
 import escapeHtml from "escape-html";
 import { mf2 } from "microformats-parser";
 
@@ -61,36 +61,34 @@ function serializeHCard(item) {
  */
 export function simplifyEmbeds(post) {
   const data = { ...post.data };
-  const container = JSDOM.fragment(
-    `<div>${post.content}</div>`,
-  ).firstElementChild;
+  const $ = cheerio.load(post.content, null, false);
 
-  data.image ??= container.querySelector("img[src]")?.src;
+  data.image ??= $("img[src]")?.attr("src");
 
-  if (!post.content.includes("h-entry")) return { ...post, data };
+  if (!$(".h-entry").length) return { ...post, data };
 
   let url = post.url;
   const { items } = mf2(post.content, {
     baseUrl: new URL(url, "https://nex-3.com/").toString(),
   });
 
-  const embeds = container.querySelectorAll(".h-entry");
+  const embeds = $(".h-entry:not(.h-entry *)");
   const replaceDataWithEmbed =
     embeds.length === 1 &&
-    container.childElementCount === 1 &&
-    container.firstElementChild.classList.contains("h-entry");
+    $.length === 1 &&
+    $.root().children().first().hasClass("h-entry");
   const entries = items.filter(
     (item) => item.type.length === 1 && item.type[0] === "h-entry",
   );
   if (embeds.length != entries.length) {
     throw new Error(
-      `JSDOM and mf2 detected a different number of h-entries for ${url}`,
+      `Cheerio and mf2 detected a different number of h-entries for ${url}`,
     );
   }
 
   for (let i = 0; i < embeds.length; i++) {
     const entry = entries[i];
-    const embed = embeds[i];
+    const embed = $(embeds[i]);
     let prose = entry.properties.content?.[0]?.html ?? "";
 
     let author = entry.properties.author?.[0];
@@ -128,7 +126,7 @@ export function simplifyEmbeds(post) {
 
       const classes = ["h-entry"];
       for (const klass of ["u-repost-of", "u-in-reply-to"]) {
-        if (embed.classList.contains(klass)) classes.push(klass);
+        if (embed.hasClass(klass)) classes.push(klass);
       }
       prose = `
         <blockquote class="${classes.join(" ")}" style="
@@ -145,11 +143,7 @@ export function simplifyEmbeds(post) {
               ? `
                   <p>
                     ${serializeHCard(author)}
-                    ${
-                      embed.classList.contains("ask-wrapper")
-                        ? "asked"
-                        : "wrote"
-                    }:
+                    ${embed.hasClass("ask-wrapper") ? "asked" : "wrote"}:
                   </p>
                 `
               : ""
@@ -160,11 +154,9 @@ export function simplifyEmbeds(post) {
       `.replaceAll(/[ \n]+/g, " ");
     }
 
-    const template = new JSDOM().window.document.createElement("template");
-    template.innerHTML = prose;
-    embed.replaceWith(template.content);
+    embed.replaceWith(prose);
   }
-  return { data, url, date: post.date, content: container.innerHTML };
+  return { data, url, date: post.date, content: $.html() };
 }
 
 /**
@@ -184,35 +176,33 @@ export function stripInitialEmbeds(content, baseUrl) {
     return content;
   }
 
-  const container = JSDOM.fragment(`<div>${content}</div>`).firstElementChild;
+  const $ = cheerio.load(content, null, false);
+  for (const child of $.root().children().toArray().map($)) {
+    if (!child.is(".h-entry, .h-cite")) break;
 
-  for (const child of container.children) {
-    if (
-      child.classList.contains("h-entry") ||
-      child.classList.contains("h-cite")
-    ) {
-      // Don't omit URL-less embeds like asks, because they don't have a
-      // canonical location elsewhere.
-      const { items } = mf2(child.outerHTML, { baseUrl });
-      const urls = items[0]?.properties?.url;
-      if (!urls) break;
+    // Don't omit URL-less embeds like asks, because they don't have a
+    // canonical location elsewhere.
+    const { items } = mf2($.html(child), { baseUrl });
+    const urls = items[0]?.properties?.url;
+    if (!urls) break;
 
-      const fragment = JSDOM.fragment();
-      for (const url of urls) {
-        const link = new JSDOM().window.document.createElement("link");
-        link.setAttribute("href", url);
-        link.className = [...child.classList]
-          .filter((c) => c.startsWith("u-"))
-          .join(" ");
-        fragment.append(link);
-      }
-      child.replaceWith(fragment);
-    } else {
-      break;
+    const fragment = cheerio.load("", null, false);
+    for (const url of urls) {
+      fragment.root().append(
+        $("<link>")
+          .attr("href", url)
+          .attr(
+            "class",
+            child
+              .attr("class")
+              .replace(/(\s|^)+(?!u-)([^\s\\]|\\[a-fA-F0-9]{1,6} ?)+/g, ""),
+          ),
+      );
     }
+    child.replaceWith(fragment);
   }
 
-  return container.innerHTML;
+  return $.html();
 }
 
 /** Returns url of the last h-entry {@link content}. */

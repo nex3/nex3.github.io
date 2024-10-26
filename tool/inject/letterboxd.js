@@ -1,59 +1,49 @@
-import { JSDOM } from "jsdom";
+import * as cheerio from "cheerio";
 import fetch from "node-fetch";
 import * as prettier from "prettier";
 
 export async function letterboxdTag(maybeRedirectUrl) {
   const reviewResponse = await fetch(maybeRedirectUrl);
   const url = reviewResponse.url;
-  const { document } = new JSDOM(await reviewResponse.text(), { url }).window;
+  const $ = cheerio.load(await reviewResponse.text(), { baseUrl: url });
 
   const [, username, , filmSlug] = new URL(url).pathname.split("/");
 
-  const dateLinks = document.querySelector(".date-links");
-  const reviewMonth = dateLinks
-    .querySelector("a:nth-child(1)")
-    .textContent.trim();
-  const reviewDay = dateLinks
-    .querySelector("a:nth-child(2)")
-    .textContent.trim();
-  const reviewYear = dateLinks
-    .querySelector("a:nth-child(3)")
-    .textContent.trim();
+  const dateLinks = $(".date-links");
+  const reviewMonth = dateLinks.find("a:nth-child(1)").text().trim();
+  const reviewDay = dateLinks.find("a:nth-child(2)").text().trim();
+  const reviewYear = dateLinks.find("a:nth-child(3)").text().trim();
 
   const args = {
-    film: document.querySelector(".film-title-wrapper > a").textContent.trim(),
-    year: document.querySelector(".film-title-wrapper .metadata").textContent,
-    authorDisplayName: document
-      .querySelector(".person-summary a.name span:first-child")
-      .textContent.trim(),
+    film: $(".film-title-wrapper > a").text().trim(),
+    year: $(".film-title-wrapper .metadata").text(),
+    authorDisplayName: $(".person-summary a.name span:first-child")
+      .text()
+      .trim(),
     date: `${reviewDay} ${reviewMonth} ${reviewYear}`,
-    avatar: new URL(
-      document.querySelector(".avatar img").getAttribute("src"),
-      url,
-    ).toString(),
-    supporter: document.querySelector(".badge.-patron")
-      ? "patron"
-      : usernameLink.querySelector(".badge.-pro")
-        ? "pro"
-        : null,
+    avatar: new URL($(".avatar img").attr("src"), url).toString(),
+    supporter:
+      $(".badge.-patron").length > 0
+        ? "patron"
+        : $(".badge.-pro").length > 0
+          ? "pro"
+          : null,
   };
 
-  const ratingEl = document.querySelector(".rating");
+  const ratingEl = $(".rating");
   if (ratingEl) {
-    const match = ratingEl.getAttribute("class")?.match(/rated-large-([0-9]+)/);
+    const match = ratingEl.attr("class")?.match(/rated-large-([0-9]+)/);
     if (match) args.rating = parseInt(match[1]) / 2;
   }
 
   const filmUrl = new URL(`https://letterboxd.com/film/${filmSlug}`);
   const filmResponse = await fetch(filmUrl);
   if (filmResponse) {
-    const image = new JSDOM(await filmResponse.text(), {
-      url: filmUrl,
-    }).window.document.querySelector(".backdrop-wrapper");
-    const urlString = image?.dataset["backdrop"];
-    if (urlString) {
-      args.image = new URL(urlString, reviewResponse.url);
-    }
+    const image = cheerio.load(await filmResponse.text(), {
+      baseUrl: filmUrl,
+    })(".backdrop-wrapper");
+    const urlString = image.data("backdrop");
+    if (urlString) args.image = new URL(urlString, filmUrl);
   }
 
   const posterUrl = new URL(
@@ -61,13 +51,11 @@ export async function letterboxdTag(maybeRedirectUrl) {
   );
   const posterResponse = await fetch(posterUrl);
   if (posterResponse) {
-    const poster = new JSDOM(await posterResponse.text(), {
-      url: posterUrl,
-    }).window.document.querySelector(".image:not(.hidden)");
-    const urlString = poster?.getAttribute("src");
-    if (urlString) {
-      args.poster = new URL(urlString, reviewResponse.url);
-    }
+    const poster = cheerio.load(await posterResponse.text(), {
+      baseUrl: posterUrl,
+    })(".image:not(.hidden)");
+    const urlString = poster?.attr("src");
+    if (urlString) args.poster = new URL(urlString, posterUrl);
   }
 
   return (
@@ -79,10 +67,10 @@ export async function letterboxdTag(maybeRedirectUrl) {
       .join(",\n") +
     " %}\n" +
     (
-      await prettier.format(
-        document.querySelector(".review.body-text > div > div").innerHTML,
-        { parser: "html", printWidth: 78 },
-      )
+      await prettier.format($(".review.body-text > div > div").html(), {
+        parser: "html",
+        printWidth: 78,
+      })
     )
       .trim()
       .replaceAll(/^/gm, "  ") +

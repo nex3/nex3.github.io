@@ -1,9 +1,9 @@
 import * as fs from "node:fs";
 import { promisify } from "node:util";
 
+import * as cheerio from "cheerio";
 import li from "li";
 import fetch from "node-fetch";
-import { JSDOM } from "jsdom";
 import { mf2 } from "microformats-parser";
 import YAML from "yaml";
 
@@ -14,12 +14,8 @@ export const data = { permalink: false };
  * nested h-entries.
  */
 function linksFromPostBody(post, url) {
-  const container = JSDOM.fragment(`<div>${post.content}</div>`, {
-    url,
-  }).firstElementChild;
-  return [...container.querySelectorAll("a[href]:not(.h-entry a[href])")].map(
-    (a) => a.href,
-  );
+  const $ = cheerio.load(post.content, { baseUri: url }, false);
+  return [...$("a[href]:not(.h-entry *)")].map((a) => a.attr("href"));
 }
 
 /** Returns the links to h-entries embedded in {@link post}. */
@@ -51,9 +47,9 @@ async function getWebMentionEndpoint(url) {
 
   return (
     li.parse(response.headers.get("link") ?? "")["webmention"] ??
-    new JSDOM(await response.text(), { url }).window.document.querySelector(
-      "link[rel=webmention]",
-    )?.href
+    cheerio
+      .load(await response.text(), { baseUrl: url })("link[rel=webmention]")
+      .attr("href")
   );
 }
 

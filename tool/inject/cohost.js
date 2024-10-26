@@ -1,6 +1,6 @@
 import * as fs from "node:fs";
 
-import { JSDOM } from "jsdom";
+import * as cheerio from "cheerio";
 import fetch from "node-fetch";
 import * as prettier from "prettier";
 
@@ -8,28 +8,24 @@ export async function cohostTag(url) {
   const author = url.pathname.split("/")[1];
 
   const response = await fetch(url);
-  const { document } = new JSDOM(await response.text(), { url }).window;
-  const posts = document.querySelectorAll("[data-postid] > article");
+  const $ = cheerio.load(await response.text(), { baseUrl: url });
+  const posts = $("[data-postid] > article");
   if (posts.length !== 1) {
     throw new Error(`URL "${url}" in ${blog} has ${posts.length} posts.`);
   }
 
-  const post = posts[0];
-  const avatar = post.querySelector("img.mask");
-  const avatarShape = [...avatar.classList]
+  const post = $(posts[0]);
+  const avatar = post.find("img.mask");
+  const avatarShape = [...avatar.attr("class").split(" ")]
     .filter((klass) => klass.startsWith("mask-"))[0]
     .substring(5);
-  const displayName = post.querySelector(
-    ".co-project-display-name",
-  ).textContent;
-  const time = post.querySelector("time").dateTime;
-  const tags = [...post.querySelectorAll(".co-tags a")]
-    .map((a) => a.textContent)
-    .join(", ");
+  const displayName = post.find(".co-project-display-name").text();
+  const time = new Date(post.find("time").attr("datetime"));
+  const tags = [...post.find(".co-tags a")].map((a) => $(a).text()).join(", ");
   const commentCount = parseInt(
-    post.querySelector(".co-thread-footer a.text-sm").textContent.split(" ")[0],
+    post.find(".co-thread-footer a.text-sm").text().split(" ")[0],
   );
-  const prose = post.querySelector(".co-prose");
+  const prose = post.find(".co-prose");
   if (!prose) {
     throw new Error(
       `URL "${url}" in ${blog} doesn't have content. You may need to be logged in to view it.`,
@@ -42,12 +38,12 @@ export async function cohostTag(url) {
     fs.writeFileSync(avatarPath, new Uint8Array(await response.arrayBuffer()));
   }
 
-  for (const mention of prose.querySelectorAll('[data-testid="mention"]')) {
-    mention.setAttribute("class", "co-mention");
-    mention.removeAttribute("data-testid");
+  for (const mention of [...prose.find('[data-testid="mention"]')].map($)) {
+    mention.attr("class", "co-mention");
+    mention.attr("data-testid", null);
   }
 
-  const contents = prose.innerHTML.replaceAll("<!-- -->", "");
+  const contents = prose.html().replaceAll("<!-- -->", "");
 
   const args = { avatarShape, displayName, time, tags, commentCount };
   if (args.avatarShape === "circle") delete args.avatarShape;

@@ -2,7 +2,6 @@ import * as fs from "node:fs";
 import { URL } from "node:url";
 
 import { glob } from "glob";
-import { JSDOM } from "jsdom";
 import fetch from "node-fetch";
 
 import { backloggdTag } from "./inject/backloggd.js";

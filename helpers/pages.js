@@ -1,6 +1,6 @@
 import * as crypto from "node:crypto";
 
-import { JSDOM } from "jsdom";
+import * as cheerio from "cheerio";
 import { compile as initHtmlToText } from "html-to-text";
 import fetch from "node-fetch";
 
@@ -14,22 +14,20 @@ const newlinePlaceholder = crypto.randomBytes(20).toString("hex");
  * causing it to be parsed as meaningful whitespace.
  */
 export function markdownSafe(html) {
-  const fragment = JSDOM.fragment(`<div>${html}</div>`);
-  escapeNewlines(fragment);
-  return fragment.childNodes[0].innerHTML
-    .replaceAll("\n", " ")
-    .replaceAll(newlinePlaceholder, "&#10;");
+  // This is probably possible to do cleaner with the raw parse5 or htmlparser2
+  // API.
+  const $ = cheerio.load(html, null, false);
+  escapeNewlines($.root()[0]);
+  return $.html().replaceAll("\n", " ").replaceAll(newlinePlaceholder, "&#10;");
 }
 
 /** HTML-escapes newlines in all text node transitive children of `node`. */
 function escapeNewlines(node) {
-  for (const child of node.childNodes) {
-    if (child.nodeType === node.TEXT_NODE) {
-      child.textContent = child.textContent.replaceAll(
-        "\n",
-        newlinePlaceholder,
-      );
-    } else if (child.hasChildNodes()) {
+  for (const child of node.children) {
+    if (child.nodeType === 3) {
+      // text node
+      child.data = child.data.replaceAll("\n", newlinePlaceholder);
+    } else if (child.children?.length) {
       escapeNewlines(child);
     }
   }
