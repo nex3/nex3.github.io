@@ -7,7 +7,7 @@ commentary:
 ---
 
 {% genericPost 'https://theoptics.bearblog.dev/twin-cities-metro-communion/',
-    name: 'twin cities metro communion',
+    title: 'twin cities metro communion',
     time: '2024-10-07T02:29Z',
     author: 'theoptics',
     authorUrl: 'https://theoptics.bearblog.dev/' %}

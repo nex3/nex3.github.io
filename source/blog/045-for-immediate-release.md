@@ -6,7 +6,7 @@ commentary:
 ---
 
 {% genericPost "https://topposts.net/post/1728191574496/",
-    name: "FOR IMMEDIATE RELEASE",
+    title: "FOR IMMEDIATE RELEASE",
     date: "2024-10-06T05:12:54Z",
     tags: "#cohost meta but like not serious",
     author: "@topghost",

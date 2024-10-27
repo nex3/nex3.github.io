@@ -3,7 +3,7 @@ tags: [speedrunning, the witness, link]
 ---
 
 {% genericPost 'https://www.fourisland.com/blog/sniping-through-walls',
-    name: 'Solving Puzzles Through Walls, and the No-Wizzies Snipe',
+    title: 'Solving Puzzles Through Walls, and the No-Wizzies Snipe',
     author: 'Hatkirby',
     authorAvatar: 'https://storage.googleapis.com/beppo.online/accounts/avatars/109/331/277/627/590/965/original/1fae2605f15007c0.png',
     time: '2023-10-29T17:36:03Z',

@@ -5,7 +5,7 @@ commentary:
 ---
 
 {% genericPost "https://shuppy.org/posts/10000012.html",
-    name: "double rainbow",
+    title: "double rainbow",
     date: "2024-10-13T09:50:09.868Z",
     tags: "#photography, #birds, #bird photography, #rainbow lorikeet",
     author: "shuppy",

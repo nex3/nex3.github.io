@@ -7,7 +7,7 @@ commentary:
 ---
 
 {% genericPost 'https://emilysdupree.substack.com/p/the-invention-of-memory',
-    name: "The Invention of Memory",
+    title: "The Invention of Memory",
     date: "30 August 2024",
     author: "Emily Dupree",
     authorUrl: "https://emilysdupree.substack.com/about",

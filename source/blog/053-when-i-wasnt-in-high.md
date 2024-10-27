@@ -3,13 +3,13 @@ tags: [newspaper comics, link]
 ---
 
 {% genericPost 'https://www.eruditorumpress.com/blog/america-a-prophecy-1',
-    name: 'America a Prophecy 1: Exegesis',
+    title: 'America a Prophecy 1: Exegesis',
     author: 'Elizabeth Sandifer',
     authorUrl: 'https://www.eruditorumpress.com/blog/author/elizabeth',
     time: '2021-09-11',
     tags: '#america a prophecy',
     via: 'Caoimhe',
-    viaName: "What I’m reading vol. 2",
+    viaTitle: "What I’m reading vol. 2",
     viaUrl: 'https://oakreef.ie/bog/what-im-reading-2',
     viaDate: '2024-10-03',
     viaAuthorUrl: 'https://oakreef.ie/',

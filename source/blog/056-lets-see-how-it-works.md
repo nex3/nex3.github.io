@@ -3,7 +3,7 @@ tags: [rss, web]
 ---
 
 {% genericPost "https://postnow.site/",
-    name: "An Annoying thing about feed readers",
+    title: "An Annoying thing about feed readers",
     date: "2024-10-08T20:15:09-0500",
     tags: "#rss",
     author: "bcj",

@@ -30,7 +30,7 @@
 {% endgenericPost %}
 
 {% genericPost "https://postnow.site/",
-    name: "I consider myself one of the three",
+    title: "I consider myself one of the three",
     date: "2024-10-18T10:58:20+0200",
     author: "bcj",
     reply: true %}

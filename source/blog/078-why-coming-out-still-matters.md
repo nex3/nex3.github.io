@@ -4,7 +4,7 @@ tags: [queer, link]
 
 {% genericPost 'https://rebeccaldavisphdgmailcom.substack.com/p/why-coming-out-still-matters',
     author: 'Rebecca Davis',
-    name: 'Why "coming out" still matters',
+    title: 'Why "coming out" still matters',
     time: '2024-10-10',
     authorUrl: 'https://www.rebeccaldavis.com/',
     authorAvatar: 'https://substackcdn.com/image/fetch/w_176,h_176,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F31174111-03bf-4dda-8fcd-e3811afb1869_1280x853.png',
@@ -14,7 +14,7 @@ tags: [queer, link]
 {% endgenericPost %}
 
 {% genericPost 'https://shelraphen.com/community-roundup-week-of-2024-10-06-11/',
-    name: 'Community Roundup Week of 2024.10.06–11',
+    title: 'Community Roundup Week of 2024.10.06–11',
     date: '12-10-2024',
     author: 'Shel Raphen',
     authorUrl: 'https://shelraphen.com/',

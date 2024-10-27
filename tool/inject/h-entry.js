@@ -62,7 +62,7 @@ async function parsedHEntryToTag(entry, items, url, baseUrl) {
   const previous = await previousEntryToTag(entry, items, baseUrl);
 
   const args = {};
-  args.name = entry.properties.name?.[0];
+  args.title = entry.properties.name?.[0];
   args.date = entry.properties.published?.[0];
   args.tags = entry.properties.category
     ?.map((tag) => (tag.startsWith("#") ? tag : `#${tag}`))
@@ -87,7 +87,7 @@ async function parsedHEntryToTag(entry, items, url, baseUrl) {
     inReplyTo = { type: ["h-cite"], properties: { url: [inReplyTo] } };
   }
   args.inReplyUrl = resolveUrl(inReplyTo?.properties?.url?.[0], baseUrl);
-  args.inReplyName = inReplyTo?.properties?.name?.[0];
+  args.inReplyTitle = inReplyTo?.properties?.name?.[0];
   args.inReplyAuthor = inReplyTo?.properties?.author?.[0];
 
   return (

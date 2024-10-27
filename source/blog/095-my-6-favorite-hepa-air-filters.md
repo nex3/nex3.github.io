@@ -3,7 +3,7 @@ tags: [covid, link]
 ---
 
 {% genericPost 'https://itsairborne.com/my-6-favorite-hepa-filters-air-cleaners-f3668de61f3f',
-    name: 'My 6 Favorite HEPA Filters & Air Cleaners',
+    title: 'My 6 Favorite HEPA Filters & Air Cleaners',
     author: 'Joey Fox',
     authorAvatar: 'https://miro.medium.com/v2/resize:fill:176:176/1*09tLpaEzPFjuBvVlFTd8SQ.jpeg',
     authorUrl: 'https://medium.com/@joeyfox.85',
@@ -39,7 +39,7 @@ more sophisticated than that, but elsewhere on his site Joey presents one that
 absolutely is just fans and tape:
 
 {% genericPost 'https://itsairborne.com/the-mini-pc-fan-cr-box-975d0b069f4c',
-    name: 'The Mini PC Fan Corsi-Rosenthal Box',
+    title: 'The Mini PC Fan Corsi-Rosenthal Box',
     author: 'Joey Fox',
     authorAvatar: 'https://miro.medium.com/v2/resize:fill:176:176/1*09tLpaEzPFjuBvVlFTd8SQ.jpeg',
     authorUrl: 'https://medium.com/@joeyfox.85',

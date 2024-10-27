@@ -5,7 +5,7 @@ updated: 2024-10-10T06:27:04Z
 ---
 
 {% genericPost 'https://lydz.gay/blog/inhaling-dread/',
-    name: 'Inhaling Dread',
+    title: 'Inhaling Dread',
     time: '2024-10-08',
     tags: '#Photography, #Lydia Writes',
     author: 'Lydia',

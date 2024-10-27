@@ -69,13 +69,13 @@ export async function tumblrTag(url) {
 
   const args = {};
   args.url = post.post_url;
-  args.name = getTitle(post);
+  args.title = getTitle(post);
   args.author = author;
   args.authorUrl = blog.url;
   args.authorAvatar = getAvatar(blog);
   args.date = new Date(post.timestamp);
   args.inReplyUrl = post.parent_post_url;
-  args.inReplyName = getTitle(post?.trail?.at(-1));
+  args.inReplyTitle = getTitle(post?.trail?.at(-1));
   args.inReplyAuthor = post?.trail?.at(-1)?.blog?.name;
 
   // We could pull tags here, but the strong Tumblr expectation is that tags are

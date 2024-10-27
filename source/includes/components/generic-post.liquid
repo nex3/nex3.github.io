@@ -7,8 +7,8 @@
   {% if inReplyUrl %}
     <div class="u-in-reply-to h-cite">
       <data name="u-url" value="{{ inReplyUrl | escape }}"></data>
-      {% if inReplyName %}
-        <data name="p-name" value="{{ inReplyName | escape }}"></data>
+      {% if inReplyTitle %}
+        <data name="p-name" value="{{ inReplyTitle | escape }}"></data>
       {% endif %}
       {% if inReplyAuthor %}
         <data name="p-author" value="{{ inReplyAuthor | escape }}"></data>
@@ -40,9 +40,9 @@
   </header>
 
   <div>
-    {% if name %}
+    {% if title %}
       <h1 class="p-name">
-        <a href="{{ url | escape }}">{{ name | escape }}</a>
+        <a href="{{ url | escape }}">{{ title | escape }}</a>
       </h1>
     {% endif %}
     <div class="gp-prose e-content">
@@ -64,8 +64,8 @@
   {% if via %}
     <div class="h-cite">
       {% if viaUrl %}<a href="{{ viaUrl | escape }}" class="u-url">{% endif -%}
-      {% if viaName %}
-        <data class="p-name" value="{{ viaName | escape }}"></data>
+      {% if viaTitle %}
+        <data class="p-name" value="{{ viaTitle | escape }}"></data>
       {% endif %}
       {% if viaDate %}
         <time class="dt-published" datetime="{{ viaDate | escape }}"></time>

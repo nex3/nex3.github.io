@@ -3,7 +3,7 @@ tags: [style, disability, link]
 ---
 
 {% genericPost 'https://platinumtulip.bearblog.dev/my-makeup-philosophy/',
-    name: 'my makeup philosophy',
+    title: 'my makeup philosophy',
     time: '2024-09-15T18:36Z',
     author: 'tulip',
     authorAvatar: 'https://files.platinumtulip.net/tulip-left.png',

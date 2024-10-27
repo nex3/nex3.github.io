@@ -3,7 +3,7 @@ tags: [nat mixes, medical, alcohol, link]
 ---
 
 {% genericPost "https://seaslug.garden/?p=69",
-    name: "10 (official) Years of Type 1",
+    title: "10 (official) Years of Type 1",
     date: "2024-10-21T04:05:08+00:00",
     tags: "#diabetesposting",
     author: "Liz",
