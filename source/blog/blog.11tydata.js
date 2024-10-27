@@ -76,14 +76,6 @@ export async function webMentions() {
     }
 
     if (mention.content?.html) {
-      if (
-        mention.content.html.includes("h-entry") ||
-        mention.content.html.includes("h-card") ||
-        mention.content.html.includes("h-cite")
-      ) {
-        mention.content.html = await reparseMentionContent(mention);
-      }
-
       mention.content.html = sanitizeHtml(mention.content.html, {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
         allowedClasses: {
@@ -132,21 +124,4 @@ export async function webMentions() {
   });
 
   return allMentions;
-}
-
-/**
- * Tries to re-download the contents of {@link mention.url} and parse the
- * content again so we can properly omit initial nested h-entries, because
- * webmention.io does not.
- */
-async function reparseMentionContent(mention) {
-  const response = await fetch(mention.url);
-  if (!response.ok) return mention.content.html;
-
-  const { items } = mf2(await response.text(), { baseUrl: mention.url });
-  const html = findEntry(items, mention.url, mention.url)?.properties
-    .content?.[0]?.html;
-  if (!html) return mention.content.html;
-
-  return stripInitialEmbeds(html, mention.url);
 }
