@@ -156,6 +156,11 @@ export function simplifyEmbeds(post) {
 
     embed.replaceWith(prose);
   }
+
+  // Simplify figures by removing value-add elements that often render poorly in
+  // RSS readers.
+  $("figure figcaption :is(.h-cite, details)").remove();
+
   return { data, url, date: post.date, content: $.html() };
 }
 
