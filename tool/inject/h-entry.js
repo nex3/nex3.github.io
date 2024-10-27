@@ -63,7 +63,7 @@ async function parsedHEntryToTag(entry, items, url, baseUrl) {
 
   const args = {};
   args.name = entry.properties.name?.[0];
-  args.time = entry.properties.published?.[0];
+  args.date = entry.properties.published?.[0];
   args.tags = entry.properties.category
     ?.map((tag) => (tag.startsWith("#") ? tag : `#${tag}`))
     ?.join(", ");

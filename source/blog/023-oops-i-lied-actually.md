@@ -4,7 +4,7 @@ updated: 2024-10-12T10:41:44Z
 ---
 
 {% genericPost "/blog/i-was-all-set-to-set/",
-    time: "2024-09-29T23:49:49Z",
+    date: "2024-09-29T23:49:49Z",
     author: "Natalie",
     authorUrl: "/",
     authorAvatar: "/assets/avatar.webp",

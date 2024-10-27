@@ -6,7 +6,7 @@ commentary:
 ---
 
 {% genericPost "https://taylor-titmouse.tumblr.com/post/762813849248366592/have-you-heard-about-the-sickos-selection-me-and",
-    time: "2024-09-27 18:26:16",
+    date: "2024-09-27 18:26:16",
     author: "taylor-titmouse",
     authorUrl: "https://taylor-titmouse.tumblr.com/",
     authorAvatar: "https://64.media.tumblr.com/0068dc4475ce27fcf43893ab2d588ba4/a93b7dffadf65372-98/s128x128u_c1/d7224872c887550bae06b7777617227a37f13cc4.pnj",

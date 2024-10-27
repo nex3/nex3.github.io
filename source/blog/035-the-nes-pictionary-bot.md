@@ -4,7 +4,7 @@ updated: 2024-10-04T03:59:02.042Z
 ---
 
 {% genericPost 'https://moonbase.lgbt/blog/nes-pictionary-in-memoriam/',
-    time: "2024-09-30T00:00:00.000Z",
+    date: "2024-09-30T00:00:00.000Z",
     author: 'Luna',
     authorUrl: "https://moonbase.lgbt/",
     quote: true,

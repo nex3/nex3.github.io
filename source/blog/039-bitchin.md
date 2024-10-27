@@ -4,7 +4,7 @@ updated: 2024-10-05T00:14:02.653Z
 ---
 
 {% genericPost "https://nex-3.com/blog/my-least-favorite-thing/",
-    time: "2024-10-04T05:25:12Z",
+    date: "2024-10-04T05:25:12Z",
     tags: "#web",
     author: "Natalie",
     authorUrl: "https://nex-3.com/",

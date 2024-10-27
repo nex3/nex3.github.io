@@ -3,8 +3,8 @@ tags: [judaism, from the river to the sea]
 ---
 
 {% genericPost 'https://shelraphen.com/how-will-we-be-remembered-the-jewish-people-after-the-war/',
-    name: 'How will we be remembered? — The Jewish People After the War',
-    date: '13-10-2024',
+    title: 'How will we be remembered? — The Jewish People After the War',
+    date: '2024-10-13',
     author: 'Shel Raphen',
     authorUrl: 'https://shelraphen.com/',
     authorAvatar: "https://shelraphen.com/content/images/2024/09/IMG_1092-1.jpeg",

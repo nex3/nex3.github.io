@@ -11,7 +11,7 @@ tags: [newspaper comics, link]
     via: 'Caoimhe',
     viaName: "What I’m reading vol. 2",
     viaUrl: 'https://oakreef.ie/bog/what-im-reading-2',
-    viaTime: '2024-10-03',
+    viaDate: '2024-10-03',
     viaAuthorUrl: 'https://oakreef.ie/',
     viaAuthorAvatar: 'https://deflector.cathode.church/accounts/avatars/108/936/450/106/251/527/original/770a0043b86f2d9c.gif',
     quote: true,

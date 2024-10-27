@@ -8,7 +8,7 @@ commentary:
 ---
 
 {% genericPost "https://seaslug.garden/?p=58",
-    time: "10-10-2024",
+    date: "10-10-2024",
     title: "seeking (spooky) movie recommendations",
     tags: "#movies",
     author: "Liz",

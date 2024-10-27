@@ -8,7 +8,7 @@ tags: [social media, cohost]
 
 {% genericPost "https://shelraphen.com/cohost-eulogy-retrospective/",
     name: "Cohost Eulogy & Retrospective",
-    time: "2024-09-27",
+    date: "2024-09-27",
     author: "Shel Raphen",
     authorUrl: "https://shelraphen.com/author/shel/",
     authorAvatar: "https://shelraphen.com/content/images/2024/09/IMG_1092-1.jpeg",

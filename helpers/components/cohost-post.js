@@ -9,7 +9,7 @@ export default createPairedComponentPlugin(
       .map((tag) => tag.trim().replace(/^#/, ""))
       .filter((tag) => tag.length > 0);
     const author = url.match(/^https:\/\/cohost\.org\/([^\/]+)/)[1];
-    const time = new Date(Date.parse(options.time));
+    const date = new Date(Date.parse(options.date));
 
     return liquidEngine.renderFile("components/cohost-post", {
       contents: stripIndent(contents).trim(),
@@ -17,7 +17,7 @@ export default createPairedComponentPlugin(
       avatarShape: options.avatarShape ?? "circle",
       author,
       authorDisplayName: options.displayName,
-      time,
+      date,
       tags,
       commentCount: options.commentCount ?? 0,
     });

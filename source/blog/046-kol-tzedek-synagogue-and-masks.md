@@ -3,8 +3,8 @@ tags: [covid, disability, link]
 ---
 
 {% genericPost 'https://shelraphen.com/kol-tzedek-synagogue-and-masks-a-call-for-accountability/',
-    name: 'Kol Tzedek Synagogue and Masks: A Call for Accountability',
-    date: '29-09-2024',
+    title: 'Kol Tzedek Synagogue and Masks: A Call for Accountability',
+    date: '2024-09-29',
     author: 'Shel Raphen',
     authorUrl: 'https://shelraphen.com/',
     authorAvatar: "https://shelraphen.com/content/images/2024/09/IMG_1092-1.jpeg",

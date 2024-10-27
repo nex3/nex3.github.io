@@ -1,5 +1,5 @@
 {% genericPost "https://topposts.net/post/1728110041120/",
-    time: "2024-10-05T06:34:01Z",
+    date: "2024-10-05T06:34:01Z",
     author: "@topghost",
     authorAvatar: "https://topposts.net/img/moon-dutiful.jpg?v=4e58b6acac05",
     reply: true %}

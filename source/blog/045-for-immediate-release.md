@@ -7,7 +7,7 @@ commentary:
 
 {% genericPost "https://topposts.net/post/1728191574496/",
     name: "FOR IMMEDIATE RELEASE",
-    time: "2024-10-06T05:12:54Z",
+    date: "2024-10-06T05:12:54Z",
     tags: "#cohost meta but like not serious",
     author: "@topghost",
     authorAvatar: "https://topposts.net/img/moon-dutiful.jpg?v=4e58b6acac05" %}

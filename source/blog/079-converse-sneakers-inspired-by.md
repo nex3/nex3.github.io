@@ -9,7 +9,7 @@ commentary:
     author: "lotusinjadewell",
     authorUrl: "https://www.tumblr.com/blog/view/lotusinjadewell",
     authorAvatar: "https://64.media.tumblr.com/d40f1919c96ff0ac7d50655ff70ec57c/c1c5bf58322cb052-2f/s128x128u_c1/2b66d52022bb5fbe0fdd540960f489cbb85997f9.png",
-    time: "1970-01-20T22:48:14.564Z",
+    date: "1970-01-20T22:48:14.564Z",
     reply: true %}
   <figure class="npf-block-image">
     <a

@@ -7,7 +7,7 @@ tags: [meta, web]
 ---
 
 {% genericPost "https://nex-3.com/blog/once-i-add-the/",
-    time: "2024-09-20T07:06:00Z",
+    date: "2024-09-20T07:06:00Z",
     tags: "#meta",
     author: "Natalie",
     authorUrl: "/",
@@ -26,7 +26,7 @@ also do it with someone else's. By way of example, please enjoy this post from
 my beautiful wife:
 
 {% genericPost "https://seaslug.garden/?p=44",
-    time: "2024-09-15",
+    date: "2024-09-15",
     tags: "#books, #research",
     author: "Liz",
     authorUrl: "https://seaslug.garden/",
@@ -44,7 +44,7 @@ Here's what the embed looks like in my blog source right now:
 {% raw %}
 ```liquid
 {% genericPost "https://nex-3.com/blog/once-i-add-the/",
-    time: "2024-09-20T07:06:00Z",
+    date: "2024-09-20T07:06:00Z",
     tags: "#meta",
     author: "Natalie",
     authorUrl: "/",

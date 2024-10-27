@@ -32,7 +32,7 @@
   <header>
     {% render 'external-attribution',
       url: url,
-      date: time,
+      date: date,
       author: author,
       authorUrl: authorUrl,
       authorAvatar: authorAvatar
@@ -67,8 +67,8 @@
       {% if viaName %}
         <data class="p-name" value="{{ viaName | escape }}"></data>
       {% endif %}
-      {% if viaTime %}
-        <time class="dt-published" datetime="{{ viaTime | escape }}"></time>
+      {% if viaDate %}
+        <time class="dt-published" datetime="{{ viaDate | escape }}"></time>
       {% endif %}
       <div class="p-author h-card">
         <span>

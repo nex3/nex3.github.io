@@ -3,7 +3,7 @@ tags: [rss]
 ---
 
 {% genericPost "https://nex-3.com/blog/doing-my-level-best-to/",
-    time: "2024-10-03T01:24:58Z",
+    date: "2024-10-03T01:24:58Z",
     tags: "#rss, #mastodon",
     author: "Natalie",
     authorUrl: "https://nex-3.com/",

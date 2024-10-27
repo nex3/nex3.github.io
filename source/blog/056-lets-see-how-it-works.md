@@ -4,7 +4,7 @@ tags: [rss, web]
 
 {% genericPost "https://postnow.site/",
     name: "An Annoying thing about feed readers",
-    time: "2024-10-08T20:15:09-0500",
+    date: "2024-10-08T20:15:09-0500",
     tags: "#rss",
     author: "bcj",
     reply: true %}

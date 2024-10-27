@@ -3,7 +3,7 @@ tags: [android, enshittification]
 ---
 
 {% genericPost "https://nex-3.com/blog/so-apparently-you-cant/",
-    time: "2024-10-07T09:20:57Z",
+    date: "2024-10-07T09:20:57Z",
     tags: "#android, #enshittification",
     author: "Natalie",
     authorAvatar: "/assets/avatar.webp",
@@ -17,7 +17,7 @@ tags: [android, enshittification]
 {% endgenericPost %}
 
 {% genericPost "https://app.commentbox.io/5765991539671040-proj?id=commentbox&url=https%3A%2F%2Fnex-3.com%2Fblog%2Fso-apparently-you-cant%2F%23commentbox&tlc_param=tlc&background_color=&text_color=&subtext_color=&sort_order=oldest#dd4fe67e3a48c37a5acfc318ed14c462",
-    time: "2024-10-08T12:29:53.518Z",
+    date: "2024-10-08T12:29:53.518Z",
     author: "effika",
     inReplyUrl: "https://nex-3.com/blog/so-apparently-you-cant/",
     inReplyAuthor: "Natalie" %}

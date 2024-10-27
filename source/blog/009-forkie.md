@@ -18,7 +18,7 @@ In celebration, please enjoy a post I still think back on and chuckle:
 
 {% cohostPost "https://cohost.org/nex3/post/580430-breaking-in-an",
     displayName: "Natalie",
-    time: "2022-12-09T21:15:20.292Z",
+    date: "2022-12-09T21:15:20.292Z",
     commentCount: 3 %}
   <p><strong>Breaking:</strong> In an effort to push video game enthusiasts to take graphical fidelity less seriously, the Academy of the English Language issued a ruling today that the term "4K" will be officially pronounced "forkie". This ruling is effective immediately for governmental sources, but non-government entities have until the third of February to update their materials before facing fines from the FCC, CRTC, Ofcom, or other relevant regulatory body.</p>
   <p>Immediately afterwards, California-based studio 2K Games issued a press release saying "Fuck dude we really dodged a bullet there. Goddamn can you imagine"</p>

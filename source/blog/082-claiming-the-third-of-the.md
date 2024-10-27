@@ -20,7 +20,7 @@
 {% endgenericPost %}
 
 {% genericPost "https://topposts.net/post/1729238695697/",
-    time: "2024-10-18T08:04:55Z",
+    date: "2024-10-18T08:04:55Z",
     tags: "#lineage, #1 of exactly 3",
     author: "@topghost",
     authorAvatar: "https://topposts.net/img/moon-dutiful.jpg",
@@ -31,7 +31,7 @@
 
 {% genericPost "https://postnow.site/",
     name: "I consider myself one of the three",
-    time: "2024-10-18T10:58:20+0200",
+    date: "2024-10-18T10:58:20+0200",
     author: "bcj",
     reply: true %}
   <p>Do you?</p>
