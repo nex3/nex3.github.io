@@ -1,4 +1,4 @@
-{%- if description or caption or title -%}
+{%- if description or caption or title or via -%}
   <figure
     class="
       image
@@ -26,7 +26,7 @@
   >
 </a>
 
-{% if description or caption or title %}
+{% if description or caption or title or via %}
   <figcaption>
     {% if title %}
       <h6>{{ title | escape }}</h6>
@@ -38,6 +38,7 @@
       </details>
     {% endif %}
     {% if caption %}{{ caption | markdown }}{% endif %}
+    {% if via %}{% render 'via', via: via %}{% endif %}
   </figcaption>
   </figure>
 {% endif %}

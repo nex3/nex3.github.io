@@ -1,0 +1,26 @@
+<div class="h-cite">
+  {% if via.url %}<a href="{{ via.url | escape }}" class="u-url">{% endif -%}
+  {% if via.title %}
+    <data class="p-name" value="{{ via.title | escape }}"></data>
+  {% endif %}
+  {% if via.date %}
+    <time class="dt-published" datetime="{{ via.date | escape }}"></time>
+  {% endif %}
+  <div class="p-author h-card">
+    <span>
+      via
+      <span class="p-name">{{ via.author.name | escape }}</span>
+    </span>
+    {% if via.author.url %}
+      <data class="u-url" value="{{ via.author.url | escape }}"></data>
+    {%- endif -%}
+    {%- if via.author.photo -%}
+      <img
+        class="u-photo"
+        src="{{ via.author.photo | escape }}"
+        alt="{{ via.author.name | escape }}"
+      >
+    {%- endif -%}
+  </div>
+  {%- if via.url %}</a>{% endif -%}
+</div>

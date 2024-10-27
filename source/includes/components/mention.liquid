@@ -1,5 +1,6 @@
 <span class="mention h-card">
-  {%- if url -%}
+  {%- if prefix %}{{ prefix | escape }} {% endif -%}
+  {%- if url and link -%}
     <a
       class="
         {{- textClasses | join: " " | escape }}
@@ -10,6 +11,12 @@
       {{- text | escape -}}
     </a>
   {%- else -%}
+    {% if url %}
+    <data
+      class="{{ urlClasses | join: " " | escape }}"
+      href="{{ url | escape }}"
+    ></data>
+    {% endif %}
     <span class="{{ textClasses | join: " " | escape }}">{{ text | escape }}</span>
   {%- endif -%}
   {%- for pair in additionalData -%}

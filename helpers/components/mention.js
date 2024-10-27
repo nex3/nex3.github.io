@@ -57,6 +57,15 @@ for (const person of [
       "https://64.media.tumblr.com/6ba2d5140aaa120f51da07e0a0f8c57b/b67a552f15ed86e0-35/s96x96u_c1/a2251fda11d2ff229c9bd891905aaa9356d96e10.jpg",
   },
   {
+    name: "Val Baca",
+    givenName: "Val",
+    familyName: "Bava",
+    nickname: "valbaca",
+    url: "https://valbaca.com/",
+    uid: "https://valbaca.com/",
+    photo: "https://valbaca.com/docs/assets/about/build-that-dad-crop.jpg",
+  },
+  {
     name: "Zandra",
     nickname: "ZandraVandra",
     url: "https://zandravandra.com/",
@@ -80,6 +89,22 @@ const jsToHCard = {
   uid: "u-uid",
   photo: "u-photo",
 };
+
+export function viaOptions(options) {
+  // TODO: This should probably include all additional metadata, maybe sharing
+  // logic with the plugin.
+  const person = knownMentions[options.via];
+  return {
+    url: options.viaUrl ?? person.url,
+    title: options.viaTitle,
+    date: options.viaDate,
+    author: {
+      name: options.via,
+      url: options.viaAuthorUrl ?? person.url,
+      photo: options.viaAuthorAvatar ?? person.photo,
+    }
+  };
+}
 
 export default createUnpairedComponentPlugin(
   "mention",
@@ -113,6 +138,8 @@ export default createUnpairedComponentPlugin(
         textClasses,
         urlClasses,
         additionalData,
+        link: options.link ?? true,
+        prefix: options.prefix
       })
     ).trim();
   },

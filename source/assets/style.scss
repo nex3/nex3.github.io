@@ -430,7 +430,7 @@ ul.attribution {
   }
 }
 
-figcaption.via {
+figcaption .h-cite {
   @extend %citation;
 }
 
@@ -727,6 +727,8 @@ $-embed-column-gap: 24px;
     width: $width;
     height: $width;
     border-radius: math.div($width, 2);
+    object-fit: cover;
+    object-position: top;
   }
 }
 
