@@ -1,5 +1,7 @@
 ---
 tags: [meta, code, mastodon]
+title: How to fail to read a Fediverse post
+updated: 2024-10-28T00:51:18Z
 ---
 
 So I'm trying to add support for automatically embedding Fediverse posts on this
