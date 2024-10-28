@@ -15,7 +15,7 @@ export const data = { permalink: false };
  */
 function linksFromPostBody(post, url) {
   const $ = cheerio.load(post.content, { baseUri: url }, false);
-  return [...$("a[href]:not(.h-entry *)")].map((a) => a.attr("href"));
+  return [...$("a[href]:not(.h-entry *)")].map($).map((a) => a.attr("href"));
 }
 
 /** Returns the links to h-entries embedded in {@link post}. */
