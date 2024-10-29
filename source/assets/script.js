@@ -61,3 +61,15 @@ for (const form of document.querySelectorAll(".wm-form")) {
     }, 2000);
   });
 }
+
+// If the browser has autoplay disabled for whatever reason, allow the user to
+// request play via the video controls.
+for (const video of document.querySelectorAll("video[autoplay]:not([controls])")) {
+  if (video.paused) {
+    const callback = () => {
+      video.play();
+      video.removeEventListener("click", callback);
+    };
+    video.addEventListener("click", callback);
+  }
+}
