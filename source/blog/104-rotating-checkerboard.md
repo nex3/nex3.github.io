@@ -18,6 +18,7 @@ repost: true
     src="https://files.mastodon.social/cache/media_attachments/files/113/327/911/999/921/971/original/a53e75b2c3d936a3.mp4"
     title="Abstract animation, perfect loop. Pink-and-red checkerboard in the background, rotating black-and-white disks forming a new checkerboard on top."
     autoplay
+    muted
     loop
     playsinline
   ></video>

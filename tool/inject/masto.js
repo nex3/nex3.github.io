@@ -79,7 +79,7 @@ export async function mastoTag(url) {
               }
             ${
               attachment.type === "gifv"
-                ? "autoplay loop playsinline"
+                ? "autoplay muted loop playsinline"
                 : "controls"
             }
           ></video>
