@@ -12,10 +12,10 @@
     </a>
   {%- else -%}
     {% if url %}
-    <data
-      class="{{ urlClasses | join: " " | escape }}"
-      href="{{ url | escape }}"
-    ></data>
+      <data
+        class="{{ urlClasses | join: " " | escape }}"
+        href="{{ url | escape }}"
+      ></data>
     {% endif %}
     <span class="{{ textClasses | join: " " | escape }}">{{ text | escape }}</span>
   {%- endif -%}

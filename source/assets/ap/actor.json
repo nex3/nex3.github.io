@@ -9,5 +9,5 @@
     "id": "https://nex-3.com/assets/ap/actor.json#main-key",
     "owner": "https://nex-3.com/assets/ap/actor.json",
     "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nAAAAB3NzaC1yc2EAAAADAQABAAABAQC4OPYMEHx9A4wZt83cwStG85nStSMKMvJ9V7tUPeXlzf/+HQlqueBQ/99XbA38L6Vruhet6LRtqAsGh73OgReEHfyJ2nUfBbq11NzyJga8nRpom/NE8hHSfZ/3MXcCjLk1MuIIjD9chuF5+APpk5gteT6jfXwnnP/YkleqOdbmF0AGUON6gWdPpdHjBKYEYSIGQ7B6SEwr2IK3C9mzVaclJTYq1mgsWydq3aiVlyrOd1l6tz5wCJ+qmCkInQHowu+KkGghY8Zd1HJ27kqBFA6V/3G16Mlk/0jJWU87owtHEOOYZ5PnEDUrSEG/rfYFOE2myWoR1kVMS2bk1FU1wy3n\n-----END PUBLIC KEY-----\n"
-  },
+  }
 }
