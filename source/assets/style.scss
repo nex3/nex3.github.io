@@ -506,6 +506,10 @@ figcaption,
   }
 }
 
+video {
+  @extend img;
+}
+
 data:not(:has(*)) {
   display: none;
 }

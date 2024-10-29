@@ -8,6 +8,7 @@ import { backloggdTag } from "./inject/backloggd.js";
 import { cohostTag } from "./inject/cohost.js";
 import { hEntryToTag } from "./inject/h-entry.js";
 import { letterboxdTag } from "./inject/letterboxd.js";
+import { mastoTag } from "./inject/masto.js";
 import { tumblrTag } from "./inject/tumblr.js";
 
 function indexAfterFrontMatter(string) {
@@ -42,6 +43,8 @@ async function tagForUrl(url, blog) {
 
     default:
       if (url.hostname.endsWith(".tumblr.com")) return await tumblrTag(url);
+      const mastoResult = await mastoTag(url);
+      if (mastoResult) return mastoResult;
 
       const response = await fetch(url);
       const html = await response.text();

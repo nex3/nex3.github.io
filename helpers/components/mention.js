@@ -3,6 +3,15 @@ import { createUnpairedComponentPlugin } from "./base.js";
 const knownMentions = {};
 for (const person of [
   {
+    givenName: "andi",
+    familyName: "mcc",
+    nickname: "mcc",
+    url: "https://runhello.com/",
+    uid: "https://runhello.com/",
+    photo:
+      "https://files.mastodon.social/accounts/avatars/000/011/307/original/dana-andi-portrait-square.jpg",
+  },
+  {
     givenName: "Blackle",
     familyName: "Mori",
     name: "Blackle Mori",
@@ -95,14 +104,14 @@ export function viaOptions(options) {
   // logic with the plugin.
   const person = knownMentions[options.via];
   return {
-    url: options.viaUrl ?? person.url,
+    url: options.viaUrl ?? person?.url,
     title: options.viaTitle,
     date: options.viaDate,
     author: {
       name: options.via,
-      url: options.viaAuthorUrl ?? person.url,
-      photo: options.viaAuthorAvatar ?? person.photo,
-    }
+      url: options.viaAuthorUrl ?? person?.url,
+      photo: options.viaAuthorAvatar ?? person?.photo,
+    },
   };
 }
 
@@ -139,7 +148,7 @@ export default createUnpairedComponentPlugin(
         urlClasses,
         additionalData,
         link: options.link ?? true,
-        prefix: options.prefix
+        prefix: options.prefix,
       })
     ).trim();
   },
