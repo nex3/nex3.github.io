@@ -6,8 +6,8 @@ for (const person of [
     givenName: "andi",
     familyName: "mcc",
     nickname: "mcc",
-    url: "https://runhello.com/",
-    uid: "https://runhello.com/",
+    url: "https://mastodon.social/@mcc",
+    uid: "https://mastodon.social/@mcc",
     photo:
       "https://files.mastodon.social/accounts/avatars/000/011/307/original/dana-andi-portrait-square.jpg",
   },
