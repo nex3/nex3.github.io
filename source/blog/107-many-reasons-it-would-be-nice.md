@@ -1,6 +1,7 @@
 
 {% genericPost "https://entangled.one/post/1730134647-many-reasons-it-would/",
-    author: "li (occuring)" %}
+    author: "li (occuring)",
+    reply: true %}
   <p>
     many reasons it would be nice to have comments here but one reason in
     particular right here right now is because i want to know: what is the
