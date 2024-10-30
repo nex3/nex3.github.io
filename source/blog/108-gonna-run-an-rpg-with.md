@@ -1,1 +1,1 @@
-gonna run an rpg with two guards one of whom always lies and one of whom always tells the truth. whatever the players ask one will say "sorry, I'll be right with you" and the other will say "fuck off I don't have to answer you"
+gonna run an rpg with two guards one of whom always lies and one of whom always tells the truth. whatever the players ask one will say "sorry, I'll be right with you" and the other will say "I don't have to answer your fuckin questions"
