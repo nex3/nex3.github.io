@@ -366,6 +366,10 @@ ul.attribution {
     flex: 1 calc(100% / var(--images-per-row, 3) - $gap);
     margin-inline: 0;
   }
+
+  figure img {
+    width: 100%;
+  }
 }
 
 .star-rating {
