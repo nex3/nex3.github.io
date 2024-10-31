@@ -3,6 +3,8 @@ tags: [art]
 commentary:
 - so glad to see Seaglass continuing to post
 - always a joy to see her work
+repost: true
+updated: 2024-10-31 10:42:00Z
 ---
 
 {% genericPost "https://www.tumblr.com/blurryseaglass/765594777848872960",
