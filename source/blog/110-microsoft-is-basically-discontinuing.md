@@ -22,6 +22,7 @@ tags: [windows]
     author: "Shel Raphen",
     authorUrl: "https://shelraphen.com/author/shel/",
     authorAvatar: "https://shelraphen.com/content/images/2024/09/IMG_1092-1.jpeg",
+    inReplyTo: 'https://azhdarchid.com/microsoft-is-basically-discontinuing-windows-what-will-happen-then/',
     quote: true,
     reply: true %}
   <p>We have really been struggling with this at work. The advantage of Windows over Macs used to be that it was highly customizable and excellent for Enterprise systems with a lot of users. It also used to have cheap and free licenses for "learning institutions" which is a category Microsoft has slowly been shrinking to include fewer and fewer institutions causing already under-funded public institutions to have to spend exorbitant amounts of money on windows licenses that they can't even use because the Recall feature is a violation of federal laws regarding computer security for certain public institutions. It's totally a disaster. We've had brand new windows 11 machines for our patrons to use just sitting in the back for nearly a year now because our IT department can't figure out how to essentially hack windows to comply with federal security regulations and every time they get it usable, a new update reverts everything because in Windows 11 you can't customize which updates you accept it's all just a bundle. Our IT guys are also just complaining that the ability to make the computers locked down enough to be for public use really does not exist in windows 11 in the way it used to in older versions of windows.</p>
