@@ -73,7 +73,6 @@ export async function tumblrTag(url) {
   args.author = author;
   args.authorUrl = blog.url;
   args.authorAvatar = getAvatar(blog);
-  console.log(post.timestamp);
   args.date = new Date(post.timestamp * 1000);
   args.inReplyUrl = post.parent_post_url;
   args.inReplyTitle = getTitle(post?.trail?.at(-1));
