@@ -18,13 +18,9 @@ commentary:
         src="https://64.media.tumblr.com/36f8fd7a80c47ff9dfaa353e1866a859/ba49949db9844a56-ec/s2048x3072/6a52c3e263e697e16799b5758413993741010f22.png"
         alt="Glitch art. A neon pink half circle is surrounded by abstract iridescent shapes. It resembles a setting sun over a turbulent and synthetic horizon. "
     /></a>
+    <figcaption>So instead I replaced my marrow with ten thousand jittering
+    bells (2023)</figcaption>
   </figure>
-  <p>
-    <em
-      >So instead I replaced my marrow with ten thousand jittering bells
-      (2023)</em
-    >
-  </p>
   <p>
     <a
       href="https://www.inprnt.com/gallery/seaglass/so-instead-i-replaced-my-marrow-with-ten-thousand-jittering-bells/"
