@@ -9,7 +9,7 @@ title: Links
 
 {% image "/assets/walkin-around-money.png",
     alt: 'Achewood "walkin\' around money" panel',
-    style: "max-width: min(40%, 231px); float: right" %}
+    containerStyle: "max-width: min(40%, 231px); float: right" %}
   A panel from [Achewood](https://achewood.com/2004/02/03/title.html).
 
   **Roast Beef:** Why did you send a check for $10,000 to "Oreos"\

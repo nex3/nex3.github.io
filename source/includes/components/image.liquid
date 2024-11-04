@@ -4,17 +4,15 @@
       image
       {% if class %}{{ class | escape }}{% endif %}
     "
-    {% if style %}
-      style="{{style | escape}}"
-    {% endif %}
+    {% if containerStyle %}style="{{containerStyle | escape}}"{% endif %}
   >
 {%- endif -%}
 
 <a href="{{ link | default: url | escape }}">
   <img
     src="{{ highRes | default: url | escape }}"
+    {% if style %}style="{{ style | escape }}"{% endif %}
     {% unless description or caption or title %}
-      {% if style %}style="{{ style | escape }}"{% endif %}
       {% if class %}class="{{ class | escape }}"{% endif %}
     {% endunless %}
     {% if alt %}
