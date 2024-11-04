@@ -75,7 +75,7 @@ export function simplifyEmbeds(post) {
   const embeds = $(".h-entry:not(.h-entry *)");
   const replaceDataWithEmbed =
     embeds.length === 1 &&
-    $.length === 1 &&
+    $.root().children().length === 1 &&
     $.root().children().first().hasClass("h-entry");
   const entries = items.filter(
     (item) => item.type.length === 1 && item.type[0] === "h-entry",

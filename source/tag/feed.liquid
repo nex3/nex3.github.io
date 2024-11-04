@@ -9,6 +9,11 @@ variables resolved.{%- endcomment -%}
 {%- assign tagslug = posts.tag | url_encode -%}
 {%- assign realPermalink = "/tag/" | append: tagslug | append: "/" -%}
 {%- assign feedPermalink = realPermalink | append: "feed.xml" -%}
+{%- assign orderedPosts = posts.posts | reverse -%}
 
-{% render 'feed', title: title, posts: posts.posts, permalink: feedPermalink,
-       pageUrl: realPermalink, site: site %}
+{% render 'feed',
+    title: title,
+    posts: orderedPosts,
+    permalink: feedPermalink,
+    pageUrl: realPermalink,
+    site: site %}

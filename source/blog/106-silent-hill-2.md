@@ -1,6 +1,7 @@
 ---
-tagged: [nat reviews, silent hill, silent hill 2]
+tags: [nat reviews, silent hill, silent hill 2]
 repost: true
+updated: 2024-11-04T08:31:56Z
 ---
 
 {% backloggd "https://www.backloggd.com/u/nex3/review/2055307/",
