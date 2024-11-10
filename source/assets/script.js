@@ -64,7 +64,9 @@ for (const form of document.querySelectorAll(".wm-form")) {
 
 // If the browser has autoplay disabled for whatever reason, allow the user to
 // request play via the video controls.
-for (const video of document.querySelectorAll("video[autoplay]:not([controls])")) {
+for (const video of document.querySelectorAll(
+  "video[autoplay]:not([controls])",
+)) {
   if (video.paused) {
     const callback = () => {
       video.play();

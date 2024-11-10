@@ -1,42 +1,39 @@
-{%- if description or caption or title or via -%}
-  <figure
-    class="
-      image
-      {% if class %}{{ class | escape }}{% endif %}
-    "
-    {% if containerStyle %}style="{{containerStyle | escape}}"{% endif %}
-  >
-{%- endif -%}
-
-<a href="{{ link | default: url | escape }}">
-  <img
-    src="{{ highRes | default: url | escape }}"
-    {% if style %}style="{{ style | escape }}"{% endif %}
-    {% unless description or caption or title %}
-      {% if class %}class="{{ class | escape }}"{% endif %}
-    {% endunless %}
-    {% if alt %}
-      alt="{{ alt | escape }}"
-    {% endif %}
-    {% if highRes %}
-      srcset="{{ url | escape }}, {{ highRes | escape }} 2x"
-    {% endif %}
-  >
-</a>
-
-{% if description or caption or title or via %}
-  <figcaption>
-    {% if title %}
-      <h6>{{ title | escape }}</h6>
-    {% endif %}
-    {% if description %}
-      <details>
-        <summary>detailed image description</summary>
-        {{ description | markdown }}
-      </details>
-    {% endif %}
-    {% if caption %}{{ caption | markdown }}{% endif %}
-    {% if via %}{% render 'via', via: via %}{% endif %}
-  </figcaption>
-  </figure>
-{% endif %}
+<figure
+  class="
+    image
+    {% if class %}{{ class | escape }}{% endif %}
+  "
+  {% if containerStyle %}
+    style="{{containerStyle | escape}}"
+  {% endif %}
+>
+  <a href="{{ link | default: url | escape }}">
+    <img
+      src="{{ highRes | default: url | escape }}"
+      {% if style %}
+        style="{{ style | escape }}"
+      {% endif %}
+      {% if alt %}
+        alt="{{ alt | escape }}"
+      {% endif %}
+      {% if highRes %}
+        srcset="{{ url | escape }}, {{ highRes | escape }} 2x"
+      {% endif %}
+    >
+  </a>
+  {%- if description or caption or title or via -%}
+    <figcaption>
+      {% if title %}
+        <h6>{{ title | escape }}</h6>
+      {% endif %}
+      {% if description %}
+        <details>
+          <summary>detailed image description</summary>
+          {{ description | markdown }}
+        </details>
+      {% endif %}
+      {% if caption %}{{ caption | markdown }}{% endif %}
+      {% if via %}{% render 'via', via: via %}{% endif %}
+    </figcaption>
+  {% endif %}
+</figure>
