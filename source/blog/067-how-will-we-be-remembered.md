@@ -1,5 +1,5 @@
 ---
-tags: [judaism, from the river to the sea]
+tags: [judaism, politics, from the river to the sea]
 ---
 
 {% genericPost 'https://shelraphen.com/how-will-we-be-remembered-the-jewish-people-after-the-war/',
