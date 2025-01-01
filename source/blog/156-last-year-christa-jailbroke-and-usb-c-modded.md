@@ -1,0 +1,13 @@
+Last year, {% mention "Christa" %} jailbroke and USB-C-modded my old 3DS XL and I told myself that once I got an acceptable way through my before-bed reading backlog[^1] I'd allow myself to add a new bedtime activity of playing through some of the old handheld games I'd been recommended. It took me most of the year but I did start earlier this week! Multiple friends have been hollering at me for years to play Shu Takumi's oeuvre, so I'm starting out with _Phoenix Wright: Ace Attorney_[^3] and doing about one in-game day per night. 
+
+[^1]: Mostly manga[^2], a handful of Western comics, and of course [_Zionist Relations With Nazi Germany_](/blog/ive-been-reading-zionist/).
+
+[^2]: I caught up with _She Loves to Cook + She Loves to Eat_ and _Asumi-Chan is Interested in Lesbian Brothels!_ and got six volumes deep into each of _Dungeon Meshi_ and _Hakukei & Mikochi_.
+
+[^3]: The DS version that was the first official English release, because I really like the old spritework and for its sake I'm willing to put up with the surprisingly shitty copy-editing.[^4]
+
+[^4]: It's always frustrating when a writing-forward indie game seems to consider an editing pass dispensable, but to see it happen from a studio as big as Capcom is a shock even in the 00s. Especially when you see _how much_ love and care they put into localizing the humor, and how excellent that turned out, seeing a bunch of basic grammar and vocabulary errors is very jarring. But I hear these are largely fixed in subsequent releases, so this is pain I have fully brought upon myself.
+
+And it's been really lovely! It fits snug and cozy into the same spot in my night as reading manga, while being a little more interactive and keeping my fingers busy. Visual novels and adventure games have always been kind of slow going for me—they compound my less-than-swift reading speed with the need to periodically wait for animations or even just click through text—but that friction is kind of a feature before bed because it encourages me to play just a bit and then try to sleep. I'm sure the backlight isn't great for sleepy hygiene but you can't win 'em all.
+
+The only real problem is that ~~the damn 3DS doesn't have a screenshot button~~ okay actually I hadn't even thought to search up "3ds homebrew screenshot". Turns out the 3DS homebrew launcher _does_ have a screenshot function... but it doesn't work when playing original DS games. But the original DS launcher has its own screenshot function! But it can only take screenshots of the bottom screen. So as I was saying: there's no screenshot button so I have to resort to photographing my screen. Oh well!
