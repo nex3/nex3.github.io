@@ -1,0 +1,7 @@
+<ol class="poster-list remove-from-simplified">
+  {% for poster in posters %}
+    <li>
+      <a href="{{ poster.url | escape }}"><img src="{{ poster.image | escape }}" alt="{{ poster.name | escape }}"></a>
+    </li>
+  {% endfor %}
+</ol>

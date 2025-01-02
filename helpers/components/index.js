@@ -5,6 +5,7 @@ import genericPostPlugin from "./generic-post.js";
 import imagePlugin from "./image.js";
 import letterboxdPlugin from "./letterboxd.js";
 import mentionPlugin from "./mention.js";
+import posterListPlugin from "./poster-list.js";
 
 export default function (eleventyConfig) {
   askPlugin(eleventyConfig);
@@ -14,4 +15,5 @@ export default function (eleventyConfig) {
   imagePlugin(eleventyConfig);
   letterboxdPlugin(eleventyConfig);
   mentionPlugin(eleventyConfig);
+  posterListPlugin(eleventyConfig);
 }

@@ -72,6 +72,10 @@ export function simplifyEmbeds(post) {
     baseUrl: new URL(url, "https://nex-3.com/").toString(),
   });
 
+  $(".remove-from-simplified").replaceWith(
+    "<p><em>(Removed from simplified view)</em></p>",
+  );
+
   const embeds = $(".h-entry:not(.h-entry *)");
   const replaceDataWithEmbed =
     embeds.length === 1 &&

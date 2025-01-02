@@ -12,6 +12,14 @@ for (const person of [
       "https://files.mastodon.social/accounts/avatars/000/011/307/original/dana-andi-portrait-square.jpg",
   },
   {
+    givenName: "Aura",
+    familyName: "Triolo",
+    url: "https://auratriolo.com/blog/",
+    uid: "https://auratriolo.com/",
+    photo:
+      "https://files.mastodon.social/accounts/avatars/000/012/428/original/d4e7fb33d531c663.jpg",
+  },
+  {
     givenName: "Blackle",
     familyName: "Mori",
     name: "Blackle Mori",
