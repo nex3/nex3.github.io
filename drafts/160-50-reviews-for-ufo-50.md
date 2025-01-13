@@ -249,7 +249,7 @@ explored for nooks and crannies I happened to have missed, and where other games
 with 100% cherry conditions give direction as to where to look you're absolutely
 on your own in *Golfaria*.
 
-<img src="/assets/160/19-the-great-bell-race.png" class="ufo-disk"> **_The Great
+<img src="/assets/160/19-the-big-bell-race.png" class="ufo-disk"> **_The Big
 Bell Race_:** I absolutely cannot hold myself back from calling this _Kampanella
 Kart_, and I won't apologize for it. I loved this game the instant I started
 playing it, even while I was feeling pretty ambivalent towards _Campanella_
@@ -345,7 +345,7 @@ embodying a premise that wouldn't exist for another couple decades. But even so,
 I'd rather be able to play it than not!
 
 <img src="/assets/160/26-hot-foot.png" class="ufo-disk"> **_Hot Foot_:** I found
-this much more comprehensible as a versus action game than _Bushido Ball_. It’s
+this much more comprehensible as a versus action game than _Bushido Ball_. It's
 still quite difficult, but as I played I grew to understand and appreciate the
 strategic depths—which players to pick, how to use the various supers, how to
 score multiple hits and avoid getting multihit myself. The co-op mode is a
@@ -387,7 +387,7 @@ _Metroid_ meets _Metal Storm_. While this definitely has some of the draggy
 feeling of the orthodox search action formula, where traversal can get to be a
 slog and finding the last few upgrades feels like looking for your lost keys,
 mixing and matching your build is very cool and the level design providing
-different challenges depending on exactly how you’ve set yourself up is
+different challenges depending on exactly how you've set yourself up is
 extremely clever.
 
 <img src="/assets/160/30-rock-on-island.png" class="ufo-disk"> **_Rock On!
@@ -484,7 +484,7 @@ salvageable. The core conceit of flying around with campanella physics and
 getting out to explore the world is _so good_, the exploration is really fun at
 first, the upgrades and level designs are compelling... this has everything it
 needs to be a great successor to a great game. Just tweak the balance, provide
-more ways to refuel, and you've got something delightful instead of a miserable
+more ways to refuel, and you've got something delightful instead of a horrid
 game that I only cherried because I had a run that happened to get lucky.
 
 <img src="/assets/160/36-hyper-contender.png" class="ufo-disk"> **_Hyper
@@ -550,5 +550,219 @@ different. You don't know what you're getting when you first choose them, so a
 lot of the game is learning what they can do and how to best get them to work
 together, just as though you were building a real team.
 
+<img src="/assets/160/41-diskonia.png" class="ufo-disk"> **_Lords of
+Diskonia_:** Carom tactics is such a smart idea, and this does a lot with the
+unit design to make it feel fresh and interesting all the way through. The enemy
+AI definitely feels a bit wonky—{% mention 'Zandra' %} described it as "like
+you're playing basketball against Michael Jordan but he has scorpions in his
+shoes, so sometimes he's pulling off incredible feats that you could never hope
+to match and sometimes he's just screaming and thrashing around randomly", which
+will live in my brain forever now. I suspect it's a way to balance for the fact
+that a computer is *capable* of lining up arbitrarily good ricochets so it has
+to make bad decisions to make the game winnable, but I did find it maybe a bit
+too easy in the end—especially considering how much of an edge you can get on
+top of the tactics by just being better at navigating the overworld.
 
-<div style="clear: left"></div>
+<img src="/assets/160/42-night-manor.png" class="ufo-disk"> **_Night Manor_:**
+The visual design here hits the part of my brain that imprinted on early
+Humongous Entertainment games just right, while the horror story brings joy to
+my more adult sensibilities. This is cool, it's creepy, and it tells its
+story—both the narrative of what happened and the underlying themes of the rot
+that already existed within this particular house—very effectively. As is
+inevitable with a point-and-click, there are moments where things that would
+work in reality don't work in the game, but overall this is one of the better
+short-form horror games I've played, and I've played more than a handful.
+
+<img src="/assets/160/43-elfazars-hat.png" class="ufo-disk"> **_Elfazar's
+Hat_:** While this may not be as meaty as the other shooters in the collection,
+I found it to be a lot of fun. It's not too tough, but the combination of cherry
+condition and bonus minigame gave me a nice bit of room to optimize without ever
+wearing out its welcome.
+
+I like the design of the upgrades here a lot, especially because the _way_
+they're useful varies so much from upgrade to upgrade: shot is the best but you
+only ever want one and a partial is nearly useless, option is decent partial and
+pretty good full but never crucial, health is good in partial repeatedly but
+only if you've lost life, shield is good repeatedly but only at full, and bomb
+is never good. It makes figuring out which cards you want when and what you
+should hold out for a fun little minigame even when you're doing the early
+levels that you have down pat.
+
+<img src="/assets/160/44-pilot-quest.png" class="ufo-disk"> **_Pilot Quest_:**
+As an idle game, this feels oddly curtailed, with its resource generation curve
+capping out at relatively few upgrades and really only requiring a handful of
+waiting periods—odd in a collection where there are so many other games to play
+while waiting. The exploration segments are a bit more fun, with a fair amount
+of reward to learning the lay of the land and where to go to maximize your time
+early on or to maximize your rewards later. But on the whole, this was never
+really *that* fun to play moment to moment.
+
+<img src="/assets/160/45-mini-and-max.png" class="ufo-disk"> **_Mini & Max_:** I
+played this whole game side by side with {% mention 'Liz' %}, with her taking
+notes while I ran the controls, and we had a blast. The constantly increasing
+scope of the game is so cool, and it does a fantastic job of filling out the
+space with fun stuff to do and interesting people to talk to. Like _Grimstone_,
+much of what makes this game excellent is just the writing and world design, but
+it has the added benefit of the exploration of finding that writing being novel
+and exciting in and of itself. And to be completely honest: I always have a soft
+spot for games that get me to take notes.
+
+<img src="/assets/160/46-combatants.png" class="ufo-disk"> **_Combatants_:**
+This game is neck and neck with *Campanella 2* for my least favorite game in the
+collection. It's miserable to a similar degree, but for very different reasons.
+It's a real-time strategy game where your units are all blithering idiots who
+rarely do what you say and never what you want, playing against an enemy with
+superior numbers *and* superior strength. There are ways to win, of course, but
+they all rely on some combination of exploiting holes in the AI (both your
+enemies' and your allies') and sheer luck.
+
+On top of that, the controls are absolutely horrendous, somehow even worse than
+you'd expect from an RTS on a two-button system. To command your ants, you have
+to open a sub-menu which does not pause the game and navigate it with the d-pad.
+Because time is always in short supply, you have to do this at speed, often just
+before moving your avatar elsewhere. If you press the d-pad to move even
+slightly before releasing the menu button, you'll send a different command than
+you expected and likely ruin your whole run.
+
+Unlike *Campanella 2*, this game is totally unsalvageable. There's nothing good
+to be had here. That said, at least it's mercifully short and not too hard to
+cherry once you know the right AI exploits. I'm genuinely not sure how these two
+rancid games made their way into an otherwise tremendouso collection.
+
+<img src="/assets/160/47-quibble-racing.png" class="ufo-disk"> **_Quibble
+Racing_:** A vapid game that's all about playing the random number generator
+slot machine and seeing what happens. There are a few ways to put a finger on
+the scale, and with enough care they could have made this into something
+genuinely strategic around accumulating and using knowledge. But they're not
+consistent enough to make doing well better than a slightly-weighted die roll.
+
+But for all its lack of substance, this is still fun. The writing and visual
+design when you interact with various merchants and other characters are
+entirely charming, and despite being random you can pretty readily beat the game
+before it wears out its welcome. It's cotton candy: very sweet, mostly air, but
+still a fun treat every now and again.
+
+<img src="/assets/160/48-seaside-drive.png" class="ufo-disk"> **_Seaside
+Drive_:** The last real banger UFOSoft ever made. This is extremely stylish
+*and* extremely smart. Combining the drift-to-charge mechanic with the idea that
+your direction of movement controls your gun gives this a tremendous amount of
+mechanical depth before it even has any level design, and then the levels really
+optimize for creation tension and release in how you position and move your car.
+This isn't terribly long nor is it terribly difficult, but it's screamingly fun
+and it's one of the big reasons I'll consider booting *UFO 50* back up for a few
+minutes long after I officially consider it finished.
+
+<img src="/assets/160/49-campanella-3.png" class="ufo-disk"> **_Campanella 3_:**
+Playing all the games up to this point really gives context for how cool the
+2D-3D effect this is going for comes off in a way that's hard to get for people
+like me who are used to modern graphics cards. The final full shooter in the
+collection is definitely not my favorite, but it's pretty entertaining and
+*very* novel. The biggest issue is that it indexes extremely heavily on
+memorizing the enemy patters for each wave, so that in the end the first few
+stages are relying more on memory than actual execution.
+
+On average, the *Campanella* series was average.
+
+<img src="/assets/160/50-cyber-owls.png" class="ufo-disk"> **_Cyber Owls_:** A
+suitably weird game to end the collection on, given the in-universe implication
+that UFOSoft bet big on it and lost their shirts. This game has high highs and
+low lows. The writing is great, the visual design more lush than any other game
+in the collection, and the fictional media tie-in is actually a pitch-perfect
+parody of 80s/90s badass anthropomorphic animal cartoons. The game's mechanics
+are all over the place—the conceit is that each of the four members of the avian
+secret agent squad star in their own genre of game, as well as a fifth tactics
+game to rescue captured teammates—but most of them are a lot of fun. The tactics
+game is easier with some characters than others but a pretty decent little
+design, the rail shooter has a surprising amount of depth to it, and I had fun
+learning the waves of the bike shooter. Brawlers, as mentioned, are not my thing
+but I didn't find this one particularly offensive.
+
+And then there's the stealth game. The stealth game is *bad*. I was so excited
+when I booted it up and saw a *Metal Gear* riff, but it's a nightmare to
+actually play. The logic by which enemies see or don't see you is totally
+incomprehensible—I had three people in group chat all tossing out theories as to
+how it worked, only to have each of the theories disproven by a clear
+counterexample that worked the opposite way. In the end we could only shrug our
+shoulders and say "I guess sometimes they just notice you and other times they
+don't". The only saving grace is that the guards are pretty bad at actually
+shooting you when you're seen, but that's mitigated by the fact that the spy
+only has two hit points.
+
+The overall arc of the game is to play each of the four segments, accumulating
+as many points as possible in each one to get extra lives which you can then
+bring with you into the final segment. There's no tactics minigame to rescue
+agents in this final segment, so those lives are important, especially since
+spending them is the brawler's main damage mitigation strategy in the final boss
+fight. So imagine my shock when I learned that the cherry condition for this
+game is to have *no one die, ever*. When going for cherry, points don't matter,
+extra lives don't matter, the only thing that matters is playing as cautiously
+as possible at every turn. I just don't get it, and learning that was a bit of a
+sad ending to an otherwise wonderful experience playing *UFO 50*.
+
+<img src="/assets/160/51-miasma-tower.png" class="ufo-disk"> **_Miasma Tower_:**
+A really lovely and crushingly sad little coda to the rest of the game that
+gives context to the dribs and drabs of lore (and offhand lines in games you
+don't even realize are lore) throughout the rest of the collection. My friends
+who have worked in the games industry were hit particularly hard by this, but I
+think we can all see in our own lives the echoes of the way capitalism
+commodifies, infests, and ultimately hollows out art. The collection takes on
+new emotional weight once you know this context, and it encourages the player to
+start thinking of the games in terms of the people who created them—first the
+fictional people who you've come to know through this experience, and then the
+real people who actually exist. This is a wonderful habit to instill in those
+who care about the medium.
+
+## The Final Ranking
+
+<div class="image-gallery ufo-image-gallery" style="--images-per-row: 10">
+  <img src="/assets/160/28-rail-heist.png" alt="Rail Heist" title="Rail Heist">
+  <img src="/assets/160/25-party-house.png" alt="Party House" title="Party House">
+  <img src="/assets/160/06-mortol.png" alt="Mortol" title="Mortol">
+  <img src="/assets/160/45-mini-and-max.png" alt="Mini &amp; Max" title="Mini &amp; Max">
+  <img src="/assets/160/32-mortol-2.png" alt="Mortol II" title="Mortol II">
+  <img src="/assets/160/12-avianos.png" alt="Avianos" title="Avianos">
+  <img src="/assets/160/48-seaside-drive.png" alt="Seaside Drive" title="Seaside Drive">
+  <img src="/assets/160/31-pingolf.png" alt="Pingolf" title="Pingolf">
+  <img src="/assets/160/17-campanella.png" alt="Campanella" title="Campanella">
+  <img src="/assets/160/03-ninpek.png" alt="Ninpek" title="Ninpek">
+  <img src="/assets/160/42-night-manor.png" alt="Night Manor" title="Night Manor">
+  <img src="/assets/160/40-grimstone.png" alt="Grimstone" title="Grimstone">
+  <img src="/assets/160/23-onion-delivery.png" alt="Onion Delivery" title="Onion Delivery">
+  <img src="/assets/160/20-warp-tank.png" alt="Warptank" title="Warptank">
+  <img src="/assets/160/41-diskonia.png" alt="Lords of Diskonia" title="Lords of Diskonia">
+  <img src="/assets/160/24-caramel-caramel.png" alt="Caramel Caramel" title="Caramel Caramel">
+  <img src="/assets/160/05-magic-garden.png" alt="Magic Garden" title="Magic Garden">
+  <img src="/assets/160/13-mooncat.png" alt="Mooncat" title="Mooncat">
+  <img src="/assets/160/01-barbuta.png" alt="Barbuta" title="Barbuta">
+  <img src="/assets/160/02-bug-hunter.png" alt="Bug Hunter" title="Bug Hunter">
+  <img src="/assets/160/18-golfaria.png" alt="Golfaria" title="Golfaria">
+  <img src="/assets/160/43-elfazars-hat.png" alt="Elfazar's Hat" title="Elfazar's Hat">
+  <img src="/assets/160/30-rock-on-island.png" alt="Rock On! Island" title="Rock On! Island">
+  <img src="/assets/160/37-valbrace.png" alt="Valbrace" title="Valbrace">
+  <img src="/assets/160/07-velgress.png" alt="Velgress" title="Velgress">
+  <img src="/assets/160/10-devilition.png" alt="Devilition" title="Devilition">
+  <img src="/assets/160/38-rakshasa.png" alt="Rakshasa" title="Rakshasa">
+  <img src="/assets/160/16-camouflage.png" alt="Camouflage" title="Camouflage">
+  <img src="/assets/160/19-the-big-bell-race.png" alt="The Big Bell Race" title="The Big Bell Race">
+  <img src="/assets/160/29-vainger.png" alt="Vainger" title="Vainger">
+  <img src="/assets/160/49-campanella-3.png" alt="Campanella 3" title="Campanella 3">
+  <img src="/assets/160/39-star-waspir.png" alt="Star Waspir" title="Star Waspir">
+  <img src="/assets/160/50-cyber-owls.png" alt="Cyber Owls" title="Cyber Owls">
+  <img src="/assets/160/26-hot-foot.png" alt="Hot Foot" title="Hot Foot">
+  <img src="/assets/160/15-block-koala.png" alt="Block Koala" title="Block Koala">
+  <img src="/assets/160/22-porgy.png" alt="Porgy" title="Porgy">
+  <img src="/assets/160/09-attactics.png" alt="Attactics" title="Attactics">
+  <img src="/assets/160/44-pilot-quest.png" alt="Pilot Quest" title="Pilot Quest">
+  <img src="/assets/160/11-kick-club.png" alt="Kick Club" title="Kick Club">
+  <img src="/assets/160/21-waldorf.png" alt="Waldorf's Journey" title="Waldorf's Journey">
+  <img src="/assets/160/36-hyper-contender.png" alt="Hyper Contender" title="Hyper Contender">
+  <img src="/assets/160/27-divers.png" alt="Divers" title="Divers">
+  <img src="/assets/160/34-overbold.png" alt="Overbold" title="Overbold">
+  <img src="/assets/160/47-quibble-racing.png" alt="Quibble Racing" title="Quibble Racing">
+  <img src="/assets/160/14-bushido-ball.png" alt="Bushido Ball" title="Bushido Ball">
+  <img src="/assets/160/08-zoldath.png" alt="Planet Zoldath" title="Planet Zoldath">
+  <img src="/assets/160/04-paint-chase.png" alt="Paint Chase" title="Paint Chase">
+  <img src="/assets/160/33-fist-hell.png" alt="Fist Hell" title="Fist Hell">
+  <img src="/assets/160/46-combatants.png" alt="Combatants" title="Combatants">
+  <img src="/assets/160/35-campanella-2.png" alt="Campanella 2" title="Campanella 2">
+</div>
