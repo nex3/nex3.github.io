@@ -858,6 +858,13 @@ small {
   }
 }
 
+.blog-prose .ufo-disk {
+  float: left;
+  margin-right: calc(1em - 2px * (76/32));
+  image-rendering: pixelated;
+  width: 76px;
+}
+
 // Web Mentions
 
 .web-mentions {

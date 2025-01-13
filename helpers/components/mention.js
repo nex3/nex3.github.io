@@ -29,6 +29,12 @@ for (const person of [
       "https://lethargic.talkative.fish/fileserver/01M8H3ETEZ71CY4QX9DW4TB7JM/attachment/original/01HR0N5F2THMKKF4MXF3M2PBXW.png",
   },
   {
+    givenName: "Cera",
+    familyName: "Neon",
+    url: "https://theonly.ciswoman.online/",
+    uid: "https://theonly.ciswoman.online/",
+  },
+  {
     name: "Christa",
     nickname: "OhPoorPup",
     url: "https://soundretro.co/",
@@ -41,6 +47,12 @@ for (const person of [
     nickname: "eramdam",
     url: "https://damien.zone/",
     uid: "https://damien.zone/",
+  },
+  {
+    givenName: "Eden",
+    familyName: "Porter",
+    url: "https://eden.care/",
+    uid: "https://eden.care/",
   },
   {
     name: "Liz",
