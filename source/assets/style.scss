@@ -363,7 +363,7 @@ ul.attribution {
   gap: $gap;
 
   > * {
-    flex: 1 calc(100% / var(--images-per-row, 3) - $gap);
+    flex: 1 minmax(calc(100% / var(--images-per-row, 3) - $gap), max-width);
     margin-inline: 0;
   }
 
