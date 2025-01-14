@@ -421,11 +421,11 @@ ul.attribution {
     grid-column: 1;
 
     @function scale-lightness($base-color, $contrast, $factor) {
-      $factor: $factor * $contrast / 100%;
+      $factor: calc($factor * $contrast / 100%);
       @return color.to-gamut(
         color.scale($base-color, $lightness: $factor),
-        $method: local-minde,
-      )
+        $method: local-minde
+      );
     }
 
     @mixin shiny-gradient($base-color, $contrast: 100%) {
@@ -439,7 +439,7 @@ ul.attribution {
         scale-lightness($base-color, $contrast, 30%) 50%,
         $base-color 65%,
         scale-lightness($base-color, $contrast, 70%) 75%,
-        scale-lightness($base-color, $contrast, -40%) 90%,
+        scale-lightness($base-color, $contrast, -40%) 90%
       );
       -webkit-background-clip: text;
       background-clip: text;
@@ -958,7 +958,7 @@ small {
 
 .blog-prose .ufo-disk {
   float: left;
-  margin-right: calc(1em - 2px * (76/32));
+  margin-right: calc(1em - 2px * (76 / 32));
   image-rendering: pixelated;
   width: 76px;
 }

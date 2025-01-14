@@ -854,4 +854,4 @@ who care about the medium.
     <img src="/assets/160/46-combatants.png" alt="Combatants" title="Combatants">
     <img src="/assets/160/35-campanella-2.png" alt="Campanella 2" title="Campanella 2">
   </dd>
-</div>
+</dl>
