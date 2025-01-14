@@ -2,6 +2,7 @@
 title: 50 Reviews for UFO 50
 tags: [ufo 50]
 class: page-ufo
+updated: 2025-01-14T04:05:53Z
 ---
 
 See also my [review of the collection itself] on Backloggd.
@@ -78,7 +79,7 @@ dying. The two characters are very obviously in love and I will fight you if you
 try to tell me otherwise.
 
 It's interesting to me that, in a collection with plenty of "arcadey" games,
-this is one of the *most* aracdey: the play is all constrained to one screen
+this is one of the *most* arcadey: the play is all constrained to one screen
 with no change in setting or mechanics, and scoring all about optimizing the
 play of a *very* simple system. I'm a little surprised they didn't go back to
 this well more often, especially considering how much of a delight this dip into
@@ -101,9 +102,9 @@ total joy. This very much feels like it expects to be played like a mobile game
 from the golden age, slowly pushing your best height higher in short-term play
 sessions in between other activities—a pattern the shared _UFO 50_ launcher
 encourages and rewards. Dying at the very beginning of a new level is undeniably
-demoralizing, but runs are quick enough that it's hard to take too much
-umbridge. It's hard to believe that the designer of *Downwell* contributed a
-game and it _wasn't_ this one.
+demoralizing, but runs are quick enough that it's hard to take too much umbrage.
+It's hard to believe that the designer of *Downwell* contributed a game and it
+_wasn't_ this one.
 
 The manual scroll in _Velgress_ is a very clever companion to the dissolving
 tiles. You can't have it be a standard autoscroller because it would suck *so*
