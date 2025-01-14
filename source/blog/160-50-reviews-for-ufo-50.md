@@ -4,6 +4,10 @@ tags: [ufo 50]
 class: page-ufo
 ---
 
+See also my [review of the collection itself] on Backloggd.
+
+[review of the collection itself]: https://www.backloggd.com/u/nex3/review/2313903/
+
 <img src="/assets/160/01-barbuta.png" class="ufo-disk"> **_Barbuta_:** An
 appropriate introduction to the collection in more ways than one. Much hay has
 been made in my earshot of the "[kaizo]-like" trap in room one, and *to a
@@ -307,7 +311,7 @@ But I kept playing, and {% mention 'Eden' %} kept guiding and encouraging me,
 and little by little I started getting an intuition for how to move my little
 car and a sense of how the big city was laid out. I could pretty consistently
 make it from delivery to delivery with relatively few deaths, and eventually I
-managed to last a whole week.
+managed to last a whole week. 
 
 My cherry run was where I really fell in love with the game. After pointedly
 never looking at a map all the way to gold, once I decided to go for cherry I
@@ -315,6 +319,13 @@ brought up a conjoined map to which Eden had added a bunch of useful additional
 information. After each delivery, I'd plot my exact route to the next stop,
 nabbing as many time extensions as possible along the way. This was a blast, and
 I quickly had the cherry as well as a lingering desire to play even more.
+
+Challenging the player to understand and engage with the city map, laid out
+organically like a real city with weird little cul-de-sacs and cross streets, is
+so smart. I don't think it's original to this game, but encapsulating it so
+neatly and positioning it as the "next level" challenge after getting a handle
+on the controls is still very smart. It certainly helps that the place names and
+the visual design of the city are so intensely charming.
 
 <img src="/assets/160/24-caramel-caramel.png" class="ufo-disk"> **_Caramel
 Caramel_:** I got to this game at just about the same time I cherried _Ninpek_,
@@ -714,7 +725,7 @@ who care about the medium.
 
 ## The Final Ranking
 
-<div class="image-gallery ufo-image-gallery" style="--images-per-row: 10">
+<div class="image-gallery pixelated-images" style="--images-per-row: 10">
   <img src="/assets/160/28-rail-heist.png" alt="Rail Heist" title="Rail Heist">
   <img src="/assets/160/25-party-house.png" alt="Party House" title="Party House">
   <img src="/assets/160/06-mortol.png" alt="Mortol" title="Mortol">
@@ -763,6 +774,72 @@ who care about the medium.
   <img src="/assets/160/08-zoldath.png" alt="Planet Zoldath" title="Planet Zoldath">
   <img src="/assets/160/04-paint-chase.png" alt="Paint Chase" title="Paint Chase">
   <img src="/assets/160/33-fist-hell.png" alt="Fist Hell" title="Fist Hell">
+  <img src="/assets/160/46-combatants.png" alt="Combatants" title="Combatants">
+  <img src="/assets/160/35-campanella-2.png" alt="Campanella 2" title="Campanella 2">
+</div>
+
+## Tier List
+
+<div class="tier-list pixelated-images">
+  <div>S</div>
+  <img src="/assets/160/28-rail-heist.png" alt="Rail Heist" title="Rail Heist">
+  <img src="/assets/160/25-party-house.png" alt="Party House" title="Party House">
+  <img src="/assets/160/06-mortol.png" alt="Mortol" title="Mortol">
+  <img src="/assets/160/45-mini-and-max.png" alt="Mini &amp; Max" title="Mini &amp; Max">
+  <img src="/assets/160/32-mortol-2.png" alt="Mortol II" title="Mortol II">
+  <img src="/assets/160/12-avianos.png" alt="Avianos" title="Avianos">
+  <img src="/assets/160/48-seaside-drive.png" alt="Seaside Drive" title="Seaside Drive">
+  <img src="/assets/160/31-pingolf.png" alt="Pingolf" title="Pingolf">
+  <img src="/assets/160/17-campanella.png" alt="Campanella" title="Campanella">
+  <img src="/assets/160/03-ninpek.png" alt="Ninpek" title="Ninpek">
+  <img src="/assets/160/42-night-manor.png" alt="Night Manor" title="Night Manor">
+  <img src="/assets/160/40-grimstone.png" alt="Grimstone" title="Grimstone">
+  <img src="/assets/160/23-onion-delivery.png" alt="Onion Delivery" title="Onion Delivery">
+  
+  <div>A</div>
+  <img src="/assets/160/20-warp-tank.png" alt="Warptank" title="Warptank">
+  <img src="/assets/160/41-diskonia.png" alt="Lords of Diskonia" title="Lords of Diskonia">
+  <img src="/assets/160/24-caramel-caramel.png" alt="Caramel Caramel" title="Caramel Caramel">
+  <img src="/assets/160/05-magic-garden.png" alt="Magic Garden" title="Magic Garden">
+  <img src="/assets/160/13-mooncat.png" alt="Mooncat" title="Mooncat">
+  <img src="/assets/160/01-barbuta.png" alt="Barbuta" title="Barbuta">
+  <img src="/assets/160/02-bug-hunter.png" alt="Bug Hunter" title="Bug Hunter">
+  <img src="/assets/160/18-golfaria.png" alt="Golfaria" title="Golfaria">
+  <img src="/assets/160/43-elfazars-hat.png" alt="Elfazar's Hat" title="Elfazar's Hat">
+  <img src="/assets/160/30-rock-on-island.png" alt="Rock On! Island" title="Rock On! Island">
+  
+  <div>B</div>
+  <img src="/assets/160/37-valbrace.png" alt="Valbrace" title="Valbrace">
+  <img src="/assets/160/07-velgress.png" alt="Velgress" title="Velgress">
+  <img src="/assets/160/10-devilition.png" alt="Devilition" title="Devilition">
+  <img src="/assets/160/38-rakshasa.png" alt="Rakshasa" title="Rakshasa">
+  <img src="/assets/160/16-camouflage.png" alt="Camouflage" title="Camouflage">
+  <img src="/assets/160/19-the-big-bell-race.png" alt="The Big Bell Race" title="The Big Bell Race">
+  <img src="/assets/160/29-vainger.png" alt="Vainger" title="Vainger">
+  <img src="/assets/160/49-campanella-3.png" alt="Campanella 3" title="Campanella 3">
+  <img src="/assets/160/39-star-waspir.png" alt="Star Waspir" title="Star Waspir">
+  <img src="/assets/160/50-cyber-owls.png" alt="Cyber Owls" title="Cyber Owls">
+  <img src="/assets/160/26-hot-foot.png" alt="Hot Foot" title="Hot Foot">
+  <img src="/assets/160/15-block-koala.png" alt="Block Koala" title="Block Koala">
+  
+  <div>C</div>
+  <img src="/assets/160/22-porgy.png" alt="Porgy" title="Porgy">
+  <img src="/assets/160/09-attactics.png" alt="Attactics" title="Attactics">
+  <img src="/assets/160/44-pilot-quest.png" alt="Pilot Quest" title="Pilot Quest">
+  <img src="/assets/160/11-kick-club.png" alt="Kick Club" title="Kick Club">
+  <img src="/assets/160/21-waldorf.png" alt="Waldorf's Journey" title="Waldorf's Journey">
+  <img src="/assets/160/36-hyper-contender.png" alt="Hyper Contender" title="Hyper Contender">
+  <img src="/assets/160/27-divers.png" alt="Divers" title="Divers">
+  <img src="/assets/160/34-overbold.png" alt="Overbold" title="Overbold">
+  <img src="/assets/160/47-quibble-racing.png" alt="Quibble Racing" title="Quibble Racing">
+  <img src="/assets/160/14-bushido-ball.png" alt="Bushido Ball" title="Bushido Ball">
+  <img src="/assets/160/08-zoldath.png" alt="Planet Zoldath" title="Planet Zoldath">
+  
+  <div>D</div>
+  <img src="/assets/160/04-paint-chase.png" alt="Paint Chase" title="Paint Chase">
+  <img src="/assets/160/33-fist-hell.png" alt="Fist Hell" title="Fist Hell">
+  
+  <div>F</div>
   <img src="/assets/160/46-combatants.png" alt="Combatants" title="Combatants">
   <img src="/assets/160/35-campanella-2.png" alt="Campanella 2" title="Campanella 2">
 </div>

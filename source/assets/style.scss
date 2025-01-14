@@ -372,6 +372,62 @@ ul.attribution {
   }
 }
 
+.tier-list {
+  display: grid;
+  grid-template-columns: minmax(20px, min-content) repeat(auto-fit, minmax(40px, 1fr));
+  column-gap: 8px;
+  row-gap: 6px;
+
+  div {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 42px;
+    padding-right: 5px;
+    height: min-content;
+    align-self: center;
+    grid-column: 1;
+
+    @function scale-lightness($base-color, $contrast, $factor) {
+      $factor: $factor * $contrast / 100%;
+      @return color.to-gamut(
+        color.scale($base-color, $lightness: $factor),
+        $method: local-minde,
+      )
+    }
+
+    @mixin shiny-gradient($base-color, $contrast: 100%) {
+      -webkit-text-stroke: 1px scale-lightness($base-color, $contrast, -70%);
+      -webkit-text-fill-color: transparent;
+      background: linear-gradient(
+        -52deg,
+        scale-lightness($base-color, $contrast, -40%) 10%,
+        $base-color 20%,
+        scale-lightness($base-color, $contrast, 70%) 40%,
+        scale-lightness($base-color, $contrast, 30%) 50%,
+        $base-color 65%,
+        scale-lightness($base-color, $contrast, 70%) 75%,
+        scale-lightness($base-color, $contrast, -40%) 90%,
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    &:nth-of-type(1) {
+      @include shiny-gradient(#ccc);
+    }
+
+    &:nth-of-type(2) {
+      @include shiny-gradient(red);
+    }
+  }
+
+  img {
+    align-items: center;
+    margin: 0;
+    width: 100%;
+  }
+}
+
 .star-rating {
   color: #00000000;
   position: relative;
@@ -865,7 +921,7 @@ small {
   width: 76px;
 }
 
-.ufo-image-gallery img {
+.pixelated-images img {
   image-rendering: pixelated;
 }
 
