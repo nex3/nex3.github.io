@@ -359,31 +359,64 @@ ul.attribution {
   flex-wrap: wrap;
   align-items: center;
 
-  $gap: 16px;
+  $gap: var(--gap, 16px);
   gap: $gap;
 
   > * {
-    flex: 1 minmax(calc(100% / var(--images-per-row, 3) - $gap), max-width);
+    flex: 1 calc(100% / var(--images-per-row, 3) - $gap);
     margin-inline: 0;
   }
 
-  figure img {
+  img {
+    width: 100%;
+  }
+}
+
+.image-grid {
+  display: grid;
+  justify-content: space-between;
+
+  $gap: var(--gap, 16px);
+  gap: $gap;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      var(--min-content, min-content),
+      calc(100% / var(--images-per-row, 3) - $gap)
+    )
+  );
+  align-items: center;
+
+  > * {
+    margin-inline: 0;
+  }
+
+  img {
     width: 100%;
   }
 }
 
 .tier-list {
   display: grid;
-  grid-template-columns: minmax(20px, min-content) repeat(auto-fit, minmax(40px, 1fr));
-  column-gap: 8px;
-  row-gap: 6px;
 
-  div {
+  $gap: 8px;
+  gap: $gap;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      var(--min-content, 50px),
+      calc(100% / (var(--items-per-row, 10) + 1) - $gap)
+    )
+  );
+
+  dt {
     font-size: 50px;
     font-weight: bold;
     line-height: 42px;
-    padding-right: 5px;
     height: min-content;
+    text-align: center;
     align-self: center;
     grid-column: 1;
 
@@ -419,6 +452,15 @@ ul.attribution {
     &:nth-of-type(2) {
       @include shiny-gradient(red);
     }
+  }
+
+  dd {
+    display: grid;
+    grid-column: 2 / -1;
+    grid-template-columns: subgrid;
+    row-gap: $gap;
+    align-items: center;
+    margin: 0;
   }
 
   img {
