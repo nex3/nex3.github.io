@@ -170,7 +170,7 @@ potential of the computer to do things like "automated combat" and "hidden board
 states" that just aren't possible face to face.
 
 <img src="/assets/160/13-mooncat.png" class="ufo-disk"> **_Mooncat_:** I adore
-the way the controls page completely buries the lead for how bizarre this game
+the way the controls page completely buries the lede for how bizarre this game
 is, but even more than that I adore how good this feels once the controls click
 in your brain. It's insane to describe this as "the sequel to _Barbuta_" (I
 genuinely wonder if Thorson Petter's characterization comes from "what sort of
@@ -239,7 +239,7 @@ thoughtful challenge design is a big part of why I ended up with so many
 cherries to my name.
 
 <img src="/assets/160/18-golfaria.png" class="ufo-disk"> **_Golfaria_:** While I
-think *Gold Story* is a slightly better execution on the concept of a "golf RPG"
+think *Golf Story* is a slightly better execution on the concept of a "golf RPG"
 than this, it's a concept that can comfortably include multiple entries. Some of
 my friends found the early game frustrating, but I liked the challenge of
 getting more freedom to roam as I found shot extensions and routed in birdies
@@ -339,7 +339,7 @@ I think this is probably the game with the biggest ratio of "time to cherry"
 versus "length of run" for me in the entire collection. I wasn't sure I was even
 going to be able to get a _gold_ until I was already on the final row of games,
 and I'm still a little bit flabbergasted that I managed a cherry. But when I got
-hit, it sure did feel good.
+it, it sure did feel good.
 
 <img src="/assets/160/25-party-house.png" class="ufo-disk"> **_Party House_:**
 Absolute natbait. I love a deckbuilder, and the particular kinds of resource
@@ -669,7 +669,7 @@ Playing all the games up to this point really gives context for how cool the
 like me who are used to modern graphics cards. The final full shooter in the
 collection is definitely not my favorite, but it's pretty entertaining and
 *very* novel. The biggest issue is that it indexes extremely heavily on
-memorizing the enemy patters for each wave, so that in the end the first few
+memorizing the enemy patterns for each wave, so that in the end the first few
 stages are relying more on memory than actual execution.
 
 On average, the *Campanella* series was average.
