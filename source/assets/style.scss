@@ -963,6 +963,24 @@ small {
   width: 76px;
 }
 
+@keyframes bounce {
+  20% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(calc(100% * -2 / 35));
+  }
+}
+
+img[src^="/assets/160/"]:hover {
+  animation-name: bounce;
+  animation-duration: 0.9s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 .pixelated-images img {
   image-rendering: pixelated;
 }
