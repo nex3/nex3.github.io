@@ -418,6 +418,10 @@ ul.attribution {
       -1px 1px 0 #000,
       1px 1px 0 #000;
     pointer-events: none;
+
+    @include phone {
+      font-size: 0.4rem;
+    }
   }
 }
 
@@ -924,7 +928,7 @@ $-embed-column-gap: 24px;
 
 /* Typography */
 p {
-  margin-bottom: 18.4px;
+  margin-bottom: 1.1em;
 }
 
 h1,
