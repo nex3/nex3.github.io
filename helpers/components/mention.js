@@ -53,7 +53,8 @@ for (const person of [
     familyName: "Porter",
     url: "https://eden.care/",
     uid: "https://eden.care/",
-    photo: "https://bear-images.sfo2.cdn.digitaloceanspaces.com/fontiago/aa12.webp",
+    photo:
+      "https://bear-images.sfo2.cdn.digitaloceanspaces.com/fontiago/aa12.webp",
   },
   {
     name: "Liz",

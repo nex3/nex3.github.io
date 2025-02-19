@@ -397,6 +397,30 @@ ul.attribution {
   }
 }
 
+.caption-overlay {
+  figure {
+    position: relative;
+  }
+
+  figcaption {
+    position: absolute;
+    align-content: end;
+    width: 100%;
+    height: 100%;
+    color: white;
+    opacity: 0.8;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-inline: 10px;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    pointer-events: none;
+  }
+}
+
 .tier-list {
   display: grid;
 
