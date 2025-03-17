@@ -2,7 +2,7 @@
 title: 50 Reviews for UFO 50
 tags: [ufo 50]
 class: page-ufo
-updated: 2025-01-14T04:05:53Z
+updated: 2025-03-17T02:39:39Z
 ---
 
 See also my [review of the collection itself] on Backloggd.
@@ -549,6 +549,16 @@ back, iterating, and getting a little bit better. In the end, I only ever
 managed to see Wave 3.1, but I still had fun learning to get that far. It's the
 best I've ever gotten at any game like this, so I'm proud of myself!
 
+**Edit:** Okay, I'm coming back to this one after talking about it with serious
+shooting game players and watching friends legitimately try to cherry it. With
+this additional context, it's pretty clear to me now that this game is both way
+too hard (particularly Wave 3 which features enemies with massive health pools,
+dozens of aimed projectiles on screen at once, _and_ asteroids that enemies can
+hide behind and you have to avoid. The upgrade regimen is incredibly punishing,
+and the rewards are stingy—you get enough score multiplier to collect *maybe*
+three extra lives before the gauntlet begins, or upgrades that are both
+temporary and anemic. I think _Star Waspir_ is in fact not very good.
+
 <img src="/assets/160/40-grimstone.png" class="ufo-disk"> **_Grimstone_:** While
 mechanically this is "just" an RPG (albeit one with a clever little timing
 minigame for the attack system), it's a totally competent one and it's
@@ -758,7 +768,6 @@ who care about the medium.
   <img src="/assets/160/19-the-big-bell-race.png" alt="The Big Bell Race" title="The Big Bell Race">
   <img src="/assets/160/29-vainger.png" alt="Vainger" title="Vainger">
   <img src="/assets/160/49-campanella-3.png" alt="Campanella 3" title="Campanella 3">
-  <img src="/assets/160/39-star-waspir.png" alt="Star Waspir" title="Star Waspir">
   <img src="/assets/160/50-cyber-owls.png" alt="Cyber Owls" title="Cyber Owls">
   <img src="/assets/160/26-hot-foot.png" alt="Hot Foot" title="Hot Foot">
   <img src="/assets/160/15-block-koala.png" alt="Block Koala" title="Block Koala">
@@ -773,6 +782,7 @@ who care about the medium.
   <img src="/assets/160/47-quibble-racing.png" alt="Quibble Racing" title="Quibble Racing">
   <img src="/assets/160/14-bushido-ball.png" alt="Bushido Ball" title="Bushido Ball">
   <img src="/assets/160/08-zoldath.png" alt="Planet Zoldath" title="Planet Zoldath">
+  <img src="/assets/160/39-star-waspir.png" alt="Star Waspir" title="Star Waspir">
   <img src="/assets/160/04-paint-chase.png" alt="Paint Chase" title="Paint Chase">
   <img src="/assets/160/33-fist-hell.png" alt="Fist Hell" title="Fist Hell">
   <img src="/assets/160/46-combatants.png" alt="Combatants" title="Combatants">
@@ -823,7 +833,6 @@ who care about the medium.
     <img src="/assets/160/19-the-big-bell-race.png" alt="The Big Bell Race" title="The Big Bell Race">
     <img src="/assets/160/29-vainger.png" alt="Vainger" title="Vainger">
     <img src="/assets/160/49-campanella-3.png" alt="Campanella 3" title="Campanella 3">
-    <img src="/assets/160/39-star-waspir.png" alt="Star Waspir" title="Star Waspir">
     <img src="/assets/160/50-cyber-owls.png" alt="Cyber Owls" title="Cyber Owls">
     <img src="/assets/160/26-hot-foot.png" alt="Hot Foot" title="Hot Foot">
     <img src="/assets/160/15-block-koala.png" alt="Block Koala" title="Block Koala">
@@ -846,6 +855,7 @@ who care about the medium.
   
   <dt>D</dt>
   <dd>
+    <img src="/assets/160/39-star-waspir.png" alt="Star Waspir" title="Star Waspir">
     <img src="/assets/160/04-paint-chase.png" alt="Paint Chase" title="Paint Chase">
     <img src="/assets/160/33-fist-hell.png" alt="Fist Hell" title="Fist Hell">
   </dd>
