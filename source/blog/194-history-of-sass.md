@@ -164,9 +164,9 @@ structure these applications.
 
 Haml was heavily influenced by these discussions. In particular, it took the
 idea of "thin views" very seriously. Rails followed a Model/View/Controller
-architecture, where the template framed as a "view" of the underlying data. It
-was only supposed to be responsible for displaying the data, not manipulating it
-or even really getting it into a form that was easy to display. To that end,
+architecture, where the template was framed as a "view" of the underlying data.
+It was only supposed to be responsible for displaying the data, not manipulating
+it or even really getting it into a form that was easy to display. To that end,
 Hampton intentionally made it annoying to write complex logic in Haml. For the
 first few releases, Haml didn't even have a way of writing Ruby statements that
 didn't emit values to HTML specifically to encourage people to put all that
