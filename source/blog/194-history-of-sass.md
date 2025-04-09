@@ -1,5 +1,6 @@
 ---
 tags: [ask, code, sass]
+updated: 2025-04-09T00:33:58Z
 ---
 
 {% ask "Lindsay Michael",
@@ -19,14 +20,14 @@ there? Sure, let's get into the history.
 
 So, before Sass ([not SASS](https://sassnotsass.com/)), there was
 [Haml](https://haml.info/). Haml was created way back in the summer of 2006 by
-[Hampton Catlin][][^name], when Ruby on Rails had lit the web development world
-on fire and everyone was rushing to invent cool new ways of writing
-server-side-rendered web applications with light [AJAX] support. Rails used YAML
-for its configuration and Hampton liked the terseness and indentation, so (as he
-once described to me) he took a template written in [ERB][] (the dominant
-templating language at the time) and just deleted redundant characters until he
-got something that felt more [DRY]. After some tweaks, the result looked
-essentially like modern Haml:
+[Hampton Lintorn-Catlin][][^name], when Ruby on Rails had lit the web
+development world on fire and everyone was rushing to invent cool new ways of
+writing server-side-rendered web applications with light [AJAX] support. Rails
+used YAML for its configuration and Hampton liked the terseness and indentation,
+so (as he once described to me) he took a template written in [ERB][] (the
+dominant templating language at the time) and just deleted redundant characters
+until he got something that felt more [DRY]. After some tweaks, the result
+looked essentially like modern Haml:
 
 [^name]: Did Hampton call it "Haml" because it sounded kind of like his name
          combined with "HTML", and then come up with an acronym after the fact?
@@ -40,7 +41,7 @@ essentially like modern Haml:
     = post.content
 ```
 
-[Hampton Catlin]: https://en.wikipedia.org/wiki/Hampton_Lintorn-Catlin
+[Hampton Lintorn-Catlin]: https://en.wikipedia.org/wiki/Hampton_Lintorn-Catlin
 [AJAX]: https://en.wikipedia.org/wiki/Ajax_(programming)
 [ERB]: https://en.wikipedia.org/wiki/ERuby
 [DRY]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
@@ -82,10 +83,10 @@ That was the original pitch Hampton sold to me: just like Haml was basically
 just a different syntax for HTML (or more accurately, for ERB, since it did
 include the ability to inject Ruby code), Sass was going to be just a different
 syntax for CSS. The first draft didn't even have variables, although by the time
-it was actually released[^3] we had added them (at the time called "constants").
-Hampton drafted some examples of how the language would look and wrote [a quick
-prototype], which I ended up [totally refactoring] shortly thereafter. As for
-Haml, I did most of the coding work for Sass.
+it was actually released[^3] we had added them (at the time called
+"constants"[^constants]). Hampton drafted some examples of how the language
+would look and wrote [a quick prototype], which I ended up [totally refactoring]
+shortly thereafter. As for Haml, I did most of the coding work for Sass.
 
 [a quick prototype]: https://github.com/sass/ruby-sass/commit/fa5048ba405619273e474a50400c7243fbff54fe
 [totally refactoring]: https://github.com/sass/ruby-sass/commit/015a1b191d06cf418b519e33d98f86970e0512ac
@@ -97,6 +98,11 @@ It also looked dramatically different than the indented syntax does today:
       initially a naked attempt on our part to promote our new language by
       piggybacking on the initial popularity of Haml, although ironically Sass
       quickly overshadowed its older sibling.
+
+[^constants]: After reading this over, Hampton reminded me that we originally
+    came to the name "constants" in part because we wanted to emphasize that
+    (unlike a template language like Haml) they weren't connected to Ruby
+    variables and didn't change based on serve-time state.
 
 ```
 !color = #fff
