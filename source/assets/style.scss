@@ -991,6 +991,27 @@ small {
   width: 76px;
 }
 
+.ac6-ac {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.ac6-nickname {
+  font-size: 60%;
+
+  &::before {
+    content: "“";
+  }
+
+  &::after {
+    content: "”";
+  }
+}
+
+.ac6-share {
+  margin-top: -2em;
+  font-size: 80%;
+}
+
 @keyframes bounce {
   20% {
     transform: translateY(0%);
