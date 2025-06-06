@@ -5,7 +5,7 @@ export default createPairedComponentPlugin(
   "backloggd",
   (liquidEngine, contents, url, options) => {
     const [_, author] = url.match(
-      /^https:\/\/www\.backloggd\.com\/u\/([^\/]+)/,
+      /^https:\/\/(?:www\.)?backloggd\.com\/u\/([^\/]+)/,
     );
     const date = new Date(Date.parse(options.date));
 
