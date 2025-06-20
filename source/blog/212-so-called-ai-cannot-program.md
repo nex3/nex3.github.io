@@ -1,7 +1,7 @@
 ---
 title: 'So-Called "AI" Cannot Program'
 tags: [so-called ai, article]
-updated: 2025-06-20T09:35:06Z
+updated: 2025-06-20T19:55:00Z
 ---
 
 I contend that it is impossible for so-called "AI", by which I mean the crop of
@@ -47,7 +47,7 @@ fit together, what's "allowed" and "not allowed" by the subtle and mercurial
 rules we all internalized as children (or adults, for second languages and
 beyond). In English, "ran boy" is not a valid sentence due to the language's
 semantics, although most native speakers would probably guess that it means "the
-boy ran". Noam Chompsky wrote "colorless green ideas sleep furiously" as an
+boy ran". Noam Chomsky wrote "colorless green ideas sleep furiously" as an
 example of a sentence that is syntactically valid despite being nonsense.
 
 The fact that that sentence is nonsense is the domain of "semantics". Semantics
@@ -59,7 +59,7 @@ content—is exactly the same. And that meaning is something that humans bring t
 them, not something that is in any way intrinsically associated with those
 particular wiggly lines in that particular order.
 
-[^2]: Thanks to {% mention 'Cassie' %} and [% mention 'Erika %} for
+[^2]: Thanks to {% mention 'Cassie' %} and {% mention 'Erika %} for
       providing these example sentences. All the languages I know well enough to
       create examples in have annoyingly similar syntax to English, which makes
       them unsuitable for this example.
@@ -126,9 +126,9 @@ might think about: the semantics of the program.
 
 ## Semantic Refinement
 
-The inevitable outcome when someone sits down with some to write a program with
-some high-level semantic goal is, one way or another, hitting a wall. This can
-come in various forms: perhaps they run their code and see behavior they didn't
+The inevitable outcome when someone sits down to write a program with some
+high-level semantic goal is, one way or another, hitting a wall. This can come
+in various forms: perhaps they run their code and see behavior they didn't
 expect, or they get a compiler error, or they can't figure out how best to name
 their classes. Whatever the symptoms, the cause is the same: they've run into
 the limits of their initial understanding of what they were trying to do.
