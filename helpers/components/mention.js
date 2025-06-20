@@ -63,6 +63,12 @@ for (const person of [
       "https://bear-images.sfo2.cdn.digitaloceanspaces.com/fontiago/aa12.webp",
   },
   {
+    name: "Erika",
+    nickname: "meadowdrone",
+    url: "https://meadowdr.one/",
+    uid: "https://meadowdr.one/",
+  },
+  {
     name: "Liz",
     nickname: "JhoiraArtificer",
     url: "https://seaslug.garden/",
@@ -76,9 +82,6 @@ for (const person of [
     url: "https://lydz.gay/",
     uid: "https://lydz.gay/",
     photo: "https://lydz.gay/img/fsJohDi4CF-100.png",
-  },
-  {
-    nickname: "meadowdrone",
   },
   {
     name: "Rose",

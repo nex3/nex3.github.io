@@ -1,7 +1,7 @@
 ---
 title: 'So-Called "AI" Cannot Program'
 tags: [so-called ai, article]
-updated: 2025-06-20T09:24:25Z
+updated: 2025-06-20T09:35:06Z
 ---
 
 I contend that it is impossible for so-called "AI", by which I mean the crop of
@@ -59,7 +59,7 @@ content—is exactly the same. And that meaning is something that humans bring t
 them, not something that is in any way intrinsically associated with those
 particular wiggly lines in that particular order.
 
-[^2]: Thanks to {% mention 'Cassie' %} and [% mention 'meadowdrone' %} for
+[^2]: Thanks to {% mention 'Cassie' %} and [% mention 'Erika %} for
       providing these example sentences. All the languages I know well enough to
       create examples in have annoyingly similar syntax to English, which makes
       them unsuitable for this example.
