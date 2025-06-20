@@ -78,6 +78,9 @@ for (const person of [
     photo: "https://lydz.gay/img/fsJohDi4CF-100.png",
   },
   {
+    nickname: "meadowdrone",
+  },
+  {
     name: "Rose",
     nickname: "holomancy",
     url: "https://holomancy.neocities.org/",

@@ -1,6 +1,7 @@
 ---
 title: 'So-Called "AI" Cannot Program'
 tags: [so-called ai, article]
+updated: 2025-06-20T09:24:25Z
 ---
 
 I contend that it is impossible for so-called "AI", by which I mean the crop of
@@ -52,15 +53,16 @@ example of a sentence that is syntactically valid despite being nonsense.
 The fact that that sentence is nonsense is the domain of "semantics". Semantics
 are the human interpretation of a structure, the meaning we ascribe to it and to
 the best of our ability share with those around us. For example, although the
-syntax of the sentences "みんなさんはピッコロさんを大好きだよ！" and "Everyone
+syntax of the sentences "みなさんはピッコロさんが大好きだよ！" and "Everyone
 loves Piccolo!"[^2] are completely different, their meaning—their semantic
 content—is exactly the same. And that meaning is something that humans bring to
 them, not something that is in any way intrinsically associated with those
 particular wiggly lines in that particular order.
 
-[^2]: Thanks to {% mention 'Cassie' %} for providing these example sentences.
-      All the languages I know well enough to create examples in have annoyingly
-      similar syntax to English, which makes them unsuitable for this example.
+[^2]: Thanks to {% mention 'Cassie' %} and [% mention 'meadowdrone' %} for
+      providing these example sentences. All the languages I know well enough to
+      create examples in have annoyingly similar syntax to English, which makes
+      them unsuitable for this example.
 
 Although syntax is a very useful concept in its own right, in this post I really
 want to focus on semantics. So remember: semantics is meaning, and specifically
