@@ -29,6 +29,12 @@ for (const person of [
       "https://lethargic.talkative.fish/fileserver/01M8H3ETEZ71CY4QX9DW4TB7JM/attachment/original/01HR0N5F2THMKKF4MXF3M2PBXW.png",
   },
   {
+    name: "Cassie",
+    nickname: "porglezomp",
+    url: "https://www.witchoflight.com/",
+    uid: "https://www.witchoflight.com/",
+  },
+  {
     givenName: "Cera",
     familyName: "Neon",
     url: "https://theonly.ciswoman.online/",
