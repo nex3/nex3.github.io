@@ -13,7 +13,8 @@ tags: [nat reviews, nightreign]
     status: "Completed",
     statusUrl: "https://backloggd.com/u/nex3/games/added/game_status:completed/",
     platform: "Windows PC",
-    platformUrl: "https://backloggd.com/u/nex3/games/added/played_platform:win/" %}
+    platformUrl: "https://backloggd.com/u/nex3/games/added/played_platform:win/",
+    image: "https://images.igdb.com/igdb/image/upload/t_720p/scvbi1.webp" %}
   <p>I've played a lot of <em>Nightreign</em>. I'm <em>still</em> playing a
   lot of <em>Nightreign</em>. In the month and a half it's been out, it quickly
   became a member of
