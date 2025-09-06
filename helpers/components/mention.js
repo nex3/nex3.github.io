@@ -1,6 +1,6 @@
 import { createUnpairedComponentPlugin } from "./base.js";
 
-const knownMentions = {};
+export const knownMentions = {};
 for (const person of [
   {
     givenName: "andi",

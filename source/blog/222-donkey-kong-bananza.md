@@ -1,6 +1,7 @@
 ---
 repost: true
 tags: [nat reviews, donkey kong bananza]
+updated: 2025-09-06T00:48:17Z
 ---
 
 {% backloggd "https://backloggd.com/u/nex3/review/3320805/",
@@ -15,7 +16,7 @@ tags: [nat reviews, donkey kong bananza]
     statusUrl: "https://backloggd.com/u/nex3/games/added/game_status:shelved/",
     platform: "Nintendo Switch 2",
     platformUrl: "https://backloggd.com/u/nex3/games/added/played_platform:nintendo-switch-2/",
-    image: "https://images.igdb.com/igdb/image/upload/t_720p/ar3p7p.webp" %}
+    image: "https://images.igdb.com/igdb/image/upload/t_720p/scw2wo.webp" %}
   I miss 3D exploration platformers. I grew up on <em>Banjo Kazooie</em> and
   <em>Donkey Kong 64</em> captured my childhood imagination like nothing else.
   These are both deeply flawed games, of course, and I would struggle to bring
