@@ -1,6 +1,7 @@
 ---
-tags: [design, hades]
+tags: [game design, hades]
 title: Hades II Has a Legibility Problem
+updated: 2025-10-04T11:19:35Z
 ---
 
 **This post contains mechanical spoilers and boss names for *Hades II*.**
