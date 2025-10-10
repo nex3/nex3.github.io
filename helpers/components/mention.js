@@ -34,6 +34,15 @@ for (const person of [
       "https://lethargic.talkative.fish/fileserver/01M8H3ETEZ71CY4QX9DW4TB7JM/attachment/original/01HR0N5F2THMKKF4MXF3M2PBXW.png",
   },
   {
+    givenName: "Bruno",
+    familyName: "Dias",
+    name: "Bruno Dias",
+    url: "https://azhdarchid.com/",
+    uid: "https://azhdarchid.com/",
+    photo:
+      "https://azhdarchid.online/fileserver/01GFF36KYD00260BYH1RY0X1J5/attachment/original/01JMHQ8SD202P3QY638588N8FP.jpg",
+  },
+  {
     name: "Cassie",
     nickname: "porglezomp",
     url: "https://www.witchoflight.com/",
