@@ -4,17 +4,14 @@ repost: true
 ---
 
 {% letterboxd "https://letterboxd.com/nex3/film/the-shining/",
-    film: "",
-    year: "",
+    film: "The Shining",
+    year: "1980",
     authorDisplayName: "Natalie Weizenbaum",
     date: "Oct 11 2025",
     avatar: "https://a.ltrbxd.com/resized/avatar/twitter/1/0/2/9/2/7/0/shard/http___pbs.twimg.com_profile_images_1051706425750122496_0kOnxl28-0-48-0-48-crop.jpg?v=144ccd3110",
     supporter: "patron",
     rating: 4.5,
     image: "https://a.ltrbxd.com/resized/sm/upload/tm/ta/x1/yh/shining-1200-1200-675-675-crop-000000.jpg?v=3eeee4ee5a" %}
-  <h3 class="hidden">Natalie Weizenbaum’s review published on Letterboxd:</h3>
-  
-  <div class="js-review-body" lang="en" data-is-translatable="true">
     <p>
       I came into this viewing kind of prepared to be underwhelmed. My
       recollection of this was of a visually striking film that was pulling in
@@ -100,5 +97,4 @@ repost: true
       out the same murderous and domineering triumph in the only space where
       they have any real power: the family.
     </p>
-  </div>
 {% endletterboxd %}
