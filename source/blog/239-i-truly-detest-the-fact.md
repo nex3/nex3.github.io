@@ -1,10 +1,11 @@
 ---
 tags: [mtg]
+updated: 2025-11-21T01:43:34Z
 ---
 
 I truly detest the fact that the new Brand Synergy MTG Secret Lairs don't have
 real artist credits. They're crediting "SQUARE ENIX" for [Final Fantasy cards]
-and "B3: Fire, CH: 58" for [Avatar cards][^hideous]. These are real pieces of
+and "B3: Fire, CH: 58" for [Avatar cards][][^hideous]. These are real pieces of
 art made by specific human beings (yes including the 3D model)! It used to be
 kind of a big deal in fantasy art circles to get your art on a Magic card, and
 these people aren't even going to get credit for it. Reducing the credit line to
