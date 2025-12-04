@@ -1,10 +1,10 @@
 ---
 tags: [game design]
-updated: 2025-12-04T01:46:25Z
+updated: 2025-12-04T03:42:15Z
 ---
 
 {% genericPost 'https://azhdarchid.com/against-metroidbrania-a-landscape-of-knowledge-games/',
-    title: 'Against 'Metroidbrania': a Landscape of Knowledge Games',
+    title: "Against 'Metroidbrania': a Landscape of Knowledge Games",
     date: '2024-10-19T03:24Z',
     author: 'Bruno Dias',
     quote: true,
