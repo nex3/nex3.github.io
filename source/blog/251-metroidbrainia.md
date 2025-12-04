@@ -1,9 +1,10 @@
 ---
 tags: [game design]
+updated: 2025-12-04T01:46:25Z
 ---
 
-{% genericPost 'https://azhdarchid.com/microsoft-is-basically-discontinuing-windows-what-will-happen-then/',
-    title: 'Microsoft is basically discontinuing Windows. What will happen, then?',
+{% genericPost 'https://azhdarchid.com/against-metroidbrania-a-landscape-of-knowledge-games/',
+    title: 'Against 'Metroidbrania': a Landscape of Knowledge Games',
     date: '2024-10-19T03:24Z',
     author: 'Bruno Dias',
     quote: true,
