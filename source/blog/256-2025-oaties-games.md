@@ -1,7 +1,7 @@
 ---
 title: "2025 Oaties: Games"
 tags: [oaties, silksong]
-updated: 2026-01-01T18:49:32Z
+updated: 2026-01-02T01:18:43Z
 ---
 
 This year, I think I'm going to split up my oaties post into two, one for games
@@ -125,7 +125,7 @@ to my GOTY lineup are from other cleanups or reevaluations:
 * 1994: _The Incredible Toon Machine_ displaces _Jazz Jackrabbit_. Both of these
   are childhood favorites, but I'd forgotten to mark the former on Backloggd
   until this year. While the OG Epic shooter platformer was an absolute
-  fascination for young Natalie, as an adult I find the _Incredible Machine_
+  fascination for young Natalie, as an adult I find the _Incredible Machine_'s
   open-ended approach to puzzle design and the ways it presents challenges in
   what is fundamentally a sandbox much more interesting.
 
