@@ -1,6 +1,7 @@
 ---
 title: "2025 Oaties: Games"
 tags: [oaties, silksong]
+updated: 2026-01-01T18:49:32Z
 ---
 
 This year, I think I'm going to split up my oaties post into two, one for games
