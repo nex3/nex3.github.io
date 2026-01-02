@@ -2,17 +2,11 @@ import { createUnpairedComponentPlugin } from "./base.js";
 
 // Letterboxd scrape (make sure all posters are loaded):
 //
-// navigator.clipboard.writeText($$(".poster-container .poster").map(poster => {
-//   const year = poster.dataset.filmReleaseYear;
+//
+// navigator.clipboard.writeText($$(".poster-list [data-component-class=LazyPoster]").map(poster => {
 //   const json = JSON.stringify([
-//     year
-//         ? `${poster.dataset.filmName} (${year})`
-//         : poster
-//             .querySelector('a.frame')
-//             .dataset
-//             .originalTitle
-//             .replace(/\) [★½].*/, ')'),
-//     `https://letterboxd.com${poster.dataset.filmLink}`,
+//     poster.dataset.itemFullDisplayName,
+//     `https://letterboxd.com${poster.dataset.itemLink}`,
 //     poster.querySelector('img.image').src,
 //   ], undefined, 1).replaceAll('\n', '');
 //   return json.substring(2, json.length - 1);
