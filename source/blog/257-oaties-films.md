@@ -1,6 +1,7 @@
 ---
 title: "2025 Oaties: Films"
 tags: [oaties, frankenstein]
+updated: 2026-01-02T07:27:03Z
 ---
 
 I feel a little less dire about the films of 2025 than I do about [the games],
@@ -134,12 +135,12 @@ has been a considerable amount of change to my list of films of the years:
   [_Jeanne Dielman_]: https://letterboxd.com/nex3/film/mirror/
   [_Mirror_]: https://letterboxd.com/nex3/film/mirror/
 
-* 1993: [_Troi couleurs : Bleu_] replaces _Groundhog Day_. A slam dunk
+* 1993: [_Trois couleurs : Bleu_] replaces _Groundhog Day_. A slam dunk
   replacement if there ever was one. _Groundhog Day_ is fun and shockingly
-  savvy, but _Troi couleurs_ as a whole is a masterpiece and _Bleu_ is my
+  savvy, but _Trois couleurs_ as a whole is a masterpiece and _Bleu_ is my
   favorite of the three by a comfortable margin. Just tremendous.
 
-  [_Troi couleurs : Bleu_]: https://letterboxd.com/nex3/film/three-colours-blue/
+  [_Trois couleurs : Bleu_]: https://letterboxd.com/nex3/film/three-colours-blue/
 
 * 2007: [_Michael Clayton_] replaces _Hot Fuzz_. This year, _Michael Clayton_
   came to me like a cold drink in the desert. I watched it in December, as I was
