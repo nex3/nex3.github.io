@@ -1,7 +1,7 @@
 ---
 title: "2025 Oaties: Films"
 tags: [oaties, frankenstein]
-updated: 2026-01-02T07:27:03Z
+updated: 2026-01-02T08:04:28Z
 ---
 
 I feel a little less dire about the films of 2025 than I do about [the games],
@@ -21,7 +21,7 @@ around that ends up cartoonish as often as it is profound.
 [_Wake Up Dead Man_]: https://letterboxd.com/nex3/film/wake-up-dead-man/
 
 The other sad fact of this year is that there's no film from it that hit me hard
-enough that I have it a full five stars. I do try to be conservative about
+enough that I have given it a full five stars. I do try to be conservative about
 giving out my highest possible rating, but despite that I've watched multiple
 five-star films each year all the way back through 2021. Worse still, looking
 back through the films that came out this year and my friends' reactions to
