@@ -18,12 +18,12 @@ what this website is for.
   absolutely fantastic, and I'm so honored that she's involved me in it as much
   as she has.
 
-* The [**_Dark Souls III_ Archipelago world**](https://archipelago.gg/games/Dark%20Souls%20III/info/en)
-  is a plugin for the [Archipelago](https://archipelago.gg) multi-world
-  randomizer that adds support for randomizing _Dark Souls III_. I didn't
-  create it initially, but I _did_ do the massive 3.0.0 rewrite that added
-  tons of new features, locations, and bug fixes. I'm still actively
-  maintaining this and trying to get new features up and running.
+* The [**_Dark Souls III_ Archipelago world**](/ds3/info) is a plugin for the
+  [Archipelago](https://archipelago.gg) multi-world randomizer that adds support
+  for randomizing _Dark Souls III_. I didn't create it initially, but I _did_ do
+  the massive 3.0.0 rewrite that added tons of new features, locations, and bug
+  fixes. I'm still actively maintaining this and trying to get new features up
+  and running.
 
 * I've maintained [**Moddy**], a _Magic: the Gathering_ [cube] since 2011, and
   run weekly cube drafts consistently the whole time (on [MTGO], these days).

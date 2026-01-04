@@ -1,0 +1,33 @@
+@font-face{
+  font-family: LexendDeca-ExtraLight;
+  src: url("/assets/fonts/LexendDeca-ExtraLight.ttf");
+}
+
+@font-face{
+  font-family: LexendDeca-Light;
+  src: url("/assets/fonts/LexendDeca-Light.ttf");
+}
+
+@font-face{
+  font-family: LexendDeca-Regular;
+  src: url("/assets/fonts/LexendDeca-Regular.ttf");
+}
+
+@font-face{
+  font-family: LexendDeca-Medium;
+  src: url("/assets/fonts/LexendDeca-Medium.ttf");
+}
+
+.markdown {
+  // archipelago.gg's Markdown renderer embeds a tags in its headers which cause
+  // them to use Lexend Deca rather than the default Markdown font. Our Markdown
+  // renderer doesn't do that, so to match the style we force it manually.
+  h1, h2, h3, h4, h5, h6 {
+    font-family: LexendDeca-Regular, sans-serif;
+  }
+}
+
+html {
+  // archipelago.gg uses this to make room for the site header, which we omit.
+  padding-top: 0;
+}
