@@ -7,7 +7,7 @@ import rssPlugin from "@11ty/eleventy-plugin-rss";
 import * as sass from "sass";
 import yaml from "js-yaml";
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
-import { parse } from "node-html-parser";
+import * as cheerio from "cheerio";
 
 import cacheBusterPlugin from "eleventy-auto-cache-buster";
 import componentsPlugin from "./helpers/components/index.js";
@@ -56,19 +56,25 @@ export default function (eleventyConfig) {
       return content;
     }
 
-    const root = parse(content);
-    for (const a of root.querySelectorAll("a")) {
-      const href = a.getAttribute("href");
-      let match = href?.match(/^\/(?:games|tutorial)\/Dark%20Souls%20III\/(.*)\/en(#.*)?$/);
+    const $ = cheerio.load(content, null, false);
+    for (const a_ of $("a")) {
+      const a = $(a_);
+      const href = a.attr("href");
+      let match = href?.match(
+        /^\/(?:games|tutorial)\/Dark%20Souls%20III\/(.*)\/en(#.*)?$/,
+      );
       if (match) {
-        a.setAttribute("href", "/ds3/" + match[1] + (match[2] ?? ''));
+        a.attr("href", "/ds3/" + match[1] + (match[2] ?? ""));
       } else if (href?.startsWith("/")) {
-        a.setAttribute("href", `https://archipelago.gg${href}`);
+        a.attr("href", `https://archipelago.gg${href}`);
       } else if (href == "../player-options") {
-        a.setAttribute("href", `https://archipelago.gg/game/Dark%20Souls%20III/player-options`);
+        a.attr(
+          "href",
+          `https://archipelago.gg/game/Dark%20Souls%20III/player-options`,
+        );
       }
     }
-    return root.outerHTML;
+    return $.html();
   });
 
   const markdownItOptions = {
