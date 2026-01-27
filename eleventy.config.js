@@ -52,7 +52,8 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addTransform("fix-ds3-links", function (content) {
-    if (!this.page.inputPath.startsWith("./source/ds3/")) {
+    if (!this.page.inputPath.startsWith("./source/ds3/") &&
+        !this.page.inputPath.startsWith("./source/ds3-preview/")) {
       return content;
     }
 
@@ -74,6 +75,19 @@ export default function (eleventyConfig) {
         );
       }
     }
+
+    for (const h_ of $("h1, h2, h3, h4, h5, h6")) {
+      const h = $(h_);
+      const id = h.attr("id");
+      if (id?.startsWith("code-") && id?.endsWith("-code")) {
+        h.attr("id", id.slice("code-".length, -"-code".length));
+      }
+
+      if (h.text().includes("_")) {
+        h.attr("id", h.attr("id").replaceAll(/-/g, '_'));
+      }
+    }
+
     return $.html();
   });
 
