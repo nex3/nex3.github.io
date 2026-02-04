@@ -1,5 +1,6 @@
 ---
-tags: [repost, nat reviews, chimes at midnight]
+repost: true
+tags: [nat reviews, chimes at midnight]
 commentary:
 - one of those films where I ended up talking myself into the higher rating while writing the review
 updated: 2026-02-04T03:34:42Z
