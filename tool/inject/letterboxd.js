@@ -15,8 +15,8 @@ export async function letterboxdTag(maybeRedirectUrl) {
   const reviewYear = dateLinks.find("a:nth-child(3)").text().trim();
 
   const args = {
-    film: $(".film-title-wrapper > a").text().trim(),
-    year: $(".film-title-wrapper .metadata").text(),
+    film: $(".-film .name a").text().trim(),
+    year: $(".-film .releasedate a").text(),
     authorDisplayName: $(".person-summary a.name span:first-child")
       .text()
       .trim(),
@@ -67,7 +67,7 @@ export async function letterboxdTag(maybeRedirectUrl) {
       .join(",\n") +
     " %}\n" +
     (
-      await prettier.format($(".review.body-text > div > div").html(), {
+      await prettier.format($(".review .body-text > div > div").html(), {
         parser: "html",
         printWidth: 78,
       })
