@@ -39,24 +39,19 @@ export async function letterboxdTag(maybeRedirectUrl) {
   const filmUrl = new URL(`https://letterboxd.com/film/${filmSlug}`);
   const filmResponse = await fetch(filmUrl);
   if (filmResponse) {
-    const image = cheerio.load(await filmResponse.text(), {
+    const text = await filmResponse.text();
+    const image = cheerio.load(text, {
       baseUrl: filmUrl,
-    })(".backdrop-wrapper");
+    })(".backdrop-container #backdrop");
+    console.log({image: image.html()});
     const urlString = image.data("backdrop");
     if (urlString) args.image = new URL(urlString, filmUrl);
   }
 
-  const posterUrl = new URL(
-    `https://letterboxd.com/ajax/poster/film/${filmSlug}/hero/300x450/`,
-  );
-  const posterResponse = await fetch(posterUrl);
-  if (posterResponse) {
-    const poster = cheerio.load(await posterResponse.text(), {
-      baseUrl: posterUrl,
-    })(".image:not(.hidden)");
-    const urlString = poster?.attr("src");
-    if (urlString) args.poster = new URL(urlString, posterUrl);
-  }
+  const filmId = $("[data-film-id]").data("film-id");
+  args.poster = "https://a.ltrbxd.com/resized/film-poster/" +
+    filmId.toString().split('').join('/') +
+    `/${filmId}-${filmSlug}-0-150-0-225-crop.jpg`;
 
   return (
     "{% letterboxd " +
