@@ -60,7 +60,7 @@ context I'd avoid. Their existence in the collection vouches for the quality of
 the games, and in providing a structure to play them with friends and clear
 victory and challenge conditions, pushes me to explore them thoroughly and makes
 even the experience of failure (an absolutely inevitable part of playing these
-games).
+games) enjoyable.
 
 <img src="/assets/160/04-paint-chase.png" class="ufo-disk"> **_Paint Chase_:** I
 started out as bad at this as I was at _Ninpek_, but I couldn't muster the
