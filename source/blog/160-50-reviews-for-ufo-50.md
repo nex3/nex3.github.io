@@ -2,7 +2,7 @@
 title: 50 Reviews for UFO 50
 tags: [ufo 50]
 class: page-ufo
-updated: 2025-03-17T02:39:39Z
+updated: 2026-02-25T12:00:39Z
 ---
 
 See also my [review of the collection itself] on Backloggd.
@@ -33,7 +33,7 @@ collection as a whole has to offer.
 arc with this game presaged my own personal experience with a lot of _UFO 50_.
 When I first picked it up, I got so overwhelmed that I put it right back down
 and wasn't sure if I was ever going to go back. Every decision has so many
-cascading outcomes that it was hard not to feel like I wasn't drowning in
+cascading outcomes that it was hard not to feel like I was drowning in
 opportunity costs. But {% mention 'Cera' %} loves it and coached me through the
 basics enough that I began to get the hang of it.
 
