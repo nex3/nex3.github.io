@@ -1,6 +1,7 @@
 ---
 title: "Becoming a Video Game Scientist Part 1: Archipelago"
 tags: [article, dark souls 3, modding]
+updated: 2026-03-04T15:37:39Z
 ---
 
 The bulk of my hobby time for the past six months or so has been spent not
@@ -137,6 +138,7 @@ randomizer).
 I could have left it there, submitted a pull request, and let the existing
 maintainer do with it what he wanted. But by this point he was largely inactive,
 and I've always found it difficult to let progress go unmade when I can clearly
-see how to do it. So rather than th end of my story, this is just the beginning.
+see how to do it. So rather than the end of my story, this is just the
+beginning.
 
 *To be continued in Part 2: Ghidra*
