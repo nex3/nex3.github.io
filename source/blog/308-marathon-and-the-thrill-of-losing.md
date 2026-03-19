@@ -1,7 +1,7 @@
 ---
 title: Marathon and the Thrill of Losing
 tags: [marathon, game design, footnote forest]
-updated: 2026-03-19T20:15:58Z
+updated: 2026-03-19T20:39:03Z
 ---
 
 I wasn't planning to play *Marathon*.
@@ -156,11 +156,11 @@ from on high.
     accumulate resources? To hunt other players? Where is the fun for *you*?
     Even this is too simple, though, because the roles can shift on a dime based
     on what happens in the field. A run that was intended to be a
-    zero-stakes[^free kit] player hunt can immediately become a high-stakes
+    zero-stakes[^free-kit] player hunt can immediately become a high-stakes
     meticulous exfiltration if you find loot you care enough about. Any run can
     become a PvP run if there are players in between you and your objective.
 
-[^free kit]: An important part of *Marathon*'s ecosystem, which as I understand
+[^free-kit]: An important part of *Marathon*'s ecosystem, which as I understand
     it doesn't exist at all in *Escape from Tarkov*[^tarkov]. The player has
     access to (at least) one faction's[^skins] "free kit" every day, which is a
     preset package of a gun with no upgrades, a handful of low-quality healing
