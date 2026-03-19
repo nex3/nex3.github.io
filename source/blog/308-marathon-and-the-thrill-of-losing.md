@@ -1,6 +1,7 @@
 ---
 title: Marathon and the Thrill of Losing
 tags: [marathon, game design, footnote forest]
+updated: 2026-03-19T20:15:58Z
 ---
 
 I wasn't planning to play *Marathon*.
@@ -110,11 +111,11 @@ give it a try.
 [menus]: https://www.reddit.com/r/okbuddyrosalyn/comments/1cd83y8/menus_and_parkour/
 
 [^d2]: I was surprised to hear that some *Destiny 2* players are grumpy[^grumpy]
-    that *Marathon* exists rather instead of Bungie spending more time on their
-    pet game, and are making their views vocally known on Twitch chats and
-    social media. Specifically, I was surprised that there were still enough
-    *Destiny 2* players in existence to make this amount of noise, given that
-    the [peak monthly player count] in 2026 was just a third of what it was in
+    that *Marathon* exists instead of Bungie spending more time on their pet
+    game, and are making their views vocally known on Twitch chats and social
+    media. Specifically, I was surprised that there were still enough *Destiny
+    2* players in existence to make this amount of noise, given that the [peak
+    monthly player count] in 2026 was just a third of what it was in
     2025. Personally, I think it probably makes sense for a company[^sony] to
     work on a game that people actually seem interested in playing.
 
