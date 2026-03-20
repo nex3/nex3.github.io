@@ -1,7 +1,7 @@
 ---
 title: Marathon and the Thrill of Losing
 tags: [marathon, game design, footnote forest]
-updated: 2026-03-19T20:39:03Z
+updated: 2026-03-20T21:04:54Z
 ---
 
 I wasn't planning to play *Marathon*.
@@ -37,7 +37,7 @@ pick up the game myself.
     satisfaction with the arrangement, and the game's design visual design has
     only improved since then.
 
-[real-world art]: https://en.wikipedia.org/wiki/The_Designers_Republic
+[real-world visual design]: https://en.wikipedia.org/wiki/The_Designers_Republic
 [Antireal]: https://antireal.info/
 
 [^tdr]: The Designers Republic is its own story, a firm so colossally
@@ -86,8 +86,8 @@ give it a try.
     hunt.
 
 [^pvp]: Different extraction shooters vary in how much they encourage
-    player-on-player combat[^pvp], although a universal constant is that killing
-    a player allows you to loot the corpse and take all their best items.
+    player-on-player combat, although a universal constant is that killing a
+    player allows you to loot the corpse and take all their best items.
     *Marathon* is reportedly pretty far towards encouraging bloodthirsty play,
     as is *Escape from Tarkov*[^tarkov]. By contrast, *ARC Raiders* is known for
     being relatively low-conflict.
