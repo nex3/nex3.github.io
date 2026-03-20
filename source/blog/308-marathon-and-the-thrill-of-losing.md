@@ -1,7 +1,7 @@
 ---
 title: Marathon and the Thrill of Losing
 tags: [marathon, game design, footnote forest]
-updated: 2026-03-20T21:04:54Z
+updated: 2026-03-20T21:33:50Z
 ---
 
 I wasn't planning to play *Marathon*.
@@ -456,7 +456,7 @@ are never truly safe, in order for the moments when you find a bit of safety to
 really shine.
 
 Having played the game now for a week or so, what I was truly surprised to find
-thinking back on my wind and my losses, was that I remembered far more vividly
+thinking back on my wins and my losses, was that I remembered far more vividly
 the runs where I made it out with some spectacular gear than I did the runs
 where I lost that exact same gear. In fact, my most memorable losses were never
 the ones where I lost the most stuff but rather the ones where I played the best
