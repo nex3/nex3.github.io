@@ -1,7 +1,7 @@
 ---
 title: Marathon and the Thrill of Losing
 tags: [marathon, game design, footnote forest]
-updated: 2026-03-20T21:33:50Z
+updated: 2026-03-21T07:16:37Z
 ---
 
 I wasn't planning to play *Marathon*.
@@ -34,7 +34,7 @@ pick up the game myself.
     found in the game's asset base, the scandal broke full-force, and a junior
     designer ended up fired. Fortunately, the story has as happy an ending as it
     can: Antireal was hired on as a design consultant, she's expressed
-    satisfaction with the arrangement, and the game's design visual design has
+    satisfaction with the arrangement, and the game's visual design has
     only improved since then.
 
 [real-world visual design]: https://en.wikipedia.org/wiki/The_Designers_Republic
