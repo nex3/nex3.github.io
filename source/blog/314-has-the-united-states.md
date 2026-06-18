@@ -1,6 +1,14 @@
 ---
 tags: [politics]
+updated: 2026-06-18T20:53:54Z
 ---
+
+{% image "/assets/314/destruction-small.webp",
+    link: "/assets/314/destruction.webp",
+    style: "width: 400px" %}
+  ===
+  *The Course of Empire: Destruction* (1836), by Cole Thomas
+{% endimage %}
 
 {% genericPost "https://www.newsweek.com/us-iran-14-point-deal-uranium-sanctions-hormuz-draft-12087032",
     date: "2026-06-17T17:37:00.000Z",
