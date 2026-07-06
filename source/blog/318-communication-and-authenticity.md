@@ -1,6 +1,7 @@
 ---
 repost: true
 tags: [language]
+updated: 2026-07-06T21:59:12Z
 commentary:
 - if someone told me this I would not react with grace or composure
 ---
@@ -14,6 +15,7 @@ commentary:
     tags: "#Uncategorized, #Autism, #Culture, #Disability, #Neurodiversity",
     via: 'Dante',
     viaDate: 'July 4, 2026 at 10:31:27 AM PDT',
+    viaUrl: 'https://links.posting.haus/shaare/KJQA9A',
     %}
   <p>I don’t know if it’s coming from this wishful thinking that’s taken hold
   again that “neurodivergent people’s communication is honest and clear and
