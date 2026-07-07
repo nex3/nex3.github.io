@@ -39,15 +39,68 @@ function getTitle(post) {
     : null;
 }
 
-function postContent(post) {
-  if (post.body) return post.body;
+/** Returns the URL for a trail {@link entry}. */
+function getUrl(entry) {
+  return `https://www.tumblr.com/${entry.blog.name}/${entry.post.id}`;
+}
 
-  let contents = "";
-  for (const block of post.content) {
-    if (block.type === "text") {
-      const text = escapeHtml(block.text).replaceAll("\n", "<br>");
-    }
+/**
+ * Returns the posting date for a trail {@link entry}.
+ *
+ * There's no way to find the date for a deleted post in a reblog chain, so in
+ * that case this will return undefined.
+ */
+async function getDate(entry) {
+  if (entry.timestamp) return new Date(entry.timestamp * 1000);
+
+  try {
+    const response = await client.blogPosts(entry.blog.name, {
+      id: entry.post.id,
+      npf: true,
+    });
+    return new Date(response.posts[0].timestamp * 1000);
+  } catch (_) {
+    return undefined;
   }
+}
+
+async function singlePost(entry, genericPostArgs = {}) {
+  const args = { ...(genericPostArgs ?? {}) };
+
+  args.title = getTitle(entry);
+  args.author = entry.blog.name;
+  args.authorUrl = entry.blog.url;
+  args.authorAvatar = getAvatar(entry.blog);
+  args.date = await getDate(entry);
+
+  // We could pull tags here, but the strong Tumblr expectation is that tags are
+  // not visible on reblogs.
+
+  return (
+    `{% genericPost ${JSON.stringify(getUrl(entry))},\n` +
+    Object.entries(args)
+      .filter(([_, value]) => value)
+      .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
+      .join(",\n") +
+    " %}\n" +
+    (
+      await prettier.format(
+        npf2html(entry.content, {
+          // These are only available from the main post we use to create a
+          // synthetic entry.
+          layout: entry.post.layout,
+          askingAvatar: entry.post.asking_avatar,
+        }),
+        {
+          parser: "html",
+          printWidth: 78,
+        },
+      )
+    )
+      .trim()
+      .replaceAll(/^/gm, "  ") +
+    "\n{% endgenericPost %}"
+  );
 }
 
 export async function tumblrTag(url) {
@@ -69,62 +122,40 @@ export async function tumblrTag(url) {
   // TODO: if !response.is_blocks_post_format, render a legacy post. Otherwise
   // we'll lose some formatting here.
 
-  let blog = response.blog;
-  let post = response.posts[0];
+  const results = [
+    await singlePost({
+      blog: response.blog,
+      post: response.posts[0],
+      content: response.posts[0].content,
+    }),
+  ];
 
-  const args = {};
+  let inReplyUrl = undefined;
+  let inReplyAuthor = undefined;
+  let inReplyTitle = undefined;
 
-  if (post.content.length === 0) {
-    const entry = post.trail[0];
-    const original = await client.blogPosts(entry.blog.name, {
-      id: entry.post.id,
-      npf: true,
-    });
+  const trail = [...response.posts[0].trail];
+  for (let i = 1; i < trail.length; i++) {
+    const entry = trail[i];
 
-    args.via = blog.name;
-    args.viaDate = new Date(post.timestamp * 1000);
-    args.viaUrl = post.post_url;
-    args.viaAuthorUrl = blog.url;
-    args.viaAuthorAvatar = getAvatar(blog);
+    const args = {};
+    if (i === trail.length - 1 && response.blog.name != entry.blog.name) {
+      args.via = response.blog.name;
+      args.viaDate = new Date(response.posts[0].timestamp * 1000);
+      args.viaUrl = response.posts[0].post_url;
+      args.viaAuthorUrl = response.blog.url;
+      args.viaAuthorAvatar = getAvatar(response.blog);
+    }
 
-    blog = original.blog;
-    post = original.posts[0];
+    args.inReplyUrl = inReplyUrl;
+    args.inReplyAuthor = inReplyAuthor;
+    args.inReplyTitle = inReplyTitle;
+    results.push(await singlePost(entry, { genericPostArgs: args }));
+
+    inReplyUrl = getUrl(entry);
+    inReplyAuthor = entry.blog.name;
+    inReplyTitle = getTitle(entry);
   }
 
-  args.url = post.post_url;
-  args.title = getTitle(post);
-  args.author = blog.name;
-  args.authorUrl = blog.url;
-  args.authorAvatar = getAvatar(blog);
-  args.date = new Date(post.timestamp * 1000);
-  args.inReplyUrl = post.parent_post_url;
-  args.inReplyTitle = getTitle(post?.trail?.at(-1));
-  args.inReplyAuthor = post?.trail?.at(-1)?.blog?.name;
-
-  // We could pull tags here, but the strong Tumblr expectation is that tags are
-  // not visible on reblogs.
-
-  return (
-    `{% genericPost ${JSON.stringify(urlString)},\n` +
-    Object.entries(args)
-      .filter(([_, value]) => value)
-      .map(([name, value]) => `    ${name}: ${JSON.stringify(value)}`)
-      .join(",\n") +
-    " %}\n" +
-    (
-      await prettier.format(
-        npf2html(post.content, {
-          layout: post.layout,
-          askingAvatar: post.asking_avatar,
-        }),
-        {
-          parser: "html",
-          printWidth: 78,
-        },
-      )
-    )
-      .trim()
-      .replaceAll(/^/gm, "  ") +
-    "\n{% endgenericPost %}"
-  );
+  return results.join("\n\n");
 }
