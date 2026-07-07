@@ -1,9 +1,13 @@
 import npf2html from "npf2html";
 import * as prettier from "prettier";
 import * as tumblr from "tumblr.js";
+import "dotenv/config";
 
 const client = new tumblr.Client({
   consumer_key: "9IaWmGX1cUa1qbxpGyxbG6LbYxlCI2P3jZJzh2COOKneaktQo2",
+  consumer_secret: process.env.TUMBLR_CONSUMER_SECRET,
+  token: process.env.TUMBLR_TOKEN,
+  token_secret: process.env.TUMBLR_TOKEN_SECRET,
 });
 
 /**
