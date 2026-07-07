@@ -1,6 +1,7 @@
 ---
 repost: true
 tags: [language, code]
+updated: 2026-07-07T01:13:19Z
 commentary:
 - really cool post about about all the complexities involved in Arabic fonts
 - and this one dude in Cairo tirelessly working to address them all
@@ -11,7 +12,8 @@ commentary:
     date: "2026-06-10",
     tags: ["#History", "#Programming"],
     author: "lr0",
-    authorAvatar: "https://lr0.org/media/images/about_pfp.png" %}
+    authorAvatar: "https://lr0.org/media/images/about_pfp.png",
+    quote: true %}
   <p>The history deserves recording because most people outside the small world
   of Arabic font engineering don't know it, and it is wonderful. Classical
   Arabic typography, by which I mean the manuscript tradition that the early
