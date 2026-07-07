@@ -57,7 +57,10 @@ export async function tumblrTag(url) {
     throw new Error(`Couldn't parse Tumblr URL ${urlString}`);
   }
 
-  const response = await client.blogPosts(match[1], { id: match[2], npf: true });
+  const response = await client.blogPosts(match[1], {
+    id: match[2],
+    npf: true,
+  });
 
   // TODO: if !response.is_blocks_post_format, render a legacy post. Otherwise
   // we'll lose some formatting here.
@@ -69,7 +72,10 @@ export async function tumblrTag(url) {
 
   if (post.content.length === 0) {
     const entry = post.trail[0];
-    const original = await client.blogPosts(entry.blog.name, { id: entry.post.id, npf: true });
+    const original = await client.blogPosts(entry.blog.name, {
+      id: entry.post.id,
+      npf: true,
+    });
 
     args.via = blog.name;
     args.viaDate = new Date(post.timestamp * 1000);

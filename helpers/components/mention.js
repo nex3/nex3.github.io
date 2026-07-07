@@ -74,7 +74,8 @@ for (const person of [
     nickname: "videodante",
     url: "https://dante.cool/",
     uid: "https://dante.cool/",
-    photo: "https://images.squarespace-cdn.com/content/v1/568f7a2e1115e08523a35cef/1453106022655-8QM4Y8S97805DSOLU5SU/30.png",
+    photo:
+      "https://images.squarespace-cdn.com/content/v1/568f7a2e1115e08523a35cef/1453106022655-8QM4Y8S97805DSOLU5SU/30.png",
   },
   {
     givenName: "Eden",

@@ -43,14 +43,15 @@ export async function letterboxdTag(maybeRedirectUrl) {
     const image = cheerio.load(text, {
       baseUrl: filmUrl,
     })(".backdrop-container #backdrop");
-    console.log({image: image.html()});
+    console.log({ image: image.html() });
     const urlString = image.data("backdrop");
     if (urlString) args.image = new URL(urlString, filmUrl);
   }
 
   const filmId = $("[data-film-id]").data("film-id");
-  args.poster = "https://a.ltrbxd.com/resized/film-poster/" +
-    filmId.toString().split('').join('/') +
+  args.poster =
+    "https://a.ltrbxd.com/resized/film-poster/" +
+    filmId.toString().split("").join("/") +
     `/${filmId}-${filmSlug}-0-150-0-225-crop.jpg`;
 
   return (
