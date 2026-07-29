@@ -122,6 +122,16 @@ export async function tumblrTag(url) {
   // TODO: if !response.is_blocks_post_format, render a legacy post. Otherwise
   // we'll lose some formatting here.
 
+  if (response.posts[0].content.length === 0) {
+    return await singlePost(response.posts[0].trail[0], {
+      via: response.blog.name,
+      viaDate: new Date(response.posts[0].timestamp * 1000),
+      viaUrl: response.posts[0].post_url,
+      viaAuthorUrl: response.blog.url,
+      viaAuthorAvatar: getAvatar(response.blog),
+    });
+  }
+
   const results = [
     await singlePost({
       blog: response.blog,
