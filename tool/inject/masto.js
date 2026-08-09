@@ -4,6 +4,8 @@ import { createRestAPIClient } from "masto";
 import fetch from "node-fetch";
 import * as prettier from "prettier";
 
+import * as dates from "../../helpers/dates.js";
+
 const masto = createRestAPIClient({
   url: "https://mastodon.social",
   accessToken: process.env["MASTO_TOKEN"],
@@ -39,7 +41,7 @@ export async function mastoTag(url) {
   args.author = status.account.displayName;
   args.authorUrl = status.account.url;
   args.authorAvatar = status.account.avatar;
-  args.date = new Date(Date.parse(status.createdAt));
+  args.date = dates.parse(status.createdAt).toISOString();
 
   let content = status.content;
   if (status.mediaAttachments.length > 1) {

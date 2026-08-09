@@ -1,4 +1,5 @@
 import { createPairedComponentPlugin } from "./base.js";
+import * as dates from "../dates.js";
 import { stripIndent } from "../type.js";
 
 export default createPairedComponentPlugin(
@@ -7,7 +8,7 @@ export default createPairedComponentPlugin(
     const [_, author, filmSlug] = url.match(
       /^https:\/\/letterboxd\.com\/([^\/]+)\/film\/([^\/]+)\//,
     );
-    const date = new Date(Date.parse(options.date));
+    const date = dates.parse(options.date);
 
     return liquidEngine.renderFile("components/letterboxd", {
       contents: stripIndent(contents).trim(),

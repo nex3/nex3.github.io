@@ -4,7 +4,7 @@
     <data class="p-name" value="{{ via.title | escape }}"></data>
   {% endif %}
   {% if via.date %}
-    <time class="dt-published" datetime="{{ via.date | escape }}"></time>
+    <time class="dt-published" datetime="{{ via.date | dateToRfc3339 }}"></time>
   {% endif %}
   <div class="p-author h-card">
     <span>

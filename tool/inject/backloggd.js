@@ -2,6 +2,8 @@ import * as cheerio from "cheerio";
 import fetch from "node-fetch";
 import * as prettier from "prettier";
 
+import * as dates from "../../helpers/dates.js";
+
 export async function backloggdTag(url) {
   const reviewResponse = await fetch(url);
   const $ = cheerio.load(await reviewResponse.text(), { baseUrl: url });
@@ -24,9 +26,9 @@ export async function backloggdTag(url) {
   if (!dateText.startsWith("Reviewed on")) {
     throw new Error(`Unexpected date text "${dateText}"`);
   }
-  args.date = new Date(
-    Date.parse(dateText.substring("Reviewed on ".length)),
-  ).toISOString();
+  args.date = dates
+    .parse(dateText.substring("Reviewed on ".length))
+    .toISOString();
 
   let poster = resolveUrl($(".game-cover img").attr("src"));
   if (poster && !poster.includes("/no_image-")) args.poster = poster;

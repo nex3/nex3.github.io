@@ -1,4 +1,5 @@
 import { createPairedComponentPlugin } from "./base.js";
+import * as dates from "../dates.js";
 import { viaOptions, knownMentions } from "./mention.js";
 import { stripIndent } from "../type.js";
 
@@ -9,7 +10,7 @@ export default createPairedComponentPlugin(
       .split(",")
       .map((tag) => tag.trim().replace(/^#/, ""))
       .filter((tag) => tag.length > 0);
-    const date = options.date ? new Date(Date.parse(options.date)) : undefined;
+    const date = options.date ? dates.parse(options.date) : undefined;
     const via = options.via ? viaOptions(options) : undefined;
     if (options.author) {
       const author = knownMentions[options.author];

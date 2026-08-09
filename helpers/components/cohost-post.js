@@ -1,4 +1,5 @@
 import { createPairedComponentPlugin } from "./base.js";
+import * as dates from "../dates.js";
 import { stripIndent } from "../type.js";
 
 export default createPairedComponentPlugin(
@@ -9,7 +10,7 @@ export default createPairedComponentPlugin(
       .map((tag) => tag.trim().replace(/^#/, ""))
       .filter((tag) => tag.length > 0);
     const author = url.match(/^https:\/\/cohost\.org\/([^\/]+)/)[1];
-    const date = new Date(Date.parse(options.date));
+    const date = dates.parse(options.date);
 
     return liquidEngine.renderFile("components/cohost-post", {
       contents: stripIndent(contents).trim(),
