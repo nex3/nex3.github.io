@@ -1,7 +1,7 @@
 ---
 title: Marathon and the Thrill of Losing
-tags: [marathon, game design, footnote forest]
-updated: 2026-03-21T07:16:37Z
+tags: [marathon, game design, footnote forest, article]
+updated: 2026-08-11T04:11:08Z
 ---
 
 I wasn't planning to play *Marathon*.
