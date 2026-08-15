@@ -1,6 +1,7 @@
 ---
 reply: true
 tags: [so-called ai]
+updated: 2026-08-15T04:35:40Z
 ---
 
 {% genericPost "https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making/",
@@ -12,7 +13,8 @@ tags: [so-called ai]
     authorUrl: "https://ludic.mataroa.blog/",
     authorAvatar: "https://cdn.masto.host/mastodonsprawlclub/accounts/avatars/110/068/971/629/468/400/original/97de6a377a0f831b.jpg",
     date: "July 18, 2026",
-    reply: true %}
+    reply: true,
+    quote: true %}
   <p>Over the past year, I’ve run point on all of our company’s sales, led the
   technical components of all but two of our engagements, and over the lifetime
   of this blog have had something like 300 catchups with professionals from
