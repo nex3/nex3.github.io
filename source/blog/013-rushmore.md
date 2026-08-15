@@ -13,7 +13,7 @@ tags:
     year: "1998",
     authorDisplayName: "Natalie Weizenbaum",
     date: "20 Sep 2024",
-    avatar: "https://a.ltrbxd.com/resized/avatar/twitter/1/0/2/9/2/7/0/shard/http___pbs.twimg.com_profile_images_1051706425750122496_0kOnxl28-0-48-0-48-crop.jpg?v=144ccd3110",
+    avatar: "https://a.ltrbxd.com/resized/avatar/upload/1/0/2/9/2/7/0/shard/avtr-0-48-0-48-crop.jpg?v=0b6f0459f5",
     supporter: "patron",
     rating: 3,
     image: "https://a.ltrbxd.com/resized/sm/upload/ks/j4/zi/xf/rushmore-1200-1200-675-675-crop-000000.jpg?v=0eed998060",
