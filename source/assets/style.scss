@@ -991,6 +991,13 @@ small {
   width: 76px;
 }
 
+.postcard {
+  float: right;
+  box-shadow: 3px 3px 8px rgb(0 0 0 / 0.5);
+  width: 200px;
+  margin: 2em 2em 1em 2em;
+}
+
 .ac6-ac {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
