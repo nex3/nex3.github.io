@@ -6,6 +6,7 @@ commentary:
 - "I'm so proud of you"
 - you are a scholar among fools
 - "if you're just seeing this on my website... that's fine. that's fine too"
+updated: 2026-08-18T07:37:26Z
 ---
 
 I'm sure all of you have already read my [Apologia for RSS] (the very first post
@@ -14,7 +15,7 @@ chosen for one reason or another. But does your RSS reader show you *everything*
 a post contains, or is it hiding the deepest, juiciest quips and chatter from
 you?
 
-[Apologia for RSS]: ./apologia-for-rss
+[Apologia for RSS]: /blog/apologia-for-rss
 
 I've been [on Tumblr] since its heyday back in 2011, and it's now the only
 social media I can really say I use regularly[^tumblr]. One of the aspects of
