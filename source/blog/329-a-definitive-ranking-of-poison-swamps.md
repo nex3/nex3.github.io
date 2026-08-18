@@ -10,6 +10,7 @@ tags:
 - elden ring
 - from software
 - cohost repost
+updated: 2026-08-18T00:01:34Z
 ---
 
 *\[This is a repost of [this post] I originally made on Cohost on 4 October 2022.\]*
@@ -43,8 +44,6 @@ kind of bullshit in a couple ways but not too bad. However, it's **not a fucking
 swamp**. It's just a bunch of poison gas in a mine! It's only even in here
 because *Dark Souls 2* doesn't have any better candidates. Poor show, *DS2*,
 poor show.
-
----
 
 ### #7: Bodhisattva Valley Floor (*Sekiro*)
 
