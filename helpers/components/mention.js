@@ -92,6 +92,13 @@ for (const person of [
     uid: "https://meadowdr.one/",
   },
   {
+    name: "Hatkirby",
+    nickname: "Hatkirby",
+    url: "https://www.fourisland.com/",
+    uid: "https://www.fourisland.com/",
+    photo: "https://storage.googleapis.com/beppo.online/accounts/avatars/109/331/277/627/590/965/original/1fae2605f15007c0.png",
+  },
+  {
     name: "Liz",
     nickname: "JhoiraArtificer",
     url: "https://seaslug.garden/",
