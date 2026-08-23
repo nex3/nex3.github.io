@@ -1,5 +1,6 @@
 ---
 tags: [for frog the bell tolls]
+updated: 2026-08-23T08:37:59Z
 ---
 
 {% genericPost "https://www.fourisland.com/blog/kaeru-disassembly-terrain",
@@ -7,7 +8,8 @@ tags: [for frog the bell tolls]
     date: "2026-07-24T15:07:39Z-0400",
     tags: "#projects, #kaeru, #video games",
     author: "Hatkirby",
-    quote: true %}
+    quote: true,
+    reply: true %}
   <p>
     <img
       src="https://www.fourisland.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTY1LCJwdXIiOiJibG9iX2lkIn19--bfd9b21fa8646873c29efecfe867b1cf30640391/tree_boundary.png"
