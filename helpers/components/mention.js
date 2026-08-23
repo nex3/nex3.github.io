@@ -114,6 +114,15 @@ for (const person of [
     photo: "https://lydz.gay/img/fsJohDi4CF-100.png",
   },
   {
+    name: "Michael Klamerus",
+    givenName: "Michael",
+    familyName: "Klamerus",
+    nickname: "mpklamerus",
+    url: "https://virtualmoose.org/",
+    uid: "https://virtualmoose.org/",
+    photo: "https://dosgame.club/system/accounts/avatars/108/198/448/686/014/371/original/40cda1c61dd635b8.jpg",
+  },
+  {
     name: "Rose",
     nickname: "holomancy",
     url: "https://holomancy.neocities.org/",

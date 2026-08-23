@@ -28,7 +28,7 @@
           {% endif %}
           {% render 'attribution', date: post.date, author: post.data.author, link: post.url %}
           <div class="e-content blog-prose">
-            {% if post.data.repost %}
+            {% if post.data.repost or post.data.truncate == false %}
               {{ post.content }}
             {% else %}
               {{ post.content | truncateHTML: 500, link: post.url | replaceInternalLinks: post.url }}

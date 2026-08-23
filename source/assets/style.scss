@@ -2278,18 +2278,22 @@ $backloggd-image-tuck: 160px;
 
 .bl-prose {
   line-height: 1.6875;
-  padding: $backloggd-image-tuck 16px 0px;
-  margin-top: calc($backloggd-image-tuck * -1 + 8px);
+  padding: 0px 16px 0px;
   z-index: 1;
-  background: linear-gradient(
-    rgba($backloggd-bg-color, 0) 0px,
-    $backloggd-bg-color calc($backloggd-image-tuck + 48px)
-  );
   color: #ccdbf1;
   // prettier-ignore
   font-family: list.join((Noto Sans,), $text-font);
   font-weight: 375;
   font-size: 0.917rem;
+
+  .bl-image + & {
+    padding-top: $backloggd-image-tuck;
+    margin-top: calc($backloggd-image-tuck * -1 + 8px);
+    background: linear-gradient(
+      rgba($backloggd-bg-color, 0) 0px,
+      $backloggd-bg-color calc($backloggd-image-tuck + 48px)
+    );
+  }
 
   p {
     margin: 0px 0px 10px;
