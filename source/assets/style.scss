@@ -221,6 +221,16 @@ main {
   }
 }
 
+// Ideally this would be on the tags themselves, but due to a bug somewhere in
+// Eleventy's rendering stack attaching `{.limited-height}` to pre blocks
+// doesn't work.
+.limited-height {
+  pre code, img {
+    height: 200px;
+    overflow: scroll;
+  }
+}
+
 .page-footer {
   text-align: center;
   margin-bottom: 8px;
