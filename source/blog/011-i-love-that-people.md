@@ -6,10 +6,11 @@ tags:
 - web dev
 - htmx
 - web components
+update: 2026-08-30T03:58:31Z
 ---
 
 I love that people are thinking about how to make chunks of the web reusable in
-standalone contexts, but I really truly deeply with that all the solutions like
+standalone contexts, but I really truly deeply wish that all the solutions like
 htmx and web components weren't so hopelessly intrinsically tied to JavaScript.
 I cut my teeth on the ideals of the semantic web and I strongly believe that a
 web page should be fundamentally usable with JavaScript disabled. For highly
