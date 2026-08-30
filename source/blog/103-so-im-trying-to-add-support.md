@@ -1,5 +1,5 @@
 ---
-tags: [meta, code, mastodon]
+tags: [meta, tech, mastodon]
 title: How to fail to read a Fediverse post
 updated: 2024-10-28T00:51:18Z
 ---

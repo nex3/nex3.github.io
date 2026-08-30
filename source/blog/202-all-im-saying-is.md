@@ -1,5 +1,5 @@
 ---
-tags: [code]
+tags: [tech]
 ---
 
 All I'm saying is that the first government to start funding grants for working

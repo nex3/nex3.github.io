@@ -1,6 +1,6 @@
 ---
 repost: true
-tags: [language, code]
+tags: [language, tech]
 updated: 2026-07-07T01:13:19Z
 commentary:
 - really cool post about about all the complexities involved in Arabic fonts

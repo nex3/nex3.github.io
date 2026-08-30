@@ -1,5 +1,5 @@
 ---
-tags: [ask, code, sass]
+tags: [ask, tech, sass]
 updated: 2025-04-09T00:33:58Z
 ---
 
