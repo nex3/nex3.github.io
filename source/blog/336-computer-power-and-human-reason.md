@@ -1,5 +1,6 @@
 ---
 tags: [computer power and human reason, so-called ai]
+updated: 2026-08-30T01:38:47Z
 ---
 
 I probably should have read [*Computer Power and Human Reason*] years ago, when
@@ -95,7 +96,7 @@ point, as far as I'm aware, long before anyone else.
     > [M]any professional programmers believe that their craft is difficult
     > because the languages with which they must deal have rigid syntactical
     > rules. There is > therefore a persistent cry for natural-language, e.g.,
-    > English, programming systems. Programmers who hold to this believe have
+    > English, programming systems. Programmers who hold to this belief have
     > probably never tackled a truly difficult problem, and have therefore never
     > felt the need for really deep criticism from the computer.[^3]
 
