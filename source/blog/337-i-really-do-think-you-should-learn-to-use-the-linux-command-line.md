@@ -2,6 +2,7 @@
 title: I really do think you should learn to use the Linux command line.
 tags: [tech]
 reply: true
+updated: 2026-08-31T22:18:14Z
 ---
 
 {% genericPost "https://azhdarchid.com/notes/i-really-do-think-2026-08-04/",
@@ -120,7 +121,7 @@ absolute basics:
   `ls --all --quote-name`. (In some cases, for historical reasons, some options
   may *only* be available in short form.)
 
-* "But Natalie," you ask, "how do you I which options a command will even
+* "But Natalie," you ask, "how do I know which options a command will even
   recognize?" There are a few ways. Just about every command takes a `--help`
   option that prints basic information about how to run a command and its
   options:
@@ -221,12 +222,12 @@ absolute basics:
   usually also find a web version by searching for "\<command name\> man page",
   like [this one for ls].
 
-* If you run `man`, you'll notice that you no longer have the familiar command
-  prompt is gone! Unlike other commands you've run so far, `man` runs as an
-  interactive application, allowing you to scroll through and even search the
-  documentation. Most command-line tools don't work this way, but it's certainly
-  not unheard-of. You can press `q` when you're done to exit out (as it
-  helpfully reminds you on the bottom line).
+* If you run `man`, you'll notice that the familiar command prompt is gone!
+  Unlike other commands you've run so far, `man` runs as an interactive
+  application, allowing you to scroll through and even search the documentation.
+  Most command-line tools don't work this way, but it's certainly not
+  unheard-of. You can press `q` when you're done to exit out (as it helpfully
+  reminds you on the bottom line).
 
 * Most Terminal applications these days use pretty common key bindings for
   editing text. However, there are a couple important exceptions:
