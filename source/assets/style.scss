@@ -726,6 +726,14 @@ details {
   }
 }
 
+.webring {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+
+  .random {@extend %sidenote}
+}
+
 // A component extending %embed should have the following structure:
 //
 // ```html

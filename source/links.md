@@ -5,6 +5,15 @@ title: Links
 
 # Links
 
+<div class="webring">
+  <a class="prev" href="https://baccyflap.com/noai/?prv&s=hon" target="_top">« Previous</a>
+  <span class="description">
+    <a href="https://baccyflap.com/noai" target="_blank">No AI Webring</a>
+    <a class="random" href="https://baccyflap.com/noai/?rnd" target="_top">(random)</a>
+  </span>
+  <a class="prev" href="https://baccyflap.com/noai/?nxt&s=hon" target="_top">Next »</a>
+</div>
+
 ## Products and Services
 
 {% image "/assets/walkin-around-money.png",
