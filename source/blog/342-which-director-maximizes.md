@@ -1,7 +1,7 @@
 tags: [film]
 commentary: 
 - this actually occurred to me because I just rewatched Hereditary
-- 'and thought "Ari Aster, what happened to you?"'
+- "and thought \"Ari Aster, what happened to you?\""
 - but Midsommar is also good so I don't think he actually scores that high
 ---
 
