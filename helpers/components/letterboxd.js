@@ -5,8 +5,8 @@ import { stripIndent } from "../type.js";
 export default createPairedComponentPlugin(
   "letterboxd",
   (liquidEngine, contents, url, options) => {
-    const [_, author, filmSlug] = url.match(
-      /^https:\/\/letterboxd\.com\/([^\/]+)\/film\/([^\/]+)\//,
+    const [_, author, filmSlug, reviewIndex] = url.match(
+      /^https:\/\/letterboxd\.com\/([^\/]+)\/film\/([^\/]+)\/(.*)/,
     );
     const date = dates.parse(options.date);
 
@@ -14,6 +14,7 @@ export default createPairedComponentPlugin(
       contents: stripIndent(contents).trim(),
       author,
       filmSlug,
+      reviewIndex,
       authorDisplayName: options.authorDisplayName,
       rating: options.rating,
       film: options.film,
