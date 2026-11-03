@@ -1,0 +1,1 @@
+a phone without a rubber case just feels like I'm holding a prank. it's a little too thin for human hands. it yearns to plummet. if it is ever tapped by something firmer than a book the entire thing will crumble to dust
