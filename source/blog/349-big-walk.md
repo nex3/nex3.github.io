@@ -1,6 +1,7 @@
 ---
 tags: [big walk, nat reviews, so-called ai]
 repost: true
+updated: 2026-11-10T10:27:43Z
 ---
 
 {% backloggd "https://backloggd.com/u/nex3/review/5546499/",
@@ -96,6 +97,20 @@ repost: true
   href="https://azhdarchid.com/there-are-sides/" >this is a conflict and there
   are sides</a>, we must in the final accounting recognize that works on the
   wrong side do real harm that we cannot paper over.</p>
+
+  <p>Others may point out that condemning all use of LLMs incentivizes lying
+  about whether a game uses them, to which I reply: good! If someone is going to
+  do something broadly (not specifically) harmful, they <em>should</em> hide it
+  in shame and fear that the world might one day know. It can be hard to
+  remember in the brazen 2020s, but shame works as a deterrent. Forcing
+  undesirable behaviors underground mitigates their spread! We've all seen this
+  happening in reverse: as it became more feasible for trans people to exist in
+  public over the last few decades, an explosion of people realized they could
+  transition too. We can and must harness this power to drive LLM use into the
+  shadows. Responsible creators will disclose the use when asked even if it
+  stands to harm them, as House House did. And irresponsible ones will be forced
+  to balance whatever they think they stand to gain by standing on the necks of
+  artists against the very concrete cost of scandal if it comes to light.</p>
 
   <p>In most of the world today, the people don't exercise political power. Good
   work is being done to try and change that, but it will not change tomorrow nor
