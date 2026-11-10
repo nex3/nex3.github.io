@@ -2143,6 +2143,17 @@ $backloggd-bg-color: #16181c;
     text-decoration: none;
   }
 
+  article a {
+    border-bottom: 1px dotted #cbd4dc;
+    color: #cbd4dc;
+    overflow-wrap: anywhere;
+
+    &:hover {
+      border-bottom-style: solid;
+      color: white;
+    }
+  }
+
   address {
     display: inline;
     font-size: 1rem;
