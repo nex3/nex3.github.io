@@ -1,7 +1,7 @@
 ---
 tags: [big walk, nat reviews, so-called ai]
 repost: true
-updated: 2026-11-10T10:27:43Z
+updated: 2026-11-10T23:14:00Z
 ---
 
 {% backloggd "https://backloggd.com/u/nex3/review/5546499/",
@@ -87,13 +87,13 @@ updated: 2026-11-10T10:27:43Z
   <p>Some may sympathize so much with this dilemma that they take it as a sign
   that people are speaking out too harshly against LLMs. I could not disagree
   more with this position. On the contrary, we must do everything we can to make
-  the use of LLMs culturally radioactive, such <em>any</em> use in a cultural
-  product is treated as putting that product in conflict with human culture as a
-  whole. It doesn't need to be black or white—we can acknowledge that <em>Big
-  Walk</em> is far less in conflict than in the mountains of steamslop that
-  continue to pile up around us—but we need to be clear that the only amount of
-  LLM use that's truly acceptable is none. While we can grant some grace to
-  those who don't yet realize that <a
+  the use of LLMs culturally radioactive, such that <em>any</em> use in a
+  cultural product is treated as putting that product in conflict with human
+  culture as a whole. It doesn't need to be black or white—we can acknowledge
+  that <em>Big Walk</em> is far less in conflict than in the mountains of
+  steamslop that continue to pile up around us—but we need to be clear that the
+  only amount of LLM use that's truly acceptable is none. While we can grant
+  some grace to those who don't yet realize that <a
   href="https://azhdarchid.com/there-are-sides/" >this is a conflict and there
   are sides</a>, we must in the final accounting recognize that works on the
   wrong side do real harm that we cannot paper over.</p>
