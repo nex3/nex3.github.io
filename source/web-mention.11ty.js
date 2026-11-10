@@ -20,6 +20,7 @@ function linksFromPostBody(post, url) {
 
 /** Returns the links to h-entries embedded in {@link post}. */
 function embedLinks(post, baseUrl) {
+  if (post.content === "") return [];
   const { items } = mf2(post.content, { baseUrl: baseUrl });
   return items
     .filter((item) => item.type.length === 1 && item.type[0] === "h-entry")
