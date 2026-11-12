@@ -92,6 +92,13 @@ for (const person of [
     uid: "https://meadowdr.one/",
   },
   {
+    name: "Graham",
+    nickname: "graham",
+    url: "https://graham.build/",
+    uid: "https://graham.build/",
+    photo: "https://graham.build/swirl.jpg",
+  },
+  {
     name: "Hatkirby",
     nickname: "Hatkirby",
     url: "https://www.fourisland.com/",
