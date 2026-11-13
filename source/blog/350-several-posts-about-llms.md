@@ -173,7 +173,7 @@ cultural actions can be appropriate to address cultural problems.
   a significant internal leak for it to ever come out. So maybe banning is
   pointless?</p>
   
-  <p><img src="https://www.possibilityspace.org/blog/assets/images/igf-4.jpg"</p>
+  <p><img src="https://www.possibilityspace.org/blog/assets/images/igf-4.jpg"></p>
 
   <p>Here's the thing: when you write down a rule, it doesn't do anything. Rules
   are not magic. They don't have any power over people. But they do two
