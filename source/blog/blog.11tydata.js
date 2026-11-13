@@ -22,6 +22,10 @@ export function permalink(data) {
 }
 
 export async function webMentions() {
+  // TODO: Cache web mentions to avoid pounding the server with every build and
+  // getting a bunch of 429s.
+  return [];
+
   const { url } = this.page;
   if (!url) return [];
 
