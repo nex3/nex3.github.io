@@ -3,6 +3,7 @@ repost: true
 commentary:
 - fuck cars in general
 - and fuck waymo in particular
+updated: 2026-11-24T15:07:31Z
 ---
 
 {% genericPost "https://blog.lauramichet.com/why-i-oppose-self-driving-vehicles/",
@@ -10,7 +11,6 @@ commentary:
     date: "2026-11-18T01:32Z",
     author: "Laura Michet",
     authorUrl: "https://www.lauramichet.com/",
-    quote: true,
     tags: 'bicycles',
     via: "Dante" %}
   <p>I find it very frustrating when cyclists speak well of Waymo! I don't
